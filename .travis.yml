@@ -14,10 +14,10 @@ install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
   - sudo dpkg -i hugo*.deb
   # 安装主题
-  - git clone https://github.com/Mogeko/LeaveIt.git themes/LeaveIt
+  - git clone https://github.com/bodhiye/LeaveIt.git themes/LeaveIt
 
 # befor_script:
-#   - git clone https://github.com/Mogeko/LeaveIt.git themes/LeaveIt
+#   - git clone https://github.com/bodhiye/LeaveIt.git themes/LeaveIt
 
 script:
 # 运行hugo命令
