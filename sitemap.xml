@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    <url>
+      <loc>https://bodhiye.github.io/about/</loc>
+      
+      <lastmod>2019-02-27T13:48:21+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/2019/hello/</loc>
+      
+      <lastmod>2019-02-26T15:08:30+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/categories/</loc>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/posts/</loc>
+      
+      <lastmod>2019-02-26T15:08:30+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/tags/</loc>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/</loc>
+      
+      <lastmod>2019-02-27T13:48:21+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://bodhiye.github.io/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</loc>
+      
+      <lastmod>2019-02-27T13:48:21+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+</urlset>

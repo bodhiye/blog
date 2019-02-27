@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂七杂八 on 叶琼州的代码小窝</title>
+    <link>https://bodhiye.github.io/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</link>
+    <description>Recent content in 杂七杂八 on 叶琼州的代码小窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 27 Feb 2019 13:48:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://bodhiye.github.io/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://bodhiye.github.io/about/</link>
+      <pubDate>Wed, 27 Feb 2019 13:48:21 +0800</pubDate>
+      
+      <guid>https://bodhiye.github.io/about/</guid>
+      <description>我叫叶琼州，就读于武汉大学国家网络安全学院。</description>
+    </item>
+    
+  </channel>
+</rss>
