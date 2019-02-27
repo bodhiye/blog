@@ -16,7 +16,7 @@ install:
   # 安装主题
   - git clone https://github.com/bodhiye/LeaveIt.git themes/LeaveIt
 
-# befor_script:
+# before_script:
 #   - git clone https://github.com/bodhiye/LeaveIt.git themes/LeaveIt
 
 script:
