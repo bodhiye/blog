@@ -1,6 +1,6 @@
 baseURL = "https://yeqiongzhou.top" # <head> 里面的 baseurl 信息，填你的博客地址
 languageCode = "zh-cn" # 语言
-title = "叶琼州的个人博客" # 浏览器的标题
+title = "叶琼州的代码小窝" # 浏览器的标题
 theme = "LeaveIt" # 主题 (需要自己下载)
 
 paginate = 11 # 每页的文章数
