@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂七杂八 on 叶琼州的代码小窝</title>
+    <link>https://yeqiongzhou.top/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</link>
+    <description>Recent content in 杂七杂八 on 叶琼州的代码小窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Feb 2019 20:31:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://yeqiongzhou.top/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>交换两个变量值</title>
+      <link>https://yeqiongzhou.top/2019/hello/</link>
+      <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/hello/</guid>
+      <description>1、借助第三个变量来实现 C = A; A = B; B = C; 2、利用加减法来实现两个变量的交换 A = A + B; B = A – B; A = A – B; 3、用位异或运算来实现，也是效率最</description>
+    </item>
+    
+  </channel>
+</rss>
