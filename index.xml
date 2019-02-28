@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>叶琼州的代码小窝 on 叶琼州的代码小窝</title>
-    <link>https://bodhiye.github.io/</link>
+    <link>https://yeqiongzhou.top/</link>
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -11,20 +11,20 @@
     
     <item>
       <title>About</title>
-      <link>https://bodhiye.github.io/about/</link>
+      <link>https://yeqiongzhou.top/about/</link>
       <pubDate>Wed, 27 Feb 2019 13:48:21 +0800</pubDate>
       
-      <guid>https://bodhiye.github.io/about/</guid>
+      <guid>https://yeqiongzhou.top/about/</guid>
       <description>&lt;p&gt;我叫叶琼州，就读于武汉大学国家网络安全学院。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Hello</title>
-      <link>https://bodhiye.github.io/2019/hello/</link>
+      <link>https://yeqiongzhou.top/2019/hello/</link>
       <pubDate>Tue, 26 Feb 2019 15:08:30 +0800</pubDate>
       
-      <guid>https://bodhiye.github.io/2019/hello/</guid>
+      <guid>https://yeqiongzhou.top/2019/hello/</guid>
       <description>&lt;p&gt;hello world&lt;/p&gt;
 </description>
     </item>

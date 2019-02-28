@@ -66,4 +66,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://bodhiye.github.io/sitemap.xml
+Sitemap: https://yeqiongzhou.top/sitemap.xml
