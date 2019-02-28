@@ -1,5 +1,4 @@
-public/*
-themes/*
-resources/*
-**/.DS_store
 public/
+resources/
+themes/
+**/.DS_store
