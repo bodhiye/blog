@@ -1,4 +1,4 @@
-baseURL = "https://bodhiye.github.io" # <head> 里面的 baseurl 信息，填你的博客地址
+baseURL = "https://yeqiongzhou.top" # <head> 里面的 baseurl 信息，填你的博客地址
 languageCode = "zh-cn" # 语言
 title = "叶琼州的代码小窝" # 浏览器的标题
 theme = "LeaveIt" # 主题 (需要自己下载)
@@ -42,7 +42,7 @@ preserveTaxonomyNames = true
 
 
 [params]
-    since = 2017
+    since = 2019
     author = "Bodhiye"                          # Author's name
     avatar = "/images/me/avatar.png"           # Author's avatar
     subtitle = "Talk is cheap. Show me the code." # Subtitle
@@ -52,20 +52,20 @@ preserveTaxonomyNames = true
     google_verification = ""
     description = "" # (Meta) 描述
     keywords = "" # site keywords
-    beian = ""
+    beian = "赣ICP备17015897号"
     baiduAnalytics = ""
     license= '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
 
 [params.social]
-    GitHub = "xxoo"
-    Twitter = "xxoo"
-    Email   = "xxoo"
-    Instagram = "xxoo"
+    GitHub = "bodhiye"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
-    Facebook = "xxoo"
-    Telegram = "xxoo"
-    Dribbble = "xxoo"
-    Medium = "xxoo"
+    Email   = "yeqiongzhou@whu.edu.cn"
+    Twitter = "yeqiongzhou"
+    Instagram = "yeqiongzhou"
+    Facebook = "yeqiongzhou"
+    # Telegram = "xxoo"
+    # Dribbble = "xxoo"
+    # Medium = "xxoo"
 
 [params.gitalk] # Github: https://github.com/gitalk/gitalk
     clientID = "abe0462addf2bb7816db" # Your client ID
