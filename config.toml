@@ -59,6 +59,7 @@ preserveTaxonomyNames = true
 [params.social]
     GitHub = "bodhiye"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
+    QQ = "/images/me/wechat.jpeg"
     Email   = "yeqiongzhou@whu.edu.cn"
     Twitter = "yeqiongzhou"
     Instagram = "yeqiongzhou"
