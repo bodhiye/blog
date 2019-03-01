@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 叶琼州的代码小窝</title>
-    <link>https://yeqiongzhou.top/posts/</link>
-    <description>Recent content in Posts on 叶琼州的代码小窝</description>
+    <title>Markdown on 叶琼州的代码小窝</title>
+    <link>https://yeqiongzhou.top/tags/markdown/</link>
+    <description>Recent content in Markdown on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 01 Mar 2019 19:36:47 +0800</lastBuildDate>
     
-	<atom:link href="https://yeqiongzhou.top/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yeqiongzhou.top/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://yeqiongzhou.top/2019/03/markdown/</guid>
       <description>Markdown 简明语法手册 1. 斜体和粗体 使用 * 和 ** 表示斜体和粗体。 示例： 这是 *斜体*，这是 粗体。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，不</description>
-    </item>
-    
-    <item>
-      <title>交换两个变量的值</title>
-      <link>https://yeqiongzhou.top/2019/02/exchange-two-variables/</link>
-      <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.top/2019/02/exchange-two-variables/</guid>
-      <description>1、借助第三个变量来实现 C = A; A = B; B = C; 2、利用加减法来实现两个变量的交换 A = A + B; B = A – B; A = A – B; 3、用位异或运算来实现，也是效率最</description>
     </item>
     
   </channel>
