@@ -54,7 +54,7 @@ preserveTaxonomyNames = true
     description = "叶琼州的个人博客" # (Meta) 描述
     keywords = "blog, hugo, go, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州" # site keywords
     beian = "赣ICP备17015897号"
-    baiduAnalytics = ""
+    baiduAnalytics = "5a98ee17bdb34762db31e4198f3a26ac"
     license= '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
 
 [params.social]
