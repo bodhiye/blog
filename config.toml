@@ -9,7 +9,6 @@ enableEmoji = true # 支持 Emoji
 enableRobotsTXT = true # 支持 robots.txt
 googleAnalytics = "UA-135209530-1" # Google 统计 id
 
-buildDrafts = true
 preserveTaxonomyNames = true
 
 [blackfriday]
