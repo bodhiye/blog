@@ -43,7 +43,7 @@ preserveTaxonomyNames = true
 
 [params]
     since = 2019
-    author = "Bodhiye"                          # Author's name
+    author = "bodhiye"                          # Author's name
     avatar = "/images/me/avatar.png"           # Author's avatar
     subtitle = "Talk is cheap. Show me the code." # Subtitle
     cdn_url = ""           # Base CDN URL
