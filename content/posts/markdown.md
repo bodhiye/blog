@@ -33,12 +33,13 @@ tags: ["Markdown"]
 ```
 
 这是一个一级标题
-==============
+=============
 
 这是一个二级标题
---------------
+-------------
 
 你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。
+
 #H1
 ##H2
 ###H3
@@ -144,17 +145,19 @@ Tags： Docker Kubernetes Markdown
 
 $ 表示行内公式：
 
-$E=mc^2$
+`$E=mc^2$`
 
-质能守恒方程可以用一个很简洁的方程式 ![](http://img.yeqiongzhou.top/gs1.png) 来表达。
+质能守恒方程可以用一个很简洁的方程式来表达。
+
+![](http://img.yeqiongzhou.top/gs1.png) 
 
 $$ 表示整行公式：
 
-$$\sum_{i=1}^n a_i=0$$
+`$$\sum_{i=1}^n a_i=0$$`
 
-$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+`$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$`
 
-$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
+`$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$`
 
 ![](http://img.yeqiongzhou.top/gs2.png)
 
@@ -225,7 +228,7 @@ cond(yes)->e
 cond(no)->sub->io
 ```
 
-![我的头像](http://img.yeqiongzhou.top/flow.svg)
+![流程图示例](http://img.yeqiongzhou.top/flow.svg)
 
 ### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
@@ -237,7 +240,7 @@ Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
-![序列图1](http://img.yeqiongzhou.top/seq1.svg)
+![序列图示例1](http://img.yeqiongzhou.top/seq1.svg)
 
 #### 示例 2
 
@@ -249,7 +252,7 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-![序列图2](http://img.yeqiongzhou.top/seq2.svg)
+![序列图示例2](http://img.yeqiongzhou.top/seq2.svg)
 
 ### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
@@ -271,7 +274,7 @@ section 发布验收
     验收: 3d
 ```
 
-![甘特图](http://img.yeqiongzhou.top/gantt.svg)
+![甘特图示例](http://img.yeqiongzhou.top/gantt.svg)
 
 ### 10. 表格支持
 
