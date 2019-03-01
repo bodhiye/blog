@@ -35,14 +35,24 @@
 
 &lt;p&gt;示例：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;这是一个一级标题
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;这是一个一级标题
 ==============
 
 这是一个二级标题
 --------------
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。&lt;/p&gt;
+&lt;h1 id=&#34;这是一个一级标题&#34;&gt;这是一个一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
+
+&lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。
+#H1
+##H2
+###H3
+####H4
+#####H5
+######H6&lt;/p&gt;
 
 &lt;h3 id=&#34;3-外链接&#34;&gt;3. 外链接&lt;/h3&gt;
 
@@ -115,7 +125,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;1-内容目录&#34;&gt;1. 内容目录&lt;/h3&gt;
+&lt;h3 id=&#34;1-内容目录-注-github-markdown-不支持-toc-目录&#34;&gt;1. 内容目录(注：GitHub Markdown 不支持&lt;code&gt;[TOC]&lt;/code&gt;目录)&lt;/h3&gt;
 
 &lt;p&gt;在段落中填写 &lt;code&gt;[TOC]&lt;/code&gt; 以显示全文内容的目录结构。&lt;/p&gt;
 
@@ -145,11 +155,13 @@
 
 &lt;p&gt;这是第二个注脚&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:footnote2&#34;&gt;&lt;a href=&#34;#fn:footnote2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;的样例。&lt;/p&gt;
 
-&lt;h3 id=&#34;5-latex-公式&#34;&gt;5. LaTeX 公式&lt;/h3&gt;
+&lt;h3 id=&#34;5-latex-公式-注-github-markdown-不支持-latex-公式&#34;&gt;5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)&lt;/h3&gt;
 
 &lt;p&gt;$ 表示行内公式：&lt;/p&gt;
 
-&lt;p&gt;质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。&lt;/p&gt;
+&lt;p&gt;$E=mc^2$&lt;/p&gt;
+
+&lt;p&gt;质能守恒方程可以用一个很简洁的方程式 &lt;img src=&#34;http://img.yeqiongzhou.top/gs1.png&#34; alt=&#34;&#34; /&gt; 来表达。&lt;/p&gt;
 
 &lt;p&gt;$$ 表示整行公式：&lt;/p&gt;
 
@@ -158,6 +170,8 @@
 &lt;p&gt;$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$&lt;/p&gt;
 
 &lt;p&gt;$$\sum^{j-1}&lt;em&gt;{k=0}{\widehat{\gamma}&lt;/em&gt;{kj} z_k}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/gs2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;访问 &lt;a href=&#34;http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MathJax&lt;/a&gt; 参考更多使用方法。&lt;/p&gt;
 
@@ -207,7 +221,7 @@ function fib(n) {
 document.write(fib(10));
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;7-流程图&#34;&gt;7. 流程图&lt;/h3&gt;
+&lt;h3 id=&#34;7-流程图-注-github-markdown-不支持流程图&#34;&gt;7. 流程图(注：GitHub Markdown 不支持流程图)&lt;/h3&gt;
 
 &lt;h4 id=&#34;示例&#34;&gt;示例&lt;/h4&gt;
 
@@ -217,66 +231,57 @@ op=&amp;gt;operation: Your Operation
 cond=&amp;gt;condition: Yes or No?
 sub=&amp;gt;subroutine: Your Subroutine
 e=&amp;gt;end
-
 st-&amp;gt;io-&amp;gt;op-&amp;gt;cond
 cond(yes)-&amp;gt;e
 cond(no)-&amp;gt;sub-&amp;gt;io
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;8-序列图&#34;&gt;8. 序列图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/flow.svg&#34; alt=&#34;我的头像&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;8-序列图-注-github-markdown-不支持序列图&#34;&gt;8. 序列图(注：GitHub Markdown 不支持序列图)&lt;/h3&gt;
 
 &lt;h4 id=&#34;示例-1&#34;&gt;示例 1&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-seq&#34;&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
+&lt;pre&gt;&lt;code class=&#34;language-sequence&#34;&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob--&amp;gt;Alice: I am good thanks!
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/seq1.svg&#34; alt=&#34;序列图1&#34; /&gt;&lt;/p&gt;
+
 &lt;h4 id=&#34;示例-2&#34;&gt;示例 2&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-seq&#34;&gt;Title: Here is a title
+&lt;pre&gt;&lt;code class=&#34;language-sequence&#34;&gt;Title: Here is a title
 A-&amp;gt;B: Normal line
 B--&amp;gt;C: Dashed line
 C-&amp;gt;&amp;gt;D: Open arrow
 D--&amp;gt;&amp;gt;A: Dashed open arrow
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;9-甘特图&#34;&gt;9. 甘特图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/seq2.svg&#34; alt=&#34;序列图2&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;9-甘特图-注-github-markdown-不支持甘特图&#34;&gt;9. 甘特图(注：GitHub Markdown 不支持甘特图)&lt;/h3&gt;
 
 &lt;p&gt;甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-gantt&#34;&gt;    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2016-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2016-07-05  , 5d
-        详细设计      :2016-07-08, 10d
-        编码          :2016-07-15, 10d
-        测试          :2016-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d
+&lt;pre&gt;&lt;code class=&#34;language-gantt&#34;&gt;title 项目开发流程
+section 项目确定
+    需求分析       :a1, 2016-06-22, 3d
+    可行性报告     :after a1, 5d
+    概念验证       : 5d
+section 项目实施
+    概要设计      :2016-07-05  , 5d
+    详细设计      :2016-07-08, 10d
+    编码          :2016-07-15, 10d
+    测试          :2016-07-22, 5d
+section 发布验收
+    发布: 2d
+    验收: 3d
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;10-流程图&#34;&gt;10. 流程图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/gantt.svg&#34; alt=&#34;甘特图&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-graphLR&#34;&gt;    A[Hard edge] --&amp;gt;|Link text| B(Round edge)
-    B --&amp;gt; C{Decision}
-    C --&amp;gt;|One| D[Result one]
-    C --&amp;gt;|Two| E[Result two]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;11-序列图&#34;&gt;11. 序列图&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sequence&#34;&gt;    Alice-&amp;gt;John: Hello John, how are you?
-    loop every minute
-        John--&amp;gt;Alice: Great!
-    end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;12-表格支持&#34;&gt;12. 表格支持&lt;/h3&gt;
+&lt;h3 id=&#34;10-表格支持&#34;&gt;10. 表格支持&lt;/h3&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -290,25 +295,25 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;计算机&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;\$1600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1600&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;5&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;手机&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;\$12&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$12&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;12&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;管线&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;\$1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;234&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;13-定义型列表&#34;&gt;13. 定义型列表&lt;/h3&gt;
+&lt;h3 id=&#34;11-定义型列表&#34;&gt;11. 定义型列表&lt;/h3&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;名词 1&lt;/dt&gt;
@@ -320,11 +325,11 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
 &lt;/code&gt;&lt;/pre&gt;&lt;/dd&gt;
 &lt;/dl&gt;
 
-&lt;h3 id=&#34;14-html-标签&#34;&gt;14. Html 标签&lt;/h3&gt;
+&lt;h3 id=&#34;12-html-标签&#34;&gt;12. Html 标签&lt;/h3&gt;
 
-&lt;p&gt;本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
+&lt;p&gt;Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;table&amp;gt;
     &amp;lt;tr&amp;gt;
         &amp;lt;th rowspan=&amp;quot;2&amp;quot;&amp;gt;值班人员&amp;lt;/th&amp;gt;
         &amp;lt;th&amp;gt;星期一&amp;lt;/th&amp;gt;
@@ -353,25 +358,7 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
     &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;15-内嵌图标&#34;&gt;15. 内嵌图标&lt;/h3&gt;
-
-&lt;p&gt;本站的图标系统对外开放，在文档中输入&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;i class=&amp;quot;icon-weibo&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;即显示微博的图标： &lt;i class=&#34;icon-weibo icon-2x&#34;&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;p&gt;替换 上述 &lt;code&gt;i 标签&lt;/code&gt; 内的 &lt;code&gt;icon-weibo&lt;/code&gt; 以显示不同的图标，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;i class=&amp;quot;icon-renren&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;即显示人人的图标： &lt;i class=&#34;icon-renren icon-2x&#34;&gt;&lt;/i&gt;&lt;/p&gt;
-
-&lt;p&gt;更多的图标和玩法可以参看 &lt;a href=&#34;http://fortawesome.github.io/Font-Awesome/3.2.1/icons/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;font-awesome&lt;/a&gt; 官方网站。&lt;/p&gt;
-
-&lt;h3 id=&#34;16-待办事宜-todo-列表&#34;&gt;16. 待办事宜 Todo 列表&lt;/h3&gt;
+&lt;h3 id=&#34;13-待办事宜-todo-列表&#34;&gt;13. 待办事宜 Todo 列表&lt;/h3&gt;
 
 &lt;p&gt;使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：&lt;/p&gt;
 
@@ -379,22 +366,22 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;博客开发&lt;/strong&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 增加黑白背景色切换功能&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 支持评论功能&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增Todo列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 改进 LaTex 功能
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 增加黑白背景色切换功能&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 支持评论功能&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 新增Todo列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 改进 LaTex 功能
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 修复 LaTex 公式渲染问题&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增 LaTex 公式编号功能 &lt;a href=&#34;http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 修复 LaTex 公式渲染问题&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 新增 LaTex 公式编号功能 &lt;a href=&#34;http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;六月毕业旅行准备&lt;/strong&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 购买武汉到大阪来回的机票&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 准备去往日本的签证&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 浏览日本免税店的物品&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 购买武汉到大阪来回的机票&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;footnotes&#34;&gt;

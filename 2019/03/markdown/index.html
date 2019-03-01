@@ -57,7 +57,7 @@
     "datePublished": "2019-03-01 19:36:47 &#43;0800 &#43;0800",
     "dateModified" : "2019-03-01 19:36:47 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.top/2019/03/markdown/",
-    "wordCount" : "1664",
+    "wordCount" : "1650",
     "keywords" : [ "Markdown", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.top/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"> 技能学习 </a>
                         
                 </span>
-                <span class="post-word-count">, 1664 words</span>
+                <span class="post-word-count">, 1650 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -179,14 +179,24 @@
 
 <p>示例：</p>
 
-<pre><code>这是一个一级标题
+<pre><code class="language-html">这是一个一级标题
 ==============
 
 这是一个二级标题
 --------------
 </code></pre>
 
-<p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。</p>
+<h1 id="这是一个一级标题">这是一个一级标题</h1>
+
+<h2 id="这是一个二级标题">这是一个二级标题</h2>
+
+<p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。
+#H1
+##H2
+###H3
+####H4
+#####H5
+######H6</p>
 
 <h3 id="3-外链接">3. 外链接</h3>
 
@@ -259,7 +269,7 @@
 
 <hr />
 
-<h3 id="1-内容目录">1. 内容目录</h3>
+<h3 id="1-内容目录-注-github-markdown-不支持-toc-目录">1. 内容目录(注：GitHub Markdown 不支持<code>[TOC]</code>目录)</h3>
 
 <p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
 
@@ -289,11 +299,13 @@
 
 <p>这是第二个注脚<sup class="footnote-ref" id="fnref:footnote2"><a href="#fn:footnote2">2</a></sup>的样例。</p>
 
-<h3 id="5-latex-公式">5. LaTeX 公式</h3>
+<h3 id="5-latex-公式-注-github-markdown-不支持-latex-公式">5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)</h3>
 
 <p>$ 表示行内公式：</p>
 
-<p>质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。</p>
+<p>$E=mc^2$</p>
+
+<p>质能守恒方程可以用一个很简洁的方程式 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/gs1.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure> 来表达。</p>
 
 <p>$$ 表示整行公式：</p>
 
@@ -302,6 +314,8 @@
 <p>$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</p>
 
 <p>$$\sum^{j-1}<em>{k=0}{\widehat{\gamma}</em>{kj} z_k}$$</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/gs2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 
 <p>访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" rel="nofollow noreferrer" target="_blank">MathJax</a> 参考更多使用方法。</p>
 
@@ -351,7 +365,7 @@ function fib(n) {
 document.write(fib(10));
 </code></pre>
 
-<h3 id="7-流程图">7. 流程图</h3>
+<h3 id="7-流程图-注-github-markdown-不支持流程图">7. 流程图(注：GitHub Markdown 不支持流程图)</h3>
 
 <h4 id="示例">示例</h4>
 
@@ -361,66 +375,57 @@ op=&gt;operation: Your Operation
 cond=&gt;condition: Yes or No?
 sub=&gt;subroutine: Your Subroutine
 e=&gt;end
-
 st-&gt;io-&gt;op-&gt;cond
 cond(yes)-&gt;e
 cond(no)-&gt;sub-&gt;io
 </code></pre>
 
-<h3 id="8-序列图">8. 序列图</h3>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/flow.svg" alt="我的头像" class="lazyload"><figcaption class="image-caption">我的头像</figcaption></figure></p>
+
+<h3 id="8-序列图-注-github-markdown-不支持序列图">8. 序列图(注：GitHub Markdown 不支持序列图)</h3>
 
 <h4 id="示例-1">示例 1</h4>
 
-<pre><code class="language-seq">Alice-&gt;Bob: Hello Bob, how are you?
+<pre><code class="language-sequence">Alice-&gt;Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob--&gt;Alice: I am good thanks!
 </code></pre>
 
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/seq1.svg" alt="序列图1" class="lazyload"><figcaption class="image-caption">序列图1</figcaption></figure></p>
+
 <h4 id="示例-2">示例 2</h4>
 
-<pre><code class="language-seq">Title: Here is a title
+<pre><code class="language-sequence">Title: Here is a title
 A-&gt;B: Normal line
 B--&gt;C: Dashed line
 C-&gt;&gt;D: Open arrow
 D--&gt;&gt;A: Dashed open arrow
 </code></pre>
 
-<h3 id="9-甘特图">9. 甘特图</h3>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/seq2.svg" alt="序列图2" class="lazyload"><figcaption class="image-caption">序列图2</figcaption></figure></p>
+
+<h3 id="9-甘特图-注-github-markdown-不支持甘特图">9. 甘特图(注：GitHub Markdown 不支持甘特图)</h3>
 
 <p>甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。</p>
 
-<pre><code class="language-gantt">    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2016-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2016-07-05  , 5d
-        详细设计      :2016-07-08, 10d
-        编码          :2016-07-15, 10d
-        测试          :2016-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d
+<pre><code class="language-gantt">title 项目开发流程
+section 项目确定
+    需求分析       :a1, 2016-06-22, 3d
+    可行性报告     :after a1, 5d
+    概念验证       : 5d
+section 项目实施
+    概要设计      :2016-07-05  , 5d
+    详细设计      :2016-07-08, 10d
+    编码          :2016-07-15, 10d
+    测试          :2016-07-22, 5d
+section 发布验收
+    发布: 2d
+    验收: 3d
 </code></pre>
 
-<h3 id="10-流程图">10. 流程图</h3>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://img.yeqiongzhou.top/gantt.svg" alt="甘特图" class="lazyload"><figcaption class="image-caption">甘特图</figcaption></figure></p>
 
-<pre><code class="language-graphLR">    A[Hard edge] --&gt;|Link text| B(Round edge)
-    B --&gt; C{Decision}
-    C --&gt;|One| D[Result one]
-    C --&gt;|Two| E[Result two]
-</code></pre>
-
-<h3 id="11-序列图">11. 序列图</h3>
-
-<pre><code class="language-sequence">    Alice-&gt;John: Hello John, how are you?
-    loop every minute
-        John--&gt;Alice: Great!
-    end
-</code></pre>
-
-<h3 id="12-表格支持">12. 表格支持</h3>
+<h3 id="10-表格支持">10. 表格支持</h3>
 
 <table>
 <thead>
@@ -434,25 +439,25 @@ D--&gt;&gt;A: Dashed open arrow
 <tbody>
 <tr>
 <td>计算机</td>
-<td align="right">\$1600</td>
+<td align="right">$1600</td>
 <td align="center">5</td>
 </tr>
 
 <tr>
 <td>手机</td>
-<td align="right">\$12</td>
+<td align="right">$12</td>
 <td align="center">12</td>
 </tr>
 
 <tr>
 <td>管线</td>
-<td align="right">\$1</td>
+<td align="right">$1</td>
 <td align="center">234</td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="13-定义型列表">13. 定义型列表</h3>
+<h3 id="11-定义型列表">11. 定义型列表</h3>
 
 <dl>
 <dt>名词 1</dt>
@@ -464,11 +469,11 @@ D--&gt;&gt;A: Dashed open arrow
 </code></pre></dd>
 </dl>
 
-<h3 id="14-html-标签">14. Html 标签</h3>
+<h3 id="12-html-标签">12. Html 标签</h3>
 
-<p>本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
+<p>Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
 
-<pre><code>&lt;table&gt;
+<pre><code class="language-html">&lt;table&gt;
     &lt;tr&gt;
         &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
         &lt;th&gt;星期一&lt;/th&gt;
@@ -497,25 +502,7 @@ D--&gt;&gt;A: Dashed open arrow
     </tr>
 </table>
 
-<h3 id="15-内嵌图标">15. 内嵌图标</h3>
-
-<p>本站的图标系统对外开放，在文档中输入</p>
-
-<pre><code>&lt;i class=&quot;icon-weibo&quot;&gt;&lt;/i&gt;
-</code></pre>
-
-<p>即显示微博的图标： <i class="icon-weibo icon-2x"></i></p>
-
-<p>替换 上述 <code>i 标签</code> 内的 <code>icon-weibo</code> 以显示不同的图标，例如：</p>
-
-<pre><code>&lt;i class=&quot;icon-renren&quot;&gt;&lt;/i&gt;
-</code></pre>
-
-<p>即显示人人的图标： <i class="icon-renren icon-2x"></i></p>
-
-<p>更多的图标和玩法可以参看 <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" rel="nofollow noreferrer" target="_blank">font-awesome</a> 官方网站。</p>
-
-<h3 id="16-待办事宜-todo-列表">16. 待办事宜 Todo 列表</h3>
+<h3 id="13-待办事宜-todo-列表">13. 待办事宜 Todo 列表</h3>
 
 <p>使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：</p>
 
@@ -523,22 +510,22 @@ D--&gt;&gt;A: Dashed open arrow
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>博客开发</strong>
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> 增加黑白背景色切换功能</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 支持评论功能</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 改进 LaTex 功能
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 增加黑白背景色切换功能</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 支持评论功能</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 改进 LaTex 功能
 
 <ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 修复 LaTex 公式渲染问题</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 修复 LaTex 公式渲染问题</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> 新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
 </ul></label></li>
 </ul></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>六月毕业旅行准备</strong>
 
 <ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 购买武汉到大阪来回的机票</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> 准备去往日本的签证</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> 浏览日本免税店的物品</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 购买武汉到大阪来回的机票</label></li>
 </ul></label></li>
 </ul>
 <div class="footnotes">
