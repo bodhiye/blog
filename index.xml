@@ -10,12 +10,12 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>交换两个变量值</title>
+      <title>交换两个变量的值</title>
       <link>https://yeqiongzhou.top/2019/02/exchange-two-variables/</link>
       <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
       
       <guid>https://yeqiongzhou.top/2019/02/exchange-two-variables/</guid>
-      <description>&lt;p&gt;1、借助第三个变量来实现&lt;/p&gt;
+      <description>&lt;p&gt;1、借助第三个&lt;kbd&gt;变量&lt;/kbd&gt;&lt;em&gt;来实现&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;C = A; A = B; B = C;&lt;/p&gt;
