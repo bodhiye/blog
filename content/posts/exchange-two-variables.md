@@ -2,8 +2,8 @@
 title: "交换两个变量值"
 date: 2019-02-28T20:31:35+08:00
 draft: true
-categories: ["杂七杂八"]
-tags: ["杂七杂八"]
+categories: ["奇淫技巧"]
+tags: ["奇淫技巧"]
 ---
 
 1、借助第三个变量来实现
