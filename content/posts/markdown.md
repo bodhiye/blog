@@ -24,7 +24,7 @@ tags: ["Markdown"]
 
 示例：
 
-```
+```html
 这是一个一级标题
 ==============
 
@@ -32,7 +32,19 @@ tags: ["Markdown"]
 --------------
 ```
 
+这是一个一级标题
+==============
+
+这是一个二级标题
+--------------
+
 你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。
+#H1
+##H2
+###H3
+####H4
+#####H5
+######H6
 
 ### 3. 外链接
 
@@ -98,7 +110,7 @@ tags: ["Markdown"]
 
 ---
 
-### 1. 内容目录
+### 1. 内容目录(注：GitHub Markdown 不支持`[TOC]`目录)
 
 在段落中填写 `[TOC]` 以显示全文内容的目录结构。
 
@@ -128,11 +140,13 @@ Tags： Docker Kubernetes Markdown
 
 这是第二个注脚[^footnote2]的样例。
 
-### 5. LaTeX 公式
+### 5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)
 
-$ 表示行内公式： 
+$ 表示行内公式：
 
-质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。
+$E=mc^2$
+
+质能守恒方程可以用一个很简洁的方程式 ![](http://img.yeqiongzhou.top/gs1.png) 来表达。
 
 $$ 表示整行公式：
 
@@ -141,6 +155,8 @@ $$\sum_{i=1}^n a_i=0$$
 $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
 
 $$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
+
+![](http://img.yeqiongzhou.top/gs2.png)
 
 访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
 
@@ -193,7 +209,7 @@ function fib(n) {
 document.write(fib(10));
 ```
 
-### 7. 流程图
+### 7. 流程图(注：GitHub Markdown 不支持流程图)
 
 #### 示例
 
@@ -204,25 +220,28 @@ op=>operation: Your Operation
 cond=>condition: Yes or No?
 sub=>subroutine: Your Subroutine
 e=>end
-
 st->io->op->cond
 cond(yes)->e
 cond(no)->sub->io
 ```
 
-### 8. 序列图
+![我的头像](http://img.yeqiongzhou.top/flow.svg)
+
+### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
 #### 示例 1
 
-```seq
+```sequence
 Alice->Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
+![序列图1](http://img.yeqiongzhou.top/seq1.svg)
+
 #### 示例 2
 
-```seq
+```sequence
 Title: Here is a title
 A->B: Normal line
 B-->C: Dashed line
@@ -230,54 +249,39 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-### 9. 甘特图
+![序列图2](http://img.yeqiongzhou.top/seq2.svg)
+
+### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
 甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。
 
 ```gantt
-    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2016-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2016-07-05  , 5d
-        详细设计      :2016-07-08, 10d
-        编码          :2016-07-15, 10d
-        测试          :2016-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d
+title 项目开发流程
+section 项目确定
+    需求分析       :a1, 2016-06-22, 3d
+    可行性报告     :after a1, 5d
+    概念验证       : 5d
+section 项目实施
+    概要设计      :2016-07-05  , 5d
+    详细设计      :2016-07-08, 10d
+    编码          :2016-07-15, 10d
+    测试          :2016-07-22, 5d
+section 发布验收
+    发布: 2d
+    验收: 3d
 ```
 
-### 10. 流程图
+![甘特图](http://img.yeqiongzhou.top/gantt.svg)
 
-```graphLR
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
-```
-
-### 11. 序列图
-
-```sequence
-    Alice->John: Hello John, how are you?
-    loop every minute
-        John-->Alice: Great!
-    end
-```
-
-### 12. 表格支持
+### 10. 表格支持
 
 | 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |
-| 计算机     | \$1600 |   5     |
-| 手机        |   \$12   |   12   |
-| 管线        |    \$1    |  234  |
+| 计算机     | $1600 |   5     |
+| 手机        |   $12   |   12   |
+| 管线        |    $1    |  234  |
 
-
-### 13. 定义型列表
+### 11. 定义型列表
 
 名词 1
 :   定义 1（左侧有一个可见的冒号和四个不可见的空格）
@@ -287,24 +291,24 @@ D-->>A: Dashed open arrow
 
         代码块（左侧有八个不可见的空格）
 
-### 14. Html 标签
+### 12. Html 标签
 
-本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：
-
-    <table>
-        <tr>
-            <th rowspan="2">值班人员</th>
-            <th>星期一</th>
-            <th>星期二</th>
-            <th>星期三</th>
-        </tr>
-        <tr>
-            <td>李强</td>
-            <td>张明</td>
-            <td>王平</td>
-        </tr>
-    </table>
-
+Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：
+```html
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+```
 
 <table>
     <tr>
@@ -320,37 +324,21 @@ D-->>A: Dashed open arrow
     </tr>
 </table>
 
-### 15. 内嵌图标
-
-本站的图标系统对外开放，在文档中输入
-
-    <i class="icon-weibo"></i>
-
-即显示微博的图标： <i class="icon-weibo icon-2x"></i>
-
-替换 上述 `i 标签` 内的 `icon-weibo` 以显示不同的图标，例如：
-
-    <i class="icon-renren"></i>
-
-即显示人人的图标： <i class="icon-renren icon-2x"></i>
-
-更多的图标和玩法可以参看 [font-awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/icons/) 官方网站。
-
-### 16. 待办事宜 Todo 列表
+### 13. 待办事宜 Todo 列表
 
 使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：
         
 - [ ] **博客开发**
-    - [ ] 增加黑白背景色切换功能
-    - [ ] 支持评论功能
-    - [x] 新增Todo列表功能 [语法参考](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
-    - [x] 改进 LaTex 功能
-        - [x] 修复 LaTex 公式渲染问题
-        - [x] 新增 LaTex 公式编号功能 [语法参考](http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers)
+    - [x] 增加黑白背景色切换功能
+    - [x] 支持评论功能
+    - [ ] 新增Todo列表功能 [语法参考](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
+    - [ ] 改进 LaTex 功能
+        - [ ] 修复 LaTex 公式渲染问题
+        - [ ] 新增 LaTex 公式编号功能 [语法参考](http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers)
 - [ ] **六月毕业旅行准备**
+    - [x] 购买武汉到大阪来回的机票
     - [ ] 准备去往日本的签证
     - [ ] 浏览日本免税店的物品
-    - [x] 购买武汉到大阪来回的机票
 
 [^footnote]: 这是一个 *注脚* 的 **文本**。
 
