@@ -27,7 +27,7 @@
 
 &lt;p&gt;示例：&lt;/p&gt;
 
-&lt;p&gt;这是 *斜体*，这是 &lt;strong&gt;粗体&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt; ，这是 &lt;strong&gt;粗体&lt;/strong&gt; 。&lt;/p&gt;
 
 &lt;h3 id=&#34;2-分级标题&#34;&gt;2. 分级标题&lt;/h3&gt;
 
@@ -46,7 +46,7 @@
 
 &lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
 
-&lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。&lt;/p&gt;
+&lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1，## H2，### H3，#### H4，##### H5，###### H6。&lt;/p&gt;
 
 &lt;h3 id=&#34;3-外链接&#34;&gt;3. 外链接&lt;/h3&gt;
 
@@ -260,7 +260,7 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
 
 &lt;p&gt;甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。&lt;/p&gt;
 
-&lt;p&gt;####示例&lt;/p&gt;
+&lt;h4 id=&#34;示例-1-1&#34;&gt;示例&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-gantt&#34;&gt;title 项目开发流程
 section 项目确定
@@ -281,7 +281,7 @@ section 发布验收
 
 &lt;h3 id=&#34;10-表格支持&#34;&gt;10. 表格支持&lt;/h3&gt;
 
-&lt;p&gt;####示例&lt;/p&gt;
+&lt;h4 id=&#34;示例-1-2&#34;&gt;示例&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;| 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |
@@ -336,7 +336,7 @@ section 发布验收
 
 &lt;p&gt;Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
 
-&lt;p&gt;####示例&lt;/p&gt;
+&lt;h4 id=&#34;示例-1-3&#34;&gt;示例&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;table&amp;gt;
     &amp;lt;tr&amp;gt;
