@@ -17,7 +17,7 @@
       <pubDate>Fri, 01 Mar 2019 19:36:47 +0800</pubDate>
       
       <guid>https://yeqiongzhou.top/2019/03/markdown/</guid>
-      <description>Markdown 简明语法手册 1. 斜体和粗体 使用 * 和 ** 表示斜体和粗体。 示例： 这是 斜体 ，这是 粗体 。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，不过一</description>
+      <description>Markdown 简明语法手册 1. 斜体和粗体 使用 *(_) 和 **(_ _) 表示斜体和粗体。 示例： 这是*斜体*，这是粗体。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，</description>
     </item>
     
   </channel>

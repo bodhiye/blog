@@ -23,11 +23,11 @@
 
 &lt;h3 id=&#34;1-斜体和粗体&#34;&gt;1. 斜体和粗体&lt;/h3&gt;
 
-&lt;p&gt;使用 * 和 ** 表示斜体和粗体。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;*&lt;/code&gt;(&lt;code&gt;_&lt;/code&gt;) 和 &lt;code&gt;**&lt;/code&gt;(&lt;code&gt;_ _&lt;/code&gt;) 表示斜体和粗体。&lt;/p&gt;
 
 &lt;p&gt;示例：&lt;/p&gt;
 
-&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt; ，这是 &lt;strong&gt;粗体&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;这是*斜体*，这是&lt;strong&gt;粗体&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;h3 id=&#34;2-分级标题&#34;&gt;2. 分级标题&lt;/h3&gt;
 
