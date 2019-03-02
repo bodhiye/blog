@@ -48,13 +48,6 @@
 
 &lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：#H1，##H2，###H3，####H4，#####H5，######H6。&lt;/p&gt;
 
-&lt;p&gt;#H1
-##H2
-###H3
-####H4
-#####H5
-######H6&lt;/p&gt;
-
 &lt;h3 id=&#34;3-外链接&#34;&gt;3. 外链接&lt;/h3&gt;
 
 &lt;p&gt;使用 [描述](链接地址) 为文字增加外链接。&lt;/p&gt;
@@ -105,16 +98,16 @@
 
 &lt;p&gt;让我们聊聊 &lt;code&gt;Kubernetes&lt;/code&gt;。&lt;/p&gt;
 
-&lt;h3 id=&#34;8-代码块&#34;&gt;8.  代码块&lt;/h3&gt;
+&lt;h3 id=&#34;8-代码块&#34;&gt;8. 代码块&lt;/h3&gt;
 
-&lt;p&gt;使用 四个缩进空格 表示代码块。&lt;/p&gt;
+&lt;p&gt;使用四个缩进空格表示代码块。&lt;/p&gt;
 
 &lt;p&gt;示例：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;这是一个代码块，此行左侧有四个不可见的空格。
+&lt;pre&gt;&lt;code&gt;这是一个代码块，此行左侧有四个不可见的空格哟。
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;9-插入图像&#34;&gt;9.  插入图像&lt;/h3&gt;
+&lt;h3 id=&#34;9-插入图像&#34;&gt;9. 插入图像&lt;/h3&gt;
 
 &lt;p&gt;使用 ![描述](图片链接地址) 插入图像。&lt;/p&gt;
 
@@ -130,7 +123,7 @@
 
 &lt;p&gt;在段落中填写 &lt;code&gt;[TOC]&lt;/code&gt; 以显示全文内容的目录结构。&lt;/p&gt;
 
-&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/toc.png&#34; alt=&#34;目录&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;2-标签分类&#34;&gt;2. 标签分类&lt;/h3&gt;
 
@@ -267,6 +260,8 @@ D--&amp;gt;&amp;gt;A: Dashed open arrow
 
 &lt;p&gt;甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。&lt;/p&gt;
 
+&lt;p&gt;####示例&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&#34;language-gantt&#34;&gt;title 项目开发流程
 section 项目确定
     需求分析       :a1, 2016-06-22, 3d
@@ -285,6 +280,15 @@ section 发布验收
 &lt;p&gt;&lt;img src=&#34;http://img.yeqiongzhou.top/gantt.svg&#34; alt=&#34;甘特图示例&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;10-表格支持&#34;&gt;10. 表格支持&lt;/h3&gt;
+
+&lt;p&gt;####示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;| 项目        | 价格   |  数量  |
+| --------   | -----:  | :----:  |
+| 计算机     | $1600 |   5     |
+| 手机        |   $12   |   12   |
+| 管线        |    $1    |  234  |
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -331,6 +335,8 @@ section 发布验收
 &lt;h3 id=&#34;12-html-标签&#34;&gt;12. Html 标签&lt;/h3&gt;
 
 &lt;p&gt;Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
+
+&lt;p&gt;####示例&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;table&amp;gt;
     &amp;lt;tr&amp;gt;
