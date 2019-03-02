@@ -233,7 +233,7 @@ cond(yes)->e
 cond(no)->sub->io
 ```
 
-![流程图示例](http://img.yeqiongzhou.top/flow.svg)
+![流程图示例](http://img.yeqiongzhou.top/flow.png)
 
 ### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
@@ -245,7 +245,7 @@ Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
-![序列图示例1](http://img.yeqiongzhou.top/seq1.svg)
+![序列图示例1](http://img.yeqiongzhou.top/seq1.png)
 
 #### 示例 2
 
@@ -257,7 +257,7 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-![序列图示例2](http://img.yeqiongzhou.top/seq2.svg)
+![序列图示例2](http://img.yeqiongzhou.top/seq2.png)
 
 ### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
@@ -281,7 +281,7 @@ section 发布验收
     验收: 3d
 ```
 
-![甘特图示例](http://img.yeqiongzhou.top/gantt.svg)
+![甘特图示例](http://img.yeqiongzhou.top/gantt.png)
 
 ### 10. 表格支持
 
