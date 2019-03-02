@@ -2,8 +2,8 @@
 title: "交换两个变量的值"
 date: 2019-02-28T20:31:35+08:00
 draft: false
-categories: ["奇淫技巧"]
-tags: ["算法"]
+categories: ["算法笔记"]
+tags: ["Algorithm"]
 ---
 
 1、借助第三个变量来实现
