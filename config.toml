@@ -17,7 +17,7 @@ preserveTaxonomyNames = true
   noreferrerLinks = true
 
 [Permalinks]
-  posts = "/:year/:month/:filename/"
+  posts = "/:year/:month/:day/:filename/"
 
 [menu]
   [[menu.main]]
