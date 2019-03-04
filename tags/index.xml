@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 28 Feb 2019 20:31:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Mar 2019 09:15:56 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Album</title>
+      <link>https://yeqiongzhou.top/tags/album/</link>
+      <pubDate>Mon, 04 Mar 2019 09:15:56 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/tags/album/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Algorithm</title>
