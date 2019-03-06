@@ -13,10 +13,10 @@
     
     <item>
       <title>交换两个变量的值</title>
-      <link>https://yeqiongzhou.top/2019/02/28/exchange-two-variables/</link>
+      <link>https://yeqiongzhou.top/2019/02/exchange-two-variables/</link>
       <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/2019/02/28/exchange-two-variables/</guid>
+      <guid>https://yeqiongzhou.top/2019/02/exchange-two-variables/</guid>
       <description>1、借助第三个变量来实现 C = A; A = B; B = C; 2、利用加减法来实现两个变量的交换 A = A + B; B = A – B; A = A – B; 3、用位异或运算来实现，也是效率最</description>
     </item>
     
