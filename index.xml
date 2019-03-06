@@ -6,509 +6,998 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Mar 2019 09:15:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2019 19:23:25 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>宝剑藏千年,谁人能识君?</title>
-      <link>https://yeqiongzhou.top/2019/03/04/hubei-provincial-museum/</link>
-      <pubDate>Mon, 04 Mar 2019 09:15:56 +0800</pubDate>
+      <title>机器人的运动范围</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer66/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:25 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/2019/03/04/hubei-provincial-museum/</guid>
+      <guid>https://yeqiongzhou.top/2019/03/06/offer66/</guid>
       <description>
 
-&lt;h1 id=&#34;湖北省博物馆&#34;&gt;湖北省博物馆&lt;/h1&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
 
-&lt;p&gt;趁着周末去了湖北省博物馆（以下简称省博），亲眼见到了《国家宝藏》中出现的越王勾践剑和曾侯乙编钟，这两件文物堪称省博的镇馆之宝。&lt;/p&gt;
+&lt;p&gt;地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？&lt;/p&gt;
 
-&lt;h3 id=&#34;宝剑藏千年-谁人能识君&#34;&gt;宝剑藏千年，谁人能识君？&lt;/h3&gt;
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
 
-&lt;p&gt;展馆有一对生死仇敌的兵器，越王勾践剑和吴王夫差矛。卧薪尝胆和西施，就是说他俩的故事。今天两人留下的遗物竟相聚在一个展柜，可谓历史的惊人的巧合。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
 
-&lt;p&gt;宝剑藏千年，谁人能识君？越王勾践剑从它出土的那一刻起，身上就带了诸多谜团，也许直到今天，人们还在破解的过程之中。&lt;/p&gt;
+using namespace std;
 
-&lt;p&gt;&lt;img src=&#34;https://img.yeqiongzhou.top/ywgjj1.jpg&#34; alt=&#34;越王勾践剑&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;青铜利剑世莫当-春秋奇宝今安在&#34;&gt;青铜利剑世莫当，春秋奇宝今安在&lt;/h3&gt;
-
-&lt;p&gt;1965年12月，考古工作者在湖北江陵一座楚国的墓葬中，出土了600多件器物，其中就有这柄铜剑。在场考古工作者回忆，一名开采队员拿剑时一不留神就将手指割破，血流不止。有人再试其锋芒，稍一用力，便将16层白纸划破。此剑长55.7厘米，宽4.6厘米，柄长8.4厘米，重875克，近剑格处有两行鸟篆铭文：“越王鸠浅（勾践）自乍（作）用剑”八字，证明此剑就是传说中的越王勾践剑。越王勾践剑制工精美，显示出铸剑师的卓越技艺。此剑寒气逼人、锋利无比，历经两千四百余年，仍然纹饰清晰精美，加之“物以人名”，历史文化价值很高，此剑被当世之人誉为“天下第一剑”，堪称我国国宝。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://img.yeqiongzhou.top/ywgjj2.jpg&#34; alt=&#34;越王勾践剑&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;越王勾践剑，属青铜剑，制作精美。剑长55.7厘米，柄长8.4厘米，剑宽 4.6厘米，剑首外翻卷成圆箍形，内铸有间隔只有0.2毫米的11道同心圆，剑身上布满了规则的黑色菱形暗格花纹，剑格正面镶有蓝色玻璃，背面镶有绿松石。
-剑身修长，有中脊，两从刃锋利，前锋曲弧内凹。茎上两道凸箍，圆首饰同心圆纹。&lt;/p&gt;
-
-&lt;h3 id=&#34;乐有八音-金石丝竹-匏土革木&#34;&gt;乐有八音 金石丝竹 匏土革木&lt;/h3&gt;
-
-&lt;p&gt;曾侯乙编钟，战国早期文物，中国首批禁止出国（境）展览文物。1978年在湖北随县（今随州市）出土。是由六十五件青铜编钟组成的庞大乐器，其音域跨五个半八度，十二个半音齐备。它高超的铸造技术和良好的音乐性能，改写了世界音乐史，被中外专家、学者称之为“稀世珍宝”。曾侯乙编钟音域跨越5个半八度， 只比现代钢琴少一个八度，中心音域12个半音齐全。&lt;/p&gt;
-
-&lt;p&gt;编钟是中国古代大型打击乐器，兴起于西周，盛于春秋战国直至秦汉。中国是制造和使用乐钟最早的国家。它用青铜铸成，由大小不同的扁圆钟按照音调高低的次序排列起来，悬挂在一个巨大的钟架上，用丁字形的木锤和长形的棒分别敲打铜钟，能发出不同的乐音，因为每个钟的音调不同，按照音谱敲打，可以演奏出美妙的乐曲。引在木架上悬挂一组音调高低不同的铜钟，由古代侍女用小木槌敲打奏乐。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/hubei-provincial-museum/zhybz1.jpg&#34; alt=&#34;曾侯乙编钟图解&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;奏响三次&#34;&gt;奏响三次&lt;/h3&gt;
-
-&lt;h4 id=&#34;第一次奏响-1978年&#34;&gt;第一次奏响：1978年&lt;/h4&gt;
-
-&lt;p&gt;1978年出土时，考古人员在随州一处修理厂内试敲响过编钟。曾侯乙编钟出土后，文化部的音乐家赶到随州，对全套编钟逐个测音。1978年8月1日，沉寂了2400多年的曾侯乙编钟，重新向世人发出了它那浪漫的千古绝响。编钟演奏以《东方红》为开篇，接着是古曲《楚商》、外国名曲《一路平安》、民族歌曲《草原上升起不落的太阳》，最后以《国际歌》的乐曲为落幕。&lt;/p&gt;
-
-&lt;h4 id=&#34;第二次奏响-1984年&#34;&gt;第二次奏响：1984年&lt;/h4&gt;
-
-&lt;p&gt;1984年，为庆祝新中国成立35周年，省博物馆演奏人员被特批随编钟进京，在北京中南海怀仁堂，为各国驻华大使演奏了中国古曲《春江花月夜》和创作曲目《楚殇》以及《欢乐颂》等中外名曲。&lt;/p&gt;
-
-&lt;h4 id=&#34;第三次奏响-1997年&#34;&gt;第三次奏响：1997年&lt;/h4&gt;
-
-&lt;p&gt;1997年，著名音乐人谭盾为庆祝香港回归创作大型交响乐《交响曲1997：天·地·人》时，由国家特批再次敲响了编钟。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://img.yeqiongzhou.top/zhybz2.jpg&#34; alt=&#34;曾侯乙编钟&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Markdown语法手册</title>
-      <link>https://yeqiongzhou.top/2019/03/01/markdown/</link>
-      <pubDate>Fri, 01 Mar 2019 19:36:47 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.top/2019/03/01/markdown/</guid>
-      <description>
-
-&lt;h1 id=&#34;markdown-简明语法手册&#34;&gt;Markdown 简明语法手册&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;1-斜体和粗体&#34;&gt;1. 斜体和粗体&lt;/h3&gt;
-
-&lt;p&gt;使用 &lt;code&gt;*&lt;/code&gt; &lt;code&gt;_&lt;/code&gt; 和 &lt;code&gt;**&lt;/code&gt; &lt;code&gt;_ _&lt;/code&gt; 表示斜体和粗体。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt; ，这是 &lt;strong&gt;粗体&lt;/strong&gt; 。&lt;/p&gt;
-
-&lt;h3 id=&#34;2-分级标题&#34;&gt;2. 分级标题&lt;/h3&gt;
-
-&lt;p&gt;使用任意个 = 表示一级标题，使用 - 表示二级标题，不过一共只能表示两级。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;这是一个一级标题
-==============
-
-这是一个二级标题
---------------
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;这是一个一级标题&#34;&gt;这是一个一级标题&lt;/h1&gt;
-
-&lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
-
-&lt;p&gt;你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1，## H2，### H3，#### H4，##### H5，###### H6。&lt;/p&gt;
-
-&lt;h1 id=&#34;h1&#34;&gt;H1&lt;/h1&gt;
-
-&lt;h2 id=&#34;h2&#34;&gt;H2&lt;/h2&gt;
-
-&lt;h3 id=&#34;h3&#34;&gt;H3&lt;/h3&gt;
-
-&lt;h4 id=&#34;h4&#34;&gt;H4&lt;/h4&gt;
-
-&lt;h5 id=&#34;h5&#34;&gt;H5&lt;/h5&gt;
-
-&lt;h6 id=&#34;h6&#34;&gt;H6&lt;/h6&gt;
-
-&lt;h3 id=&#34;3-外链接&#34;&gt;3. 外链接&lt;/h3&gt;
-
-&lt;p&gt;使用 [描述](链接地址) 为文字增加外链接。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;p&gt;这是 &lt;a href=&#34;https://yeqiongzhou.top&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;本人博客&lt;/a&gt; 的链接。&lt;/p&gt;
-
-&lt;h3 id=&#34;4-无序列表&#34;&gt;4. 无序列表&lt;/h3&gt;
-
-&lt;p&gt;使用 *，+，- 表示无序列表。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;无序列表项 一&lt;/li&gt;
-&lt;li&gt;无序列表项 二&lt;/li&gt;
-&lt;li&gt;无序列表项 三&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;5-有序列表&#34;&gt;5. 有序列表&lt;/h3&gt;
-
-&lt;p&gt;使用数字和点表示有序列表。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;有序列表项 一&lt;/li&gt;
-&lt;li&gt;有序列表项 二&lt;/li&gt;
-&lt;li&gt;有序列表项 三&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;6-文字引用&#34;&gt;6. 文字引用&lt;/h3&gt;
-
-&lt;p&gt;使用 &amp;gt; 表示文字引用。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Talk is cheap. Show me the code.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;7-行内代码块&#34;&gt;7. 行内代码块&lt;/h3&gt;
-
-&lt;p&gt;使用 `代码` 表示行内代码块。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;p&gt;让我们聊聊 &lt;code&gt;Kubernetes&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;8-代码块&#34;&gt;8. 代码块&lt;/h3&gt;
-
-&lt;p&gt;使用四个缩进空格表示代码块。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是一个代码块，此行左侧有四个不可见的空格哟。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;9-插入图像&#34;&gt;9. 插入图像&lt;/h3&gt;
-
-&lt;p&gt;使用 ![描述](图片链接地址) 插入图像。&lt;/p&gt;
-
-&lt;p&gt;示例：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/me/avatar.png&#34; alt=&#34;我的头像&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;markdown-高阶语法手册&#34;&gt;Markdown 高阶语法手册&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;1-内容目录-注-github-markdown-不支持-toc-目录&#34;&gt;1. 内容目录(注：GitHub Markdown 不支持&lt;code&gt;[TOC]&lt;/code&gt;目录)&lt;/h3&gt;
-
-&lt;p&gt;在段落中填写 &lt;code&gt;[TOC]&lt;/code&gt; 以显示全文内容的目录结构。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/toc.png&#34; alt=&#34;目录&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-标签分类&#34;&gt;2. 标签分类&lt;/h3&gt;
-
-&lt;p&gt;在编辑区任意行的列首位置输入以下代码给文稿标签：&lt;/p&gt;
-
-&lt;p&gt;标签： Docker Kubernetes Markdown&lt;/p&gt;
-
-&lt;p&gt;或者&lt;/p&gt;
-
-&lt;p&gt;Tags： Docker Kubernetes Markdown&lt;/p&gt;
-
-&lt;h3 id=&#34;3-删除线&#34;&gt;3. 删除线&lt;/h3&gt;
-
-&lt;p&gt;使用 ~~ 表示删除线。&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;这是一段错误的文本。&lt;/del&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;4-注脚&#34;&gt;4. 注脚&lt;/h3&gt;
-
-&lt;p&gt;使用 [^keyword] 表示注脚。&lt;/p&gt;
-
-&lt;p&gt;这是一个注脚&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:footnote&#34;&gt;&lt;a href=&#34;#fn:footnote&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;的样例。&lt;/p&gt;
-
-&lt;p&gt;这是第二个注脚&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:footnote2&#34;&gt;&lt;a href=&#34;#fn:footnote2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;的样例。&lt;/p&gt;
-
-&lt;h3 id=&#34;5-latex-公式-注-github-markdown-不支持-latex-公式&#34;&gt;5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)&lt;/h3&gt;
-
-&lt;p&gt;$ 表示行内公式：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$E=mc^2$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;质能守恒方程可以用一个很简洁的方程式来表达。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/gs1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;$$ 表示整行公式：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$$\sum_{i=1}^n a_i=0$$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/gs2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;访问 &lt;a href=&#34;http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MathJax&lt;/a&gt; 参考更多使用方法。&lt;/p&gt;
-
-&lt;h3 id=&#34;6-加强的代码块&#34;&gt;6. 加强的代码块&lt;/h3&gt;
-
-&lt;p&gt;支持四十一种编程语言的语法高亮的显示，行号显示。&lt;/p&gt;
-
-&lt;p&gt;非代码示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install vim-gnome
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Python 示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@requires_authorization
-def somefunc(param1=&#39;&#39;, param2=0):
-    &#39;&#39;&#39;A docstring&#39;&#39;&#39;
-    if param1 &amp;gt; param2: # interesting
-        print &#39;Greater&#39;
-    return (param2 - param1 + 1) or None
-
-class SomeClass:
-    pass
-
-&amp;gt;&amp;gt;&amp;gt; message = &#39;&#39;&#39;interpreter
-... prompt&#39;&#39;&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;JavaScript 示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
-* nth element in the fibonacci series.
-* @param n &amp;gt;= 0
-* @return the nth element, &amp;gt;= 0.
-*/
-function fib(n) {
-  var a = 1, b = 1;
-  var tmp;
-  while (--n &amp;gt;= 0) {
-    tmp = a;
-    a += b;
-    b = tmp;
-  }
-  return a;
+int getSum(int n) {
+    int sum = 0;
+    while (n) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
 }
 
-document.write(fib(10));
+int moving(int threshold, int i, int j, int rows, int cols, vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;flag) {
+    if (i &amp;lt; 0 || i &amp;gt;= rows || j &amp;lt; 0 || j &amp;gt;= cols || flag[i][j] == 1 || getSum(i) + getSum(j) &amp;gt; threshold)
+        return 0;
+    flag[i][j] = 1;
+    return moving(threshold, i - 1, j, rows, cols, flag) + moving(threshold, i + 1, j, rows, cols, flag) +
+           moving(threshold, i, j - 1, rows, cols, flag) + moving(threshold, i, j + 1, rows, cols, flag) + 1;
+}
+
+int movingCount(int threshold, int rows, int cols) {
+    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; flag(rows);
+    for (int i = 0; i &amp;lt; rows; i++)
+        flag[i].resize(cols, 0);
+    return moving(threshold, 0, 0, rows, cols, flag);
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    int m, n, k;
+    cin &amp;gt;&amp;gt; m &amp;gt;&amp;gt; n &amp;gt;&amp;gt; k;
+    cout &amp;lt;&amp;lt; movingCount(k, m, n);
+    return 0;
+}
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;7-流程图-注-github-markdown-不支持流程图&#34;&gt;7. 流程图(注：GitHub Markdown 不支持流程图)&lt;/h3&gt;
-
-&lt;h4 id=&#34;示例&#34;&gt;示例&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-flow&#34;&gt;st=&amp;gt;start: Start:&amp;gt;https://yeqiongzhou.top
-io=&amp;gt;inputoutput: verification
-op=&amp;gt;operation: Your Operation
-cond=&amp;gt;condition: Yes or No?
-sub=&amp;gt;subroutine: Your Subroutine
-e=&amp;gt;end
-st-&amp;gt;io-&amp;gt;op-&amp;gt;cond
-cond(yes)-&amp;gt;e
-cond(no)-&amp;gt;sub-&amp;gt;io
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/flow.png&#34; alt=&#34;流程图示例&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;8-序列图-注-github-markdown-不支持序列图&#34;&gt;8. 序列图(注：GitHub Markdown 不支持序列图)&lt;/h3&gt;
-
-&lt;h4 id=&#34;示例-1&#34;&gt;示例 1&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sequence&#34;&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob--&amp;gt;Alice: I am good thanks!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/seq1.png&#34; alt=&#34;序列图示例1&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;示例-2&#34;&gt;示例 2&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sequence&#34;&gt;Title: Here is a title
-A-&amp;gt;B: Normal line
-B--&amp;gt;C: Dashed line
-C-&amp;gt;&amp;gt;D: Open arrow
-D--&amp;gt;&amp;gt;A: Dashed open arrow
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/seq2.png&#34; alt=&#34;序列图示例2&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;9-甘特图-注-github-markdown-不支持甘特图&#34;&gt;9. 甘特图(注：GitHub Markdown 不支持甘特图)&lt;/h3&gt;
-
-&lt;p&gt;甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。&lt;/p&gt;
-
-&lt;h4 id=&#34;示例-1-1&#34;&gt;示例&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-gantt&#34;&gt;title 项目开发流程
-section 项目确定
-    需求分析       :a1, 2016-06-22, 3d
-    可行性报告     :after a1, 5d
-    概念验证       : 5d
-section 项目实施
-    概要设计      :2016-07-05  , 5d
-    详细设计      :2016-07-08, 10d
-    编码          :2016-07-15, 10d
-    测试          :2016-07-22, 5d
-section 发布验收
-    发布: 2d
-    验收: 3d
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yeqiongzhou.top/images/markdown/gantt.png&#34; alt=&#34;甘特图示例&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;10-表格支持&#34;&gt;10. 表格支持&lt;/h3&gt;
-
-&lt;h4 id=&#34;示例-1-2&#34;&gt;示例&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | $1600 |   5     |
-| 手机        |   $12   |   12   |
-| 管线        |    $1    |  234  |
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;项目&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;价格&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数量&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;计算机&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;$1600&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;手机&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;$12&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;12&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;管线&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;$1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;234&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&#34;11-定义型列表&#34;&gt;11. 定义型列表&lt;/h3&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;名词 1&lt;/dt&gt;
-&lt;dd&gt;定义 1（左侧有一个可见的冒号和四个不可见的空格）&lt;/dd&gt;
-&lt;dt&gt;代码块 2&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;代码块（左侧有八个不可见的空格）
-&lt;/code&gt;&lt;/pre&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h3 id=&#34;12-html-标签&#34;&gt;12. Html 标签&lt;/h3&gt;
-
-&lt;p&gt;Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：&lt;/p&gt;
-
-&lt;h4 id=&#34;示例-1-3&#34;&gt;示例&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;table&amp;gt;
-    &amp;lt;tr&amp;gt;
-        &amp;lt;th rowspan=&amp;quot;2&amp;quot;&amp;gt;值班人员&amp;lt;/th&amp;gt;
-        &amp;lt;th&amp;gt;星期一&amp;lt;/th&amp;gt;
-        &amp;lt;th&amp;gt;星期二&amp;lt;/th&amp;gt;
-        &amp;lt;th&amp;gt;星期三&amp;lt;/th&amp;gt;
-    &amp;lt;/tr&amp;gt;
-    &amp;lt;tr&amp;gt;
-        &amp;lt;td&amp;gt;李强&amp;lt;/td&amp;gt;
-        &amp;lt;td&amp;gt;张明&amp;lt;/td&amp;gt;
-        &amp;lt;td&amp;gt;王平&amp;lt;/td&amp;gt;
-    &amp;lt;/tr&amp;gt;
-&amp;lt;/table&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th rowspan=&#34;2&#34;&gt;值班人员&lt;/th&gt;
-        &lt;th&gt;星期一&lt;/th&gt;
-        &lt;th&gt;星期二&lt;/th&gt;
-        &lt;th&gt;星期三&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;李强&lt;/td&gt;
-        &lt;td&gt;张明&lt;/td&gt;
-        &lt;td&gt;王平&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&#34;13-待办事宜-todo-列表&#34;&gt;13. 待办事宜 Todo 列表&lt;/h3&gt;
-
-&lt;p&gt;使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：&lt;/p&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;博客开发&lt;/strong&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 增加黑白背景色切换功能&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 支持评论功能&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 新增Todo列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 改进 LaTex 功能
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 修复 LaTex 公式渲染问题&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 新增 LaTex 公式编号功能 &lt;a href=&#34;http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;六月毕业旅行准备&lt;/strong&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 购买武汉到大阪来回的机票&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 准备去往日本的签证&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 浏览日本免税店的物品&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:footnote&#34;&gt;这是一个 &lt;em&gt;注脚&lt;/em&gt; 的 &lt;strong&gt;文本&lt;/strong&gt;。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:footnote&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:footnote2&#34;&gt;这是另一个 &lt;em&gt;注脚&lt;/em&gt; 的 &lt;strong&gt;文本&lt;/strong&gt;。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:footnote2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>交换两个变量的值</title>
-      <link>https://yeqiongzhou.top/2019/02/28/exchange-two-variables/</link>
-      <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
+      <title>矩阵中的路径</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer65/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:21 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/2019/02/28/exchange-two-variables/</guid>
-      <description>&lt;p&gt;1、借助第三个变量来实现&lt;/p&gt;
+      <guid>https://yeqiongzhou.top/2019/03/06/offer65/</guid>
+      <description>
 
-&lt;blockquote&gt;
-&lt;p&gt;C = A; A = B; B = C;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
 
-&lt;p&gt;2、利用加减法来实现两个变量的交换&lt;/p&gt;
+&lt;p&gt;请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则之后不能再次进入这个格子。 例如 a b c e s f c s a d e e 这样的3 X 4 矩阵中包含一条字符串&amp;rdquo;bcced&amp;rdquo;的路径，但是矩阵中不包含&amp;rdquo;abcb&amp;rdquo;路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;A = A + B; B = A – B; A = A – B;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
 
-&lt;p&gt;3、用位异或运算来实现，也是效率最高的&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;vector&amp;gt;
 
-&lt;p&gt;原理：利用一个数异或本身等于0和异或运算符合交换律&lt;/p&gt;
+using namespace std;
 
-&lt;blockquote&gt;
-&lt;p&gt;A = A ^ B; B = A ^ B; A = A ^ B;&lt;/p&gt;
-&lt;/blockquote&gt;
+bool path(char *matrix, int rows, int cols, int i, int j, char *str, int k, vector&amp;lt;bool&amp;gt; flag) {
+    int index = i * cols + j;
+    if (i &amp;lt; 0 || i &amp;gt;= rows || j &amp;lt; 0 || j &amp;gt;= cols || matrix[index] != str[k] || flag[index])
+        return false;
+    if (k == strlen(str) - 1)
+        return true;
+    flag[index] = true;
+    if (path(matrix, rows, cols, i - 1, j, str, k + 1, flag) || path(matrix, rows, cols, i + 1, j, str, k + 1, flag) ||
+        path(matrix, rows, cols, i, j - 1, str, k + 1, flag) || path(matrix, rows, cols, i, j + 1, str, k + 1, flag))
+        return true;
+    flag[index] = false;
+    return false;
+}
+
+bool hasPath(char *matrix, int rows, int cols, char *str) {
+    vector&amp;lt;bool&amp;gt; flag(rows * cols, false);
+    for (int i = 0; i &amp;lt; rows; i++)
+        for (int j = 0; j &amp;lt; cols; j++)
+            if (path(matrix, rows, cols, i, j, str, 0, flag))
+                return true;
+    return false;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    int rows, cols;
+    char s[101], str[101];
+    cin &amp;gt;&amp;gt; rows &amp;gt;&amp;gt; cols &amp;gt;&amp;gt; s &amp;gt;&amp;gt; str;
+    cout &amp;lt;&amp;lt; hasPath(s, rows, cols, str);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://yeqiongzhou.top/about/</link>
-      <pubDate>Wed, 27 Feb 2019 13:48:21 +0800</pubDate>
+      <title>滑动窗口的最大值</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer64/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:18 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/about/</guid>
-      <description>&lt;p&gt;嗨，大家好，我叫&lt;code&gt;叶琼州&lt;/code&gt;，非常荣幸您访问了我的博客。我目前就读于武汉大学国家网络安全学院，爱好旅行、摄影、骑行、吉他、口琴、美食etc，当然也喜欢码代码啦，希望能和各位过客交个朋友，首页有我的各种联系方式，以后我会持续的在这个博客上分享我的技术文章，当然也会分享生活上值得纪念的点点滴滴。欢迎大家关注我的博客，有空常来看看🌚🌝(╯·⚇·╰)&lt;/p&gt;
+      <guid>https://yeqiongzhou.top/2019/03/06/offer64/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。例如，如果输入数组{2,3,4,2,6,2,5,1}及滑动窗口的大小3，那么一共存在6个滑动窗口，他们的最大值分别为{4,4,6,6,6,5}； 针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个： {[2,3,4],2,6,2,5,1}， {2,[3,4,2],6,2,5,1}， {2,3,[4,2,6],2,5,1}， {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}， {2,3,4,2,6,[2,5,1]}。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;deque&amp;gt;
+
+using namespace std;
+
+vector&amp;lt;int&amp;gt; maxInWindows(const vector&amp;lt;int&amp;gt; &amp;amp;num, unsigned int size) {
+    vector&amp;lt;int&amp;gt; v;
+    deque&amp;lt;int&amp;gt; d;
+    for (unsigned int i = 0; i &amp;lt; num.size(); ++i) {
+        while (d.size() &amp;amp;&amp;amp; num[d.back()] &amp;lt;= num[i])
+            d.pop_back();
+        if (d.size() &amp;amp;&amp;amp; i - d.front() + 1 &amp;gt; size)
+            d.pop_front();
+        d.push_back(i);
+        if (size &amp;amp;&amp;amp; i + 1 &amp;gt;= size)
+            v.push_back(num[d.front()]);
+    }
+    return v;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    vector&amp;lt;int&amp;gt; v, res;
+    int n, k, tmp;
+    cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; k;
+    for (int i = 0; i &amp;lt; n; i++) {
+        cin &amp;gt;&amp;gt; tmp;
+        v.push_back(tmp);
+    }
+    res = maxInWindows(v, k);
+    for (auto it = res.begin(); it != res.end(); ++it)
+        cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据流中的中位数</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer63/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:13 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer63/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+using namespace std;
+
+vector&amp;lt;int&amp;gt; v;
+int n;
+
+void Insert(int num) {
+    v.push_back(num);
+    n = v.size();
+    for (int i = n - 1; i &amp;gt; 0 &amp;amp;&amp;amp; v[i] &amp;lt; v[i - 1]; --i)
+        swap(v[i], v[i - 1]);
+}
+
+double GetMedian() {
+    return (v[(n - 1) &amp;gt;&amp;gt; 1] + v[n &amp;gt;&amp;gt; 1]) / 2.0;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    int m, tmp;
+    cin &amp;gt;&amp;gt; m;
+    for (int i = 0; i &amp;lt; m; i++) {
+        cin &amp;gt;&amp;gt; tmp;
+        Insert(tmp);
+    }
+    cout &amp;lt;&amp;lt; GetMedian();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>二叉搜索树的第k个结点</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer62/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:07 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer62/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+
+    TreeNode() {}
+};
+
+TreeNode *newTree() {
+    TreeNode *node = new TreeNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+int count = 0;
+
+TreeNode *KthNode(TreeNode *pRoot, int k) {
+    if (pRoot) {
+        TreeNode *node = KthNode(pRoot-&amp;gt;left, k);
+        if (node) return node;
+        if (++count == k)return pRoot;
+        node = KthNode(pRoot-&amp;gt;right, k);
+        if (node)return node;
+    }
+    return NULL;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    int k;
+    cin &amp;gt;&amp;gt; k;
+    TreeNode *root = NULL;
+    root = newTree();
+    cout &amp;lt;&amp;lt; KthNode(root, k)-&amp;gt;val;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>序列化二叉树</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer61/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:03 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer61/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现两个函数，分别用来序列化和反序列化二叉树&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+
+    TreeNode() {}
+};
+
+TreeNode *newTree() {
+    TreeNode *node = new TreeNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+void preOrder(TreeNode *pRoot)
+{
+    if (pRoot)
+    {
+        cout &amp;lt;&amp;lt; pRoot-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+        preOrder(pRoot-&amp;gt;left);
+        preOrder(pRoot-&amp;gt;right);
+    }
+}
+
+char* Serialize(TreeNode *root) {
+    if(!root)return &amp;quot;#&amp;quot;;
+    string s=to_string(root-&amp;gt;val);
+    s.push_back(&#39;,&#39;);
+    char *left = Serialize(root-&amp;gt;left);
+    char *right = Serialize(root-&amp;gt;right);
+    char *res = new char[strlen(left) + strlen(right) + s.size()];
+    strcpy(res, s.c_str());
+    strcat(res, left);
+    strcat(res, right);
+    return res;
+}
+
+TreeNode* decode(char *&amp;amp;str) {
+    if(*str==&#39;#&#39;){
+        str++;
+        return NULL;
+    }
+    int num = 0;
+    while(*str != &#39;,&#39;)
+        num = num*10 + (*(str++)-&#39;0&#39;);
+    str++;
+    TreeNode *root = new TreeNode(num);
+    root-&amp;gt;left = decode(str);
+    root-&amp;gt;right = decode(str);
+    return root;
+}
+
+TreeNode* Deserialize(char *str) {
+    return decode(str);
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    TreeNode *root = NULL;
+    root = newTree();
+    cout&amp;lt;&amp;lt;Serialize(root)&amp;lt;&amp;lt;endl;
+    TreeNode * res = Deserialize(Serialize(root));
+    preOrder(res);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>把二叉树打印成多行</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer60/</link>
+      <pubDate>Wed, 06 Mar 2019 19:23:00 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer60/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;queue&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+
+    TreeNode() {}
+};
+
+TreeNode *newTree() {
+    TreeNode *node = new TreeNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; Print(TreeNode *pRoot) {
+    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
+    if (!pRoot)return res;
+    queue&amp;lt;TreeNode *&amp;gt; q;
+    q.push(pRoot);
+    while (!q.empty()) {
+        vector&amp;lt;int&amp;gt; v;
+        int size=q.size();
+        for (int i = 0; i &amp;lt; size; ++i) {
+            TreeNode *tmp = q.front();
+            q.pop();
+            v.push_back(tmp-&amp;gt;val);
+            if (tmp-&amp;gt;left)q.push(tmp-&amp;gt;left);
+            if (tmp-&amp;gt;right)q.push(tmp-&amp;gt;right);
+        }
+        res.push_back(v);
+    }
+    return res;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    TreeNode *root = NULL;
+    root = newTree();
+    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
+    res = Print(root);
+    for (auto it = res.begin(); it != res.end(); ++it) {
+        for (auto i = (*it).begin(); i != (*it).end(); ++i)
+            cout &amp;lt;&amp;lt; *i &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+        cout &amp;lt;&amp;lt; endl;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>按之字形顺序打印二叉树</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer59/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:54 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer59/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;queue&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+
+    TreeNode() {}
+};
+
+TreeNode *newTree() {
+    TreeNode *node = new TreeNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; Print(TreeNode *pRoot) {
+    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
+    if (!pRoot)return res;
+    queue&amp;lt;TreeNode *&amp;gt; q;
+    q.push(pRoot);
+    bool even = false;
+    while (!q.empty()) {
+        vector&amp;lt;int&amp;gt; v;
+        int size=q.size();
+        for (int i = 0; i &amp;lt; size; ++i) {
+            TreeNode *tmp = q.front();
+            q.pop();
+            v.push_back(tmp-&amp;gt;val);
+            if (tmp-&amp;gt;left)q.push(tmp-&amp;gt;left);
+            if (tmp-&amp;gt;right)q.push(tmp-&amp;gt;right);
+        }
+        if (even)
+            reverse(v.begin(), v.end());
+        even = !even;
+        res.push_back(v);
+    }
+    return res;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    TreeNode *root = NULL;
+    root = newTree();
+    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
+    res = Print(root);
+    for (auto it = res.begin(); it != res.end(); ++it) {
+        for (auto i = (*it).begin(); i != (*it).end(); ++i)
+            cout &amp;lt;&amp;lt; *i &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+        cout &amp;lt;&amp;lt; endl;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>对称的二叉树</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer58/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:51 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer58/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+
+    TreeNode() {}
+};
+
+TreeNode *newTree() {
+    TreeNode *node = new TreeNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+bool symmetrical(TreeNode *left, TreeNode *right) {
+    if (!left &amp;amp;&amp;amp; !right)
+        return true;
+    if (left &amp;amp;&amp;amp; right)
+        return left-&amp;gt;val == right-&amp;gt;val &amp;amp;&amp;amp; symmetrical(left-&amp;gt;left, right-&amp;gt;right) &amp;amp;&amp;amp;
+               symmetrical(left-&amp;gt;right, right-&amp;gt;left);
+    return false;
+}
+
+bool isSymmetrical(TreeNode *pRoot) {
+    if (!pRoot)
+        return true;
+    return symmetrical(pRoot-&amp;gt;left, pRoot-&amp;gt;right);
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    TreeNode *root = NULL;
+    root = newTree();
+    cout &amp;lt;&amp;lt; isSymmetrical(root);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>二叉树的下一个结点</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer57/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:48 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer57/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+struct TreeLinkNode {
+    int val;
+    struct TreeLinkNode *left;
+    struct TreeLinkNode *right;
+    struct TreeLinkNode *next;
+
+    TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+
+    TreeLinkNode() {}
+};
+
+TreeLinkNode *newTree() {
+    TreeLinkNode *node = new TreeLinkNode;
+    int x;
+    cin &amp;gt;&amp;gt; x;
+    if (!x)node = NULL;
+    else {
+        node-&amp;gt;val = x;
+        node-&amp;gt;left-&amp;gt;next = node;
+        node-&amp;gt;left = newTree();
+        node-&amp;gt;right-&amp;gt;next = node;
+        node-&amp;gt;right = newTree();
+    }
+    return node;
+}
+
+TreeLinkNode *GetNext(TreeLinkNode *pNode) {
+    if (!pNode)return NULL;
+    if (pNode-&amp;gt;right) {
+        pNode = pNode-&amp;gt;right;
+        while (pNode-&amp;gt;left)pNode = pNode-&amp;gt;left;
+        return pNode;
+    }
+    while (pNode-&amp;gt;next) {
+        if (pNode-&amp;gt;next-&amp;gt;left == pNode)
+            return pNode-&amp;gt;next;
+        pNode = pNode-&amp;gt;next;
+    }
+    return NULL;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    TreeLinkNode *node = newTree();
+    TreeLinkNode *pNode;
+    TreeLinkNode *res = GetNext(pNode);
+    cout &amp;lt;&amp;lt; res-&amp;gt;val;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>删除链表中重复的结点</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer56/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:44 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer56/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5 处理后为 1-&amp;gt;2-&amp;gt;5&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+struct ListNode {
+    int val;
+    ListNode *next;
+
+    ListNode(int x) : val(x), next(NULL) {}
+
+    ListNode() {}
+};
+
+ListNode *newList() {
+    ListNode *L = new ListNode;
+    L-&amp;gt;next = NULL;
+    ListNode *q = L;
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    for (int i = 0; i &amp;lt; n; i++) {
+        ListNode *p = new ListNode;
+        cin &amp;gt;&amp;gt; p-&amp;gt;val;
+        q-&amp;gt;next = p;
+        q = p;
+    }
+    q-&amp;gt;next = NULL;
+    return L-&amp;gt;next;
+}
+
+void print(ListNode *pHead) {
+    while (pHead) {
+        cout &amp;lt;&amp;lt; pHead-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+        pHead = pHead-&amp;gt;next;
+    }
+}
+
+ListNode *deleteDuplication(ListNode *pHead) {
+    if (pHead == NULL || pHead-&amp;gt;next == NULL)
+        return pHead;
+    if (pHead-&amp;gt;val == pHead-&amp;gt;next-&amp;gt;val) {
+        ListNode *pNode = pHead-&amp;gt;next;
+        while (pNode != NULL &amp;amp;&amp;amp; pNode-&amp;gt;val == pHead-&amp;gt;val) {
+            pNode = pNode-&amp;gt;next;
+        }
+        return deleteDuplication(pNode);
+    } else {
+        pHead-&amp;gt;next = deleteDuplication(pHead-&amp;gt;next);
+        return pHead;
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    ListNode *L = newList();
+    ListNode *res = deleteDuplication(L);
+    print(res);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>链表中环的入口结点</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer55/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:40 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer55/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+struct ListNode {
+    int val;
+    ListNode *next;
+
+    ListNode(int x) : val(x), next(NULL) {}
+
+    ListNode() {}
+};
+
+ListNode *newList() {
+    ListNode *L = new ListNode;
+    L-&amp;gt;next = NULL;
+    ListNode *q = L;
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    for (int i = 0; i &amp;lt; n; i++) {
+        ListNode *p = new ListNode;
+        cin &amp;gt;&amp;gt; p-&amp;gt;val;
+        q-&amp;gt;next = p;
+        q = p;
+    }
+    q-&amp;gt;next = NULL;
+    return L-&amp;gt;next;
+}
+
+ListNode *EntryNodeOfLoop(ListNode *pHead) {
+    if (pHead == NULL || pHead-&amp;gt;next == NULL)
+        return NULL;
+    ListNode *p1 = pHead, *p2 = pHead;
+    while (p2 != NULL &amp;amp;&amp;amp; p2-&amp;gt;next != NULL) {
+        p1 = p1-&amp;gt;next;
+        p2 = p2-&amp;gt;next-&amp;gt;next;
+        if (p1 == p2) {
+            p2 = pHead;
+            while (p1 != p2) {
+                p1 = p1-&amp;gt;next;
+                p2 = p2-&amp;gt;next;
+            }
+            if (p1 == p2)
+                return p1;
+        }
+    }
+    return NULL;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    ListNode *L = newList();
+    cout &amp;lt;&amp;lt; EntryNodeOfLoop(L)-&amp;gt;val;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>字符流中第一个不重复的字符</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer54/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:36 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer54/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符&amp;rdquo;go&amp;rdquo;时，第一个只出现一次的字符是&amp;rdquo;g&amp;rdquo;。当从该字符流中读出前六个字符“google&amp;rdquo;时，第一个只出现一次的字符是&amp;rdquo;l&amp;rdquo;。&lt;/p&gt;
+
+&lt;h4 id=&#34;输出描述&#34;&gt;输出描述:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;如果当前字符流没有存在出现一次的字符，返回#字符。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;map&amp;gt;
+#include &amp;lt;vector&amp;gt;
+
+using namespace std;
+
+map&amp;lt;char, int&amp;gt; m;
+vector&amp;lt;int&amp;gt; v;
+
+void Insert(char ch) {
+    v.push_back(ch);
+    m[ch]++;
+}
+
+char FirstAppearingOnce() {
+    for (auto it = v.begin(); it != v.end(); ++it)
+        if (m[*it] == 1)
+            return *it;
+    return &#39;#&#39;;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    char c;
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    for (int i = 0; i &amp;lt; n; i++) {
+        cin &amp;gt;&amp;gt; c;
+        Insert(c);
+    }
+    cout &amp;lt;&amp;lt; FirstAppearingOnce();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>表示数值的字符串</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer53/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:32 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer53/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串&amp;rdquo;+100&amp;rdquo;,&amp;ldquo;5e2&amp;rdquo;,&amp;ldquo;-123&amp;rdquo;,&amp;ldquo;3.1416&amp;rdquo;和&amp;rdquo;-1E-16&amp;rdquo;都表示数值。 但是&amp;rdquo;12e&amp;rdquo;,&amp;ldquo;1a3.14&amp;rdquo;,&amp;ldquo;1.2.3&amp;rdquo;,&amp;ldquo;+-5&amp;rdquo;和&amp;rdquo;12e+4.3&amp;rdquo;都不是。&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+bool isNumeric(char *string) {
+    int n = strlen(string);
+    if (n == 0 || (n == 1 &amp;amp;&amp;amp; (string[0] &amp;lt; &#39;0&#39; || string[0] &amp;gt; &#39;9&#39;)))
+        return false;
+    bool sign = false, dec = false, hasE = false;
+    for (int i = 0; i &amp;lt; n; i++) {
+        if (string[i] == &#39;+&#39; || string[i] == &#39;-&#39;) {
+            if (!sign &amp;amp;&amp;amp; i &amp;gt; 0 &amp;amp;&amp;amp; string[i - 1] != &#39;e&#39; &amp;amp;&amp;amp; string[i - 1] != &#39;E&#39;)
+                return false;
+            if (sign &amp;amp;&amp;amp; string[i - 1] != &#39;e&#39; &amp;amp;&amp;amp; string[i - 1] != &#39;E&#39;)
+                return false;
+            sign = true;
+        } else if (string[i] == &#39;e&#39; || string[i] == &#39;E&#39;) {
+            if (i == 0 || i == n - 1)
+                return false;
+            if (hasE)
+                return false;
+            hasE = true;
+        } else if (string[i] == &#39;.&#39;) {
+            if (hasE || dec || i == 0 || i == n - 1)
+                return false;
+            dec = true;
+        } else if (string[i] &amp;lt; &#39;0&#39; || string[i] &amp;gt; &#39;9&#39;)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    char a[101];
+    cin &amp;gt;&amp;gt; a;
+    cout &amp;lt;&amp;lt; isNumeric(a);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>正则表达式匹配</title>
+      <link>https://yeqiongzhou.top/2019/03/06/offer52/</link>
+      <pubDate>Wed, 06 Mar 2019 19:22:27 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/03/06/offer52/</guid>
+      <description>
+
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+
+&lt;p&gt;请实现一个函数用来匹配包括&amp;rsquo;.&amp;lsquo;和&amp;rsquo;&lt;em&gt;&amp;lsquo;的正则表达式。模式中的字符&amp;rsquo;.&amp;lsquo;表示任意一个字符，而&amp;rsquo;&lt;/em&gt;&amp;lsquo;表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串&amp;rdquo;aaa&amp;rdquo;与模式&amp;rdquo;a.a&amp;rdquo;和&amp;rdquo;ab*ac*a&amp;rdquo;匹配，但是与&amp;rdquo;aa.a&amp;rdquo;和&amp;rdquo;ab*a&amp;rdquo;均不匹配&lt;/p&gt;
+
+&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+bool match(char *str, char *pattern) {
+    if (*str == &#39;\0&#39; &amp;amp;&amp;amp; *pattern == &#39;\0&#39;)
+        return true;
+    if (*str != &#39;\0&#39; &amp;amp;&amp;amp; *pattern == &#39;\0&#39;)
+        return false;
+    if (*(pattern + 1) != &#39;*&#39;) {
+        if (*str == *pattern || (*str != &#39;\0&#39; &amp;amp;&amp;amp; *pattern == &#39;.&#39;))
+            return match(str + 1, pattern + 1);
+        else
+            return false;
+    } else {
+        if (*str == *pattern || (*str != &#39;\0&#39; &amp;amp;&amp;amp; *pattern == &#39;.&#39;))
+            return match(str, pattern + 2) || match(str + 1, pattern);
+        else
+            return match(str, pattern + 2);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
