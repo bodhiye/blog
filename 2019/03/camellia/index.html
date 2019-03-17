@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, hugo, go, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州">
   
-  <link rel="prev" href="https://yeqiongzhou.top/2019/03/offer65/" />
-  <link rel="next" href="https://yeqiongzhou.top/2019/03/camellia/" />
-  <link rel="canonical" href="https://yeqiongzhou.top/2019/03/offer66/" />
+  <link rel="prev" href="https://yeqiongzhou.top/2019/03/offer66/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.top/2019/03/camellia/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           机器人的运动范围 | 叶琼州的代码小窝
+           Camellia | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="机器人的运动范围 | 叶琼州的代码小窝">
+  <meta name="title" content="Camellia | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.top"
     },
     "articleSection" : "posts",
-    "name" : "机器人的运动范围",
-    "headline" : "机器人的运动范围",
-    "description" : "题目描述 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列",
+    "name" : "Camellia",
+    "headline" : "Camellia",
+    "description" : "山茶花 前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下茶花吧。 山茶花是我",
     "inLanguage" : "zh-cn",
     "author" : "bodhiye",
     "creator" : "bodhiye",
@@ -54,11 +54,11 @@
     "accountablePerson" : "bodhiye",
     "copyrightHolder" : "bodhiye",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-06 19:23:25 &#43;0800 &#43;0800",
-    "dateModified" : "2019-03-06 19:23:25 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.top/2019/03/offer66/",
-    "wordCount" : "341",
-    "keywords" : [ "Offer", "叶琼州的代码小窝"]
+    "datePublished": "2019-03-13 14:07:51 &#43;0800 &#43;0800",
+    "dateModified" : "2019-03-13 14:07:51 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.top/2019/03/camellia/",
+    "wordCount" : "428",
+    "keywords" : [ "Album", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,24 +126,26 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">机器人的运动范围</h1>
+        <h1 class="post-title" itemprop="name headline">Camellia</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.top" rel="author">bodhiye</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=3996-19-67 itemprop="datePublished">March 6, 2019</time>
+                on <time datetime=3996-19-132 itemprop="datePublished">March 13, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.top/categories/%E5%89%91%E6%8C%87offer/"> 剑指offer </a>
+                        <a href="https://yeqiongzhou.top/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/"> 相册影集 </a>
                         
                 </span>
-                <span class="post-word-count">, 341 words</span>
+                <span class="post-word-count">, 428 words</span>
         </div>
     </header>
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -159,49 +161,32 @@
 
           
 
-<h3 id="题目描述">题目描述</h3>
+<h1 id="山茶花">山茶花</h1>
 
-<p>地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？</p>
+<p>前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下茶花吧。</p>
 
-<h4 id="题解">题解</h4>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://img.yeqiongzhou.top/shancha1.jpg" alt="红色山茶花" class="lazyload"><figcaption class="image-caption">红色山茶花</figcaption></figure></p>
 
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
+<hr />
 
-using namespace std;
+<p>山茶花是我国著名的花卉之一，由于它的株形十分优美典雅，花色丰富多样化，一直都深受很多文人墨客的青睐，而且山茶花寓意着谦逊，理想的爱，美德，可爱，即使在寒冷季节也依旧不失它的高洁美丽。</p>
 
-int getSum(int n) {
-    int sum = 0;
-    while (n) {
-        sum += n % 10;
-        n /= 10;
-    }
-    return sum;
-}
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://img.yeqiongzhou.top/shancha2.jpg" alt="白色山茶花" class="lazyload"><figcaption class="image-caption">白色山茶花</figcaption></figure></p>
 
-int moving(int threshold, int i, int j, int rows, int cols, vector&lt;vector&lt;int&gt; &gt; &amp;flag) {
-    if (i &lt; 0 || i &gt;= rows || j &lt; 0 || j &gt;= cols || flag[i][j] == 1 || getSum(i) + getSum(j) &gt; threshold)
-        return 0;
-    flag[i][j] = 1;
-    return moving(threshold, i - 1, j, rows, cols, flag) + moving(threshold, i + 1, j, rows, cols, flag) +
-           moving(threshold, i, j - 1, rows, cols, flag) + moving(threshold, i, j + 1, rows, cols, flag) + 1;
-}
+<h3 id="山茶花花语">山茶花花语</h3>
 
-int movingCount(int threshold, int rows, int cols) {
-    vector&lt;vector&lt;int&gt; &gt; flag(rows);
-    for (int i = 0; i &lt; rows; i++)
-        flag[i].resize(cols, 0);
-    return moving(threshold, 0, 0, rows, cols, flag);
-}
+<ul>
+<li><p><strong>谦让细心呵护</strong>
+因为山茶花的花瓣掉落是一片一片叶子慢慢掉落，带有依依不舍之意，所以山茶花的花语代表了一种谦让和高洁的寓意，比如山茶花送给女孩表现了男孩对女孩爱意的小心翼翼和爱慕之情。</p></li>
 
-int main() {
-    ios::sync_with_stdio(false);
-    int m, n, k;
-    cin &gt;&gt; m &gt;&gt; n &gt;&gt; k;
-    cout &lt;&lt; movingCount(k, m, n);
-    return 0;
-}
-</code></pre>
+<li><p><strong>高洁孤傲</strong>
+因为山茶花是冬末春初盛开的鲜花，就如同梅花一样，带有一种高洁孤傲之意，不愿和众花一起盛开争艳，只愿独自绽放需求一份属于自己的高洁和孤傲，这就是山茶花的另外一层花语寓意。</p></li>
+
+<li><p><strong>深沉谨慎</strong>
+同样因为山茶花的花朵绽放时间，山茶花不愿意和众花一起绽放在夏季，不愿意争芳斗艳，也说明了山茶花有自己的谨慎和深沉，也正是因为这份谨慎和深沉才造就了只属于山茶花的高洁与孤傲。</p></li>
+</ul>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://img.yeqiongzhou.top/shancha3.jpg" alt="粉色山茶花" class="lazyload"><figcaption class="image-caption">粉色山茶花</figcaption></figure></p>
 
     </div>
 
@@ -216,7 +201,7 @@ int main() {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.top/2019/03/offer66/>https://yeqiongzhou.top/2019/03/offer66/</span>
+                    <a href=https://yeqiongzhou.top/2019/03/camellia/>https://yeqiongzhou.top/2019/03/camellia/</span>
             </p>
             
              
@@ -232,8 +217,8 @@ int main() {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.top/tags/offer/">
-                    #Offer</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.top/tags/album/">
+                    #Album</a></span>
             
             </section>
         
@@ -245,10 +230,8 @@ int main() {
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.top/2019/03/offer65/" class="prev" rel="prev" title="矩阵中的路径"><i class="iconfont icon-left"></i>&nbsp;矩阵中的路径</a>
+        <a href="https://yeqiongzhou.top/2019/03/offer66/" class="prev" rel="prev" title="机器人的运动范围"><i class="iconfont icon-left"></i>&nbsp;机器人的运动范围</a>
          
-        
-        <a href="https://yeqiongzhou.top/2019/03/camellia/" class="next" rel="next" title="Camellia">Camellia&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -315,8 +298,9 @@ int main() {
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
