@@ -29,14 +29,13 @@ tags: ["Album"]
 
 ![粉色山茶花](https://img.yeqiongzhou.top/shancha3.jpg)
 
-最后来欣赏一下陆游描写山茶花的诗句。
+最后来欣赏一下陆游描写山茶花的诗句吧。
 
 ```html
          《山茶》
-
          宋 陆游
-
 东园三月雨兼风，桃李飘零扫地空。
-
 唯有山茶偏耐久，绿丛又放数枝红。
 ```
+
+![山茶花](https://img.yeqiongzhou.top/shancha4.jpg)
