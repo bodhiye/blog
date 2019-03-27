@@ -43,7 +43,7 @@ preserveTaxonomyNames = true
 
 [params]
     since = 2019
-    author = "yeqiongzhou"                          # Author's name
+    author = "叶琼州"                          # Author's name
     avatar = "/images/me/avatar.png"           # Author's avatar
     subtitle = "Talk is cheap. Show me the code." # Subtitle
     cdn_url = "img.yeqiongzhou.top.qiniudns.com"           # Base CDN URL
