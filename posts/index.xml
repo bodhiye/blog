@@ -650,33 +650,5 @@
       <description>1、借助第三个变量来实现 C = A; A = B; B = C; 2、利用加减法来实现两个变量的交换 A = A + B; B = A – B; A = A – B; 3、用位异或运算来实现，也是效率最</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://yeqiongzhou.top/1/01/love/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yeqiongzhou.top/1/01/love/</guid>
-      <description>Our Love Story @font-face { font-family: digit; src: url(&#39;digital-7_mono.ttf&#39;) format(&#34;truetype&#34;); }       我的爱人
-我会牵着你的手，走到我们满头白发的那一天
-我会守护你生命里的精彩，并陪伴你一路精彩下去。
-你的幸福快乐，是我一生的追求。
-我会每一天带着笑脸，和你说早安，
-我会每一晚与你道声晚安再入梦乡，
-我会带你去所有你想去的地方，
-陪你闹看你笑
-历经你生命中所有的点点滴滴。
-我期待这一生与你一起走过，
-走到尽头再回头看尽一生铅华满地，
-我期待与你慢慢变老，
-等我们老到哪儿也去不了，
-还能满载着一生的幸福快乐。
-我愿意爱你直到老去，
-我会为我们的未来撑起一片天空，
-为我们的将来担负起一生的责任，
-愿意为你去做每一件能让你开心快乐的事。
-所有我们经历的点点滴滴，
-都是我们一辈子最美的回忆。   小芳,我爱你！   Love u forever and ever. - 叶琼州      var offsetX = $(&#34;#loveHeart&#34;).width() / 2; var offsetY = $(&#34;#loveHeart&#34;).height() / 2 - 55; var together = new Date(); together.</description>
-    </item>
-    
   </channel>
 </rss>
