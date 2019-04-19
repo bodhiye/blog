@@ -6,11 +6,9 @@ categories: ["k8s笔记"]
 tags: ["Kubernetes"]
 ---
 
-### Kubernetes存活探针揭秘
+ 　　Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测失败，Kubernetes将定期执行探针并重新启动容器。
 
-Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测失败，Kubernetes将定期执行探针并重新启动容器。
-
-Kubernetes有以下三种探测容器的机制：
+　　Kubernetes有以下三种探测容器的机制：
 
 - HTTP GET探针对容器的IP地址（你指定的端口和路径）执行HTTP GET请求。如果探测器收到响应，并且响应状态码不代表错误（换句话说，如果HTTP响应状态码是2xx或3xx），则认为探测成功。如果服务器返回错误响应状态码或者根本没有响应，那么探测就被认为是失败的，容器将被重新启动。
 - TCP套接字探针尝试与容器指定端口建立TCP连接。如果连接成功建立，则探测成功。否则，容器重新启动。
