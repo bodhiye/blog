@@ -17,7 +17,7 @@
       <pubDate>Fri, 19 Apr 2019 09:31:00 +0800</pubDate>
       
       <guid>https://yeqiongzhou.top/2019/04/kubernetes-liveness-probes/</guid>
-      <description>Kubernetes存活探针揭秘 Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每</description>
+      <description>Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测</description>
     </item>
     
   </channel>
