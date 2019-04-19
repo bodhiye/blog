@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k8s笔记 on 叶琼州的代码小窝</title>
+    <link>https://yeqiongzhou.top/categories/k8s%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in k8s笔记 on 叶琼州的代码小窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 19 Apr 2019 09:31:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://yeqiongzhou.top/categories/k8s%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes存活探针</title>
+      <link>https://yeqiongzhou.top/2019/04/kubernetes-liveness-probes/</link>
+      <pubDate>Fri, 19 Apr 2019 09:31:00 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/04/kubernetes-liveness-probes/</guid>
+      <description>Kubernetes存活探针揭秘 Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每</description>
+    </item>
+    
+  </channel>
+</rss>

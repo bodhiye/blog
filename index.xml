@@ -6,8 +6,30 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 23 Mar 2019 16:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 09:31:00 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kubernetes存活探针</title>
+      <link>https://yeqiongzhou.top/2019/04/kubernetes-liveness-probes/</link>
+      <pubDate>Fri, 19 Apr 2019 09:31:00 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.top/2019/04/kubernetes-liveness-probes/</guid>
+      <description>
+
+&lt;h3 id=&#34;kubernetes存活探针揭秘&#34;&gt;Kubernetes存活探针揭秘&lt;/h3&gt;
+
+&lt;p&gt;Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测失败，Kubernetes将定期执行探针并重新启动容器。&lt;/p&gt;
+
+&lt;p&gt;Kubernetes有以下三种探测容器的机制：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP GET探针对容器的IP地址（你指定的端口和路径）执行HTTP GET请求。如果探测器收到响应，并且响应状态码不代表错误（换句话说，如果HTTP响应状态码是2xx或3xx），则认为探测成功。如果服务器返回错误响应状态码或者根本没有响应，那么探测就被认为是失败的，容器将被重新启动。&lt;/li&gt;
+&lt;li&gt;TCP套接字探针尝试与容器指定端口建立TCP连接。如果连接成功建立，则探测成功。否则，容器重新启动。&lt;/li&gt;
+&lt;li&gt;Exec探针在容器内执行任意命令，并检查命令的退出状态码。如果状态码是0，则探测成功。所有其他状态码都被认为失败。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>🌸又是一年赏樱时🌸</title>
@@ -942,61 +964,6 @@ int main() {
     ios::sync_with_stdio(false);
     ListNode *L = newList();
     cout &amp;lt;&amp;lt; EntryNodeOfLoop(L)-&amp;gt;val;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>字符流中第一个不重复的字符</title>
-      <link>https://yeqiongzhou.top/2019/03/offer54/</link>
-      <pubDate>Wed, 06 Mar 2019 19:22:36 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.top/2019/03/offer54/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符&amp;rdquo;go&amp;rdquo;时，第一个只出现一次的字符是&amp;rdquo;g&amp;rdquo;。当从该字符流中读出前六个字符“google&amp;rdquo;时，第一个只出现一次的字符是&amp;rdquo;l&amp;rdquo;。&lt;/p&gt;
-
-&lt;h4 id=&#34;输出描述&#34;&gt;输出描述:&lt;/h4&gt;
-
-&lt;p&gt;如果当前字符流没有存在出现一次的字符，返回#字符。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;map&amp;gt;
-#include &amp;lt;vector&amp;gt;
-
-using namespace std;
-
-map&amp;lt;char, int&amp;gt; m;
-vector&amp;lt;int&amp;gt; v;
-
-void Insert(char ch) {
-    v.push_back(ch);
-    m[ch]++;
-}
-
-char FirstAppearingOnce() {
-    for (auto it = v.begin(); it != v.end(); ++it)
-        if (m[*it] == 1)
-            return *it;
-    return &#39;#&#39;;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    char c;
-    int n;
-    cin &amp;gt;&amp;gt; n;
-    for (int i = 0; i &amp;lt; n; i++) {
-        cin &amp;gt;&amp;gt; c;
-        Insert(c);
-    }
-    cout &amp;lt;&amp;lt; FirstAppearingOnce();
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
