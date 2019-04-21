@@ -47,7 +47,7 @@ int main()
 	L->next = NULL;
 	cin >> n;
 	for (int i = 0; i < n; i++)
-	{//´řÍˇ˝áľăľÄÍˇ˛ĺˇ¨
+	{
 		ListNode *p = new ListNode;
 		cin >> p->val;
 		p->next = L->next;
