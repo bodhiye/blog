@@ -31,14 +31,12 @@ struct ListNode {
 
 vector<int> printListFromTailToHead(ListNode* head)
 {
-	//µÝ¹é·¨
 	/*if (head != NULL) {
 		if (head->next != NULL) {
 			dev = printListFromTailToHead(head->next);
 		}
 		dev.push_back(head->val);
 	}*/
-	//ÀûÓÃÕ»
 	if (head != NULL)
 	{
 		s.push(head->val);
