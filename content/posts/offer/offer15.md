@@ -49,7 +49,7 @@ int main()
 	ListNode *q = L;
 	cin >> n;
 	for (int i = 0; i < n; i++)
-	{//´řÍˇ˝áľăľÄÎ˛˛ĺˇ¨
+	{
 		ListNode *p = new ListNode;
 		cin >> p->val;
 		q->next = p;
