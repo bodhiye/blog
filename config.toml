@@ -1,4 +1,4 @@
-baseURL = "https://yeqiongzhou.top" # <head> 里面的 baseurl 信息，填你的博客地址
+baseURL = "https://yeqiongzhou.com" # <head> 里面的 baseurl 信息，填你的博客地址
 languageCode = "zh-cn" # 语言
 title = "叶琼州的代码小窝" # 浏览器的标题
 hasCJKLanguage = true # 开启可以让「字数统计」统计汉字

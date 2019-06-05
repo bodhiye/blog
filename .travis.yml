@@ -38,7 +38,7 @@ after_script:
 env:
  global:
    # Github Pages
-   - GH_REF: github.com/bodhiye/bodhiye.github.io
+   - GH_REF: github.com/bodhiye/bodhiye.github.io.git
 
 deploy:
   provider: pages # 重要，指定这是一份github pages的部署配置
@@ -46,7 +46,7 @@ deploy:
   local-dir: public # 静态站点文件所在目录
   # target-branch: master # 要将静态站点文件发布到哪个分支
   github-token: $GITHUB_TOKEN # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
-  fqdn: yeqiongzhou.top # 如果是自定义域名，此处要填
+  fqdn: yeqiongzhou.com # 如果是自定义域名，此处要填
   keep-history: true # 是否保持target-branch分支的提交记录
   on:
     branch: master # 博客源码的分支
