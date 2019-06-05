@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法笔记 on 叶琼州的代码小窝</title>
-    <link>https://yeqiongzhou.top/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</link>
+    <link>https://yeqiongzhou.com/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 算法笔记 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 28 Feb 2019 20:31:35 +0800</lastBuildDate>
     
-	<atom:link href="https://yeqiongzhou.top/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yeqiongzhou.com/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>交换两个变量的值</title>
-      <link>https://yeqiongzhou.top/2019/02/exchange-two-variables/</link>
+      <link>https://yeqiongzhou.com/2019/02/exchange-two-variables/</link>
       <pubDate>Thu, 28 Feb 2019 20:31:35 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/2019/02/exchange-two-variables/</guid>
+      <guid>https://yeqiongzhou.com/2019/02/exchange-two-variables/</guid>
       <description>1、借助第三个变量来实现 C = A; A = B; B = C; 2、利用加减法来实现两个变量的交换 A = A + B; B = A – B; A = A – B; 3、用位异或运算来实现，也是效率最</description>
     </item>
     

@@ -66,4 +66,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://yeqiongzhou.top/sitemap.xml
+Sitemap: https://yeqiongzhou.com/sitemap.xml

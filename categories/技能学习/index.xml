@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技能学习 on 叶琼州的代码小窝</title>
-    <link>https://yeqiongzhou.top/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 技能学习 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 01 Mar 2019 19:36:47 +0800</lastBuildDate>
     
-	<atom:link href="https://yeqiongzhou.top/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown语法手册</title>
-      <link>https://yeqiongzhou.top/2019/03/markdown/</link>
+      <link>https://yeqiongzhou.com/2019/03/markdown/</link>
       <pubDate>Fri, 01 Mar 2019 19:36:47 +0800</pubDate>
       
-      <guid>https://yeqiongzhou.top/2019/03/markdown/</guid>
+      <guid>https://yeqiongzhou.com/2019/03/markdown/</guid>
       <description>Markdown 简明语法手册 1. 斜体和粗体 使用 * _ 和 ** _ _ 表示斜体和粗体。 示例： 这是 斜体 ，这是 粗体 。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，</description>
     </item>
     
