@@ -7,7 +7,7 @@ theme = "LeaveIt" # 主题 (需要自己下载)
 paginate = 11 # 每页的文章数
 enableEmoji = true # 支持 Emoji
 enableRobotsTXT = true # 支持 robots.txt
-googleAnalytics = "UA-135209530-2" # Google 统计 id
+googleAnalytics = "UA-135209530-1" # Google 统计 id
 
 preserveTaxonomyNames = true
 
