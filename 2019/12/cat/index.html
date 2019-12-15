@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Linux cat命令",
     "headline" : "Linux cat命令",
-    "description" : "命令详解 cat 命令用于连接文件并打印到标准输出设备上 语法格式 cat [-AbeEnstTv] [--help] [--version] fileName 参数说明 -n 或 &ndash;number: 由1开始对所有输出的行数编号。 -b 或 &ndash;number-nonblank: 和 -n 相似，只不过对于空-",
+    "description" : "命令详解 cat 命令用于连接文件并打印到标准输出设备上 语法格式 cat [-AbeEnstTv] [&ndash;help] [&ndash;version] fileName 参数说明 -n 或 &ndash;number: 由1开始对所有输出的行数编号。 -b 或 &ndash;number-nonblank: 和 -n 相似，只不过对于空-",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -57,7 +57,7 @@
     "datePublished": "2019-12-15 23:45:47 &#43;0800 &#43;0800",
     "dateModified" : "2019-12-15 23:45:47 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2019/12/cat/",
-    "wordCount" : "414",
+    "wordCount" : "409",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 414 words</span>
+                <span class="post-word-count">, 409 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -167,8 +167,9 @@
 
 <h3 id="语法格式">语法格式</h3>
 
-<pre><code>cat [-AbeEnstTv] [--help] [--version] fileName
-</code></pre>
+<blockquote>
+<p>cat [-AbeEnstTv] [&ndash;help] [&ndash;version] fileName</p>
+</blockquote>
 
 <h3 id="参数说明">参数说明</h3>
 
@@ -187,21 +188,44 @@
 <h3 id="举个栗子">举个栗子</h3>
 
 <ol>
-<li><p>把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:
-&gt; cat -n textfile1 &gt; textfile2</p></li>
-
-<li><p>把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:
-&gt; cat -b textfile1 textfile2 &gt;&gt; textfile3</p></li>
-
-<li><p>清空 /etc/test.txt 文档内容:
-&gt; cat /dev/null &gt; /etc/test.txt</p></li>
-
-<li><p>cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:
-&gt; cat /dev/fd0 &gt; OUTFILE</p></li>
-
-<li><p>相反的，如果想把 image file 写到软盘，输入:
-&gt; cat IMG_FILE &gt; /dev/fd0</p></li>
+<li>把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:</li>
 </ol>
+
+<blockquote>
+<p>cat -n textfile1 &gt; textfile2</p>
+</blockquote>
+
+<ol>
+<li>把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:</li>
+</ol>
+
+<blockquote>
+<p>cat -b textfile1 textfile2 &gt;&gt; textfile3</p>
+</blockquote>
+
+<ol>
+<li>清空 /etc/test.txt 文档内容:</li>
+</ol>
+
+<blockquote>
+<p>cat /dev/null &gt; /etc/test.txt</p>
+</blockquote>
+
+<ol>
+<li>cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:</li>
+</ol>
+
+<blockquote>
+<p>cat /dev/fd0 &gt; OUTFILE</p>
+</blockquote>
+
+<ol>
+<li>相反的，如果想把 image file 写到软盘，输入:</li>
+</ol>
+
+<blockquote>
+<p>cat IMG_FILE &gt; /dev/fd0</p>
+</blockquote>
 
 <h4 id="注">注</h4>
 

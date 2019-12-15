@@ -25,8 +25,9 @@
 
 &lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;cat [-AbeEnstTv] [--help] [--version] fileName
-&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cat [-AbeEnstTv] [&amp;ndash;help] [&amp;ndash;version] fileName&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
 
@@ -45,21 +46,44 @@
 &lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:
-&amp;gt; cat -n textfile1 &amp;gt; textfile2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:
-&amp;gt; cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;清空 /etc/test.txt 文档内容:
-&amp;gt; cat /dev/null &amp;gt; /etc/test.txt&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:
-&amp;gt; cat /dev/fd0 &amp;gt; OUTFILE&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;相反的，如果想把 image file 写到软盘，输入:
-&amp;gt; cat IMG_FILE &amp;gt; /dev/fd0&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat -n textfile1 &amp;gt; textfile2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;清空 /etc/test.txt 文档内容:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat /dev/null &amp;gt; /etc/test.txt&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat /dev/fd0 &amp;gt; OUTFILE&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;相反的，如果想把 image file 写到软盘，输入:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat IMG_FILE &amp;gt; /dev/fd0&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
 
