@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, hugo, go, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2019/03/sakura/" />
-  <link rel="next" href="https://yeqiongzhou.com/2019/12/cat/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2019/12/cat/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Kubernetes存活探针 | 叶琼州的代码小窝
+           Linux cat命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Kubernetes存活探针 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux cat命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Kubernetes存活探针",
-    "headline" : "Kubernetes存活探针",
-    "description" : "Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测",
+    "name" : "Linux cat命令",
+    "headline" : "Linux cat命令",
+    "description" : "命令详解 cat 命令用于连接文件并打印到标准输出设备上 语法格式 cat [-AbeEnstTv] [--help] [--version] fileName 参数说明 -n 或 &ndash;number: 由1开始对所有输出的行数编号。 -b 或 &ndash;number-nonblank: 和 -n 相似，只不过对于空-",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,11 +54,11 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2019",
-    "datePublished": "2019-04-19 09:31:00 &#43;0800 &#43;0800",
-    "dateModified" : "2019-04-19 09:31:00 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/",
-    "wordCount" : "367",
-    "keywords" : [ "Kubernetes", "叶琼州的代码小窝"]
+    "datePublished": "2019-12-15 23:45:47 &#43;0800 &#43;0800",
+    "dateModified" : "2019-12-15 23:45:47 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2019/12/cat/",
+    "wordCount" : "414",
+    "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Kubernetes存活探针</h1>
+        <h1 class="post-title" itemprop="name headline">Linux cat命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=4996-19-199 itemprop="datePublished">April 19, 2019</time>
+                on <time datetime=12996-19-1511 itemprop="datePublished">December 15, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/k8s%E7%AC%94%E8%AE%B0/"> k8s笔记 </a>
+                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 367 words</span>
+                <span class="post-word-count">, 414 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -157,14 +157,56 @@
           
           
 
-          <p>　　Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测失败，Kubernetes将定期执行探针并重新启动容器。</p>
+          
 
-<p>　　Kubernetes有以下三种探测容器的机制：</p>
+<hr />
+
+<h2 id="命令详解">命令详解</h2>
+
+<p>cat 命令用于连接文件并打印到标准输出设备上</p>
+
+<h3 id="语法格式">语法格式</h3>
+
+<pre><code>cat [-AbeEnstTv] [--help] [--version] fileName
+</code></pre>
+
+<h3 id="参数说明">参数说明</h3>
 
 <ul>
-<li>HTTP GET探针对容器的IP地址（你指定的端口和路径）执行HTTP GET请求。如果探测器收到响应，并且响应状态码不代表错误（换句话说，如果HTTP响应状态码是2xx或3xx），则认为探测成功。如果服务器返回错误响应状态码或者根本没有响应，那么探测就被认为是失败的，容器将被重新启动。</li>
-<li>TCP套接字探针尝试与容器指定端口建立TCP连接。如果连接成功建立，则探测成功。否则，容器重新启动。</li>
-<li>Exec探针在容器内执行任意命令，并检查命令的退出状态码。如果状态码是0，则探测成功。所有其他状态码都被认为失败。</li>
+<li>-n 或 &ndash;number: 由1开始对所有输出的行数编号。</li>
+<li>-b 或 &ndash;number-nonblank: 和 -n 相似，只不过对于空-不编号。</li>
+<li>-s 或 &ndash;squeeze-blank: 当遇到有连续两行以上的空白行-代换为一行的空白行。</li>
+<li>-v 或 &ndash;show-nonprinting: 使用 ^ 和 M- 符号，除了 -D 和 TAB 之外。</li>
+<li>-E 或 &ndash;show-ends: 在每行结束处显示 $。</li>
+<li>-T 或 &ndash;show-tabs: 将 TAB 字符显示为 ^I。</li>
+<li>-A 或 &ndash;show-all: 等价于 -vET。</li>
+<li>-e: 等价于&rdquo;-vE&rdquo;选项。</li>
+<li>-t: 等价于&rdquo;-vT&rdquo;选项。</li>
+</ul>
+
+<h3 id="举个栗子">举个栗子</h3>
+
+<ol>
+<li><p>把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:
+&gt; cat -n textfile1 &gt; textfile2</p></li>
+
+<li><p>把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:
+&gt; cat -b textfile1 textfile2 &gt;&gt; textfile3</p></li>
+
+<li><p>清空 /etc/test.txt 文档内容:
+&gt; cat /dev/null &gt; /etc/test.txt</p></li>
+
+<li><p>cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:
+&gt; cat /dev/fd0 &gt; OUTFILE</p></li>
+
+<li><p>相反的，如果想把 image file 写到软盘，输入:
+&gt; cat IMG_FILE &gt; /dev/fd0</p></li>
+</ol>
+
+<h4 id="注">注</h4>
+
+<ul>
+<li>在类 Unix 系统中，/dev/null 称空设备，是一个特殊的设备文件，它丢弃一切写入其中的数据，读取它则会立即得到一个 EOF。</li>
 </ul>
 
     </div>
@@ -180,7 +222,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/>https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/</span>
+                    <a href=https://yeqiongzhou.com/2019/12/cat/>https://yeqiongzhou.com/2019/12/cat/</span>
             </p>
             
              
@@ -196,8 +238,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/kubernetes/">
-                    #Kubernetes</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
+                    #Linux</a></span>
             
             </section>
         
@@ -209,10 +251,8 @@
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2019/03/sakura/" class="prev" rel="prev" title="🌸又是一年赏樱时🌸"><i class="iconfont icon-left"></i>&nbsp;🌸又是一年赏樱时🌸</a>
+        <a href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" class="prev" rel="prev" title="Kubernetes存活探针"><i class="iconfont icon-left"></i>&nbsp;Kubernetes存活探针</a>
          
-        
-        <a href="https://yeqiongzhou.com/2019/12/cat/" class="next" rel="next" title="Linux cat命令">Linux cat命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
