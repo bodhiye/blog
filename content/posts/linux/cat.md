@@ -12,6 +12,9 @@ tags: ["Linux"]
 
 cat 命令用于连接文件并打印到标准输出设备上
 
+### 命令全拼
+cat = Concatenate
+
 ### 语法格式
 
 > cat [-AbeEnstTv] [--help] [--version] fileName
