@@ -17,7 +17,7 @@
       <pubDate>Sun, 15 Dec 2019 23:45:47 +0800</pubDate>
       
       <guid>https://yeqiongzhou.com/2019/12/cat/</guid>
-      <description>命令详解 cat 命令用于连接文件并打印到标准输出设备上 语法格式 cat [-AbeEnstTv] [&amp;ndash;help] [&amp;ndash;version] fileName 参数说明 -n 或 &amp;ndash;number: 由1开始对所有输出的行数编号。 -b 或 &amp;ndash;number-nonblank: 和 -n 相似，只不过对于空-</description>
+      <description>命令详解 cat 命令用于连接文件并打印到标准输出设备上 命令全拼 cat = Concatenate 语法格式 cat [-AbeEnstTv] [&amp;ndash;help] [&amp;ndash;version] fileName 参数说明 -n 或 &amp;ndash;number: 由1开始对所有输出的行数编号。 -b 或 &amp;ndash;number-nonblank: 和 -n 相似，</description>
     </item>
     
   </channel>
