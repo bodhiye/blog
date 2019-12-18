@@ -12,6 +12,7 @@ tags: ["Linux"]
 
 chattr 命令用于改变文件属性。
 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:
+
 - a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。
 - A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。
 - c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。
@@ -45,16 +46,15 @@ chattr = change attributes
 
 ### 举个栗子
 
-1. 用 chattr 命令防止系统中某个关键文件被修改:
+- 用 chattr 命令防止系统中某个关键文件被修改:
 
 > chattr +i /root/yeqiongzhou.yaml
 > lsattr /root/yeqiongzhou.yaml
 
 会显示如下属性:
+`----i-------- /root/yeqiongzhou.yaml`
 
-> ----i-------- /root/yeqiongzhou.yaml
-
-2. 让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:
+- 让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:
 
 > chattr +a /var/log/messages
 

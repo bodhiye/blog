@@ -33,23 +33,23 @@ cat = concatenate
 
 ### 举个栗子
 
-1. 把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:
+- 把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:
 
 > cat -n textfile1 > textfile2
 
-2. 把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:
+- 把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:
 
 > cat -b textfile1 textfile2 >> textfile3
 
-3. 清空 /etc/test.txt 文档内容:
+- 清空 /etc/test.txt 文档内容:
 
 > cat /dev/null > /etc/test.txt
 
-4. cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:
+- cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:
 
 > cat /dev/fd0 > OUTFILE
 
-5. 相反的，如果想把 image file 写到软盘，输入:
+- 相反的，如果想把 image file 写到软盘，输入:
 
 > cat IMG_FILE > /dev/fd0
 
