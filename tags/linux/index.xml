@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Dec 2019 08:40:47 +0800</pubDate>
       
       <guid>https://yeqiongzhou.com/2019/12/chattr/</guid>
-      <description>命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式: a：append only，让文件</description>
+      <description>命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下几种模式: a：append only，让文件</description>
     </item>
     
     <item>

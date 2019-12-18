@@ -22,7 +22,7 @@
 &lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
 
 &lt;p&gt;chattr 命令用于改变文件属性。
-这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:&lt;/p&gt;
+这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下几种模式:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。&lt;/li&gt;
@@ -73,8 +73,7 @@
 lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;会显示如下属性:
-&lt;code&gt;----i-------- /root/yeqiongzhou.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;会显示如下属性: &lt;code&gt;----i-------- /root/yeqiongzhou.yaml&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:&lt;/li&gt;
