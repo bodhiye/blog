@@ -6,8 +6,91 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Dec 2019 23:45:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 08:40:47 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux chattr命令</title>
+      <link>https://yeqiongzhou.com/2019/12/chattr/</link>
+      <pubDate>Wed, 18 Dec 2019 08:40:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2019/12/chattr/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
+
+&lt;p&gt;chattr 命令用于改变文件属性。
+这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:
+- a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。
+- A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。
+- c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。
+- C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。
+- d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。
+- D：synchronous directory updates，同步更新目录。
+- e：extent format，extent 格式。
+- i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。
+- j：data journaling，数据日志，文件在写入时会先被记录。
+- s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。
+- S：synchronous updates，即时更新文件或目录，功能类似 sync。
+- t：no tail-merging，文件系统支持尾部合并。
+- T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。
+- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;chattr = change attributes&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chattr [-RVf] [-+=aAcCdDeijsStTu] [-v version] files&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-R 递归处理，将指定目录下的所有文件及子目录一并处理。&lt;/li&gt;
+&lt;li&gt;-v&amp;lt;版本编号&amp;gt; 设置文件或目录版本。&lt;/li&gt;
+&lt;li&gt;-V 显示指令执行过程。&lt;/li&gt;
+&lt;li&gt;+&amp;lt;属性&amp;gt; 开启文件或目录的该项属性。&lt;/li&gt;
+&lt;li&gt;-&amp;lt;属性&amp;gt; 关闭文件或目录的该项属性。&lt;/li&gt;
+&lt;li&gt;=&amp;lt;属性&amp;gt; 指定文件或目录的该项属性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用 chattr 命令防止系统中某个关键文件被修改:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chattr +i /root/yeqiongzhou.yaml
+lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;会显示如下属性:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;mdash;-i&amp;mdash;&amp;mdash;&amp;ndash; /root/yeqiongzhou.yaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chattr +a /var/log/messages&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;各参数选项中常用到的是a和i。a选项强制只可添加不可删除，多用于日志系统的安全设定。而i是更为严格的安全设定，只有superuser (root) 或具有 CAP_LINUX_IMMUTABLE 处理能力（标识）的进程能够施加该选项。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux cat命令</title>
@@ -21,11 +104,11 @@
 
 &lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
 
-&lt;p&gt;cat 命令用于连接文件并打印到标准输出设备上&lt;/p&gt;
+&lt;p&gt;cat 命令用于连接文件并打印到标准输出设备上。&lt;/p&gt;
 
 &lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
 
-&lt;p&gt;cat = Concatenate&lt;/p&gt;
+&lt;p&gt;cat = concatenate&lt;/p&gt;
 
 &lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
 
@@ -899,82 +982,6 @@ int main() {
     TreeLinkNode *pNode;
     TreeLinkNode *res = GetNext(pNode);
     cout &amp;lt;&amp;lt; res-&amp;gt;val;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>删除链表中重复的结点</title>
-      <link>https://yeqiongzhou.com/2019/03/offer56/</link>
-      <pubDate>Wed, 06 Mar 2019 19:22:44 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer56/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5 处理后为 1-&amp;gt;2-&amp;gt;5&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-
-using namespace std;
-
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode(int x) : val(x), next(NULL) {}
-
-    ListNode() {}
-};
-
-ListNode *newList() {
-    ListNode *L = new ListNode;
-    L-&amp;gt;next = NULL;
-    ListNode *q = L;
-    int n;
-    cin &amp;gt;&amp;gt; n;
-    for (int i = 0; i &amp;lt; n; i++) {
-        ListNode *p = new ListNode;
-        cin &amp;gt;&amp;gt; p-&amp;gt;val;
-        q-&amp;gt;next = p;
-        q = p;
-    }
-    q-&amp;gt;next = NULL;
-    return L-&amp;gt;next;
-}
-
-void print(ListNode *pHead) {
-    while (pHead) {
-        cout &amp;lt;&amp;lt; pHead-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
-        pHead = pHead-&amp;gt;next;
-    }
-}
-
-ListNode *deleteDuplication(ListNode *pHead) {
-    if (pHead == NULL || pHead-&amp;gt;next == NULL)
-        return pHead;
-    if (pHead-&amp;gt;val == pHead-&amp;gt;next-&amp;gt;val) {
-        ListNode *pNode = pHead-&amp;gt;next;
-        while (pNode != NULL &amp;amp;&amp;amp; pNode-&amp;gt;val == pHead-&amp;gt;val) {
-            pNode = pNode-&amp;gt;next;
-        }
-        return deleteDuplication(pNode);
-    } else {
-        pHead-&amp;gt;next = deleteDuplication(pHead-&amp;gt;next);
-        return pHead;
-    }
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    ListNode *L = newList();
-    ListNode *res = deleteDuplication(L);
-    print(res);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

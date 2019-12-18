@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, hugo, go, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" />
-  <link rel="next" href="https://yeqiongzhou.com/2019/12/chattr/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2019/12/cat/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2019/12/cat/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2019/12/chattr/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux cat命令 | 叶琼州的代码小窝
+           Linux chattr命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux cat命令 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux chattr命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux cat命令",
-    "headline" : "Linux cat命令",
-    "description" : "命令详解 cat 命令用于连接文件并打印到标准输出设备上。 命令全拼 cat = concatenate 语法格式 cat [-AbeEnstTv] [&ndash;help] [&ndash;version] fileName 参数说明 -n 或 &ndash;number: 由1开始对所有输出的行数编号。 -b 或 &ndash;number-nonblank: 和 -n 相似",
+    "name" : "Linux chattr命令",
+    "headline" : "Linux chattr命令",
+    "description" : "命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式: - a：append only，让文",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,10 +54,10 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2019",
-    "datePublished": "2019-12-15 23:45:47 &#43;0800 &#43;0800",
-    "dateModified" : "2019-12-15 23:45:47 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2019/12/cat/",
-    "wordCount" : "417",
+    "datePublished": "2019-12-18 08:40:47 &#43;0800 &#43;0800",
+    "dateModified" : "2019-12-18 08:40:47 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2019/12/chattr/",
+    "wordCount" : "1005",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -126,11 +126,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux cat命令</h1>
+        <h1 class="post-title" itemprop="name headline">Linux chattr命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=12996-19-1511 itemprop="datePublished">December 15, 2019</time>
+                on <time datetime=12996-19-188 itemprop="datePublished">December 18, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 417 words</span>
+                <span class="post-word-count">, 1005 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -163,78 +163,73 @@
 
 <h2 id="命令详解">命令详解</h2>
 
-<p>cat 命令用于连接文件并打印到标准输出设备上。</p>
+<p>chattr 命令用于改变文件属性。
+这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:
+- a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。
+- A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。
+- c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。
+- C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。
+- d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。
+- D：synchronous directory updates，同步更新目录。
+- e：extent format，extent 格式。
+- i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。
+- j：data journaling，数据日志，文件在写入时会先被记录。
+- s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。
+- S：synchronous updates，即时更新文件或目录，功能类似 sync。
+- t：no tail-merging，文件系统支持尾部合并。
+- T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。
+- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中</p>
 
 <h3 id="命令全拼">命令全拼</h3>
 
-<p>cat = concatenate</p>
+<p>chattr = change attributes</p>
 
 <h3 id="语法格式">语法格式</h3>
 
 <blockquote>
-<p>cat [-AbeEnstTv] [&ndash;help] [&ndash;version] fileName</p>
+<p>chattr [-RVf] [-+=aAcCdDeijsStTu] [-v version] files&hellip;</p>
 </blockquote>
 
 <h3 id="参数说明">参数说明</h3>
 
 <ul>
-<li>-n 或 &ndash;number: 由1开始对所有输出的行数编号。</li>
-<li>-b 或 &ndash;number-nonblank: 和 -n 相似，只不过对于空-不编号。</li>
-<li>-s 或 &ndash;squeeze-blank: 当遇到有连续两行以上的空白行-代换为一行的空白行。</li>
-<li>-v 或 &ndash;show-nonprinting: 使用 ^ 和 M- 符号，除了 -D 和 TAB 之外。</li>
-<li>-E 或 &ndash;show-ends: 在每行结束处显示 $。</li>
-<li>-T 或 &ndash;show-tabs: 将 TAB 字符显示为 ^I。</li>
-<li>-A 或 &ndash;show-all: 等价于 -vET。</li>
-<li>-e: 等价于&rdquo;-vE&rdquo;选项。</li>
-<li>-t: 等价于&rdquo;-vT&rdquo;选项。</li>
+<li>-R 递归处理，将指定目录下的所有文件及子目录一并处理。</li>
+<li>-v&lt;版本编号&gt; 设置文件或目录版本。</li>
+<li>-V 显示指令执行过程。</li>
+<li>+&lt;属性&gt; 开启文件或目录的该项属性。</li>
+<li>-&lt;属性&gt; 关闭文件或目录的该项属性。</li>
+<li>=&lt;属性&gt; 指定文件或目录的该项属性。</li>
 </ul>
 
 <h3 id="举个栗子">举个栗子</h3>
 
 <ol>
-<li>把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:</li>
+<li>用 chattr 命令防止系统中某个关键文件被修改:</li>
 </ol>
 
 <blockquote>
-<p>cat -n textfile1 &gt; textfile2</p>
+<p>chattr +i /root/yeqiongzhou.yaml
+lsattr /root/yeqiongzhou.yaml</p>
+</blockquote>
+
+<p>会显示如下属性:</p>
+
+<blockquote>
+<p>&mdash;-i&mdash;&mdash;&ndash; /root/yeqiongzhou.yaml</p>
 </blockquote>
 
 <ol>
-<li>把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:</li>
+<li>让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:</li>
 </ol>
 
 <blockquote>
-<p>cat -b textfile1 textfile2 &gt;&gt; textfile3</p>
-</blockquote>
-
-<ol>
-<li>清空 /etc/test.txt 文档内容:</li>
-</ol>
-
-<blockquote>
-<p>cat /dev/null &gt; /etc/test.txt</p>
-</blockquote>
-
-<ol>
-<li>cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:</li>
-</ol>
-
-<blockquote>
-<p>cat /dev/fd0 &gt; OUTFILE</p>
-</blockquote>
-
-<ol>
-<li>相反的，如果想把 image file 写到软盘，输入:</li>
-</ol>
-
-<blockquote>
-<p>cat IMG_FILE &gt; /dev/fd0</p>
+<p>chattr +a /var/log/messages</p>
 </blockquote>
 
 <h4 id="注">注</h4>
 
 <ul>
-<li>在类 Unix 系统中，/dev/null 称空设备，是一个特殊的设备文件，它丢弃一切写入其中的数据，读取它则会立即得到一个 EOF。</li>
+<li>各参数选项中常用到的是a和i。a选项强制只可添加不可删除，多用于日志系统的安全设定。而i是更为严格的安全设定，只有superuser (root) 或具有 CAP_LINUX_IMMUTABLE 处理能力（标识）的进程能够施加该选项。</li>
 </ul>
 
     </div>
@@ -250,7 +245,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2019/12/cat/>https://yeqiongzhou.com/2019/12/cat/</span>
+                    <a href=https://yeqiongzhou.com/2019/12/chattr/>https://yeqiongzhou.com/2019/12/chattr/</span>
             </p>
             
              
@@ -279,10 +274,8 @@
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" class="prev" rel="prev" title="Kubernetes存活探针"><i class="iconfont icon-left"></i>&nbsp;Kubernetes存活探针</a>
+        <a href="https://yeqiongzhou.com/2019/12/cat/" class="prev" rel="prev" title="Linux cat命令"><i class="iconfont icon-left"></i>&nbsp;Linux cat命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2019/12/chattr/" class="next" rel="next" title="Linux chattr命令">Linux chattr命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
