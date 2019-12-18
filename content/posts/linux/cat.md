@@ -10,10 +10,10 @@ tags: ["Linux"]
 
 ## 命令详解
 
-cat 命令用于连接文件并打印到标准输出设备上
+cat 命令用于连接文件并打印到标准输出设备上。
 
 ### 命令全拼
-cat = Concatenate
+cat = concatenate
 
 ### 语法格式
 
