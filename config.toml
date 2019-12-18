@@ -58,12 +58,12 @@ preserveTaxonomyNames = true
 
 [params.social]
     GitHub = "bodhiye"
-    LinkedIn = "yeqiongzhou"
-    Email   = "yeqiongzhou@whu.edu.cn"
+    # LinkedIn = "yeqiongzhou"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
     Twitter = "yeqiongzhou"
     Instagram = "yeqiongzhou"
     Facebook = "yeqiongzhou"
+    Email   = "yeqiongzhou@whu.edu.cn"
     # Telegram = "xxoo"
     # Dribbble = "xxoo"
     # Medium = "xxoo"
