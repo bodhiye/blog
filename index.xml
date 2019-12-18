@@ -22,21 +22,24 @@
 &lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
 
 &lt;p&gt;chattr 命令用于改变文件属性。
-这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:
-- a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。
-- A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。
-- c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。
-- C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。
-- d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。
-- D：synchronous directory updates，同步更新目录。
-- e：extent format，extent 格式。
-- i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。
-- j：data journaling，数据日志，文件在写入时会先被记录。
-- s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。
-- S：synchronous updates，即时更新文件或目录，功能类似 sync。
-- t：no tail-merging，文件系统支持尾部合并。
-- T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。
-- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中&lt;/p&gt;
+这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。&lt;/li&gt;
+&lt;li&gt;A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。&lt;/li&gt;
+&lt;li&gt;c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。&lt;/li&gt;
+&lt;li&gt;C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。&lt;/li&gt;
+&lt;li&gt;d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。&lt;/li&gt;
+&lt;li&gt;D：synchronous directory updates，同步更新目录。&lt;/li&gt;
+&lt;li&gt;e：extent format，extent 格式。&lt;/li&gt;
+&lt;li&gt;i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。&lt;/li&gt;
+&lt;li&gt;j：data journaling，数据日志，文件在写入时会先被记录。&lt;/li&gt;
+&lt;li&gt;s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。&lt;/li&gt;
+&lt;li&gt;S：synchronous updates，即时更新文件或目录，功能类似 sync。&lt;/li&gt;
+&lt;li&gt;t：no tail-merging，文件系统支持尾部合并。&lt;/li&gt;
+&lt;li&gt;T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。&lt;/li&gt;
+&lt;li&gt;u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
 
@@ -61,24 +64,21 @@
 
 &lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;用 chattr 命令防止系统中某个关键文件被修改:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;chattr +i /root/yeqiongzhou.yaml
 lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;会显示如下属性:&lt;/p&gt;
+&lt;p&gt;会显示如下属性:
+&lt;code&gt;----i-------- /root/yeqiongzhou.yaml&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&amp;mdash;-i&amp;mdash;&amp;mdash;&amp;ndash; /root/yeqiongzhou.yaml&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;chattr +a /var/log/messages&lt;/p&gt;
@@ -132,41 +132,41 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cat -n textfile1 &amp;gt; textfile2&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;清空 /etc/test.txt 文档内容:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cat /dev/null &amp;gt; /etc/test.txt&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cat /dev/fd0 &amp;gt; OUTFILE&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;相反的，如果想把 image file 写到软盘，输入:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cat IMG_FILE &amp;gt; /dev/fd0&lt;/p&gt;

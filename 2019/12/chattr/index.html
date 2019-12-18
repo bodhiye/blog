@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Linux chattr命令",
     "headline" : "Linux chattr命令",
-    "description" : "命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式: - a：append only，让文",
+    "description" : "命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式: a：append only，让文件",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -57,7 +57,7 @@
     "datePublished": "2019-12-18 08:40:47 &#43;0800 &#43;0800",
     "dateModified" : "2019-12-18 08:40:47 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2019/12/chattr/",
-    "wordCount" : "1005",
+    "wordCount" : "991",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 1005 words</span>
+                <span class="post-word-count">, 991 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -164,21 +164,24 @@
 <h2 id="命令详解">命令详解</h2>
 
 <p>chattr 命令用于改变文件属性。
-这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:
-- a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。
-- A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。
-- c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。
-- C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。
-- d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。
-- D：synchronous directory updates，同步更新目录。
-- e：extent format，extent 格式。
-- i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。
-- j：data journaling，数据日志，文件在写入时会先被记录。
-- s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。
-- S：synchronous updates，即时更新文件或目录，功能类似 sync。
-- t：no tail-merging，文件系统支持尾部合并。
-- T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。
-- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中</p>
+这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下8种模式:</p>
+
+<ul>
+<li>a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。</li>
+<li>A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。</li>
+<li>c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。</li>
+<li>C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。</li>
+<li>d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。</li>
+<li>D：synchronous directory updates，同步更新目录。</li>
+<li>e：extent format，extent 格式。</li>
+<li>i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。</li>
+<li>j：data journaling，数据日志，文件在写入时会先被记录。</li>
+<li>s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。</li>
+<li>S：synchronous updates，即时更新文件或目录，功能类似 sync。</li>
+<li>t：no tail-merging，文件系统支持尾部合并。</li>
+<li>T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。</li>
+<li>u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中</li>
+</ul>
 
 <h3 id="命令全拼">命令全拼</h3>
 
@@ -203,24 +206,21 @@
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<ol>
+<ul>
 <li>用 chattr 命令防止系统中某个关键文件被修改:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>chattr +i /root/yeqiongzhou.yaml
 lsattr /root/yeqiongzhou.yaml</p>
 </blockquote>
 
-<p>会显示如下属性:</p>
+<p>会显示如下属性:
+<code>----i-------- /root/yeqiongzhou.yaml</code></p>
 
-<blockquote>
-<p>&mdash;-i&mdash;&mdash;&ndash; /root/yeqiongzhou.yaml</p>
-</blockquote>
-
-<ol>
+<ul>
 <li>让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>chattr +a /var/log/messages</p>

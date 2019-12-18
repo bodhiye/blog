@@ -191,41 +191,41 @@
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<ol>
+<ul>
 <li>把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>cat -n textfile1 &gt; textfile2</p>
 </blockquote>
 
-<ol>
+<ul>
 <li>把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>cat -b textfile1 textfile2 &gt;&gt; textfile3</p>
 </blockquote>
 
-<ol>
+<ul>
 <li>清空 /etc/test.txt 文档内容:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>cat /dev/null &gt; /etc/test.txt</p>
 </blockquote>
 
-<ol>
+<ul>
 <li>cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>cat /dev/fd0 &gt; OUTFILE</p>
 </blockquote>
 
-<ol>
+<ul>
 <li>相反的，如果想把 image file 写到软盘，输入:</li>
-</ol>
+</ul>
 
 <blockquote>
 <p>cat IMG_FILE &gt; /dev/fd0</p>
