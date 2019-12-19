@@ -29,6 +29,12 @@
 
 .icon-wechat:before { content: "\e68b"; }
 
+.icon-wechatnum:before { content: "\f07a"; }
+
+.icon-qq:before { content: "\e60c"; }
+
+.icon-qqnum:before { content: "\e608"; }
+
 .icon-facebook:before { content: "\e601"; }
 
 .icon-twitter:before { content: "\eb2a"; }
