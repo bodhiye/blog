@@ -46,12 +46,12 @@ preserveTaxonomyNames = true
     author = "叶琼州"                          # Author's name
     avatar = "/images/me/avatar.png"           # Author's avatar
     subtitle = "Talk is cheap. Show me the code." # Subtitle
-    cdn_url = "img.yeqiongzhou.top.qiniudns.com"           # Base CDN URL
+    cdn_url = ""   # Base CDN URL
     home_mode = "" # post or other
     enableGitalk = true # gitalk 评论系统
     google_verification = ""
     description = "叶琼州的个人博客" # (Meta) 描述
-    keywords = "blog, hugo, go, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州" # site keywords
+    keywords = "blog, hugo, go, golang, docker, kubernetes, k8s, bodhiye, yeqiongzhou, 叶琼州" # site keywords
     beian = "赣ICP备17015897号"
     baiduAnalytics = "8cb4aac9b76858bf912c10546e0ca16d"
     license= '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
@@ -59,8 +59,10 @@ preserveTaxonomyNames = true
 [params.social]
     GitHub = "bodhiye"
     QQ = "/images/me/wechat.jpeg"
+    QQGroup = "/images/me/wechat.jpeg"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
-    WechatNum = "/images/me/wechat.jpeg"
+    WechatGroup = "/images/me/wechat.jpeg"
+    PublicNumber = "/images/me/wechat.jpeg"
     Twitter = "yeqiongzhou"
     Instagram = "yeqiongzhou"
     Facebook = "yeqiongzhou"

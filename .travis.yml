@@ -21,7 +21,7 @@ install:
 
 script:
 # 运行hugo命令
-  - hugo
+  - HUGO_ENV=production hugo --gc --minify
 
 after_script:
   - cd ./public
