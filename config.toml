@@ -40,7 +40,6 @@ preserveTaxonomyNames = true
     url = "/about/"
     weight = 4
 
-
 [params]
     since = 2019
     author = "叶琼州"                          # Author's name
