@@ -27,15 +27,15 @@
 
 .icon-mail01:before { content: "\e642"; }
 
-.icon-wechat1:before { content: "\e68b"; }
+.icon-wechat:before { content: "\e68b"; }
 
-.icon-wechat:before { content: "\e903"; }
+.icon-wechat1:before { content: "\e618"; }
 
-.icon-wechat-1:before { content: "\e902"; }
+.icon-wechat2:before { content: "\e64c"; }
 
-.icon-QQ-1:before { content: "\e900"; }
+.icon-qq:before { content: "\e602"; }
 
-.icon-QQ-2:before { content: "\e901"; }
+.icon-qq1:before { content: "\e66a"; }
 
 .icon-facebook:before { content: "\e601"; }
 
