@@ -57,15 +57,17 @@ preserveTaxonomyNames = true
 
 [params.social]
     GitHub = "bodhiye"
+    Email = "yeqiongzhou@whu.edu.cn"
     QQ = "/images/me/avatar.png"
-    QQGroup = "/images/me/wechat.jpeg"
+    # QQGroup = "/images/me/wechat.jpeg"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
-    WechatGroup = "/images/me/wechat.jpeg"
+    # WechatGroup = "/images/me/wechat.jpeg"
     PublicNumber = "/images/me/wechat.jpeg"
-    Twitter = "yeqiongzhou"
-    Instagram = "yeqiongzhou"
-    Facebook = "yeqiongzhou"
-    Email   = "yeqiongzhou@whu.edu.cn"
+    Zhihu = "yeqiongzhou"
+    # Weibo = "yeqiongzhou"
+    # Twitter = "yeqiongzhou"
+    # Instagram = "yeqiongzhou"
+    # Facebook = "yeqiongzhou"
     # LinkedIn = "yeqiongzhou"
     # Telegram = "xxoo"
     # Dribbble = "xxoo"
