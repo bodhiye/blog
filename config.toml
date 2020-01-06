@@ -57,7 +57,7 @@ preserveTaxonomyNames = true
 
 [params.social]
     GitHub = "bodhiye"
-    QQ = "/images/me/avatar.jpeg"
+    QQ = "/images/me/wechat.jpeg"
     QQGroup = "/images/me/wechat.jpeg"
     Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
     WechatGroup = "/images/me/wechat.jpeg"
