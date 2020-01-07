@@ -58,9 +58,9 @@ preserveTaxonomyNames = true
 [params.social]
     GitHub = "bodhiye"
     QQ = "/images/me/qq.jpg"
-    # QQGroup = "/images/me/qq.jpg"
+    QQGroup = "/images/me/qq.jpg"
     Wechat = "/images/me/wechat.png"  # Wechat QRcode image
-    # WechatGroup = "/images/me/wechat.jpeg"
+    WechatGroup = "/images/me/wechat.jpeg"
     PublicNumber = "/images/me/official.jpg"
     # Zhihu = "yeqiongzhou"
     # Weibo = "yeqiongzhou"
