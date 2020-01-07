@@ -110,7 +110,7 @@ tags: ["Markdown"]
 
 示例：
 
-![我的头像](/Blog/static/images/me/avatar.png)
+![我的头像](https://raw.githubusercontent.com/bodhiye/BlogImage/master/me/avatar.png)
 
 # Markdown 高阶语法手册
 
@@ -120,7 +120,7 @@ tags: ["Markdown"]
 
 在段落中填写 `[TOC]` 以显示全文内容的目录结构。
 
-![目录](/Blog/static/images/markdown/toc.png)
+![目录](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/toc.png)
 
 ### 2. 标签分类
 
@@ -154,7 +154,7 @@ $ 表示行内公式：
 
 质能守恒方程可以用一个很简洁的方程式来表达。
 
-![](/Blog/static/images/markdown/gs1.png) 
+![](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gs1.png) 
 
 $$ 表示整行公式：
 
@@ -164,7 +164,7 @@ $$ 表示整行公式：
 
 `$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$`
 
-![](/Blog/static/images/markdown/gs2.png)
+![](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gs2.png)
 
 访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
 
@@ -233,7 +233,7 @@ cond(yes)->e
 cond(no)->sub->io
 ```
 
-![流程图示例](/Blog/static/images/markdown/flow.png)
+![流程图示例](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/flow.png)
 
 ### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
@@ -245,7 +245,7 @@ Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
-![序列图示例1](/Blog/static/images/markdown/seq1.png)
+![序列图示例1](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/seq1.png)
 
 #### 示例 2
 
@@ -257,7 +257,7 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-![序列图示例2](/Blog/static/images/markdown/seq2.png)
+![序列图示例2](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/seq2.png)
 
 ### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
@@ -281,7 +281,7 @@ section 发布验收
     验收: 3d
 ```
 
-![甘特图示例](/Blog/static/images/markdown/gantt.png)
+![甘特图示例](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gantt.png)
 
 ### 10. 表格支持
 
