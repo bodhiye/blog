@@ -57,7 +57,6 @@ preserveTaxonomyNames = true
 
 [params.social]
     GitHub = "bodhiye"
-    Email = "yeqiongzhou@whu.edu.cn"
     QQ = "/images/me/qq.jpg"
     # QQGroup = "/images/me/qq.jpg"
     Wechat = "/images/me/wechat.png"  # Wechat QRcode image
@@ -68,10 +67,11 @@ preserveTaxonomyNames = true
     # Twitter = "yeqiongzhou"
     # Instagram = "yeqiongzhou"
     # Facebook = "yeqiongzhou"
-    # LinkedIn = "yeqiongzhou"
     # Telegram = "xxoo"
     # Dribbble = "xxoo"
     # Medium = "xxoo"
+    LinkedIn = "yeqiongzhou"
+    Email = "yeqiongzhou@whu.edu.cn"
 
 [params.gitalk] # Github: https://github.com/gitalk/gitalk
     clientID = "abe0462addf2bb7816db" # Your client ID
