@@ -38,7 +38,7 @@
 &lt;li&gt;S：synchronous updates，即时更新文件或目录，功能类似 sync。&lt;/li&gt;
 &lt;li&gt;t：no tail-merging，文件系统支持尾部合并。&lt;/li&gt;
 &lt;li&gt;T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。&lt;/li&gt;
-&lt;li&gt;u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中&lt;/li&gt;
+&lt;li&gt;u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
