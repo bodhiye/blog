@@ -26,7 +26,7 @@ chattr 命令用于改变文件属性。
 - S：synchronous updates，即时更新文件或目录，功能类似 sync。
 - t：no tail-merging，文件系统支持尾部合并。
 - T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。
-- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中
+- u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中。
 
 ### 命令全拼
 chattr = change attributes
