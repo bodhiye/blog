@@ -6,7 +6,7 @@
     <description>Recent content in Golang实战 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 Feb 2020 22:31:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 11:31:00 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/categories/golang%E5%AE%9E%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Docker部署Golang Http服务</title>
       <link>https://yeqiongzhou.com/2020/02/docker-golang-http/</link>
-      <pubDate>Sat, 15 Feb 2020 22:31:00 +0800</pubDate>
+      <pubDate>Sun, 16 Feb 2020 11:31:00 +0800</pubDate>
       
       <guid>https://yeqiongzhou.com/2020/02/docker-golang-http/</guid>
       <description>前言 最近在工作中有这么一个需求：由于某个服务只在生产环境下部署，测试环境下没有相关服务，但是本地无法访问生产环境的服务，所以我需要mock一</description>
