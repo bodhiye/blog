@@ -6,8 +6,84 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Dec 2019 08:40:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2020 22:31:00 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker部署Golang Http服务</title>
+      <link>https://yeqiongzhou.com/2020/02/docker-golang-http/</link>
+      <pubDate>Sat, 15 Feb 2020 22:31:00 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/02/docker-golang-http/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;最近在工作中有这么一个需求：由于某个服务只在生产环境下部署，测试环境下没有相关服务，但是本地无法访问生产环境的服务，所以我需要mock一个返回特定json的http服务。&lt;/p&gt;
+
+&lt;h4 id=&#34;服务代码&#34;&gt;服务代码&lt;/h4&gt;
+
+&lt;p&gt;相关代码已经上传至GitHub：&lt;code&gt;https://github.com/bodhiye/http-fake&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;main.go代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+	&amp;quot;encoding/json&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+)
+
+type fakeReq struct {
+	URI string `json:&amp;quot;uri&amp;quot;`
+}
+
+// 处理application/json类型的POST请求
+func fake(w http.ResponseWriter, r *http.Request) {
+	// 根据请求body创建一个json解析器实例
+	decoder := json.NewDecoder(r.Body)
+	// 用于存放参数数据
+	var req fakeReq
+	// 解析参数 存入map
+    decoder.Decode(&amp;amp;req)
+    // 打印日志
+	fmt.Printf(&amp;quot;url=%s\n&amp;quot;, req.URI)
+
+    // 返回你需要的json，这里返回了{&amp;quot;code&amp;quot;: 200}
+	fmt.Fprintf(w, `{&amp;quot;code&amp;quot;: 200}`)
+}
+
+func main() {
+	http.HandleFunc(&amp;quot;/fake&amp;quot;, fake)
+	http.ListenAndServe(&amp;quot;:2333&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dockerfile代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM golang:latest
+MAINTAINER &amp;quot;yeqiongzhou@whu.edu.cn&amp;quot;
+WORKDIR /go/src/http-fake
+ADD . /go/src/http-fake
+RUN go build .
+EXPOSE 2333
+ENTRYPOINT [&amp;quot;./http-fake&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;部署流程&#34;&gt;部署流程&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;编译Dockerfile文件：&lt;code&gt;docker build -t bodhiye/http-fake .&lt;/code&gt;编译完成后在终端输入&lt;code&gt;docker images&lt;/code&gt;可以查看刚才编译好的http-fake镜像。&lt;/li&gt;
+&lt;li&gt;你得注册一个Docker Hub账号，注册成功后登录Docker Hub：&lt;code&gt;docker login -u bodhiye&lt;/code&gt;，之后输入密码即可登录成功。&lt;/li&gt;
+&lt;li&gt;把镜像上传到Docker Hub：&lt;code&gt;docker push bodhiye/http-fake&lt;/code&gt;上传成功后可以在Docker Hub网站上看到刚刚上传的http-fake镜像。&lt;/li&gt;
+&lt;li&gt;在你需要部署的服务器或者本地环境下拉取镜像：&lt;code&gt;docker pull bodhiye/http-fake:latest&lt;/code&gt;代码中latest表示拉取最新的镜像版本。&lt;/li&gt;
+&lt;li&gt;启动http-fake服务：&lt;code&gt;docker run --name test-http -d -p 2048:2333 bodhiye/http-fake&lt;/code&gt;将容器服务内部的2333端口映射到本机的2048端口上，并给该容器服务起了一个my-test-http名称。&lt;/li&gt;
+&lt;li&gt;测试http-fake服务：&lt;code&gt;curl -X POST -d &#39;{&amp;quot;uri&amp;quot;:&amp;quot;https://img.yeqiongzhou.com/test.jpg&amp;quot;}&#39; 127.0.0.1:2048/fake&lt;/code&gt;通过curl的方式来访问本地的http-fake服务，可以看到该服务返回了预期的json字段。如果要在本地访问服务器上的该服务，则127.0.0.1替换成服务器的IP地址。&lt;/li&gt;
+&lt;li&gt;查看日志：&lt;code&gt;docker logs test-http&lt;/code&gt;可以打印出服务相关日志&lt;code&gt;url=https://img.yeqiongzhou.com/test.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux chattr命令</title>
@@ -910,77 +986,6 @@ int main() {
     TreeNode *root = NULL;
     root = newTree();
     cout &amp;lt;&amp;lt; isSymmetrical(root);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>二叉树的下一个结点</title>
-      <link>https://yeqiongzhou.com/2019/03/offer57/</link>
-      <pubDate>Wed, 06 Mar 2019 19:22:48 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer57/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-
-using namespace std;
-
-struct TreeLinkNode {
-    int val;
-    struct TreeLinkNode *left;
-    struct TreeLinkNode *right;
-    struct TreeLinkNode *next;
-
-    TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
-
-    TreeLinkNode() {}
-};
-
-TreeLinkNode *newTree() {
-    TreeLinkNode *node = new TreeLinkNode;
-    int x;
-    cin &amp;gt;&amp;gt; x;
-    if (!x)node = NULL;
-    else {
-        node-&amp;gt;val = x;
-        node-&amp;gt;left-&amp;gt;next = node;
-        node-&amp;gt;left = newTree();
-        node-&amp;gt;right-&amp;gt;next = node;
-        node-&amp;gt;right = newTree();
-    }
-    return node;
-}
-
-TreeLinkNode *GetNext(TreeLinkNode *pNode) {
-    if (!pNode)return NULL;
-    if (pNode-&amp;gt;right) {
-        pNode = pNode-&amp;gt;right;
-        while (pNode-&amp;gt;left)pNode = pNode-&amp;gt;left;
-        return pNode;
-    }
-    while (pNode-&amp;gt;next) {
-        if (pNode-&amp;gt;next-&amp;gt;left == pNode)
-            return pNode-&amp;gt;next;
-        pNode = pNode-&amp;gt;next;
-    }
-    return NULL;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    TreeLinkNode *node = newTree();
-    TreeLinkNode *pNode;
-    TreeLinkNode *res = GetNext(pNode);
-    cout &amp;lt;&amp;lt; res-&amp;gt;val;
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://yeqiongzhou.com/2020/02/docker-golang-http/</loc>
+      
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://yeqiongzhou.com/2019/12/chattr/</loc>
       
       <lastmod>2019-12-18T08:40:47+08:00</lastmod>
@@ -787,6 +797,42 @@
     </url>
   
     <url>
+      <loc>https://yeqiongzhou.com/tags/docker/</loc>
+      
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://yeqiongzhou.com/tags/golang/</loc>
+      
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://yeqiongzhou.com/categories/golang%E5%AE%9E%E6%88%98/</loc>
+      
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://yeqiongzhou.com/tags/kubernetes/</loc>
       
       <lastmod>2019-04-19T09:31:00+08:00</lastmod>
@@ -837,7 +883,7 @@
     <url>
       <loc>https://yeqiongzhou.com/posts/</loc>
       
-      <lastmod>2019-12-18T08:40:47+08:00</lastmod>
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
       
       
       
@@ -885,7 +931,7 @@
     <url>
       <loc>https://yeqiongzhou.com/</loc>
       
-      <lastmod>2019-12-18T08:40:47+08:00</lastmod>
+      <lastmod>2020-02-15T22:31:00+08:00</lastmod>
       
       
       

@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2019/12/cat/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/02/docker-golang-http/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2019/12/chattr/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2019/12/chattr/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/02/docker-golang-http/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux chattr命令 | 叶琼州的代码小窝
+           Docker部署Golang Http服务 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux chattr命令 | 叶琼州的代码小窝">
+  <meta name="title" content="Docker部署Golang Http服务 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux chattr命令",
-    "headline" : "Linux chattr命令",
-    "description" : "命令详解 chattr 命令用于改变文件属性。 这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下几种模式: a：append only，让文件",
+    "name" : "Docker部署Golang Http服务",
+    "headline" : "Docker部署Golang Http服务",
+    "description" : "前言 最近在工作中有这么一个需求：由于某个服务只在生产环境下部署，测试环境下没有相关服务，但是本地无法访问生产环境的服务，所以我需要mock一",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
     "publisher": "叶琼州",
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-12-18 08:40:47 &#43;0800 &#43;0800",
-    "dateModified" : "2019-12-18 08:40:47 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2019/12/chattr/",
-    "wordCount" : "992",
-    "keywords" : [ "Linux", "叶琼州的代码小窝"]
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-15 22:31:00 &#43;0800 &#43;0800",
+    "dateModified" : "2020-02-15 22:31:00 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/02/docker-golang-http/",
+    "wordCount" : "920",
+    "keywords" : [ "Docker","Golang", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux chattr命令</h1>
+        <h1 class="post-title" itemprop="name headline">Docker部署Golang Http服务</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=12996-19-188 itemprop="datePublished">December 18, 2019</time>
+                on <time datetime=2996-20-1510 itemprop="datePublished">February 15, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
+                        <a href="https://yeqiongzhou.com/categories/golang%E5%AE%9E%E6%88%98/"> Golang实战 </a>
                         
                 </span>
-                <span class="post-word-count">, 992 words</span>
+                <span class="post-word-count">, 920 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -159,77 +159,71 @@
 
           
 
-<hr />
+<h3 id="前言">前言</h3>
 
-<h2 id="命令详解">命令详解</h2>
+<p>最近在工作中有这么一个需求：由于某个服务只在生产环境下部署，测试环境下没有相关服务，但是本地无法访问生产环境的服务，所以我需要mock一个返回特定json的http服务。</p>
 
-<p>chattr 命令用于改变文件属性。
-这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下几种模式:</p>
+<h4 id="服务代码">服务代码</h4>
 
-<ul>
-<li>a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。</li>
-<li>A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。</li>
-<li>c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。</li>
-<li>C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。</li>
-<li>d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。</li>
-<li>D：synchronous directory updates，同步更新目录。</li>
-<li>e：extent format，extent 格式。</li>
-<li>i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。</li>
-<li>j：data journaling，数据日志，文件在写入时会先被记录。</li>
-<li>s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。</li>
-<li>S：synchronous updates，即时更新文件或目录，功能类似 sync。</li>
-<li>t：no tail-merging，文件系统支持尾部合并。</li>
-<li>T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。</li>
-<li>u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中。</li>
-</ul>
+<p>相关代码已经上传至GitHub：<code>https://github.com/bodhiye/http-fake</code></p>
 
-<h3 id="命令全拼">命令全拼</h3>
+<p>main.go代码</p>
 
-<p>chattr = change attributes</p>
+<pre><code class="language-go">package main
 
-<h3 id="语法格式">语法格式</h3>
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+	&quot;net/http&quot;
+)
 
-<blockquote>
-<p>chattr [-RVf] [-+=aAcCdDeijsStTu] [-v version] files&hellip;</p>
-</blockquote>
+type fakeReq struct {
+	URI string `json:&quot;uri&quot;`
+}
 
-<h3 id="参数说明">参数说明</h3>
+// 处理application/json类型的POST请求
+func fake(w http.ResponseWriter, r *http.Request) {
+	// 根据请求body创建一个json解析器实例
+	decoder := json.NewDecoder(r.Body)
+	// 用于存放参数数据
+	var req fakeReq
+	// 解析参数 存入map
+    decoder.Decode(&amp;req)
+    // 打印日志
+	fmt.Printf(&quot;url=%s\n&quot;, req.URI)
 
-<ul>
-<li>-R 递归处理，将指定目录下的所有文件及子目录一并处理。</li>
-<li>-v&lt;版本编号&gt; 设置文件或目录版本。</li>
-<li>-V 显示指令执行过程。</li>
-<li>+&lt;属性&gt; 开启文件或目录的该项属性。</li>
-<li>-&lt;属性&gt; 关闭文件或目录的该项属性。</li>
-<li>=&lt;属性&gt; 指定文件或目录的该项属性。</li>
-</ul>
+    // 返回你需要的json，这里返回了{&quot;code&quot;: 200}
+	fmt.Fprintf(w, `{&quot;code&quot;: 200}`)
+}
 
-<h3 id="举个栗子">举个栗子</h3>
+func main() {
+	http.HandleFunc(&quot;/fake&quot;, fake)
+	http.ListenAndServe(&quot;:2333&quot;, nil)
+}
+</code></pre>
 
-<ul>
-<li>用 chattr 命令防止系统中某个关键文件被修改:</li>
-</ul>
+<p>Dockerfile代码</p>
 
-<blockquote>
-<p>chattr +i /root/yeqiongzhou.yaml
-lsattr /root/yeqiongzhou.yaml</p>
-</blockquote>
+<pre><code class="language-dockerfile">FROM golang:latest
+MAINTAINER &quot;yeqiongzhou@whu.edu.cn&quot;
+WORKDIR /go/src/http-fake
+ADD . /go/src/http-fake
+RUN go build .
+EXPOSE 2333
+ENTRYPOINT [&quot;./http-fake&quot;]
+</code></pre>
 
-<p>会显示如下属性: <code>----i-------- /root/yeqiongzhou.yaml</code></p>
+<h4 id="部署流程">部署流程</h4>
 
-<ul>
-<li>让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:</li>
-</ul>
-
-<blockquote>
-<p>chattr +a /var/log/messages</p>
-</blockquote>
-
-<h4 id="注">注</h4>
-
-<ul>
-<li>各参数选项中常用到的是a和i。a选项强制只可添加不可删除，多用于日志系统的安全设定。而i是更为严格的安全设定，只有superuser (root) 或具有 CAP_LINUX_IMMUTABLE 处理能力（标识）的进程能够施加该选项。</li>
-</ul>
+<ol>
+<li>编译Dockerfile文件：<code>docker build -t bodhiye/http-fake .</code>编译完成后在终端输入<code>docker images</code>可以查看刚才编译好的http-fake镜像。</li>
+<li>你得注册一个Docker Hub账号，注册成功后登录Docker Hub：<code>docker login -u bodhiye</code>，之后输入密码即可登录成功。</li>
+<li>把镜像上传到Docker Hub：<code>docker push bodhiye/http-fake</code>上传成功后可以在Docker Hub网站上看到刚刚上传的http-fake镜像。</li>
+<li>在你需要部署的服务器或者本地环境下拉取镜像：<code>docker pull bodhiye/http-fake:latest</code>代码中latest表示拉取最新的镜像版本。</li>
+<li>启动http-fake服务：<code>docker run --name test-http -d -p 2048:2333 bodhiye/http-fake</code>将容器服务内部的2333端口映射到本机的2048端口上，并给该容器服务起了一个my-test-http名称。</li>
+<li>测试http-fake服务：<code>curl -X POST -d '{&quot;uri&quot;:&quot;https://img.yeqiongzhou.com/test.jpg&quot;}' 127.0.0.1:2048/fake</code>通过curl的方式来访问本地的http-fake服务，可以看到该服务返回了预期的json字段。如果要在本地访问服务器上的该服务，则127.0.0.1替换成服务器的IP地址。</li>
+<li>查看日志：<code>docker logs test-http</code>可以打印出服务相关日志<code>url=https://img.yeqiongzhou.com/test.jpg</code></li>
+</ol>
 
     </div>
 
@@ -244,7 +238,7 @@ lsattr /root/yeqiongzhou.yaml</p>
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2019/12/chattr/>https://yeqiongzhou.com/2019/12/chattr/</span>
+                    <a href=https://yeqiongzhou.com/2020/02/docker-golang-http/>https://yeqiongzhou.com/2020/02/docker-golang-http/</span>
             </p>
             
              
@@ -260,8 +254,11 @@ lsattr /root/yeqiongzhou.yaml</p>
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
-                    #Linux</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/docker/">
+                    #Docker</a></span>
+            
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/golang/">
+                    #Golang</a></span>
             
             </section>
         
@@ -273,10 +270,8 @@ lsattr /root/yeqiongzhou.yaml</p>
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2019/12/cat/" class="prev" rel="prev" title="Linux cat命令"><i class="font_family icon-left"></i>&nbsp;Linux cat命令</a>
+        <a href="https://yeqiongzhou.com/2019/12/chattr/" class="prev" rel="prev" title="Linux chattr命令"><i class="font_family icon-left"></i>&nbsp;Linux chattr命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/02/docker-golang-http/" class="next" rel="next" title="Docker部署Golang Http服务">Docker部署Golang Http服务&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
