@@ -29,6 +29,7 @@ chattr 命令用于改变文件属性。
 - u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中。
 
 ### 命令全拼
+
 chattr = change attributes
 
 ### 语法格式
@@ -48,7 +49,7 @@ chattr = change attributes
 
 - 用 chattr 命令防止系统中某个关键文件被修改:
 
-> chattr +i /root/yeqiongzhou.yaml
+> chattr +i /root/yeqiongzhou.yaml  
 > lsattr /root/yeqiongzhou.yaml
 
 会显示如下属性: `----i-------- /root/yeqiongzhou.yaml`
