@@ -57,7 +57,7 @@
     "datePublished": "2020-05-26 23:35:47 &#43;0800 &#43;0800",
     "dateModified" : "2020-05-26 23:35:47 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2020/05/chmod/",
-    "wordCount" : "642",
+    "wordCount" : "647",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 642 words</span>
+                <span class="post-word-count">, 647 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -202,46 +202,36 @@
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<ol>
-<li>将文件 yeqiongzhou.txt 设为所有人皆可读取:</li>
-</ol>
+<p>1 将文件 yeqiongzhou.txt 设为所有人皆可读取:</p>
 
 <blockquote>
 <p>chmod ugo+r yeqiongzhou.txt
 chmod a+r yeqiongzhou.txt</p>
 </blockquote>
 
-<ol>
-<li>将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:</li>
-</ol>
+<p>2 将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:</p>
 
 <blockquote>
 <p>chmod ug+w,o-w yeqiongzhou.txt xiaofang.txt</p>
 </blockquote>
 
-<ol>
-<li>将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:</li>
-</ol>
+<p>3 将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:</p>
 
 <blockquote>
 <p>chmod u+x yeqiongzhou.go</p>
 </blockquote>
 
-<ol>
-<li>将目前目录下的所有文件与子目录皆设为任何人可读取:</li>
-</ol>
+<p>4 将目前目录下的所有文件与子目录皆设为任何人可读取:</p>
 
 <blockquote>
 <p>chmod -R a+r *</p>
 </blockquote>
 
-<ol>
-<li>此外chmod也可以用数字来表示权限如:</li>
-</ol>
+<p>5 此外chmod也可以用数字来表示权限如:</p>
 
 <blockquote>
 <p>chmod 777 file
-语法为: <code>chmod abc file</code>
+语法为: chmod abc file
 其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。</p>
 </blockquote>
 
