@@ -6,8 +6,118 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 25 May 2020 23:21:21 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 23:35:47 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux chmod命令</title>
+      <link>https://yeqiongzhou.com/2020/05/chmod/</link>
+      <pubDate>Tue, 26 May 2020 23:35:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/05/chmod/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
+
+&lt;p&gt;Linux/Unix 的文件调用权限分为三级: 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。
+&lt;strong&gt;使用权限&lt;/strong&gt;: 所有使用者&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;chmod = change mode&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod [-cfvR] [&amp;ndash;help] [&amp;ndash;version] mode file&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;p&gt;mode: 权限设定字串，格式如下 :
+&amp;gt; [ugoa&amp;hellip;][[+-=][rwxX]&amp;hellip;][,&amp;hellip;]&lt;/p&gt;
+
+&lt;p&gt;其中:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;u表示该文件的拥有者，g表示与该文件的拥有者属于同一个群体(group)者，o表示其他以外的人，a表示这三者皆是。&lt;/li&gt;
+&lt;li&gt;+表示增加权限、-表示取消权限、=表示唯一设定权限。&lt;/li&gt;
+&lt;li&gt;r表示可读取，w表示可写入，x表示可执行，X表示只有当该文件是个子目录或者该文件已经被设定过为可执行。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其他参数说明：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-c: 若该文件权限确实已经更改，才显示其更改动作&lt;/li&gt;
+&lt;li&gt;-f: 若该文件权限无法被更改也不要显示错误讯息&lt;/li&gt;
+&lt;li&gt;-v: 显示权限变更的详细资料&lt;/li&gt;
+&lt;li&gt;-R: 对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)&lt;/li&gt;
+&lt;li&gt;&amp;ndash;help: 显示辅助说明&lt;/li&gt;
+&lt;li&gt;&amp;ndash;version: 显示版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将文件 yeqiongzhou.txt 设为所有人皆可读取:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod ugo+r yeqiongzhou.txt
+chmod a+r yeqiongzhou.txt&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod ug+w,o-w yeqiongzhou.txt xiaofang.txt&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod u+x yeqiongzhou.go&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将目前目录下的所有文件与子目录皆设为任何人可读取:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod -R a+r *&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;此外chmod也可以用数字来表示权限如:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chmod 777 file
+语法为: &lt;code&gt;chmod abc file&lt;/code&gt;
+其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+&lt;strong&gt;r=4，w=2，x=1&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;若要rwx属性则4+2+1=7；&lt;/li&gt;
+&lt;li&gt;若要rw-属性则4+2=6；&lt;/li&gt;
+&lt;li&gt;若要r-x属性则4+1=5。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;chmod a=rwx file&lt;/code&gt; 和 &lt;code&gt;chmod 777 file&lt;/code&gt; 效果相同
+&lt;code&gt;chmod ug=rwx,o=x file&lt;/code&gt; 和 &lt;code&gt;chmod 771 file&lt;/code&gt; 效果相同&lt;/p&gt;
+
+&lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
+
+&lt;p&gt;若用chmod 4755 filename可使此程序具有root的权限&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>无重复字符的最长子串</title>
@@ -895,89 +1005,6 @@ int main() {
     cout&amp;lt;&amp;lt;Serialize(root)&amp;lt;&amp;lt;endl;
     TreeNode * res = Deserialize(Serialize(root));
     preOrder(res);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>把二叉树打印成多行</title>
-      <link>https://yeqiongzhou.com/2019/03/offer60/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:00 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer60/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;queue&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-
-using namespace std;
-
-struct TreeNode {
-    int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
-
-    TreeNode(int x) :
-            val(x), left(NULL), right(NULL) {
-    }
-
-    TreeNode() {}
-};
-
-TreeNode *newTree() {
-    TreeNode *node = new TreeNode;
-    int x;
-    cin &amp;gt;&amp;gt; x;
-    if (!x)node = NULL;
-    else {
-        node-&amp;gt;val = x;
-        node-&amp;gt;left = newTree();
-        node-&amp;gt;right = newTree();
-    }
-    return node;
-}
-
-vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; Print(TreeNode *pRoot) {
-    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
-    if (!pRoot)return res;
-    queue&amp;lt;TreeNode *&amp;gt; q;
-    q.push(pRoot);
-    while (!q.empty()) {
-        vector&amp;lt;int&amp;gt; v;
-        int size=q.size();
-        for (int i = 0; i &amp;lt; size; ++i) {
-            TreeNode *tmp = q.front();
-            q.pop();
-            v.push_back(tmp-&amp;gt;val);
-            if (tmp-&amp;gt;left)q.push(tmp-&amp;gt;left);
-            if (tmp-&amp;gt;right)q.push(tmp-&amp;gt;right);
-        }
-        res.push_back(v);
-    }
-    return res;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    TreeNode *root = NULL;
-    root = newTree();
-    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; res;
-    res = Print(root);
-    for (auto it = res.begin(); it != res.end(); ++it) {
-        for (auto i = (*it).begin(); i != (*it).end(); ++i)
-            cout &amp;lt;&amp;lt; *i &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
-        cout &amp;lt;&amp;lt; endl;
-    }
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

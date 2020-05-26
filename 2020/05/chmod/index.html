@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/05/chgrp/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/05/chmod/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/05/chmod/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           无重复字符的最长子串 | 叶琼州的代码小窝
+           Linux chmod命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="无重复字符的最长子串 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux chmod命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "无重复字符的最长子串",
-    "headline" : "无重复字符的最长子串",
-    "description" : "题目描述 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。 示例 1: 输入: &quot;abcabcbb&quot; 输出: 3 解释: 因为无重复字符的最长子串是 &quot;abc",
+    "name" : "Linux chmod命令",
+    "headline" : "Linux chmod命令",
+    "description" : "命令详解 Linux/Unix 的文件调用权限分为三级: 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。 使用权限: 所有使用者 命令全拼 chmod = change mode 语法格",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,11 +54,11 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-05-25 23:21:21 &#43;0800 &#43;0800",
-    "dateModified" : "2020-05-25 23:21:21 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/",
-    "wordCount" : "317",
-    "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
+    "datePublished": "2020-05-26 23:35:47 &#43;0800 &#43;0800",
+    "dateModified" : "2020-05-26 23:35:47 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/05/chmod/",
+    "wordCount" : "642",
+    "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">无重复字符的最长子串</h1>
+        <h1 class="post-title" itemprop="name headline">Linux chmod命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=5996-20-2511 itemprop="datePublished">May 25, 2020</time>
+                on <time datetime=5996-20-2611 itemprop="datePublished">May 26, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/"> 每日算法 </a>
+                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 317 words</span>
+                <span class="post-word-count">, 642 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,64 +161,103 @@
 
 <hr />
 
-<h2 id="题目描述">题目描述</h2>
+<h2 id="命令详解">命令详解</h2>
 
-<p>给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。</p>
+<p>Linux/Unix 的文件调用权限分为三级: 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。
+<strong>使用权限</strong>: 所有使用者</p>
 
-<h3 id="示例-1">示例 1:</h3>
+<h3 id="命令全拼">命令全拼</h3>
 
-<pre><code class="language-html">输入: &quot;abcabcbb&quot;
-输出: 3
-解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。
-</code></pre>
+<p>chmod = change mode</p>
 
-<h3 id="示例-2">示例 2:</h3>
+<h3 id="语法格式">语法格式</h3>
 
-<pre><code class="language-html">输入: &quot;bbbbb&quot;
-输出: 1
-解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。
-</code></pre>
+<blockquote>
+<p>chmod [-cfvR] [&ndash;help] [&ndash;version] mode file&hellip;</p>
+</blockquote>
 
-<h3 id="示例-3">示例 3:</h3>
+<h3 id="参数说明">参数说明</h3>
 
-<pre><code class="language-html">输入: &quot;pwwkew&quot;
-输出: 3
-解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。
-     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。
-</code></pre>
+<p>mode: 权限设定字串，格式如下 :
+&gt; [ugoa&hellip;][[+-=][rwxX]&hellip;][,&hellip;]</p>
 
-<h2 id="题解">题解</h2>
+<p>其中:</p>
 
-<pre><code class="language-golang">package main
+<ul>
+<li>u表示该文件的拥有者，g表示与该文件的拥有者属于同一个群体(group)者，o表示其他以外的人，a表示这三者皆是。</li>
+<li>+表示增加权限、-表示取消权限、=表示唯一设定权限。</li>
+<li>r表示可读取，w表示可写入，x表示可执行，X表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
+</ul>
 
-import (
-	&quot;fmt&quot;
-)
+<p>其他参数说明：</p>
 
-func main() {
-	str := []string{&quot;abcabcbb&quot;, &quot;bbbbb&quot;, &quot;pwwkew&quot;}
-	for _, s := range str {
-		len := lengthOfLongestSubstring(s)
-		fmt.Println(len)
-	}
-}
+<ul>
+<li>-c: 若该文件权限确实已经更改，才显示其更改动作</li>
+<li>-f: 若该文件权限无法被更改也不要显示错误讯息</li>
+<li>-v: 显示权限变更的详细资料</li>
+<li>-R: 对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)</li>
+<li>&ndash;help: 显示辅助说明</li>
+<li>&ndash;version: 显示版本</li>
+</ul>
 
-func lengthOfLongestSubstring(s string) int {
-	lastOccurred := make(map[byte]int)
-	start := 0
-	maxLength := 0
-	for i, ch := range []byte(s) {
-		if lastI, ok := lastOccurred[ch]; ok &amp;&amp; lastI &gt;= start {
-			start = lastI + 1
-		}
-		if i-start+1 &gt; maxLength {
-			maxLength = i - start + 1
-		}
-		lastOccurred[ch] = i
-	}
-	return maxLength
-}
-</code></pre>
+<h3 id="举个栗子">举个栗子</h3>
+
+<ol>
+<li>将文件 yeqiongzhou.txt 设为所有人皆可读取:</li>
+</ol>
+
+<blockquote>
+<p>chmod ugo+r yeqiongzhou.txt
+chmod a+r yeqiongzhou.txt</p>
+</blockquote>
+
+<ol>
+<li>将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:</li>
+</ol>
+
+<blockquote>
+<p>chmod ug+w,o-w yeqiongzhou.txt xiaofang.txt</p>
+</blockquote>
+
+<ol>
+<li>将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:</li>
+</ol>
+
+<blockquote>
+<p>chmod u+x yeqiongzhou.go</p>
+</blockquote>
+
+<ol>
+<li>将目前目录下的所有文件与子目录皆设为任何人可读取:</li>
+</ol>
+
+<blockquote>
+<p>chmod -R a+r *</p>
+</blockquote>
+
+<ol>
+<li>此外chmod也可以用数字来表示权限如:</li>
+</ol>
+
+<blockquote>
+<p>chmod 777 file
+语法为: <code>chmod abc file</code>
+其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+<strong>r=4，w=2，x=1</strong></p>
+</blockquote>
+
+<ul>
+<li>若要rwx属性则4+2+1=7；</li>
+<li>若要rw-属性则4+2=6；</li>
+<li>若要r-x属性则4+1=5。</li>
+</ul>
+
+<p><code>chmod a=rwx file</code> 和 <code>chmod 777 file</code> 效果相同
+<code>chmod ug=rwx,o=x file</code> 和 <code>chmod 771 file</code> 效果相同</p>
+
+<h4 id="注">注</h4>
+
+<p>若用chmod 4755 filename可使此程序具有root的权限</p>
 
     </div>
 
@@ -233,7 +272,7 @@ func lengthOfLongestSubstring(s string) int {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/>https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/</span>
+                    <a href=https://yeqiongzhou.com/2020/05/chmod/>https://yeqiongzhou.com/2020/05/chmod/</span>
             </p>
             
              
@@ -249,8 +288,8 @@ func lengthOfLongestSubstring(s string) int {
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/leetcode/">
-                    #Leetcode</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
+                    #Linux</a></span>
             
             </section>
         
@@ -262,10 +301,8 @@ func lengthOfLongestSubstring(s string) int {
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/05/chgrp/" class="prev" rel="prev" title="Linux chgrp命令"><i class="font_family icon-left"></i>&nbsp;Linux chgrp命令</a>
+        <a href="https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/" class="prev" rel="prev" title="无重复字符的最长子串"><i class="font_family icon-left"></i>&nbsp;无重复字符的最长子串</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/05/chmod/" class="next" rel="next" title="Linux chmod命令">Linux chmod命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 

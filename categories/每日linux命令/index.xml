@@ -6,10 +6,19 @@
     <description>Recent content in 每日Linux命令 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 25 May 2020 22:25:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 23:35:47 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux chmod命令</title>
+      <link>https://yeqiongzhou.com/2020/05/chmod/</link>
+      <pubDate>Tue, 26 May 2020 23:35:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/05/chmod/</guid>
+      <description>命令详解 Linux/Unix 的文件调用权限分为三级: 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。 使用权限: 所有使用者 命令全拼 chmod = change mode 语法格</description>
+    </item>
     
     <item>
       <title>Linux chgrp命令</title>
