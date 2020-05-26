@@ -100,9 +100,10 @@ chmod a+r yeqiongzhou.txt&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;chmod 777 file
 语法为: &lt;code&gt;chmod abc file&lt;/code&gt;
-其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
-&lt;strong&gt;r=4，w=2，x=1&lt;/strong&gt;&lt;/p&gt;
+其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;r=4，w=2，x=1&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;若要rwx属性则4+2+1=7；&lt;/li&gt;
