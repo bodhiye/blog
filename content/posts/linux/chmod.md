@@ -43,27 +43,27 @@ mode: 权限设定字串，格式如下 :
 
 ### 举个栗子
 
-1. 将文件 yeqiongzhou.txt 设为所有人皆可读取:
+1 将文件 yeqiongzhou.txt 设为所有人皆可读取:
 
 > chmod ugo+r yeqiongzhou.txt
 > chmod a+r yeqiongzhou.txt
 
-2. 将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:
+2 将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:
 
 > chmod ug+w,o-w yeqiongzhou.txt xiaofang.txt
 
-3. 将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:
+3 将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:
 
 > chmod u+x yeqiongzhou.go
 
-4. 将目前目录下的所有文件与子目录皆设为任何人可读取:
+4 将目前目录下的所有文件与子目录皆设为任何人可读取:
 
 > chmod -R a+r *
 
-5. 此外chmod也可以用数字来表示权限如:
+5 此外chmod也可以用数字来表示权限如:
 
 > chmod 777 file
-语法为: `chmod abc file`
+语法为: chmod abc file
 其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
 
 r=4，w=2，x=1
