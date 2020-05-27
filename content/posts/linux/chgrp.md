@@ -19,7 +19,7 @@ chgrp = change group
 
 ### 语法格式
 
-> chgrp [-cfhRv][--help][--version][所属群组][文件或目录...]  
+> chgrp [-cfhRv][--help][--version][所属群组][文件或目录...]
 > chgrp [-cfhRv][--help][--reference=<参考文件或目录>][--version][文件或目录...]
 
 ### 参数说明
@@ -30,7 +30,7 @@ chgrp = change group
 - -R或--recursive 递归处理，将指定目录下的所有文件及子目录一并处理。
 - -v或--verbose 显示指令执行过程。
 - --help 在线帮助。
-- --reference=<参考文件或目录>　把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。
+- --reference=<参考文件或目录>，把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。
 - --version 显示版本信息。
 
 ### 举个栗子
