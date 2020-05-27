@@ -155,7 +155,7 @@ import (
 )
 
 func main() {
-	str := []string{&amp;quot;abcabcbb&amp;quot;, &amp;quot;bbbbb&amp;quot;, &amp;quot;pwwkew&amp;quot;, &amp;quot;yeqiongzhou&amp;quot;}
+	str := []string{&amp;quot;abcabcbb&amp;quot;, &amp;quot;bbbbb&amp;quot;, &amp;quot;pwwkew&amp;quot;}
 	for _, s := range str {
 		len := lengthOfLongestSubstring(s)
 		fmt.Println(len)

@@ -290,13 +290,14 @@ int main()
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
+    var title = location.pathname.substr(0, 50); 
     const gitalk = new Gitalk({
         clientID: 'abe0462addf2bb7816db',
         clientSecret: '302211bbfc34be3c75ec4cfa8751002e796356fa',
         repo: 'bodhiye.github.io',
         owner: 'bodhiye',
         admin: ['bodhiye'],
-        id: location.pathname, 
+        id: title, 
         distractionFreeMode: false 
     });
     (function () {

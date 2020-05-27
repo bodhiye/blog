@@ -57,7 +57,7 @@
     "datePublished": "2020-05-25 23:21:21 &#43;0800 &#43;0800",
     "dateModified" : "2020-05-25 23:21:21 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2020/05/longest-substring-without-repeating-characters/",
-    "wordCount" : "318",
+    "wordCount" : "317",
     "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/"> 每日算法 </a>
                         
                 </span>
-                <span class="post-word-count">, 318 words</span>
+                <span class="post-word-count">, 317 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -196,7 +196,7 @@ import (
 )
 
 func main() {
-	str := []string{&quot;abcabcbb&quot;, &quot;bbbbb&quot;, &quot;pwwkew&quot;, &quot;yeqiongzhou&quot;}
+	str := []string{&quot;abcabcbb&quot;, &quot;bbbbb&quot;, &quot;pwwkew&quot;}
 	for _, s := range str {
 		len := lengthOfLongestSubstring(s)
 		fmt.Println(len)
@@ -278,13 +278,14 @@ func lengthOfLongestSubstring(s string) int {
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
+    var title = location.pathname.substr(0, 50); 
     const gitalk = new Gitalk({
         clientID: 'abe0462addf2bb7816db',
         clientSecret: '302211bbfc34be3c75ec4cfa8751002e796356fa',
         repo: 'bodhiye.github.io',
         owner: 'bodhiye',
         admin: ['bodhiye'],
-        id: location.pathname, 
+        id: title, 
         distractionFreeMode: false 
     });
     (function () {
