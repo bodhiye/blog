@@ -203,7 +203,7 @@ func lengthOfLongestSubstring(s string) int {
 &lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;version][所属群组][文件或目录&amp;hellip;]&lt;br /&gt;
+&lt;p&gt;chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;version][所属群组][文件或目录&amp;hellip;]
 chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;reference=&amp;lt;参考文件或目录&amp;gt;][&amp;ndash;version][文件或目录&amp;hellip;]&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -216,7 +216,7 @@ chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;reference=&amp;lt;参考文件或目�
 &lt;li&gt;-R或&amp;ndash;recursive 递归处理，将指定目录下的所有文件及子目录一并处理。&lt;/li&gt;
 &lt;li&gt;-v或&amp;ndash;verbose 显示指令执行过程。&lt;/li&gt;
 &lt;li&gt;&amp;ndash;help 在线帮助。&lt;/li&gt;
-&lt;li&gt;&amp;ndash;reference=&amp;lt;参考文件或目录&amp;gt;　把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;reference=&amp;lt;参考文件或目录&amp;gt;，把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。&lt;/li&gt;
 &lt;li&gt;&amp;ndash;version 显示版本信息。&lt;/li&gt;
 &lt;/ul&gt;
 
