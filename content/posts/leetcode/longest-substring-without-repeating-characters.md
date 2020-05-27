@@ -47,7 +47,7 @@ import (
 )
 
 func main() {
-	str := []string{"abcabcbb", "bbbbb", "pwwkew"}
+	str := []string{"abcabcbb", "bbbbb", "pwwkew", "yeqiongzhou"}
 	for _, s := range str {
 		len := lengthOfLongestSubstring(s)
 		fmt.Println(len)
