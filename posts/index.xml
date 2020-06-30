@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>mongo导出数据</title>
+      <link>https://yeqiongzhou.com/2020/06/mongoexport/</link>
+      <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/06/mongoexport/</guid>
+      <description>前言 最近工作上遇到一个需求，需要给算法人员导出某天某个用户所有的数据，这里就要用到mongoexport命令了。 导出数据 mongoexport -h your-mongo-hostname &amp;ndash;port 27017 -d database-name -c collection-name -q</description>
+    </item>
+    
+    <item>
       <title>视频拼接</title>
       <link>https://yeqiongzhou.com/2020/06/concatenate-video/</link>
       <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>

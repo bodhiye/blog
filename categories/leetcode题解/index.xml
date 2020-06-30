@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>每日算法 on 叶琼州的代码小窝</title>
-    <link>https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/</link>
-    <description>Recent content in 每日算法 on 叶琼州的代码小窝</description>
+    <title>Leetcode题解 on 叶琼州的代码小窝</title>
+    <link>https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/</link>
+    <description>Recent content in Leetcode题解 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 25 May 2020 23:21:21 +0800</lastBuildDate>
     
-	<atom:link href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/05/chmod/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/06/mongoexport/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/06/concatenate-video/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/06/concatenate-video/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/06/mongoexport/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           视频拼接 | 叶琼州的代码小窝
+           mongo导出数据 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="视频拼接 | 叶琼州的代码小窝">
+  <meta name="title" content="mongo导出数据 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "视频拼接",
-    "headline" : "视频拼接",
-    "description" : "前言 最近在工作中有这么一个需求：用一个超大视频来测试一个视频服务接口，看结果响应是否超时。但是本地只有一个2GB大小的电影文件，如何快速生成",
+    "name" : "mongo导出数据",
+    "headline" : "mongo导出数据",
+    "description" : "前言 最近工作上遇到一个需求，需要给算法人员导出某天某个用户所有的数据，这里就要用到mongoexport命令了。 导出数据 mongoexport -h your-mongo-hostname &ndash;port 27017 -d database-name -c collection-name -q",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -56,9 +56,9 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-06-30 23:16:47 &#43;0800 &#43;0800",
     "dateModified" : "2020-06-30 23:16:47 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/06/concatenate-video/",
-    "wordCount" : "604",
-    "keywords" : [ "FFmpeg", "叶琼州的代码小窝"]
+    "url" : "https://yeqiongzhou.com/2020/06/mongoexport/",
+    "wordCount" : "212",
+    "keywords" : [ "MongoDB", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,7 +126,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">视频拼接</h1>
+        <h1 class="post-title" itemprop="name headline">mongo导出数据</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
@@ -135,10 +135,10 @@
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"> 技能学习 </a>
+                        <a href="https://yeqiongzhou.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%A6%E8%A7%A3/"> 数据库详解 </a>
                         
                 </span>
-                <span class="post-word-count">, 604 words</span>
+                <span class="post-word-count">, 212 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,42 +161,17 @@
 
 <h3 id="前言">前言</h3>
 
-<p>最近在工作中有这么一个需求：用一个超大视频来测试一个视频服务接口，看结果响应是否超时。但是本地只有一个2GB大小的电影文件，如何快速生成一个10GB大小的视频文件。</p>
+<p>最近工作上遇到一个需求，需要给算法人员导出某天某个用户所有的数据，这里就要用到mongoexport命令了。</p>
 
-<h3 id="视频拼接">视频拼接</h3>
-
-<p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源程序。本文就介绍<a href="https://trac.ffmpeg.org/wiki/Concatenate" rel="nofollow noreferrer" target="_blank">FFmpeg官方</a>推荐的三种视频拼接方法.</p>
-
-<ol>
-<li>Concat demuxer: 基于demuxer实现的拼接，需要视频音频的属性完全一样，这种方式不会对视频音频流解码再编码，因此速度很快，推荐大家使用这种方式。</li>
-</ol>
-
-<pre><code class="language-bash">ffmpeg -f concat -safe 0 -i filelist.txt -c copy yeqiongzhou.mp4
-filelist.txt: file 'test1.mp4'
-              file 'test1.mp4'
-	      file 'test2.mp4'
-	      file 'test2.mp4'
-通过上面的命令我们就可以通过本地的test1.mp4和test2.mp4这两个小视频文件生成一个大视频文件。
-Tips: 如果是相对路径，则不需要上面的-safe 0。
-</code></pre>
-
-<ol>
-<li>Concat protocol: 该方式是基于文件来操作的，某些文件（例如MPEG-2 transport streams），这类似于在linux系统上使用cat命令或在Windows上进行复制操作。</li>
-</ol>
+<h3 id="导出数据">导出数据</h3>
 
 <blockquote>
-<p>ffmpeg -i &ldquo;concat:test1.mp4|test2.mp4|test3.mp4&rdquo; -c copy yeqiongzhou.mp4</p>
+<p>mongoexport -h your-mongo-hostname &ndash;port 27017 -d database-name -c collection-name -q &lsquo;{&ldquo;uid&rdquo;:123456, &ldquo;created_at&rdquo;:{$gt:Date(1593446400000)}}&rsquo; -o /home/yeqiongzhou/test.json</p>
 </blockquote>
 
-<ol>
-<li>Concat filter: 这种方式实际上是把所有的视频音频全部解码，统一为原始的音视频流，然后塞进编码器重新编码。这种方式需要视频之间的分辨率和帧率必须一致，优点是兼容性好，能够应付绝大部分场景。</li>
-</ol>
+<p>该命令可以通过查询条件导出指定用户(123456)在指定时间(2020-06-30)后的所有记录</p>
 
-<pre><code class="language-bash">ffmpeg -i test1.mp4 -i test2.webm -i test3.mov \
--filter_complex &quot;[0✌️0][0🅰️0][1✌️0][1🅰️0][2✌️0][2🅰️0]concat=n=3:v=1:a=1[outv][outa]&quot; \
--map &quot;[outv]&quot; -map &quot;[outa]&quot; yeqiongzhou.mkv
-通过上面的命令我们合并了三个具有视频流和音频流的文件。
-</code></pre>
+<p>Tips: -q选项可以指定查询条件，但是时间不支持ISODate格式，所以必须将时间转换为毫秒，可以通过<code>date -d 2020-06-30 +%s</code>将ISODate格式的时间转换为时间戳，然后补上三个0转换为毫秒。</p>
 
     </div>
 
@@ -211,7 +186,7 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/06/concatenate-video/>https://yeqiongzhou.com/2020/06/concatenate-video/</span>
+                    <a href=https://yeqiongzhou.com/2020/06/mongoexport/>https://yeqiongzhou.com/2020/06/mongoexport/</span>
             </p>
             
              
@@ -227,8 +202,8 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/ffmpeg/">
-                    #FFmpeg</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/mongodb/">
+                    #MongoDB</a></span>
             
             </section>
         
@@ -240,10 +215,8 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/05/chmod/" class="prev" rel="prev" title="Linux chmod命令"><i class="font_family icon-left"></i>&nbsp;Linux chmod命令</a>
+        <a href="https://yeqiongzhou.com/2020/06/concatenate-video/" class="prev" rel="prev" title="视频拼接"><i class="font_family icon-left"></i>&nbsp;视频拼接</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/06/mongoexport/" class="next" rel="next" title="mongo导出数据">mongo导出数据&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 

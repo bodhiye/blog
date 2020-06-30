@@ -10,6 +10,30 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>mongo导出数据</title>
+      <link>https://yeqiongzhou.com/2020/06/mongoexport/</link>
+      <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/06/mongoexport/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;最近工作上遇到一个需求，需要给算法人员导出某天某个用户所有的数据，这里就要用到mongoexport命令了。&lt;/p&gt;
+
+&lt;h3 id=&#34;导出数据&#34;&gt;导出数据&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mongoexport -h your-mongo-hostname &amp;ndash;port 27017 -d database-name -c collection-name -q &amp;lsquo;{&amp;ldquo;uid&amp;rdquo;:123456, &amp;ldquo;created_at&amp;rdquo;:{$gt:Date(1593446400000)}}&amp;rsquo; -o /home/yeqiongzhou/test.json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;该命令可以通过查询条件导出指定用户(123456)在指定时间(2020-06-30)后的所有记录&lt;/p&gt;
+
+&lt;p&gt;Tips: -q选项可以指定查询条件，但是时间不支持ISODate格式，所以必须将时间转换为毫秒，可以通过&lt;code&gt;date -d 2020-06-30 +%s&lt;/code&gt;将ISODate格式的时间转换为时间戳，然后补上三个0转换为毫秒。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>视频拼接</title>
       <link>https://yeqiongzhou.com/2020/06/concatenate-video/</link>
       <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
@@ -29,11 +53,11 @@
 &lt;li&gt;Concat demuxer: 基于demuxer实现的拼接，需要视频音频的属性完全一样，这种方式不会对视频音频流解码再编码，因此速度很快，推荐大家使用这种方式。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;ffmpeg -f concat -safe 0 -i filelist.txt -c copy yeqiongzhou.mp4
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ffmpeg -f concat -safe 0 -i filelist.txt -c copy yeqiongzhou.mp4
 filelist.txt: file &#39;test1.mp4&#39;
               file &#39;test1.mp4&#39;
-			  file &#39;test2.mp4&#39;
-			  file &#39;test2.mp4&#39;
+	      file &#39;test2.mp4&#39;
+	      file &#39;test2.mp4&#39;
 通过上面的命令我们就可以通过本地的test1.mp4和test2.mp4这两个小视频文件生成一个大视频文件。
 Tips: 如果是相对路径，则不需要上面的-safe 0。
 &lt;/code&gt;&lt;/pre&gt;
@@ -50,7 +74,7 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
 &lt;li&gt;Concat filter: 这种方式实际上是把所有的视频音频全部解码，统一为原始的音视频流，然后塞进编码器重新编码。这种方式需要视频之间的分辨率和帧率必须一致，优点是兼容性好，能够应付绝大部分场景。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;ffmpeg -i test1.mp4 -i test2.webm -i test3.mov \
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ffmpeg -i test1.mp4 -i test2.webm -i test3.mov \
 -filter_complex &amp;quot;[0✌️0][0🅰️0][1✌️0][1🅰️0][2✌️0][2🅰️0]concat=n=3:v=1:a=1[outv][outa]&amp;quot; \
 -map &amp;quot;[outv]&amp;quot; -map &amp;quot;[outa]&amp;quot; yeqiongzhou.mkv
 通过上面的命令我们合并了三个具有视频流和音频流的文件。
@@ -876,76 +900,6 @@ int main() {
         Insert(tmp);
     }
     cout &amp;lt;&amp;lt; GetMedian();
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>二叉搜索树的第k个结点</title>
-      <link>https://yeqiongzhou.com/2019/03/offer62/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:07 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer62/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-
-using namespace std;
-
-struct TreeNode {
-    int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
-
-    TreeNode(int x) :
-            val(x), left(NULL), right(NULL) {
-    }
-
-    TreeNode() {}
-};
-
-TreeNode *newTree() {
-    TreeNode *node = new TreeNode;
-    int x;
-    cin &amp;gt;&amp;gt; x;
-    if (!x)node = NULL;
-    else {
-        node-&amp;gt;val = x;
-        node-&amp;gt;left = newTree();
-        node-&amp;gt;right = newTree();
-    }
-    return node;
-}
-
-int count = 0;
-
-TreeNode *KthNode(TreeNode *pRoot, int k) {
-    if (pRoot) {
-        TreeNode *node = KthNode(pRoot-&amp;gt;left, k);
-        if (node) return node;
-        if (++count == k)return pRoot;
-        node = KthNode(pRoot-&amp;gt;right, k);
-        if (node)return node;
-    }
-    return NULL;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    int k;
-    cin &amp;gt;&amp;gt; k;
-    TreeNode *root = NULL;
-    root = newTree();
-    cout &amp;lt;&amp;lt; KthNode(root, k)-&amp;gt;val;
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
