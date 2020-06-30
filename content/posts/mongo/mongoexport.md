@@ -1,6 +1,6 @@
 ---
 title: "mongo导出数据"
-date: 2020-06-30T23:16:47+08:00
+date: 2020-06-30T23:55:47+08:00
 draft: false
 categories: ["数据库详解"]
 tags: ["MongoDB"]
