@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FFmpeg on 叶琼州的代码小窝</title>
+    <link>https://yeqiongzhou.com/tags/ffmpeg/</link>
+    <description>Recent content in FFmpeg on 叶琼州的代码小窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 30 Jun 2020 23:16:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://yeqiongzhou.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>视频拼接</title>
+      <link>https://yeqiongzhou.com/2020/06/concatenate-video/</link>
+      <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/06/concatenate-video/</guid>
+      <description>前言 最近在工作中有这么一个需求：用一个超大视频来测试一个视频服务接口，看结果响应是否超时。但是本地只有一个2GB大小的电影文件，如何快速生成</description>
+    </item>
+    
+  </channel>
+</rss>

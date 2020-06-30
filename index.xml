@@ -6,8 +6,57 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 May 2020 23:35:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 23:16:47 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>视频拼接</title>
+      <link>https://yeqiongzhou.com/2020/06/concatenate-video/</link>
+      <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/06/concatenate-video/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;最近在工作中有这么一个需求：用一个超大视频来测试一个视频服务接口，看结果响应是否超时。但是本地只有一个2GB大小的电影文件，如何快速生成一个10GB大小的视频文件。&lt;/p&gt;
+
+&lt;h3 id=&#34;视频拼接&#34;&gt;视频拼接&lt;/h3&gt;
+
+&lt;p&gt;FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源程序。本文就介绍&lt;a href=&#34;https://trac.ffmpeg.org/wiki/Concatenate&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;FFmpeg官方&lt;/a&gt;推荐的三种视频拼接方法.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Concat demuxer: 基于demuxer实现的拼接，需要视频音频的属性完全一样，这种方式不会对视频音频流解码再编码，因此速度很快，推荐大家使用这种方式。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;ffmpeg -f concat -safe 0 -i filelist.txt -c copy yeqiongzhou.mp4
+filelist.txt: file &#39;test1.mp4&#39;
+              file &#39;test1.mp4&#39;
+			  file &#39;test2.mp4&#39;
+			  file &#39;test2.mp4&#39;
+通过上面的命令我们就可以通过本地的test1.mp4和test2.mp4这两个小视频文件生成一个大视频文件。
+Tips: 如果是相对路径，则不需要上面的-safe 0。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Concat protocol: 该方式是基于文件来操作的，某些文件（例如MPEG-2 transport streams），这类似于在linux系统上使用cat命令或在Windows上进行复制操作。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ffmpeg -i &amp;ldquo;concat:test1.mp4|test2.mp4|test3.mp4&amp;rdquo; -c copy yeqiongzhou.mp4&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Concat filter: 这种方式实际上是把所有的视频音频全部解码，统一为原始的音视频流，然后塞进编码器重新编码。这种方式需要视频之间的分辨率和帧率必须一致，优点是兼容性好，能够应付绝大部分场景。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;ffmpeg -i test1.mp4 -i test2.webm -i test3.mov \
+-filter_complex &amp;quot;[0✌️0][0🅰️0][1✌️0][1🅰️0][2✌️0][2🅰️0]concat=n=3:v=1:a=1[outv][outa]&amp;quot; \
+-map &amp;quot;[outv]&amp;quot; -map &amp;quot;[outa]&amp;quot; yeqiongzhou.mkv
+通过上面的命令我们合并了三个具有视频流和音频流的文件。
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux chmod命令</title>
@@ -897,105 +946,6 @@ int main() {
     TreeNode *root = NULL;
     root = newTree();
     cout &amp;lt;&amp;lt; KthNode(root, k)-&amp;gt;val;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>序列化二叉树</title>
-      <link>https://yeqiongzhou.com/2019/03/offer61/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:03 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer61/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;请实现两个函数，分别用来序列化和反序列化二叉树&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-
-using namespace std;
-
-struct TreeNode {
-    int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
-
-    TreeNode(int x) :
-            val(x), left(NULL), right(NULL) {
-    }
-
-    TreeNode() {}
-};
-
-TreeNode *newTree() {
-    TreeNode *node = new TreeNode;
-    int x;
-    cin &amp;gt;&amp;gt; x;
-    if (!x)node = NULL;
-    else {
-        node-&amp;gt;val = x;
-        node-&amp;gt;left = newTree();
-        node-&amp;gt;right = newTree();
-    }
-    return node;
-}
-
-void preOrder(TreeNode *pRoot)
-{
-    if (pRoot)
-    {
-        cout &amp;lt;&amp;lt; pRoot-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
-        preOrder(pRoot-&amp;gt;left);
-        preOrder(pRoot-&amp;gt;right);
-    }
-}
-
-char* Serialize(TreeNode *root) {
-    if(!root)return &amp;quot;#&amp;quot;;
-    string s=to_string(root-&amp;gt;val);
-    s.push_back(&#39;,&#39;);
-    char *left = Serialize(root-&amp;gt;left);
-    char *right = Serialize(root-&amp;gt;right);
-    char *res = new char[strlen(left) + strlen(right) + s.size()];
-    strcpy(res, s.c_str());
-    strcat(res, left);
-    strcat(res, right);
-    return res;
-}
-
-TreeNode* decode(char *&amp;amp;str) {
-    if(*str==&#39;#&#39;){
-        str++;
-        return NULL;
-    }
-    int num = 0;
-    while(*str != &#39;,&#39;)
-        num = num*10 + (*(str++)-&#39;0&#39;);
-    str++;
-    TreeNode *root = new TreeNode(num);
-    root-&amp;gt;left = decode(str);
-    root-&amp;gt;right = decode(str);
-    return root;
-}
-
-TreeNode* Deserialize(char *str) {
-    return decode(str);
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    TreeNode *root = NULL;
-    root = newTree();
-    cout&amp;lt;&amp;lt;Serialize(root)&amp;lt;&amp;lt;endl;
-    TreeNode * res = Deserialize(Serialize(root));
-    preOrder(res);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

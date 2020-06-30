@@ -6,10 +6,19 @@
     <description>Recent content in 技能学习 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 Mar 2019 19:36:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 23:16:47 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>视频拼接</title>
+      <link>https://yeqiongzhou.com/2020/06/concatenate-video/</link>
+      <pubDate>Tue, 30 Jun 2020 23:16:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/06/concatenate-video/</guid>
+      <description>前言 最近在工作中有这么一个需求：用一个超大视频来测试一个视频服务接口，看结果响应是否超时。但是本地只有一个2GB大小的电影文件，如何快速生成</description>
+    </item>
     
     <item>
       <title>Markdown语法手册</title>
