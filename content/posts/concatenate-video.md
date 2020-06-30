@@ -16,12 +16,12 @@ FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其�
 
 1. Concat demuxer: 基于demuxer实现的拼接，需要视频音频的属性完全一样，这种方式不会对视频音频流解码再编码，因此速度很快，推荐大家使用这种方式。
 
-```html
+```bash
 ffmpeg -f concat -safe 0 -i filelist.txt -c copy yeqiongzhou.mp4
 filelist.txt: file 'test1.mp4'
               file 'test1.mp4'
-			  file 'test2.mp4'
-			  file 'test2.mp4'
+	      file 'test2.mp4'
+	      file 'test2.mp4'
 通过上面的命令我们就可以通过本地的test1.mp4和test2.mp4这两个小视频文件生成一个大视频文件。
 Tips: 如果是相对路径，则不需要上面的-safe 0。
 ```
@@ -32,7 +32,7 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
 
 3. Concat filter: 这种方式实际上是把所有的视频音频全部解码，统一为原始的音视频流，然后塞进编码器重新编码。这种方式需要视频之间的分辨率和帧率必须一致，优点是兼容性好，能够应付绝大部分场景。
 
-```html
+```bash
 ffmpeg -i test1.mp4 -i test2.webm -i test3.mov \
 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]concat=n=3:v=1:a=1[outv][outa]" \
 -map "[outv]" -map "[outa]" yeqiongzhou.mkv

@@ -2,7 +2,7 @@
 title: "无重复字符的最长子串"
 date: 2020-05-25T23:21:21+08:00
 draft: false
-categories: ["每日算法"]
+categories: ["Leetcode题解"]
 tags: ["Leetcode"]
 ---
 
