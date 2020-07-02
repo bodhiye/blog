@@ -57,7 +57,7 @@
     "datePublished": "2020-06-30 23:55:47 &#43;0800 &#43;0800",
     "dateModified" : "2020-06-30 23:55:47 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2020/06/mongoexport/",
-    "wordCount" : "212",
+    "wordCount" : "213",
     "keywords" : [ "MongoDB", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%A6%E8%A7%A3/"> 数据库详解 </a>
                         
                 </span>
-                <span class="post-word-count">, 212 words</span>
+                <span class="post-word-count">, 213 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -169,8 +169,11 @@
 <p>mongoexport -h your-mongo-hostname &ndash;port 27017 -d database-name -c collection-name -q &lsquo;{&ldquo;uid&rdquo;:123456, &ldquo;created_at&rdquo;:{$gt:Date(1593446400000)}}&rsquo; -o /home/yeqiongzhou/test.json</p>
 </blockquote>
 
-<p>该命令可以通过查询条件导出指定用户(123456)在指定时间(2020-06-30)后的所有记录
-Tips: -q选项可以指定查询条件，但是时间不支持ISODate格式，所以必须将时间转换为毫秒，可以通过<code>date -d 2020-06-30 +%s</code>将ISODate格式的时间转换为时间戳，然后补上三个0转换为毫秒。</p>
+<p>该命令可以通过查询条件导出指定用户(123456)在指定时间(2020-06-30)后的所有记录。</p>
+
+<h4 id="tips">Tips</h4>
+
+<p>-q选项可以指定查询条件，但是时间不支持ISODate格式，所以必须将时间转换为毫秒，可以通过<code>date -d 2020-06-30 +%s</code>将ISODate格式的时间转换为时间戳，然后补上三个0转换为毫秒。</p>
 
     </div>
 
