@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 30 Jun 2020 23:55:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 23:33:47 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dockerfile多阶段构建</title>
+      <link>https://yeqiongzhou.com/2020/07/docker-multistage-build/</link>
+      <pubDate>Sun, 12 Jul 2020 23:33:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/07/docker-multistage-build/</guid>
+      <description>前言 我们在构建docker镜像时，希望最后得到的镜像越小越好，但是在构建时，总是会用到各种各样复杂的环境，大部分都是临时环境，只是为了生成对</description>
+    </item>
     
     <item>
       <title>mongo导出数据</title>
