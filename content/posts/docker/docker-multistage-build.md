@@ -15,7 +15,7 @@ tags: ["Docker"]
 关于镜像构建，最重要的事情之一就是让镜像容量尽可能的变得更小，Dockerfile中的每条指令都会添加一层镜像，我们需要在进入下一层时清除之后用不到的文件。
 在多阶段构建中，我们可以通过`FROM`指令在Dockerfile中生成多个阶段。每个FROM指令可以使用不同的base镜像，并且每个指令都开始构建的新阶段，您可以把前一个阶段生成的文件COPY到另一个阶段，从而在最终的镜像中只留下需要的所有内容，下面通过一个例子来实践一下多阶段构建的方法。
 
-```html
+```dockerfile
 FROM golang:1.10.2
 WORKDIR /go/src/github.com/yeqiongzhou/docker-multistage-build/
 RUN go get -d -v golang.org/x/net/html
@@ -35,7 +35,7 @@ CMD ["./app"]
 
 默认情况下，未命名的阶段，您可以通过其整数编号来引用它们，第一FROM条指令的起始编号为0。但是，您还可以通过`AS <NAME>`在FROM指令中添加来命名阶段。下面的示例通过给阶段命名并在COPY指令中使用名称来引用前一个阶段的文件。这意味着，即使以后对Dockerfile中的指令进行了重新排序，它们也能正常的构建运行。
 
-```html
+```dockerfile
 FROM golang:1.10.2 AS yeqiongzhou
 WORKDIR /go/src/github.com/yeqiongzhou/docker-multistage-build/
 COPY app.go .
@@ -52,12 +52,14 @@ CMD ["./app"]
 ### 构建指定的阶段
 
 构建映像时，不必构建整个Dockerfile，即所有的阶段。您可以指定目标构建阶段。以上面的Dockerfile为例，我们可以通过以下命令只构建第一个阶段。
+
 > docker build --target yeqiongzhou -t yeqiongzhou/docker-multistage-build:latest .
 这个方法可以在调试测试阶段发挥很大的作用。
 
 ### 拷贝外部镜像的文件
 
 使用多阶段构建时，您不仅可以之前在Dockerfile中创建的阶段进行拷贝。您可以使用`COPY --from`指令从外部的镜像进行拷贝操作。
+
 > COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
 
 #### 注
