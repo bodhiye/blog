@@ -26,7 +26,7 @@
 &lt;p&gt;关于镜像构建，最重要的事情之一就是让镜像容量尽可能的变得更小，Dockerfile中的每条指令都会添加一层镜像，我们需要在进入下一层时清除之后用不到的文件。
 在多阶段构建中，我们可以通过&lt;code&gt;FROM&lt;/code&gt;指令在Dockerfile中生成多个阶段。每个FROM指令可以使用不同的base镜像，并且每个指令都开始构建的新阶段，您可以把前一个阶段生成的文件COPY到另一个阶段，从而在最终的镜像中只留下需要的所有内容，下面通过一个例子来实践一下多阶段构建的方法。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;FROM golang:1.10.2
+&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM golang:1.10.2
 WORKDIR /go/src/github.com/yeqiongzhou/docker-multistage-build/
 RUN go get -d -v golang.org/x/net/html
 COPY app.go .
@@ -45,7 +45,7 @@ CMD [&amp;quot;./app&amp;quot;]
 
 &lt;p&gt;默认情况下，未命名的阶段，您可以通过其整数编号来引用它们，第一FROM条指令的起始编号为0。但是，您还可以通过&lt;code&gt;AS &amp;lt;NAME&amp;gt;&lt;/code&gt;在FROM指令中添加来命名阶段。下面的示例通过给阶段命名并在COPY指令中使用名称来引用前一个阶段的文件。这意味着，即使以后对Dockerfile中的指令进行了重新排序，它们也能正常的构建运行。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;FROM golang:1.10.2 AS yeqiongzhou
+&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM golang:1.10.2 AS yeqiongzhou
 WORKDIR /go/src/github.com/yeqiongzhou/docker-multistage-build/
 COPY app.go .
 RUN go get -d -v golang.org/x/net/html &amp;amp;&amp;amp; \
@@ -60,14 +60,20 @@ CMD [&amp;quot;./app&amp;quot;]
 
 &lt;h3 id=&#34;构建指定的阶段&#34;&gt;构建指定的阶段&lt;/h3&gt;
 
-&lt;p&gt;构建映像时，不必构建整个Dockerfile，即所有的阶段。您可以指定目标构建阶段。以上面的Dockerfile为例，我们可以通过以下命令只构建第一个阶段。
-&amp;gt; docker build &amp;ndash;target yeqiongzhou -t yeqiongzhou/docker-multistage-build:latest .
+&lt;p&gt;构建映像时，不必构建整个Dockerfile，即所有的阶段。您可以指定目标构建阶段。以上面的Dockerfile为例，我们可以通过以下命令只构建第一个阶段。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;docker build &amp;ndash;target yeqiongzhou -t yeqiongzhou/docker-multistage-build:latest .
 这个方法可以在调试测试阶段发挥很大的作用。&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h3 id=&#34;拷贝外部镜像的文件&#34;&gt;拷贝外部镜像的文件&lt;/h3&gt;
 
-&lt;p&gt;使用多阶段构建时，您不仅可以之前在Dockerfile中创建的阶段进行拷贝。您可以使用&lt;code&gt;COPY --from&lt;/code&gt;指令从外部的镜像进行拷贝操作。
-&amp;gt; COPY &amp;ndash;from=nginx:latest /etc/nginx/nginx.conf /nginx.conf&lt;/p&gt;
+&lt;p&gt;使用多阶段构建时，您不仅可以之前在Dockerfile中创建的阶段进行拷贝。您可以使用&lt;code&gt;COPY --from&lt;/code&gt;指令从外部的镜像进行拷贝操作。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;COPY &amp;ndash;from=nginx:latest /etc/nginx/nginx.conf /nginx.conf&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
 
