@@ -6,8 +6,43 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Jul 2020 23:33:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 07:45:41 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ab压力测试</title>
+      <link>https://yeqiongzhou.com/2020/07/apache-bench/</link>
+      <pubDate>Wed, 22 Jul 2020 07:45:41 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/07/apache-bench/</guid>
+      <description>
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;最近在工作中有这么一个需求：测试原子服务的 QPS 有多少，一种方式是用 Jenkins 跑压力测试，另一种就是今天要用的 apache bench (ab) 测试工具，ab 是用于对 Apache 超文本传输​​协议（HTTP）服务器进行基准测试的工具。&lt;/p&gt;
+
+&lt;h3 id=&#34;压力测试&#34;&gt;压力测试&lt;/h3&gt;
+
+&lt;p&gt;这里就不展开讲 ab 的语法，直接讲 ab 进行压力测试的命令，详细语法大家可以参考&lt;a href=&#34;https://httpd.apache.org/docs/2.4/programs/ab.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ab官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在当前目录下新建 &lt;em&gt;post.json&lt;/em&gt; 文件存放 json 格式的请求
+&lt;strong&gt;post.json&lt;/strong&gt;: {&amp;ldquo;data&amp;rdquo;:{&amp;ldquo;uri&amp;rdquo;:&amp;ldquo;&lt;a href=&#34;http://cdn.yeqiongzhou.top/pulp.jpg&amp;quot;}&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://cdn.yeqiongzhou.top/pulp.jpg&amp;quot;}&lt;/a&gt;}&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ab -n 60000 -c 60 -p post.json -T application/json -H &amp;ldquo;Authorization:xxx uid=xxx&amp;rdquo; &amp;ldquo;&lt;a href=&#34;http://12.34.56.78:1024/v1/ab&amp;quot;&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://12.34.56.78:1024/v1/ab&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面来详细介绍这条命令，让大家能够快速上手使用。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-n 6000 代表测试 6000 次&lt;/li&gt;
+&lt;li&gt;-c 60 代表模拟了 60 个客户端来请求相应的接口，也就是请求的并发数&lt;/li&gt;
+&lt;li&gt;-p 包含了需要 post 的文件地址，和 -T 一起使用&lt;/li&gt;
+&lt;li&gt;-H 请求头信息&lt;/li&gt;
+&lt;li&gt;最后跟上要请求的接口地址&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Dockerfile多阶段构建</title>
@@ -872,59 +907,6 @@ int main() {
     char s[101], str[101];
     cin &amp;gt;&amp;gt; rows &amp;gt;&amp;gt; cols &amp;gt;&amp;gt; s &amp;gt;&amp;gt; str;
     cout &amp;lt;&amp;lt; hasPath(s, rows, cols, str);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>滑动窗口的最大值</title>
-      <link>https://yeqiongzhou.com/2019/03/offer64/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:18 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer64/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。例如，如果输入数组{2,3,4,2,6,2,5,1}及滑动窗口的大小3，那么一共存在6个滑动窗口，他们的最大值分别为{4,4,6,6,6,5}； 针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个： {[2,3,4],2,6,2,5,1}， {2,[3,4,2],6,2,5,1}， {2,3,[4,2,6],2,5,1}， {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}， {2,3,4,2,6,[2,5,1]}。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;deque&amp;gt;
-
-using namespace std;
-
-vector&amp;lt;int&amp;gt; maxInWindows(const vector&amp;lt;int&amp;gt; &amp;amp;num, unsigned int size) {
-    vector&amp;lt;int&amp;gt; v;
-    deque&amp;lt;int&amp;gt; d;
-    for (unsigned int i = 0; i &amp;lt; num.size(); ++i) {
-        while (d.size() &amp;amp;&amp;amp; num[d.back()] &amp;lt;= num[i])
-            d.pop_back();
-        if (d.size() &amp;amp;&amp;amp; i - d.front() + 1 &amp;gt; size)
-            d.pop_front();
-        d.push_back(i);
-        if (size &amp;amp;&amp;amp; i + 1 &amp;gt;= size)
-            v.push_back(num[d.front()]);
-    }
-    return v;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    vector&amp;lt;int&amp;gt; v, res;
-    int n, k, tmp;
-    cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; k;
-    for (int i = 0; i &amp;lt; n; i++) {
-        cin &amp;gt;&amp;gt; tmp;
-        v.push_back(tmp);
-    }
-    res = maxInWindows(v, k);
-    for (auto it = res.begin(); it != res.end(); ++it)
-        cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

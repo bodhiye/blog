@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://yeqiongzhou.com/2020/07/apache-bench/</loc>
+      
+      <lastmod>2020-07-22T07:45:41+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://yeqiongzhou.com/2020/07/docker-multistage-build/</loc>
       
       <lastmod>2020-07-12T23:33:47+08:00</lastmod>
@@ -1003,7 +1013,7 @@
     <url>
       <loc>https://yeqiongzhou.com/posts/</loc>
       
-      <lastmod>2020-07-12T23:33:47+08:00</lastmod>
+      <lastmod>2020-07-22T07:45:41+08:00</lastmod>
       
       
       
@@ -1016,6 +1026,18 @@
       <loc>https://yeqiongzhou.com/tags/</loc>
       
       <lastmod>2019-03-23T16:53:00+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://yeqiongzhou.com/tags/apache-bench/</loc>
+      
+      <lastmod>2020-07-22T07:45:41+08:00</lastmod>
       
       
       
@@ -1051,7 +1073,7 @@
     <url>
       <loc>https://yeqiongzhou.com/</loc>
       
-      <lastmod>2020-07-12T23:33:47+08:00</lastmod>
+      <lastmod>2020-07-22T07:45:41+08:00</lastmod>
       
       
       
@@ -1063,7 +1085,7 @@
     <url>
       <loc>https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/</loc>
       
-      <lastmod>2020-06-30T23:16:47+08:00</lastmod>
+      <lastmod>2020-07-22T07:45:41+08:00</lastmod>
       
       
       
