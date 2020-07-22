@@ -57,7 +57,7 @@
     "datePublished": "2020-07-22 07:45:41 &#43;0800 &#43;0800",
     "dateModified" : "2020-07-22 07:45:41 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2020/07/apache-bench/",
-    "wordCount" : "273",
+    "wordCount" : "372",
     "keywords" : [ "apache-bench", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"> 技能学习 </a>
                         
                 </span>
-                <span class="post-word-count">, 273 words</span>
+                <span class="post-word-count">, 372 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -162,6 +162,10 @@
 <h3 id="前言">前言</h3>
 
 <p>最近在工作中有这么一个需求：测试原子服务的 QPS 有多少，一种方式是用 Jenkins 跑压力测试，另一种就是今天要用的 apache bench (ab) 测试工具，ab 是用于对 Apache 超文本传输​​协议（HTTP）服务器进行基准测试的工具。</p>
+
+<h3 id="原理">原理</h3>
+
+<p>ab 命令会创建多个并发访问线程，模拟多个访问者同时对某一 URL 地址进行访问。它的测试目标是基于 URL 的，因此，它既可以用来测试 apache 的负载压力，也可以测试 nginx、tomcat、IIS 等其它 web 服务器的压力。</p>
 
 <h3 id="压力测试">压力测试</h3>
 
