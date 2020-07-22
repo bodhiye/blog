@@ -10,6 +10,10 @@ tags: ["apache-bench"]
 
 最近在工作中有这么一个需求：测试原子服务的 QPS 有多少，一种方式是用 Jenkins 跑压力测试，另一种就是今天要用的 apache bench (ab) 测试工具，ab 是用于对 Apache 超文本传输​​协议（HTTP）服务器进行基准测试的工具。
 
+### 原理
+
+ab 命令会创建多个并发访问线程，模拟多个访问者同时对某一 URL 地址进行访问。它的测试目标是基于 URL 的，因此，它既可以用来测试 apache 的负载压力，也可以测试 nginx、tomcat、IIS 等其它 web 服务器的压力。
+
 ### 压力测试
 
 这里就不展开讲 ab 的语法，直接讲 ab 进行压力测试的命令，详细语法大家可以参考[ab官方文档](https://httpd.apache.org/docs/2.4/programs/ab.html)
