@@ -6,8 +6,84 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 22 Jul 2020 07:45:41 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 10:21:21 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>不同路径II</title>
+      <link>https://yeqiongzhou.com/2020/07/unique-paths-ii/</link>
+      <pubDate>Sun, 26 Jul 2020 10:21:21 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/07/unique-paths-ii/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;题目描述&#34;&gt;题目描述&lt;/h2&gt;
+
+&lt;p&gt;一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/unique-paths-ii.jpg&#34; alt=&#34;不同路径II&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;网格中的障碍物和空位置分别用 1 和 0 来表示。
+&lt;strong&gt;说明：&lt;/strong&gt;m 和 n 的值均不超过 100。&lt;/p&gt;
+
+&lt;h3 id=&#34;示例-1&#34;&gt;示例 1:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;输入:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+输出: 2
+解释:
+3x3 网格的正中间有一个障碍物。
+从左上角到右下角一共有 2 条不同的路径：
+
+1. 向右 -&amp;gt; 向右 -&amp;gt; 向下 -&amp;gt; 向下
+2. 向下 -&amp;gt; 向下 -&amp;gt; 向右 -&amp;gt; 向右
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;题解&#34;&gt;题解&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+)
+
+func main() {
+	grid := [][]int{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}
+	len := uniquePathsWithObstacles(grid)
+	fmt.Println(len)
+}
+
+func uniquePathsWithObstacles(obstacleGrid [][]int) int {
+	n, m := len(obstacleGrid), len(obstacleGrid[0])
+	f := make([]int, m)
+	if obstacleGrid[0][0] == 0 {
+		f[0] = 1
+	}
+	for i := 0; i &amp;lt; n; i++ {
+		for j := 0; j &amp;lt; m; j++ {
+			if obstacleGrid[i][j] == 1 {
+				f[j] = 0
+				continue
+			}
+			if j-1 &amp;gt;= 0 &amp;amp;&amp;amp; obstacleGrid[i][j-1] == 0 {
+				f[j] += f[j-1]
+			}
+		}
+	}
+	return f[len(f)-1]
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>ab压力测试</title>
@@ -726,7 +802,7 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;p&gt;武汉大学的樱花已经有着很长的历史，更有着复杂的历史背景，关于武大樱花多数人并不很清楚，只是停留在日本军人栽种的那种认识状态上。因此美丽的樱花虽然渲染春色，给了人们美的享受，但也带了一些“烦恼”。有人认为樱花是国耻的象征，有人说不要把樱花复杂化；有人说武大因樱花而美丽；也有人说樱花因武大才迷人。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/sakura/yinghua4.jpg&#34; alt=&#34;樱花城堡&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua4.jpg&#34; alt=&#34;樱花城堡&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -739,7 +815,7 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 &lt;li&gt;1973年，武大农场又从上海引进了一批山樱花，同时再次更新了已老化的樱树。由于樱花树的生命周期很短，一般只有二三十年，1939年由日本人种下的第一批日本樱花，50年代更新时已基本死绝。因此，我们今天在武大所看到的日本樱花，已远非当年日军所留下的花种了。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/sakura/yinghua1.jpg&#34; alt=&#34;武大樱花&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua1.jpg&#34; alt=&#34;武大樱花&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -747,7 +823,7 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;p&gt;武大樱花就像我国的著名景区一样，早已负盛名。无论海内外只要到了三四月份，就前赴后继的奔赴武大观赏樱花，无论是感受学子间传播的才气氛围，还是樱花满地所带来的美伦意境，都足以让人觉得不虚此行。但这只是臆想罢了，作为校园而并非正规景点，他是有规定的，每天只限定在某一时间段开放，而且限名额为两万人，去那里可能看不到花，却一定看得到人头涌动，热闹无比的人群。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/sakura/yinghua2.jpg&#34; alt=&#34;樱花大道人潮&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua2.jpg&#34; alt=&#34;樱花大道人潮&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -755,7 +831,7 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;p&gt;到武大去看樱花，看那些摇曳的花枝，看那些如花的笑靥，看那些流光溢彩，也看那些深情的凝望。我看到那些年轻的充满深情的眸子，也看到写着岁月沧桑的双眼，此刻春风扑在他们的脸上，我仿佛看到圣洁的诺言美丽如初，我仿佛看到深情中的淡定、从容正在绽放。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/sakura/yinghua3.jpg&#34; alt=&#34;武大行政楼&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua3.jpg&#34; alt=&#34;武大行政楼&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -769,30 +845,37 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;p&gt;前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过山茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下山茶花吧。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/camellia/shancha1.jpg&#34; alt=&#34;红色山茶花&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/shancha1.jpg&#34; alt=&#34;红色山茶花&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;山茶花是我国著名的花卉之一，由于它的株形十分优美典雅，花色丰富多样化，一直都深受很多文人墨客的青睐，而且山茶花寓意着谦逊，理想的爱，美德，可爱，即使在寒冷季节也依旧不失它的高洁美丽。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/camellia/shancha2.jpg&#34; alt=&#34;白色山茶花&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/shancha2.jpg&#34; alt=&#34;白色山茶花&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&#34;山茶花花语&#34;&gt;山茶花花语&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;谦让细心呵护&lt;/strong&gt;
-因为山茶花的花瓣掉落是一片一片叶子慢慢掉落，带有依依不舍之意，所以山茶花的花语代表了一种谦让和高洁的寓意，比如山茶花送给女孩表现了男孩对女孩爱意的小心翼翼和爱慕之情。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;高洁孤傲&lt;/strong&gt;
-因为山茶花是冬末春初盛开的鲜花，就如同梅花一样，带有一种高洁孤傲之意，不愿和众花一起盛开争艳，只愿独自绽放需求一份属于自己的高洁和孤傲，这就是山茶花的另外一层花语寓意。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;深沉谨慎&lt;/strong&gt;
-同样因为山茶花的花朵绽放时间，山茶花不愿意和众花一起绽放在夏季，不愿意争芳斗艳，也说明了山茶花有自己的谨慎和深沉，也正是因为这份谨慎和深沉才造就了只属于山茶花的高洁与孤傲。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;谦让细心呵护&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/camellia/shancha3.jpg&#34; alt=&#34;粉色山茶花&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;因为山茶花的花瓣掉落是一片一片叶子慢慢掉落，带有依依不舍之意，所以山茶花的花语代表了一种谦让和高洁的寓意，比如山茶花送给女孩表现了男孩对女孩爱意的小心翼翼和爱慕之情。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高洁孤傲&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为山茶花是冬末春初盛开的鲜花，就如同梅花一样，带有一种高洁孤傲之意，不愿和众花一起盛开争艳，只愿独自绽放需求一份属于自己的高洁和孤傲，这就是山茶花的另外一层花语寓意。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;深沉谨慎&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;同样因为山茶花的花朵绽放时间，山茶花不愿意和众花一起绽放在夏季，不愿意争芳斗艳，也说明了山茶花有自己的谨慎和深沉，也正是因为这份谨慎和深沉才造就了只属于山茶花的高洁与孤傲。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/shancha3.jpg&#34; alt=&#34;粉色山茶花&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -800,11 +883,11 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;         《山茶》
          宋 陆游
-东园三月雨兼风，桃李飘零扫地空。
-唯有山茶偏耐久，绿丛又放数枝红。
+         东园三月雨兼风，桃李飘零扫地空。
+         唯有山茶偏耐久，绿丛又放数枝红。
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bodhiye/BlogImage/master/album/camellia/shancha4.jpg&#34; alt=&#34;山茶花&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/shancha4.jpg&#34; alt=&#34;山茶花&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -856,61 +939,6 @@ int main() {
     int m, n, k;
     cin &amp;gt;&amp;gt; m &amp;gt;&amp;gt; n &amp;gt;&amp;gt; k;
     cout &amp;lt;&amp;lt; movingCount(k, m, n);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>矩阵中的路径</title>
-      <link>https://yeqiongzhou.com/2019/03/offer65/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:21 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer65/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则之后不能再次进入这个格子。 例如 a b c e s f c s a d e e 这样的3 X 4 矩阵中包含一条字符串&amp;rdquo;bcced&amp;rdquo;的路径，但是矩阵中不包含&amp;rdquo;abcb&amp;rdquo;路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-
-using namespace std;
-
-bool path(char *matrix, int rows, int cols, int i, int j, char *str, int k, vector&amp;lt;bool&amp;gt; flag) {
-    int index = i * cols + j;
-    if (i &amp;lt; 0 || i &amp;gt;= rows || j &amp;lt; 0 || j &amp;gt;= cols || matrix[index] != str[k] || flag[index])
-        return false;
-    if (k == strlen(str) - 1)
-        return true;
-    flag[index] = true;
-    if (path(matrix, rows, cols, i - 1, j, str, k + 1, flag) || path(matrix, rows, cols, i + 1, j, str, k + 1, flag) ||
-        path(matrix, rows, cols, i, j - 1, str, k + 1, flag) || path(matrix, rows, cols, i, j + 1, str, k + 1, flag))
-        return true;
-    flag[index] = false;
-    return false;
-}
-
-bool hasPath(char *matrix, int rows, int cols, char *str) {
-    vector&amp;lt;bool&amp;gt; flag(rows * cols, false);
-    for (int i = 0; i &amp;lt; rows; i++)
-        for (int j = 0; j &amp;lt; cols; j++)
-            if (path(matrix, rows, cols, i, j, str, 0, flag))
-                return true;
-    return false;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    int rows, cols;
-    char s[101], str[101];
-    cin &amp;gt;&amp;gt; rows &amp;gt;&amp;gt; cols &amp;gt;&amp;gt; s &amp;gt;&amp;gt; str;
-    cout &amp;lt;&amp;lt; hasPath(s, rows, cols, str);
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

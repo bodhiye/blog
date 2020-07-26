@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2019/03/camellia/" />
-  <link rel="next" href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2019/03/sakura/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/07/apache-bench/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/07/unique-paths-ii/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           🌸又是一年赏樱时🌸 | 叶琼州的代码小窝
+           不同路径II | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="🌸又是一年赏樱时🌸 | 叶琼州的代码小窝">
+  <meta name="title" content="不同路径II | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "🌸又是一年赏樱时🌸",
-    "headline" : "🌸又是一年赏樱时🌸",
-    "description" : "正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。 武大樱花背景 武大校内樱花约1000多株，以日本樱花、山樱花、垂",
+    "name" : "不同路径II",
+    "headline" : "不同路径II",
+    "description" : "题目描述 一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。 机器人每次只能向下或者向右移动一步。机器人试图达到网格的",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
     "publisher": "叶琼州",
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-03-23 16:53:00 &#43;0800 &#43;0800",
-    "dateModified" : "2019-03-23 16:53:00 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2019/03/sakura/",
-    "wordCount" : "897",
-    "keywords" : [ "Album", "叶琼州的代码小窝"]
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-26 10:21:21 &#43;0800 &#43;0800",
+    "dateModified" : "2020-07-26 10:21:21 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/07/unique-paths-ii/",
+    "wordCount" : "333",
+    "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">🌸又是一年赏樱时🌸</h1>
+        <h1 class="post-title" itemprop="name headline">不同路径II</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=3996-19-234 itemprop="datePublished">March 23, 2019</time>
+                on <time datetime=7996-20-2610 itemprop="datePublished">July 26, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/"> 相册影集 </a>
+                        <a href="https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/"> Leetcode题解 </a>
                         
                 </span>
-                <span class="post-word-count">, 897 words</span>
+                <span class="post-word-count">, 333 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,46 +161,71 @@
 
           
 
-<p>正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。</p>
-
 <hr />
 
-<h3 id="武大樱花背景">武大樱花背景</h3>
+<h2 id="题目描述">题目描述</h2>
 
-<p>武大校内樱花约1000多株，以日本樱花、山樱花、垂枝大叶早樱和红花高盆樱4种为主。这些花既有侵华日军当年所留下的“国耻之花”，也有中日恢复邦交后由日本友人多次赠送的“友谊之花”。</p>
+<p>一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>
 
-<p>武汉大学的樱花已经有着很长的历史，更有着复杂的历史背景，关于武大樱花多数人并不很清楚，只是停留在日本军人栽种的那种认识状态上。因此美丽的樱花虽然渲染春色，给了人们美的享受，但也带了一些“烦恼”。有人认为樱花是国耻的象征，有人说不要把樱花复杂化；有人说武大因樱花而美丽；也有人说樱花因武大才迷人。</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/unique-paths-ii.jpg" alt="不同路径II" class="lazyload"><figcaption class="image-caption">不同路径II</figcaption></figure></p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/yinghua4.jpg" alt="樱花城堡" class="lazyload"><figcaption class="image-caption">樱花城堡</figcaption></figure></p>
+<p>网格中的障碍物和空位置分别用 1 和 0 来表示。
+<strong>说明：</strong>m 和 n 的值均不超过 100。</p>
 
-<hr />
+<h3 id="示例-1">示例 1:</h3>
 
-<h3 id="武大樱花发展历史">武大樱花发展历史</h3>
+<pre><code class="language-html">输入:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+输出: 2
+解释:
+3x3 网格的正中间有一个障碍物。
+从左上角到右下角一共有 2 条不同的路径：
 
-<ul>
-<li>1939年日军当年在武汉大学种下的小日樱花不超过30株，主要分布在今天的樱花大道上，至今那些日军栽种的樱花树都早已老死。抗战胜利后，武大于1946年10月复归珞珈山；</li>
-<li>1947年3月，武大生物系师生观察发现，校园里共有28株樱花树开花，它们均匀地分布在老斋舍三个拱门之间及其两侧的四个门栋前（每个门栋前各有7株）。</li>
-<li>1957年，武汉大学对这些樱树进行了更新。</li>
-<li>1973年，武大农场又从上海引进了一批山樱花，同时再次更新了已老化的樱树。由于樱花树的生命周期很短，一般只有二三十年，1939年由日本人种下的第一批日本樱花，50年代更新时已基本死绝。因此，我们今天在武大所看到的日本樱花，已远非当年日军所留下的花种了。</li>
-</ul>
+1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下
+2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/yinghua1.jpg" alt="武大樱花" class="lazyload"><figcaption class="image-caption">武大樱花</figcaption></figure></p>
+</code></pre>
 
-<hr />
+<h2 id="题解">题解</h2>
 
-<h3 id="武大樱花季">武大樱花季</h3>
+<pre><code class="language-golang">package main
 
-<p>武大樱花就像我国的著名景区一样，早已负盛名。无论海内外只要到了三四月份，就前赴后继的奔赴武大观赏樱花，无论是感受学子间传播的才气氛围，还是樱花满地所带来的美伦意境，都足以让人觉得不虚此行。但这只是臆想罢了，作为校园而并非正规景点，他是有规定的，每天只限定在某一时间段开放，而且限名额为两万人，去那里可能看不到花，却一定看得到人头涌动，热闹无比的人群。</p>
+import (
+	&quot;fmt&quot;
+)
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/yinghua2.jpg" alt="樱花大道人潮" class="lazyload"><figcaption class="image-caption">樱花大道人潮</figcaption></figure></p>
+func main() {
+	grid := [][]int{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}
+	len := uniquePathsWithObstacles(grid)
+	fmt.Println(len)
+}
 
-<hr />
-
-<h3 id="武大樱花赏析">武大樱花赏析</h3>
-
-<p>到武大去看樱花，看那些摇曳的花枝，看那些如花的笑靥，看那些流光溢彩，也看那些深情的凝望。我看到那些年轻的充满深情的眸子，也看到写着岁月沧桑的双眼，此刻春风扑在他们的脸上，我仿佛看到圣洁的诺言美丽如初，我仿佛看到深情中的淡定、从容正在绽放。</p>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/yinghua3.jpg" alt="武大行政楼" class="lazyload"><figcaption class="image-caption">武大行政楼</figcaption></figure></p>
+func uniquePathsWithObstacles(obstacleGrid [][]int) int {
+	n, m := len(obstacleGrid), len(obstacleGrid[0])
+	f := make([]int, m)
+	if obstacleGrid[0][0] == 0 {
+		f[0] = 1
+	}
+	for i := 0; i &lt; n; i++ {
+		for j := 0; j &lt; m; j++ {
+			if obstacleGrid[i][j] == 1 {
+				f[j] = 0
+				continue
+			}
+			if j-1 &gt;= 0 &amp;&amp; obstacleGrid[i][j-1] == 0 {
+				f[j] += f[j-1]
+			}
+		}
+	}
+	return f[len(f)-1]
+}
+</code></pre>
 
     </div>
 
@@ -215,7 +240,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2019/03/sakura/>https://yeqiongzhou.com/2019/03/sakura/</span>
+                    <a href=https://yeqiongzhou.com/2020/07/unique-paths-ii/>https://yeqiongzhou.com/2020/07/unique-paths-ii/</span>
             </p>
             
              
@@ -231,8 +256,8 @@
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/album/">
-                    #Album</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/leetcode/">
+                    #Leetcode</a></span>
             
             </section>
         
@@ -244,10 +269,8 @@
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2019/03/camellia/" class="prev" rel="prev" title="山茶花"><i class="font_family icon-left"></i>&nbsp;山茶花</a>
+        <a href="https://yeqiongzhou.com/2020/07/apache-bench/" class="prev" rel="prev" title="ab压力测试"><i class="font_family icon-left"></i>&nbsp;ab压力测试</a>
          
-        
-        <a href="https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/" class="next" rel="next" title="Kubernetes存活探针">Kubernetes存活探针&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
