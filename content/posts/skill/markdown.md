@@ -12,7 +12,7 @@ tags: ["Markdown"]
 
 ### 1. 斜体和粗体
 
-使用 `*` `_` 和 `**` `_ _` 表示斜体和粗体。
+使用 `*`  `_` 和 `**`  `_ _` 表示斜体和粗体。
 
 示例：
 
@@ -24,7 +24,7 @@ tags: ["Markdown"]
 
 示例：
 
-```html
+``` html
 这是一个一级标题
 ==============
 
@@ -66,9 +66,9 @@ tags: ["Markdown"]
 
 示例：
 
-- 无序列表项 一
-- 无序列表项 二
-- 无序列表项 三
+* 无序列表项 一
+* 无序列表项 二
+* 无序列表项 三
 
 ### 5. 有序列表
 
@@ -90,11 +90,11 @@ tags: ["Markdown"]
 
 ### 7. 行内代码块
 
-使用 \`代码` 表示行内代码块。
+使用 \ `代码` 表示行内代码块。
 
 示例：
 
-让我们聊聊 `Kubernetes`。
+让我们聊聊 `Kubernetes` 。
 
 ### 8. 代码块
 
@@ -110,17 +110,17 @@ tags: ["Markdown"]
 
 示例：
 
-![我的头像](https://raw.githubusercontent.com/bodhiye/BlogImage/master/me/avatar.png)
+![我的头像](http://file.yeqiongzhou.top/avatar.png)
 
 # Markdown 高阶语法手册
 
 ---
 
-### 1. 内容目录(注：GitHub Markdown 不支持`[TOC]`目录)
+### 1. 内容目录(注：GitHub Markdown 不支持 `[TOC]` 目录)
 
 在段落中填写 `[TOC]` 以显示全文内容的目录结构。
 
-![目录](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/toc.png)
+![目录](http://file.yeqiongzhou.top/toc.png)
 
 ### 2. 标签分类
 
@@ -150,21 +150,17 @@ Tags： Docker Kubernetes Markdown
 
 $ 表示行内公式：
 
-`$E=mc^2$`
-
+ `$E=mc^2$`
 质能守恒方程可以用一个很简洁的方程式来表达。
 
-![](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gs1.png) 
+![](http://file.yeqiongzhou.top/gs1.png) 
 
 $$ 表示整行公式：
 
-`$$\sum_{i=1}^n a_i=0$$`
-
-`$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$`
-
-`$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$`
-
-![](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gs2.png)
+ `$$\sum_{i=1}^n a_i=0$$`
+ `$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$`
+ `$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$`
+![](http://file.yeqiongzhou.top/gs2.png)
 
 访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
 
@@ -174,13 +170,13 @@ $$ 表示整行公式：
 
 非代码示例：
 
-```
+``` 
 $ sudo apt-get install vim-gnome
 ```
 
 Python 示例：
 
-```python
+``` python
 @requires_authorization
 def somefunc(param1='', param2=0):
     '''A docstring'''
@@ -199,19 +195,20 @@ JavaScript 示例：
 
 ``` javascript
 /**
-* nth element in the fibonacci series.
-* @param n >= 0
-* @return the nth element, >= 0.
-*/
+ * nth element in the fibonacci series.
+ * @param n >= 0
+ * @return the nth element, >= 0.
+ */
 function fib(n) {
-  var a = 1, b = 1;
-  var tmp;
-  while (--n >= 0) {
-    tmp = a;
-    a += b;
-    b = tmp;
-  }
-  return a;
+    var a = 1,
+        b = 1;
+    var tmp;
+    while (--n >= 0) {
+        tmp = a;
+        a += b;
+        b = tmp;
+    }
+    return a;
 }
 
 document.write(fib(10));
@@ -221,7 +218,7 @@ document.write(fib(10));
 
 #### 示例
 
-```flow
+``` flow
 st=>start: Start:>https://yeqiongzhou.top
 io=>inputoutput: verification
 op=>operation: Your Operation
@@ -233,23 +230,23 @@ cond(yes)->e
 cond(no)->sub->io
 ```
 
-![流程图示例](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/flow.png)
+![流程图示例](http://file.yeqiongzhou.top/flow.png)
 
 ### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
 #### 示例 1
 
-```sequence
+``` sequence
 Alice->Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
-![序列图示例1](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/seq1.png)
+![序列图示例1](http://file.yeqiongzhou.top/seq1.png)
 
 #### 示例 2
 
-```sequence
+``` sequence
 Title: Here is a title
 A->B: Normal line
 B-->C: Dashed line
@@ -257,7 +254,7 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-![序列图示例2](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/seq2.png)
+![序列图示例2](http://file.yeqiongzhou.top/seq2.png)
 
 ### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
@@ -265,7 +262,7 @@ D-->>A: Dashed open arrow
 
 #### 示例
 
-```gantt
+``` gantt
 title 项目开发流程
 section 项目确定
     需求分析       :a1, 2016-06-22, 3d
@@ -281,25 +278,25 @@ section 发布验收
     验收: 3d
 ```
 
-![甘特图示例](https://raw.githubusercontent.com/bodhiye/BlogImage/master/markdown/gantt.png)
+![甘特图示例](http://file.yeqiongzhou.top/gantt.png)
 
 ### 10. 表格支持
 
 #### 示例
 
-```html
-| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | $1600 |   5     |
-| 手机        |   $12   |   12   |
-| 管线        |    $1    |  234  |
+``` html
+| 项目 | 价格 | 数量 |
+| -------- | -----: | :----: |
+| 计算机 | $1600 | 5 |
+| 手机 | $12 | 12 |
+| 管线 | $1 | 234 |
 ```
 
-| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | $1600 |   5     |
-| 手机        |   $12   |   12   |
-| 管线        |    $1    |  234  |
+| 项目 | 价格 | 数量 |
+| -------- | -----: | :----: |
+| 计算机 | $1600 | 5 |
+| 手机 | $12 | 12 |
+| 管线 | $1 | 234 |
 
 ### 11. 定义型列表
 
@@ -317,7 +314,7 @@ Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一�
 
 #### 示例
 
-```html
+``` html
 <table>
     <tr>
         <th rowspan="2">值班人员</th>
@@ -334,6 +331,7 @@ Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一�
 ```
 
 <table>
+
     <tr>
         <th rowspan="2">值班人员</th>
         <th>星期一</th>
@@ -345,20 +343,21 @@ Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一�
         <td>张明</td>
         <td>王平</td>
     </tr>
+
 </table>
 
 ### 13. 待办事宜 Todo 列表
 
 使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：
 
-- [ ] **博客开发**
+* [ ] **博客开发**
     - [x] 增加黑白背景色切换功能
     - [x] 支持评论功能
     - [ ] 新增Todo列表功能 [语法参考](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
     - [ ] 改进 LaTex 功能
         - [ ] 修复 LaTex 公式渲染问题
         - [ ] 新增 LaTex 公式编号功能 [语法参考](http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers)
-- [ ] **六月毕业旅行准备**
+* [ ] **六月毕业旅行准备**
     - [x] 购买武汉到大阪来回的机票
     - [ ] 准备去往日本的签证
     - [ ] 浏览日本免税店的物品
