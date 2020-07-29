@@ -6,8 +6,70 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Jul 2020 10:21:21 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 23:25:47 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux cksum命令</title>
+      <link>https://yeqiongzhou.com/2020/07/cksum/</link>
+      <pubDate>Wed, 29 Jul 2020 23:25:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/07/cksum/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;最近女朋友要我把相机里旅游时拍的照片发给她，然后我就把照片传到百度云发给她了，她下载后就抱怨说百度云把图片压缩了，导致图片放大后看不清，我马上上百度云看了一下，发现文件大小没有压缩，于是我就把百度云下载的图片和我本地内存卡里的照片比对一下，看百度云是否把我的图片压缩了。这里就可以用到 cksum 命令来检查两个文件是否一致。&lt;/p&gt;
+
+&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
+
+&lt;p&gt;Linux cksum 命令用于检查文件的CRC是否正确，确保文件从一个系统传输到另一个系统的过程中不被损坏。
+CRC 是一种排错检查方式，该校验法的标准由 CCITT 所指定，至少可检测到 99.998% 的已知错误。
+指定文件交由指令&amp;rdquo;cksum&amp;rdquo;进行校验后，该指令会返回校验结果供用户核对文件是否正确无误。若不指定任何文件名称或是所给予的文件名为&amp;rdquo;-&amp;ldquo;，则指令&amp;rdquo;cksum&amp;rdquo;会从标准输入设备中读取数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;cksum= checksums&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cksum [&amp;ndash;help][&amp;ndash;version][文件&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;help：在线帮助。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;version：显示版本信息。&lt;/li&gt;
+&lt;li&gt;文件…:需要进行检查的文件路径&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;使用指令&amp;rdquo;cksum&amp;rdquo;计算文件&amp;rdquo;testfile1&amp;rdquo;的完整性，输入如下命令：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cksum yeqiongzhou.jpg yeqiongzhou-baiduyun.jpg&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以上命令执行后，将输出校验码等相关的信息，具体输出信息如下所示：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2415123943 3538944 yeqiongzhou.jpg
+2415123943 3538944 yeqiongzhou-baiduyun.jpg&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;上面的输出信息中，&lt;code&gt;2415123943&lt;/code&gt;表示校验码，&lt;code&gt;3538944&lt;/code&gt;表示字节数。
+可见这两张图片是一模一样的，百度云并没有对照片进行压缩。&lt;/p&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;如果文件中有任何字符被修改，都将改变计算后CRC校验码的值。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>不同路径II</title>
@@ -889,60 +951,6 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/shancha4.jpg&#34; alt=&#34;山茶花&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>机器人的运动范围</title>
-      <link>https://yeqiongzhou.com/2019/03/offer66/</link>
-      <pubDate>Wed, 06 Mar 2019 19:23:25 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/offer66/</guid>
-      <description>
-
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
-
-&lt;p&gt;地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？&lt;/p&gt;
-
-&lt;h4 id=&#34;题解&#34;&gt;题解&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-
-using namespace std;
-
-int getSum(int n) {
-    int sum = 0;
-    while (n) {
-        sum += n % 10;
-        n /= 10;
-    }
-    return sum;
-}
-
-int moving(int threshold, int i, int j, int rows, int cols, vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;flag) {
-    if (i &amp;lt; 0 || i &amp;gt;= rows || j &amp;lt; 0 || j &amp;gt;= cols || flag[i][j] == 1 || getSum(i) + getSum(j) &amp;gt; threshold)
-        return 0;
-    flag[i][j] = 1;
-    return moving(threshold, i - 1, j, rows, cols, flag) + moving(threshold, i + 1, j, rows, cols, flag) +
-           moving(threshold, i, j - 1, rows, cols, flag) + moving(threshold, i, j + 1, rows, cols, flag) + 1;
-}
-
-int movingCount(int threshold, int rows, int cols) {
-    vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; flag(rows);
-    for (int i = 0; i &amp;lt; rows; i++)
-        flag[i].resize(cols, 0);
-    return moving(threshold, 0, 0, rows, cols, flag);
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    int m, n, k;
-    cin &amp;gt;&amp;gt; m &amp;gt;&amp;gt; n &amp;gt;&amp;gt; k;
-    cout &amp;lt;&amp;lt; movingCount(k, m, n);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

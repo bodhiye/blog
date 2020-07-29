@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/07/apache-bench/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/07/cksum/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/07/unique-paths-ii/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/07/unique-paths-ii/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/07/cksum/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           不同路径II | 叶琼州的代码小窝
+           Linux cksum命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="不同路径II | 叶琼州的代码小窝">
+  <meta name="title" content="Linux cksum命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "不同路径II",
-    "headline" : "不同路径II",
-    "description" : "题目描述 一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。 机器人每次只能向下或者向右移动一步。机器人试图达到网格的",
+    "name" : "Linux cksum命令",
+    "headline" : "Linux cksum命令",
+    "description" : "前言 最近女朋友要我把相机里旅游时拍的照片发给她，然后我就把照片传到百度云发给她了，她下载后就抱怨说百度云把图片压缩了，导致图片放大后看不清，",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,11 +54,11 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-07-26 10:21:21 &#43;0800 &#43;0800",
-    "dateModified" : "2020-07-26 10:21:21 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/07/unique-paths-ii/",
-    "wordCount" : "333",
-    "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
+    "datePublished": "2020-07-29 23:25:47 &#43;0800 &#43;0800",
+    "dateModified" : "2020-07-29 23:25:47 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/07/cksum/",
+    "wordCount" : "688",
+    "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,26 +126,24 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">不同路径II</h1>
+        <h1 class="post-title" itemprop="name headline">Linux cksum命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=7996-20-2610 itemprop="datePublished">July 26, 2020</time>
+                on <time datetime=7996-20-2911 itemprop="datePublished">July 29, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/"> Leetcode题解 </a>
+                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 333 words</span>
+                <span class="post-word-count">, 688 words</span>
         </div>
     </header>
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -163,70 +161,55 @@
 
 <hr />
 
-<h2 id="题目描述">题目描述</h2>
+<h2 id="前言">前言</h2>
 
-<p>一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。
-机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
-现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>
+<p>最近女朋友要我把相机里旅游时拍的照片发给她，然后我就把照片传到百度云发给她了，她下载后就抱怨说百度云把图片压缩了，导致图片放大后看不清，我马上上百度云看了一下，发现文件大小没有压缩，于是我就把百度云下载的图片和我本地内存卡里的照片比对一下，看百度云是否把我的图片压缩了。这里就可以用到 cksum 命令来检查两个文件是否一致。</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://file.yeqiongzhou.top/unique-paths-ii.jpg" alt="不同路径II" class="lazyload"><figcaption class="image-caption">不同路径II</figcaption></figure></p>
+<h2 id="命令详解">命令详解</h2>
 
-<p>网格中的障碍物和空位置分别用 1 和 0 来表示。</p>
+<p>Linux cksum 命令用于检查文件的CRC是否正确，确保文件从一个系统传输到另一个系统的过程中不被损坏。
+CRC 是一种排错检查方式，该校验法的标准由 CCITT 所指定，至少可检测到 99.998% 的已知错误。
+指定文件交由指令&rdquo;cksum&rdquo;进行校验后，该指令会返回校验结果供用户核对文件是否正确无误。若不指定任何文件名称或是所给予的文件名为&rdquo;-&ldquo;，则指令&rdquo;cksum&rdquo;会从标准输入设备中读取数据。</p>
 
-<p><strong>说明：</strong>m 和 n 的值均不超过 100。</p>
+<h3 id="命令全拼">命令全拼</h3>
 
-<h3 id="示例-1">示例 1:</h3>
+<p>cksum= checksums</p>
 
-<pre><code class="language-html">输入:
-[
-  [0,0,0],
-  [0,1,0],
-  [0,0,0]
-]
-输出: 2
-解释:
-3x3 网格的正中间有一个障碍物。
-从左上角到右下角一共有 2 条不同的路径：
+<h3 id="语法格式">语法格式</h3>
 
-1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下
-2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右
+<blockquote>
+<p>cksum [&ndash;help][&ndash;version][文件&hellip;]</p>
+</blockquote>
 
-</code></pre>
+<h3 id="参数说明">参数说明</h3>
 
-<h2 id="题解">题解</h2>
+<ul>
+<li>&ndash;help：在线帮助。</li>
+<li>&ndash;version：显示版本信息。</li>
+<li>文件…:需要进行检查的文件路径</li>
+</ul>
 
-<pre><code class="language-golang">package main
+<h3 id="举个栗子">举个栗子</h3>
 
-import (
-	&quot;fmt&quot;
-)
+<p>使用指令&rdquo;cksum&rdquo;计算文件&rdquo;testfile1&rdquo;的完整性，输入如下命令：</p>
 
-func main() {
-	grid := [][]int{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}
-	len := uniquePathsWithObstacles(grid)
-	fmt.Println(len)
-}
+<blockquote>
+<p>cksum yeqiongzhou.jpg yeqiongzhou-baiduyun.jpg</p>
+</blockquote>
 
-func uniquePathsWithObstacles(obstacleGrid [][]int) int {
-	n, m := len(obstacleGrid), len(obstacleGrid[0])
-	f := make([]int, m)
-	if obstacleGrid[0][0] == 0 {
-		f[0] = 1
-	}
-	for i := 0; i &lt; n; i++ {
-		for j := 0; j &lt; m; j++ {
-			if obstacleGrid[i][j] == 1 {
-				f[j] = 0
-				continue
-			}
-			if j-1 &gt;= 0 &amp;&amp; obstacleGrid[i][j-1] == 0 {
-				f[j] += f[j-1]
-			}
-		}
-	}
-	return f[len(f)-1]
-}
-</code></pre>
+<p>以上命令执行后，将输出校验码等相关的信息，具体输出信息如下所示：</p>
+
+<blockquote>
+<p>2415123943 3538944 yeqiongzhou.jpg
+2415123943 3538944 yeqiongzhou-baiduyun.jpg</p>
+</blockquote>
+
+<p>上面的输出信息中，<code>2415123943</code>表示校验码，<code>3538944</code>表示字节数。
+可见这两张图片是一模一样的，百度云并没有对照片进行压缩。</p>
+
+<h3 id="tips">Tips</h3>
+
+<p>如果文件中有任何字符被修改，都将改变计算后CRC校验码的值。</p>
 
     </div>
 
@@ -241,7 +224,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/07/unique-paths-ii/>https://yeqiongzhou.com/2020/07/unique-paths-ii/</span>
+                    <a href=https://yeqiongzhou.com/2020/07/cksum/>https://yeqiongzhou.com/2020/07/cksum/</span>
             </p>
             
              
@@ -257,8 +240,8 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/leetcode/">
-                    #Leetcode</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
+                    #Linux</a></span>
             
             </section>
         
@@ -270,10 +253,8 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/07/apache-bench/" class="prev" rel="prev" title="ab压力测试"><i class="font_family icon-left"></i>&nbsp;ab压力测试</a>
+        <a href="https://yeqiongzhou.com/2020/07/unique-paths-ii/" class="prev" rel="prev" title="不同路径II"><i class="font_family icon-left"></i>&nbsp;不同路径II</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/07/cksum/" class="next" rel="next" title="Linux cksum命令">Linux cksum命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
@@ -341,9 +322,8 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

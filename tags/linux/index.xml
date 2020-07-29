@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 May 2020 23:35:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 23:25:47 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux cksum命令</title>
+      <link>https://yeqiongzhou.com/2020/07/cksum/</link>
+      <pubDate>Wed, 29 Jul 2020 23:25:47 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/07/cksum/</guid>
+      <description>前言 最近女朋友要我把相机里旅游时拍的照片发给她，然后我就把照片传到百度云发给她了，她下载后就抱怨说百度云把图片压缩了，导致图片放大后看不清，</description>
+    </item>
     
     <item>
       <title>Linux chmod命令</title>
