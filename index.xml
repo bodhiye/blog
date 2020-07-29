@@ -120,7 +120,7 @@ CRC 是一种排错检查方式，该校验法的标准由 CCITT 所指定，至
 
 &lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
 
-&lt;p&gt;使用指令&amp;rdquo;cksum&amp;rdquo;计算文件&amp;rdquo;testfile1&amp;rdquo;的完整性，输入如下命令：&lt;/p&gt;
+&lt;p&gt;使用指令&amp;rdquo;cksum&amp;rdquo;计算文件 yeqiongzhou.jpg 和 yeqiongzhou-baiduyun.jpg 的一致性，输入如下命令：&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;cksum yeqiongzhou.jpg yeqiongzhou-baiduyun.jpg&lt;/p&gt;
