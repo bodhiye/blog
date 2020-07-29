@@ -34,7 +34,7 @@ cksum= checksums
 
 ### 举个栗子
 
-使用指令"cksum"计算文件"testfile1"的完整性，输入如下命令：
+使用指令"cksum"计算文件 yeqiongzhou.jpg 和 yeqiongzhou-baiduyun.jpg 的一致性，输入如下命令：
 
 > cksum yeqiongzhou.jpg yeqiongzhou-baiduyun.jpg
 
