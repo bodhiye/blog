@@ -131,9 +131,8 @@ func uniquePaths(m, n int) int {
 &lt;p&gt;以上命令执行后，将输出校验码等相关的信息，具体输出信息如下所示：&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;2415123943 3538944 yeqiongzhou.jpg&lt;/p&gt;
-
-&lt;p&gt;2415123943 3538944 yeqiongzhou-baiduyun.jpg&lt;/p&gt;
+&lt;p&gt;2415123943 3538944 yeqiongzhou.jpg&lt;br /&gt;
+2415123943 3538944 yeqiongzhou-baiduyun.jpg&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;上面的输出信息中，&lt;code&gt;2415123943&lt;/code&gt;表示校验码，&lt;code&gt;3538944&lt;/code&gt;表示字节数。
