@@ -22,7 +22,7 @@ CRC 是一种排错检查方式，该校验法的标准由 CCITT 所指定，至
 
 ### 命令全拼
 
-cksum= checksums
+cksum = checksums
 
 ### 语法格式
 
