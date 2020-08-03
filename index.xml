@@ -6,8 +6,87 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Jul 2020 00:23:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 23:03:22 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux nohup命令</title>
+      <link>https://yeqiongzhou.com/2020/08/nohup/</link>
+      <pubDate>Mon, 03 Aug 2020 23:03:22 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/nohup/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;我们平时在远程服务器或者跳板机上执行命令时，如果由于长时间未操作导致服务端未响应，触发了防火墙的闲置超时断开的缺省机制，会导致之前执行的命令中断。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。&lt;/p&gt;
+
+&lt;p&gt;nohup命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下，如果当前目录文件不可写，则输出重定向到 $HOME/nohup.out 文件中。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;cksum = no hang up&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;nohup Command [ Arg … ] [　&amp;amp; ]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Command：要执行的命令。&lt;/li&gt;
+&lt;li&gt;Arg：一些参数，可以指定输出文件。&lt;/li&gt;
+&lt;li&gt;&amp;amp;：让命令在后台执行，终端退出后命令仍旧执行。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;nohup /root/yeqiongzhou.sh &amp;amp;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以上命令执行后，在终端如果看到以下输出说明运行成功：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;nohup: ignoring input and appending output to &amp;lsquo;nohup.out&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这时我们打开 root 目录 可以看到生存了 nohup.out 文件。
+如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ps -aux | grep &amp;ldquo;yeqiongzhou.sh&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;找到 PID 后，就可以使用 kill PID 来删除该后台进程。&lt;/p&gt;
+
+&lt;p&gt;2、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本，并重定向输入到 yeqiongzhou.log 文件：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;nohup /root/test.sh &amp;gt; yeqiongzhou.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;2&amp;gt;&amp;amp;1&lt;/strong&gt;：将标准错误 2 重定向到标准输出 &amp;amp;1 ，标准输出 &amp;amp;1 再被重定向输入到 runoob.log 文件中。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;0 – stdin (standard input，标准输入)&lt;/li&gt;
+&lt;li&gt;1 – stdout (standard output，标准输出)&lt;/li&gt;
+&lt;li&gt;2 – stderr (standard error，标准错误输出)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>不同路径</title>
@@ -917,57 +996,6 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 &lt;li&gt;TCP套接字探针尝试与容器指定端口建立TCP连接。如果连接成功建立，则探测成功。否则，容器重新启动。&lt;/li&gt;
 &lt;li&gt;Exec探针在容器内执行任意命令，并检查命令的退出状态码。如果状态码是0，则探测成功。所有其他状态码都被认为失败。&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>🌸又是一年赏樱时🌸</title>
-      <link>https://yeqiongzhou.com/2019/03/sakura/</link>
-      <pubDate>Sat, 23 Mar 2019 16:53:00 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/03/sakura/</guid>
-      <description>
-
-&lt;p&gt;正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;武大樱花背景&#34;&gt;武大樱花背景&lt;/h3&gt;
-
-&lt;p&gt;武大校内樱花约1000多株，以日本樱花、山樱花、垂枝大叶早樱和红花高盆樱4种为主。这些花既有侵华日军当年所留下的“国耻之花”，也有中日恢复邦交后由日本友人多次赠送的“友谊之花”。&lt;/p&gt;
-
-&lt;p&gt;武汉大学的樱花已经有着很长的历史，更有着复杂的历史背景，关于武大樱花多数人并不很清楚，只是停留在日本军人栽种的那种认识状态上。因此美丽的樱花虽然渲染春色，给了人们美的享受，但也带了一些“烦恼”。有人认为樱花是国耻的象征，有人说不要把樱花复杂化；有人说武大因樱花而美丽；也有人说樱花因武大才迷人。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua4.jpg&#34; alt=&#34;樱花城堡&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;武大樱花发展历史&#34;&gt;武大樱花发展历史&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1939年日军当年在武汉大学种下的小日樱花不超过30株，主要分布在今天的樱花大道上，至今那些日军栽种的樱花树都早已老死。抗战胜利后，武大于1946年10月复归珞珈山；&lt;/li&gt;
-&lt;li&gt;1947年3月，武大生物系师生观察发现，校园里共有28株樱花树开花，它们均匀地分布在老斋舍三个拱门之间及其两侧的四个门栋前（每个门栋前各有7株）。&lt;/li&gt;
-&lt;li&gt;1957年，武汉大学对这些樱树进行了更新。&lt;/li&gt;
-&lt;li&gt;1973年，武大农场又从上海引进了一批山樱花，同时再次更新了已老化的樱树。由于樱花树的生命周期很短，一般只有二三十年，1939年由日本人种下的第一批日本樱花，50年代更新时已基本死绝。因此，我们今天在武大所看到的日本樱花，已远非当年日军所留下的花种了。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua1.jpg&#34; alt=&#34;武大樱花&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;武大樱花季&#34;&gt;武大樱花季&lt;/h3&gt;
-
-&lt;p&gt;武大樱花就像我国的著名景区一样，早已负盛名。无论海内外只要到了三四月份，就前赴后继的奔赴武大观赏樱花，无论是感受学子间传播的才气氛围，还是樱花满地所带来的美伦意境，都足以让人觉得不虚此行。但这只是臆想罢了，作为校园而并非正规景点，他是有规定的，每天只限定在某一时间段开放，而且限名额为两万人，去那里可能看不到花，却一定看得到人头涌动，热闹无比的人群。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua2.jpg&#34; alt=&#34;樱花大道人潮&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;武大樱花赏析&#34;&gt;武大樱花赏析&lt;/h3&gt;
-
-&lt;p&gt;到武大去看樱花，看那些摇曳的花枝，看那些如花的笑靥，看那些流光溢彩，也看那些深情的凝望。我看到那些年轻的充满深情的眸子，也看到写着岁月沧桑的双眼，此刻春风扑在他们的脸上，我仿佛看到圣洁的诺言美丽如初，我仿佛看到深情中的淡定、从容正在绽放。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://file.yeqiongzhou.top/yinghua3.jpg&#34; alt=&#34;武大行政楼&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
