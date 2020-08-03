@@ -104,7 +104,7 @@ func uniquePaths(m, n int) int {
 
 &lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
 
-&lt;p&gt;cksum= checksums&lt;/p&gt;
+&lt;p&gt;cksum = checksums&lt;/p&gt;
 
 &lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
 
