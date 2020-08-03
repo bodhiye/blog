@@ -34,7 +34,7 @@ cksum = no hang up
 
 ### 举个栗子
 
-1. 以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本：
+1、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本：
 
 > nohup /root/yeqiongzhou.sh &
 
@@ -49,7 +49,7 @@ cksum = no hang up
 
 找到 PID 后，就可以使用 kill PID 来删除该后台进程。
 
-2. 以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本，并重定向输入到 yeqiongzhou.log 文件：
+2、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本，并重定向输入到 yeqiongzhou.log 文件：
 
 > nohup /root/test.sh > yeqiongzhou.log 2>&1 &
 
