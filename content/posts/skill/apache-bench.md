@@ -19,7 +19,7 @@ ab 命令会创建多个并发访问线程，模拟多个访问者同时对某�
 这里就不展开讲 ab 的语法，直接讲 ab 进行压力测试的命令，详细语法大家可以参考[ab官方文档](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
 在当前目录下新建 *post.json* 文件存放 json 格式的请求
-**post.json**: {"data":{"uri":"http://cdn.yeqiongzhou.top/pulp.jpg"}}
+**post.json**: {"data":{"uri":"http://cdn.yeqiongzhou.com/pulp.jpg"}}
 
 > ab -n 6000 -c 60 -p post.json -T application/json -H "Authorization:xxx uid=xxx" "http://12.34.56.78:1024/v1/ab"
 

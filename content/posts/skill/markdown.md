@@ -58,7 +58,7 @@ tags: ["Markdown"]
 
 示例：
 
-这是 [本人博客](https://yeqiongzhou.top) 的链接。
+这是 [本人博客](https://yeqiongzhou.com) 的链接。
 
 ### 4. 无序列表
 
@@ -110,7 +110,7 @@ tags: ["Markdown"]
 
 示例：
 
-![我的头像](http://blog.yeqiongzhou.top/avatar.png)
+![我的头像](http://blog.yeqiongzhou.com/avatar.png)
 
 # Markdown 高阶语法手册
 
@@ -120,7 +120,7 @@ tags: ["Markdown"]
 
 在段落中填写 `[TOC]` 以显示全文内容的目录结构。
 
-![目录](http://blog.yeqiongzhou.top/toc.png)
+![目录](http://blog.yeqiongzhou.com/toc.png)
 
 ### 2. 标签分类
 
@@ -153,14 +153,14 @@ $ 表示行内公式：
  `$E=mc^2$`
 质能守恒方程可以用一个很简洁的方程式来表达。
 
-![](http://blog.yeqiongzhou.top/gs1.png) 
+![](http://blog.yeqiongzhou.com/gs1.png) 
 
 $$ 表示整行公式：
 
  `$$\sum_{i=1}^n a_i=0$$`
  `$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$`
  `$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$`
-![](http://blog.yeqiongzhou.top/gs2.png)
+![](http://blog.yeqiongzhou.com/gs2.png)
 
 访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
 
@@ -219,7 +219,7 @@ document.write(fib(10));
 #### 示例
 
 ``` flow
-st=>start: Start:>https://yeqiongzhou.top
+st=>start: Start:>https://yeqiongzhou.com
 io=>inputoutput: verification
 op=>operation: Your Operation
 cond=>condition: Yes or No?
@@ -230,7 +230,7 @@ cond(yes)->e
 cond(no)->sub->io
 ```
 
-![流程图示例](http://blog.yeqiongzhou.top/flow.png)
+![流程图示例](http://blog.yeqiongzhou.com/flow.png)
 
 ### 8. 序列图(注：GitHub Markdown 不支持序列图)
 
@@ -242,7 +242,7 @@ Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
 ```
 
-![序列图示例1](http://blog.yeqiongzhou.top/seq1.png)
+![序列图示例1](http://blog.yeqiongzhou.com/seq1.png)
 
 #### 示例 2
 
@@ -254,7 +254,7 @@ C->>D: Open arrow
 D-->>A: Dashed open arrow
 ```
 
-![序列图示例2](http://blog.yeqiongzhou.top/seq2.png)
+![序列图示例2](http://blog.yeqiongzhou.com/seq2.png)
 
 ### 9. 甘特图(注：GitHub Markdown 不支持甘特图)
 
@@ -278,7 +278,7 @@ section 发布验收
     验收: 3d
 ```
 
-![甘特图示例](http://blog.yeqiongzhou.top/gantt.png)
+![甘特图示例](http://blog.yeqiongzhou.com/gantt.png)
 
 ### 10. 表格支持
 
