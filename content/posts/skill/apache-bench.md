@@ -21,7 +21,7 @@ ab 命令会创建多个并发访问线程，模拟多个访问者同时对某�
 在当前目录下新建 *post.json* 文件存放 json 格式的请求
 **post.json**: {"data":{"uri":"http://cdn.yeqiongzhou.top/pulp.jpg"}}
 
-> ab -n 60000 -c 60 -p post.json -T application/json -H "Authorization:xxx uid=xxx" "http://12.34.56.78:1024/v1/ab"
+> ab -n 6000 -c 60 -p post.json -T application/json -H "Authorization:xxx uid=xxx" "http://12.34.56.78:1024/v1/ab"
 
 下面来详细介绍这条命令，让大家能够快速上手使用。
 
