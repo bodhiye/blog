@@ -327,7 +327,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 &lt;strong&gt;post.json&lt;/strong&gt;: {&amp;ldquo;data&amp;rdquo;:{&amp;ldquo;uri&amp;rdquo;:&amp;ldquo;&lt;a href=&#34;http://cdn.yeqiongzhou.top/pulp.jpg&amp;quot;}&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://cdn.yeqiongzhou.top/pulp.jpg&amp;quot;}&lt;/a&gt;}&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;ab -n 60000 -c 60 -p post.json -T application/json -H &amp;ldquo;Authorization:xxx uid=xxx&amp;rdquo; &amp;ldquo;&lt;a href=&#34;http://12.34.56.78:1024/v1/ab&amp;quot;&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://12.34.56.78:1024/v1/ab&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ab -n 6000 -c 60 -p post.json -T application/json -H &amp;ldquo;Authorization:xxx uid=xxx&amp;rdquo; &amp;ldquo;&lt;a href=&#34;http://12.34.56.78:1024/v1/ab&amp;quot;&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://12.34.56.78:1024/v1/ab&amp;quot;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;下面来详细介绍这条命令，让大家能够快速上手使用。&lt;/p&gt;
