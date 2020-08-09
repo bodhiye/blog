@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/07/unique-paths/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/08/chown/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/nohup/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/08/nohup/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/chown/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux nohup命令 | 叶琼州的代码小窝
+           Linux chown命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux nohup命令 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux chown命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux nohup命令",
-    "headline" : "Linux nohup命令",
-    "description" : "前言 我们平时在远程服务器或者跳板机上执行命令时，如果由于长时间未操作导致服务端未响应，触发了防火墙的闲置超时断开的缺省机制，会导致之前执行的",
+    "name" : "Linux chown命令",
+    "headline" : "Linux chown命令",
+    "description" : "命令详解 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,10 +54,10 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-08-03 23:03:22 &#43;0800 &#43;0800",
-    "dateModified" : "2020-08-03 23:03:22 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/08/nohup/",
-    "wordCount" : "554",
+    "datePublished": "2020-08-09 22:44:22 &#43;0800 &#43;0800",
+    "dateModified" : "2020-08-09 22:44:22 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/08/chown/",
+    "wordCount" : "400",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -126,11 +126,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux nohup命令</h1>
+        <h1 class="post-title" itemprop="name headline">Linux chown命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=8996-20-311 itemprop="datePublished">August 3, 2020</time>
+                on <time datetime=8996-20-910 itemprop="datePublished">August 9, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 554 words</span>
+                <span class="post-word-count">, 400 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,72 +161,51 @@
 
 <hr />
 
-<h3 id="前言">前言</h3>
-
-<p>我们平时在远程服务器或者跳板机上执行命令时，如果由于长时间未操作导致服务端未响应，触发了防火墙的闲置超时断开的缺省机制，会导致之前执行的命令中断。</p>
-
 <h3 id="命令详解">命令详解</h3>
 
-<p>nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。</p>
-
-<p>nohup命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下，如果当前目录文件不可写，则输出重定向到 $HOME/nohup.out 文件中。</p>
+<p>Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
 
 <h3 id="命令全拼">命令全拼</h3>
 
-<p>cksum = no hang up</p>
+<p>chown = change owner</p>
 
 <h3 id="语法格式">语法格式</h3>
 
 <blockquote>
-<p>nohup Command [ Arg … ] [　&amp; ]</p>
+<p>chown [-cfhvR] [&ndash;help] [&ndash;version] user[:group] file&hellip;</p>
 </blockquote>
 
 <h3 id="参数说明">参数说明</h3>
 
 <ul>
-<li>Command：要执行的命令。</li>
-<li>Arg：一些参数，可以指定输出文件。</li>
-<li>&amp;：让命令在后台执行，终端退出后命令仍旧执行。</li>
+<li>user : 新的文件拥有者的使用者 ID</li>
+<li>group : 新的文件拥有者的使用者组(group)</li>
+<li>-c : 显示更改的部分的信息</li>
+<li>-f : 忽略错误信息</li>
+<li>-h :修复符号链接</li>
+<li>-v : 显示详细的处理信息</li>
+<li>-R : 处理指定目录以及其子目录下的所有文件</li>
+<li>&ndash;help : 显示辅助说明</li>
+<li>&ndash;version : 显示版本</li>
 </ul>
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<p>1、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本：</p>
+<p>1、将文件 yeqiongzhou.jpg 的拥有者设为 bodhiye，群体的使用者 xiaoye:</p>
 
 <blockquote>
-<p>nohup /root/yeqiongzhou.sh &amp;</p>
+<p>chown bodhiye:xiaoye yeqiongzhou.jpg</p>
 </blockquote>
 
-<p>以上命令执行后，在终端如果看到以下输出说明运行成功：</p>
+<p>2、将目前目录下的所有文件与子目录的拥有者皆设为 bodhiye，群体的使用者 xiaoye:</p>
 
 <blockquote>
-<p>nohup: ignoring input and appending output to &lsquo;nohup.out&rsquo;</p>
-</blockquote>
-
-<p>这时我们打开 root 目录 可以看到生存了 nohup.out 文件。
-如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除。</p>
-
-<blockquote>
-<p>ps -aux | grep &ldquo;yeqiongzhou.sh&rdquo;</p>
-</blockquote>
-
-<p>找到 PID 后，就可以使用 kill PID 来删除该后台进程。</p>
-
-<p>2、以下命令在后台执行 root 目录下的 yeqiongzhou.sh 脚本，并重定向输入到 yeqiongzhou.log 文件：</p>
-
-<blockquote>
-<p>nohup /root/test.sh &gt; yeqiongzhou.log 2&gt;&amp;1 &amp;</p>
+<p>chown -R bodhiye:xiaoye *</p>
 </blockquote>
 
 <h3 id="tips">Tips</h3>
 
-<p><strong>2&gt;&amp;1</strong>：将标准错误 2 重定向到标准输出 &amp;1 ，标准输出 &amp;1 再被重定向输入到 runoob.log 文件中。</p>
-
-<ul>
-<li>0 – stdin (standard input，标准输入)</li>
-<li>1 – stdout (standard output，标准输出)</li>
-<li>2 – stderr (standard error，标准错误输出)</li>
-</ul>
+<p>一般来说，这个指令只有是由系统管理者(root)所使用，一般使用者没有权限可以改变别人的文件拥有者，也没有权限把自己的文件拥有者改设为别人。只有系统管理者(root)才有这样的权限。</p>
 
     </div>
 
@@ -241,7 +220,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/08/nohup/>https://yeqiongzhou.com/2020/08/nohup/</span>
+                    <a href=https://yeqiongzhou.com/2020/08/chown/>https://yeqiongzhou.com/2020/08/chown/</span>
             </p>
             
              
@@ -270,10 +249,8 @@
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/07/unique-paths/" class="prev" rel="prev" title="不同路径"><i class="font_family icon-left"></i>&nbsp;不同路径</a>
+        <a href="https://yeqiongzhou.com/2020/08/nohup/" class="prev" rel="prev" title="Linux nohup命令"><i class="font_family icon-left"></i>&nbsp;Linux nohup命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/08/chown/" class="next" rel="next" title="Linux chown命令">Linux chown命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 

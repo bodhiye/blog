@@ -6,8 +6,66 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Aug 2020 23:03:22 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 22:44:22 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux chown命令</title>
+      <link>https://yeqiongzhou.com/2020/08/chown/</link>
+      <pubDate>Sun, 09 Aug 2020 22:44:22 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/chown/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;chown = change owner&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chown [-cfhvR] [&amp;ndash;help] [&amp;ndash;version] user[:group] file&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;user : 新的文件拥有者的使用者 ID&lt;/li&gt;
+&lt;li&gt;group : 新的文件拥有者的使用者组(group)&lt;/li&gt;
+&lt;li&gt;-c : 显示更改的部分的信息&lt;/li&gt;
+&lt;li&gt;-f : 忽略错误信息&lt;/li&gt;
+&lt;li&gt;-h :修复符号链接&lt;/li&gt;
+&lt;li&gt;-v : 显示详细的处理信息&lt;/li&gt;
+&lt;li&gt;-R : 处理指定目录以及其子目录下的所有文件&lt;/li&gt;
+&lt;li&gt;&amp;ndash;help : 显示辅助说明&lt;/li&gt;
+&lt;li&gt;&amp;ndash;version : 显示版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、将文件 yeqiongzhou.jpg 的拥有者设为 bodhiye，群体的使用者 xiaoye:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chown bodhiye:xiaoye yeqiongzhou.jpg&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2、将目前目录下的所有文件与子目录的拥有者皆设为 bodhiye，群体的使用者 xiaoye:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;chown -R bodhiye:xiaoye *&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;一般来说，这个指令只有是由系统管理者(root)所使用，一般使用者没有权限可以改变别人的文件拥有者，也没有权限把自己的文件拥有者改设为别人。只有系统管理者(root)才有这样的权限。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux nohup命令</title>
@@ -980,24 +1038,6 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;在类 Unix 系统中，/dev/null 称空设备，是一个特殊的设备文件，它丢弃一切写入其中的数据，读取它则会立即得到一个 EOF。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes存活探针</title>
-      <link>https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/</link>
-      <pubDate>Fri, 19 Apr 2019 09:31:00 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/</guid>
-      <description>&lt;p&gt;　　Kubernetes可以通过存活探针（liveness probes）检查容器是否还在运行。可以为pod中的每个容器单独指定存活探针。如果探测失败，Kubernetes将定期执行探针并重新启动容器。&lt;/p&gt;
-
-&lt;p&gt;　　Kubernetes有以下三种探测容器的机制：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP GET探针对容器的IP地址（你指定的端口和路径）执行HTTP GET请求。如果探测器收到响应，并且响应状态码不代表错误（换句话说，如果HTTP响应状态码是2xx或3xx），则认为探测成功。如果服务器返回错误响应状态码或者根本没有响应，那么探测就被认为是失败的，容器将被重新启动。&lt;/li&gt;
-&lt;li&gt;TCP套接字探针尝试与容器指定端口建立TCP连接。如果连接成功建立，则探测成功。否则，容器重新启动。&lt;/li&gt;
-&lt;li&gt;Exec探针在容器内执行任意命令，并检查命令的退出状态码。如果状态码是0，则探测成功。所有其他状态码都被认为失败。&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
