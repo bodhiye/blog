@@ -17,7 +17,7 @@
       <pubDate>Sun, 09 Aug 2020 22:44:22 +0800</pubDate>
       
       <guid>https://yeqiongzhou.com/2020/08/chown/</guid>
-      <description>命令详解 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或</description>
+      <description>前言 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组</description>
     </item>
     
     <item>

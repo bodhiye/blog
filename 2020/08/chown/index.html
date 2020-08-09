@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Linux chown命令",
     "headline" : "Linux chown命令",
-    "description" : "命令详解 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或",
+    "description" : "前言 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -57,7 +57,7 @@
     "datePublished": "2020-08-09 22:44:22 &#43;0800 &#43;0800",
     "dateModified" : "2020-08-09 22:44:22 &#43;0800 &#43;0800",
     "url" : "https://yeqiongzhou.com/2020/08/chown/",
-    "wordCount" : "400",
+    "wordCount" : "537",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 400 words</span>
+                <span class="post-word-count">, 537 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,9 +161,13 @@
 
 <hr />
 
-<h3 id="命令详解">命令详解</h3>
+<h3 id="前言">前言</h3>
 
 <p>Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
+
+<h3 id="命令详解">命令详解</h3>
+
+<p>chown 命令，主要用于修改文件（或目录）的所有者，除此之外，这个命令也可以修改文件（或目录）的所属组。</p>
 
 <h3 id="命令全拼">命令全拼</h3>
 
@@ -202,6 +206,14 @@
 <blockquote>
 <p>chown -R bodhiye:xiaoye *</p>
 </blockquote>
+
+<p>3、chown 命令也支持单纯的修改文件或目录的所属组：</p>
+
+<blockquote>
+<p>chown :xiaoye yeqiongzhou.jpg</p>
+</blockquote>
+
+<p>就表示修改 yeqiongzhou.jpg 文件的所属组为 xiaoye，但修改所属组通常使用 chgrp 命令，因此只修改文件所属组时并不推荐大家使用 chown 命令。</p>
 
 <h3 id="tips">Tips</h3>
 
