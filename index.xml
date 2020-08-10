@@ -6,8 +6,70 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Aug 2020 22:44:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 23:07:56 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux cmp命令</title>
+      <link>https://yeqiongzhou.com/2020/08/cmp/</link>
+      <pubDate>Mon, 10 Aug 2020 23:07:56 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/cmp/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，今天来讲一下 cmp 命令。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux cmp 命令用于比较两个文件是否有差异。当相互比较的两个文件完全一样时，则该指令不会显示任何信息。若发现有所差异，预设会标示出第一个不同之处的字符和列数编号。若不指定任何文件名称或是所给予的文件名为&amp;rdquo;-&amp;ldquo;，则 cmp 指令会从标准输入设备读取数据。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;cmp = compare&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cmp [-clsv][-i &amp;lt;字符数目&amp;gt;][&amp;ndash;help][第一个文件][第二个文件]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-c或&amp;ndash;print-chars: 除了标明差异处的十进制字码之外，一并显示该字符所对应字符。&lt;/li&gt;
+&lt;li&gt;-i&amp;lt;字符数目&amp;gt;或&amp;ndash;ignore-initial=&amp;lt;字符数目&amp;gt;: 指定一个数目。&lt;/li&gt;
+&lt;li&gt;-l或&amp;ndash;verbose: 标示出所有不一样的地方。&lt;/li&gt;
+&lt;li&gt;-s或&amp;ndash;quiet或&amp;ndash;silent: 不显示错误信息。&lt;/li&gt;
+&lt;li&gt;-v或&amp;ndash;version: 显示版本信息。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;help: 在线帮助。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、要确定两个文件是否相同，请输入：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cmp yeqiongzhou.jpg yeqiongzhou.jpg.bak&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;上面命令比较 yeqiongzhou.jpg 和 yeqiongzhou.jpg.bak 是否相同。如果文件相同，则不显示消息。&lt;/p&gt;
+
+&lt;p&gt;2、如果比较的两个文件不同，则显示第一个不同的位置，例如：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cmp yeqiongzhou1.jpg yeqiongzhou2.jpg&lt;br /&gt;
+yeqiongzhou1.jpg yeqiongzhou2.jpg differ: char 22, line 1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;如果显示消息 cmp: EOF on yeqiongzhou1.jpg，则 yeqiongzhou2.jpg 的第一部分与 yeqiongzhou1.jpg 相同，但在 yeqiongzhou2.jpg 中还有其他数据。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux chown命令</title>
@@ -962,94 +1024,6 @@ lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;各参数选项中常用到的是a和i。a选项强制只可添加不可删除，多用于日志系统的安全设定。而i是更为严格的安全设定，只有superuser (root) 或具有 CAP_LINUX_IMMUTABLE 处理能力（标识）的进程能够施加该选项。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Linux cat命令</title>
-      <link>https://yeqiongzhou.com/2019/12/cat/</link>
-      <pubDate>Sun, 15 Dec 2019 23:45:47 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/12/cat/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
-
-&lt;p&gt;cat 命令用于连接文件并打印到标准输出设备上。&lt;/p&gt;
-
-&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
-
-&lt;p&gt;cat = concatenate&lt;/p&gt;
-
-&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat [-AbeEnstTv] [&amp;ndash;help] [&amp;ndash;version] fileName&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-n 或 &amp;ndash;number: 由1开始对所有输出的行数编号。&lt;/li&gt;
-&lt;li&gt;-b 或 &amp;ndash;number-nonblank: 和 -n 相似，只不过对于空-不编号。&lt;/li&gt;
-&lt;li&gt;-s 或 &amp;ndash;squeeze-blank: 当遇到有连续两行以上的空白行-代换为一行的空白行。&lt;/li&gt;
-&lt;li&gt;-v 或 &amp;ndash;show-nonprinting: 使用 ^ 和 M- 符号，除了 -D 和 TAB 之外。&lt;/li&gt;
-&lt;li&gt;-E 或 &amp;ndash;show-ends: 在每行结束处显示 $。&lt;/li&gt;
-&lt;li&gt;-T 或 &amp;ndash;show-tabs: 将 TAB 字符显示为 ^I。&lt;/li&gt;
-&lt;li&gt;-A 或 &amp;ndash;show-all: 等价于 -vET。&lt;/li&gt;
-&lt;li&gt;-e: 等价于&amp;rdquo;-vE&amp;rdquo;选项。&lt;/li&gt;
-&lt;li&gt;-t: 等价于&amp;rdquo;-vT&amp;rdquo;选项。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;把 textfile1 的文档内容加上行号后输入 textfile2 这个文档里:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat -n textfile1 &amp;gt; textfile2&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;把 textfile1 和 textfile2 的文档内容加上行号（空白行不加）之后将内容附加到 textfile3 文档里:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat -b textfile1 textfile2 &amp;gt;&amp;gt; textfile3&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;清空 /etc/test.txt 文档内容:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat /dev/null &amp;gt; /etc/test.txt&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cat 也可以用来制作镜像文件。例如要制作软盘的镜像文件，将软盘放好后输入:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat /dev/fd0 &amp;gt; OUTFILE&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;相反的，如果想把 image file 写到软盘，输入:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat IMG_FILE &amp;gt; /dev/fd0&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在类 Unix 系统中，/dev/null 称空设备，是一个特殊的设备文件，它丢弃一切写入其中的数据，读取它则会立即得到一个 EOF。&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

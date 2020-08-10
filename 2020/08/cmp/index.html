@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/08/nohup/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/08/cmp/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/chown/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/08/chown/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/cmp/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux chown命令 | 叶琼州的代码小窝
+           Linux cmp命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux chown命令 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux cmp命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux chown命令",
-    "headline" : "Linux chown命令",
-    "description" : "前言 Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组",
+    "name" : "Linux cmp命令",
+    "headline" : "Linux cmp命令",
+    "description" : "前言 Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，今天来讲一下 cmp 命令。 命令详解 Linux cmp 命令用于比较两个文件是",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,10 +54,10 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-08-09 22:44:22 &#43;0800 &#43;0800",
-    "dateModified" : "2020-08-09 22:44:22 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/08/chown/",
-    "wordCount" : "537",
+    "datePublished": "2020-08-10 23:07:56 &#43;0800 &#43;0800",
+    "dateModified" : "2020-08-10 23:07:56 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/08/cmp/",
+    "wordCount" : "593",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -126,11 +126,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux chown命令</h1>
+        <h1 class="post-title" itemprop="name headline">Linux cmp命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=8996-20-910 itemprop="datePublished">August 9, 2020</time>
+                on <time datetime=8996-20-1011 itemprop="datePublished">August 10, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 537 words</span>
+                <span class="post-word-count">, 593 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -163,61 +163,53 @@
 
 <h3 id="前言">前言</h3>
 
-<p>Linux/Unix 是多人多工操作系统，所有的文件皆有拥有者。利用 chown 将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
+<p>Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，今天来讲一下 cmp 命令。</p>
 
 <h3 id="命令详解">命令详解</h3>
 
-<p>chown 命令，主要用于修改文件（或目录）的所有者，除此之外，这个命令也可以修改文件（或目录）的所属组。</p>
+<p>Linux cmp 命令用于比较两个文件是否有差异。当相互比较的两个文件完全一样时，则该指令不会显示任何信息。若发现有所差异，预设会标示出第一个不同之处的字符和列数编号。若不指定任何文件名称或是所给予的文件名为&rdquo;-&ldquo;，则 cmp 指令会从标准输入设备读取数据。</p>
 
 <h3 id="命令全拼">命令全拼</h3>
 
-<p>chown = change owner</p>
+<p>cmp = compare</p>
 
 <h3 id="语法格式">语法格式</h3>
 
 <blockquote>
-<p>chown [-cfhvR] [&ndash;help] [&ndash;version] user[:group] file&hellip;</p>
+<p>cmp [-clsv][-i &lt;字符数目&gt;][&ndash;help][第一个文件][第二个文件]</p>
 </blockquote>
 
 <h3 id="参数说明">参数说明</h3>
 
 <ul>
-<li>user : 新的文件拥有者的使用者 ID</li>
-<li>group : 新的文件拥有者的使用者组(group)</li>
-<li>-c : 显示更改的部分的信息</li>
-<li>-f : 忽略错误信息</li>
-<li>-h :修复符号链接</li>
-<li>-v : 显示详细的处理信息</li>
-<li>-R : 处理指定目录以及其子目录下的所有文件</li>
-<li>&ndash;help : 显示辅助说明</li>
-<li>&ndash;version : 显示版本</li>
+<li>-c或&ndash;print-chars: 除了标明差异处的十进制字码之外，一并显示该字符所对应字符。</li>
+<li>-i&lt;字符数目&gt;或&ndash;ignore-initial=&lt;字符数目&gt;: 指定一个数目。</li>
+<li>-l或&ndash;verbose: 标示出所有不一样的地方。</li>
+<li>-s或&ndash;quiet或&ndash;silent: 不显示错误信息。</li>
+<li>-v或&ndash;version: 显示版本信息。</li>
+<li>&ndash;help: 在线帮助。</li>
 </ul>
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<p>1、将文件 yeqiongzhou.jpg 的拥有者设为 bodhiye，群体的使用者 xiaoye:</p>
+<p>1、要确定两个文件是否相同，请输入：</p>
 
 <blockquote>
-<p>chown bodhiye:xiaoye yeqiongzhou.jpg</p>
+<p>cmp yeqiongzhou.jpg yeqiongzhou.jpg.bak</p>
 </blockquote>
 
-<p>2、将目前目录下的所有文件与子目录的拥有者皆设为 bodhiye，群体的使用者 xiaoye:</p>
+<p>上面命令比较 yeqiongzhou.jpg 和 yeqiongzhou.jpg.bak 是否相同。如果文件相同，则不显示消息。</p>
+
+<p>2、如果比较的两个文件不同，则显示第一个不同的位置，例如：</p>
 
 <blockquote>
-<p>chown -R bodhiye:xiaoye *</p>
+<p>cmp yeqiongzhou1.jpg yeqiongzhou2.jpg<br />
+yeqiongzhou1.jpg yeqiongzhou2.jpg differ: char 22, line 1</p>
 </blockquote>
-
-<p>3、chown 命令也支持单纯的修改文件或目录的所属组：</p>
-
-<blockquote>
-<p>chown :xiaoye yeqiongzhou.jpg</p>
-</blockquote>
-
-<p>就表示修改 yeqiongzhou.jpg 文件的所属组为 xiaoye，但修改所属组通常使用 chgrp 命令，因此只修改文件所属组时并不推荐大家使用 chown 命令。</p>
 
 <h3 id="tips">Tips</h3>
 
-<p>一般来说，这个指令只有是由系统管理者(root)所使用，一般使用者没有权限可以改变别人的文件拥有者，也没有权限把自己的文件拥有者改设为别人。只有系统管理者(root)才有这样的权限。</p>
+<p>如果显示消息 cmp: EOF on yeqiongzhou1.jpg，则 yeqiongzhou2.jpg 的第一部分与 yeqiongzhou1.jpg 相同，但在 yeqiongzhou2.jpg 中还有其他数据。</p>
 
     </div>
 
@@ -232,7 +224,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/08/chown/>https://yeqiongzhou.com/2020/08/chown/</span>
+                    <a href=https://yeqiongzhou.com/2020/08/cmp/>https://yeqiongzhou.com/2020/08/cmp/</span>
             </p>
             
              
@@ -261,10 +253,8 @@
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/08/nohup/" class="prev" rel="prev" title="Linux nohup命令"><i class="font_family icon-left"></i>&nbsp;Linux nohup命令</a>
+        <a href="https://yeqiongzhou.com/2020/08/chown/" class="prev" rel="prev" title="Linux chown命令"><i class="font_family icon-left"></i>&nbsp;Linux chown命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/08/cmp/" class="next" rel="next" title="Linux cmp命令">Linux cmp命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 

@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Aug 2020 22:44:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 23:07:56 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux cmp命令</title>
+      <link>https://yeqiongzhou.com/2020/08/cmp/</link>
+      <pubDate>Mon, 10 Aug 2020 23:07:56 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/cmp/</guid>
+      <description>前言 Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，今天来讲一下 cmp 命令。 命令详解 Linux cmp 命令用于比较两个文件是</description>
+    </item>
     
     <item>
       <title>Linux chown命令</title>
