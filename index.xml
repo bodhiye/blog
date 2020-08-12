@@ -6,8 +6,122 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Aug 2020 23:07:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 23:48:09 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux diff命令</title>
+      <link>https://yeqiongzhou.com/2020/08/diff/</link>
+      <pubDate>Wed, 12 Aug 2020 23:48:09 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/diff/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，还讲了利用 cmp 来比较两个文件是否有差异，今天来讲一下另一个比较文件差异的 diff 命令。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux diff 命令用于比较文件的差异。
+diff 以逐行的方式，比较文本文件的异同处。如果指定要比较目录，则 diff 会比较目录中相同文件名的文件，但不会比较其中子目录。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;diff = Difference&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;diff [-abBcdefHilnNpPqrstTuvwy][-&amp;lt;行数&amp;gt;][-C &amp;lt;行数&amp;gt;][-D &amp;lt;巨集名称&amp;gt;][-I &amp;lt;字符或字符串&amp;gt;][-S &amp;lt;文件&amp;gt;][-W &amp;lt;宽度&amp;gt;][-x &amp;lt;文件或目录&amp;gt;][-X &amp;lt;文件&amp;gt;][&amp;ndash;help][&amp;ndash;left-column][&amp;ndash;suppress-common-line][文件或目录1][文件或目录2]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-&amp;lt;行数&amp;gt;: 指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。&lt;/li&gt;
+&lt;li&gt;-a或&amp;ndash;text: diff预设只会逐行比较文本文件。&lt;/li&gt;
+&lt;li&gt;-b或&amp;ndash;ignore-space-change: 不检查空格字符的不同。&lt;/li&gt;
+&lt;li&gt;-B或&amp;ndash;ignore-blank-lines: 不检查空白行。&lt;/li&gt;
+&lt;li&gt;-c: 显示全部内文，并标出不同之处。&lt;/li&gt;
+&lt;li&gt;-C&amp;lt;行数&amp;gt;或&amp;ndash;context&amp;lt;行数&amp;gt;: 与执行&amp;rdquo;-c-&amp;lt;行数&amp;gt;&amp;ldquo;指令相同。&lt;/li&gt;
+&lt;li&gt;-d或&amp;ndash;minimal: 使用不同的演算法，以较小的单位来做比较。&lt;/li&gt;
+&lt;li&gt;-D&amp;lt;巨集名称&amp;gt;或ifdef&amp;lt;巨集名称&amp;gt;: 此参数的输出格式可用于前置处理器巨集。&lt;/li&gt;
+&lt;li&gt;-e或&amp;ndash;ed: 此参数的输出格式可用于ed的script文件。&lt;/li&gt;
+&lt;li&gt;-f或-forward-ed: 输出的格式类似ed的script文件，但按照原来文件的顺序来显示不同处。&lt;/li&gt;
+&lt;li&gt;-H或&amp;ndash;speed-large-files: 比较大文件时，可加快速度。&lt;/li&gt;
+&lt;li&gt;-l&amp;lt;字符或字符串&amp;gt;或&amp;ndash;ignore-matching-lines&amp;lt;字符或字符串&amp;gt;: 若两个文件在某几行有所不同，而这几行同时都包含了选项中指定的字符或字符串，则不显示这两个文件的差异。&lt;/li&gt;
+&lt;li&gt;-i或&amp;ndash;ignore-case: 不检查大小写的不同。&lt;/li&gt;
+&lt;li&gt;-l或&amp;ndash;paginate: 将结果交由pr程序来分页。&lt;/li&gt;
+&lt;li&gt;-n或&amp;ndash;rcs: 将比较结果以RCS的格式来显示。&lt;/li&gt;
+&lt;li&gt;-N或&amp;ndash;new-file: 在比较目录时，若文件A仅出现在某个目录中，预设会显示：&lt;/li&gt;
+&lt;li&gt;Only in目录: 件A若使用-N参数，则diff会将文件A与一个空白的文件比较。&lt;/li&gt;
+&lt;li&gt;-p: 若比较的文件为C语言的程序码文件时，显示差异所在的函数名称。&lt;/li&gt;
+&lt;li&gt;-P或&amp;ndash;unidirectional-new-file: 与-N类似，但只有当第二个目录包含了一个第一个目录所没有的文件时，才会将这个文件与空白的文件做比较。&lt;/li&gt;
+&lt;li&gt;-q或&amp;ndash;brief: 仅显示有无差异，不显示详细的信息。&lt;/li&gt;
+&lt;li&gt;-r或&amp;ndash;recursive: 比较子目录中的文件。&lt;/li&gt;
+&lt;li&gt;-s或&amp;ndash;report-identical-files: 若没有发现任何差异，仍然显示信息。&lt;/li&gt;
+&lt;li&gt;-S&amp;lt;文件&amp;gt;或&amp;ndash;starting-file&amp;lt;文件&amp;gt;: 在比较目录时，从指定的文件开始比较。&lt;/li&gt;
+&lt;li&gt;-t或&amp;ndash;expand-tabs: 在输出时，将tab字符展开。&lt;/li&gt;
+&lt;li&gt;-T或&amp;ndash;initial-tab: 在每行前面加上tab字符以便对齐。&lt;/li&gt;
+&lt;li&gt;-u,-U&amp;lt;列数&amp;gt;或&amp;ndash;unified=&amp;lt;列数&amp;gt;: 以合并的方式来显示文件内容的不同。&lt;/li&gt;
+&lt;li&gt;-v或&amp;ndash;version: 显示版本信息。&lt;/li&gt;
+&lt;li&gt;-w或&amp;ndash;ignore-all-space: 忽略全部的空格字符。&lt;/li&gt;
+&lt;li&gt;-W&amp;lt;宽度&amp;gt;或&amp;ndash;width&amp;lt;宽度&amp;gt;: 在使用-y参数时，指定栏宽。&lt;/li&gt;
+&lt;li&gt;-x&amp;lt;文件名或目录&amp;gt;或&amp;ndash;exclude&amp;lt;文件名或目录&amp;gt;: 不比较选项中所指定的文件或目录。&lt;/li&gt;
+&lt;li&gt;-X&amp;lt;文件&amp;gt;或&amp;ndash;exclude-from&amp;lt;文件&amp;gt;: 您可以将文件或目录类型存成文本文件，然后在=&amp;lt;文件&amp;gt;中指定此文本文件。&lt;/li&gt;
+&lt;li&gt;-y或&amp;ndash;side-by-side: 以并列的方式显示文件的异同之处。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;help: 显示帮助。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;left-column: 在使用-y参数时，若两个文件某一行内容相同，则仅在左侧的栏位显示该行内容。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;suppress-common-lines: 在使用-y参数时，仅显示不同之处。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;上面看了一大堆参数，下面来看看 diff 命令的实际使用吧，首先准备两个文件 xiaoye.log 和 xiaofang.log，接着来比较这两个文件：
+xiaoye.log&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;yeqiongzhou
+region
+shanghai
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;xiaofang.log&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;xiaofang
+region
+china
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;diff xiaoye.log xiaofang.log&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;输出如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;1c1
+&amp;lt; yeqiongzhou
+---
+&amp;gt; xiaofang
+3c3
+&amp;lt; shanghai
+---
+&amp;gt; china
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面的&amp;rdquo;1c1&amp;rdquo;和&amp;rdquo;3c3&amp;rdquo;表示 xiaoye.log 和 xiaofang.log 文件在第1行和第3行内容有所不同。&lt;/p&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;rdquo;|&amp;rdquo; 表示前后两个文件内容有不同。&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&amp;lt;&amp;rdquo; 表示后面文件比前面文件少了一行内容。&lt;/li&gt;
+&lt;li&gt;&amp;rdquo;&amp;gt;&amp;rdquo; 表示后面文件比前面文件多了一行内容。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux cmp命令</title>
@@ -943,88 +1057,6 @@ ENTRYPOINT [&amp;quot;./http-fake&amp;quot;]
 &lt;li&gt;测试http-fake服务：&lt;code&gt;curl -X POST -d &#39;{&amp;quot;uri&amp;quot;:&amp;quot;https://img.yeqiongzhou.com/test.jpg&amp;quot;}&#39; 127.0.0.1:2048/fake&lt;/code&gt;通过curl的方式来访问本地的http-fake服务，可以看到该服务返回了预期的json字段。如果要在本地访问服务器上的该服务，则127.0.0.1替换成服务器的IP地址。&lt;/li&gt;
 &lt;li&gt;查看日志：&lt;code&gt;docker logs test-http&lt;/code&gt;可以打印出服务相关日志&lt;code&gt;url=https://img.yeqiongzhou.com/test.jpg&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Linux chattr命令</title>
-      <link>https://yeqiongzhou.com/2019/12/chattr/</link>
-      <pubDate>Wed, 18 Dec 2019 08:40:47 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2019/12/chattr/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
-
-&lt;p&gt;chattr 命令用于改变文件属性。
-这项指令可改变存放在 ext2 文件系统上的文件或目录属性，这些属性共有以下几种模式:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;a：append only，让文件或目录仅供附加用途，设定该参数后，只能向文件中添加数据，而不能删除，多用于服务器日志文件安全。&lt;/li&gt;
-&lt;li&gt;A：no atime updates，不更新文件或目录的最后存取时间，文件或目录的 atime (access time)不可被修改(modified)。&lt;/li&gt;
-&lt;li&gt;c：compressed，将文件或目录压缩后存放，设定文件是否经压缩后再存储，读取时需要经过自动解压操作将文件或目录压缩后存放。&lt;/li&gt;
-&lt;li&gt;C：no copy-on-write (COW)，不执行写入时复制，多个调用者获取同一个资源，这时另一个调用者对这资源进行了修改，不生成一个副本。&lt;/li&gt;
-&lt;li&gt;d：no dump，将文件或目录排除在倾倒操作之外，设定文件不能成为 dump 程序的备份目标。&lt;/li&gt;
-&lt;li&gt;D：synchronous directory updates，同步更新目录。&lt;/li&gt;
-&lt;li&gt;e：extent format，extent 格式。&lt;/li&gt;
-&lt;li&gt;i：immutable，不得任意更动文件或目录，设定文件不能被删除、改名、设定链接关系，同时不能写入或新增内容。&lt;/li&gt;
-&lt;li&gt;j：data journaling，数据日志，文件在写入时会先被记录。&lt;/li&gt;
-&lt;li&gt;s：secure deletion，保密性删除文件或目录，即硬盘空间被全部收回。&lt;/li&gt;
-&lt;li&gt;S：synchronous updates，即时更新文件或目录，功能类似 sync。&lt;/li&gt;
-&lt;li&gt;t：no tail-merging，文件系统支持尾部合并。&lt;/li&gt;
-&lt;li&gt;T：top of directory hierarchy，具有该属性的目录将被视为目录层次结构的顶部。&lt;/li&gt;
-&lt;li&gt;u：undeletable，预防意外删除，与s相反，当设定为u时，数据内容其实还存在磁盘中。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
-
-&lt;p&gt;chattr = change attributes&lt;/p&gt;
-
-&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chattr [-RVf] [-+=aAcCdDeijsStTu] [-v version] files&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-R 递归处理，将指定目录下的所有文件及子目录一并处理。&lt;/li&gt;
-&lt;li&gt;-v&amp;lt;版本编号&amp;gt; 设置文件或目录版本。&lt;/li&gt;
-&lt;li&gt;-V 显示指令执行过程。&lt;/li&gt;
-&lt;li&gt;+&amp;lt;属性&amp;gt; 开启文件或目录的该项属性。&lt;/li&gt;
-&lt;li&gt;-&amp;lt;属性&amp;gt; 关闭文件或目录的该项属性。&lt;/li&gt;
-&lt;li&gt;=&amp;lt;属性&amp;gt; 指定文件或目录的该项属性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;用 chattr 命令防止系统中某个关键文件被修改:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chattr +i /root/yeqiongzhou.yaml&lt;br /&gt;
-lsattr /root/yeqiongzhou.yaml&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;会显示如下属性: &lt;code&gt;----i-------- /root/yeqiongzhou.yaml&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chattr +a /var/log/messages&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;各参数选项中常用到的是a和i。a选项强制只可添加不可删除，多用于日志系统的安全设定。而i是更为严格的安全设定，只有superuser (root) 或具有 CAP_LINUX_IMMUTABLE 处理能力（标识）的进程能够施加该选项。&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
