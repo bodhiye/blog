@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Aug 2020 23:48:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2020 17:13:14 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux file命令</title>
+      <link>https://yeqiongzhou.com/2020/08/file/</link>
+      <pubDate>Sun, 16 Aug 2020 17:13:14 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/file/</guid>
+      <description>前言 Linux 中“一切皆文件”，任何事物都是以文件的形式存在，在 windows 环境下，我们一般情况下可以通过文件的后缀名来识别文件的种类，但是在 linux 环境下，文件名</description>
+    </item>
     
     <item>
       <title>Linux diff命令</title>

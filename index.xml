@@ -6,8 +6,75 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Aug 2020 23:48:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2020 17:13:14 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux file命令</title>
+      <link>https://yeqiongzhou.com/2020/08/file/</link>
+      <pubDate>Sun, 16 Aug 2020 17:13:14 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/file/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;Linux 中“一切皆文件”，任何事物都是以文件的形式存在，在 windows 环境下，我们一般情况下可以通过文件的后缀名来识别文件的种类，但是在 linux 环境下，文件名可以自由更改，这时我们就可以通过 file 命令来获取文件的类型信息。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux file 命令用于辨识文件类型，通过 file 指令，我们得以辨识该文件的类型。&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file [-bcLvz][-f &amp;lt;名称文件&amp;gt;][-m &amp;lt;魔法数字文件&amp;gt;&amp;hellip;][文件或目录&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-b 　列出辨识结果时，不显示文件名称。&lt;/li&gt;
+&lt;li&gt;-c 　详细显示指令执行过程，便于排错或分析程序执行的情形。&lt;/li&gt;
+&lt;li&gt;-f&amp;lt;名称文件&amp;gt; 　指定名称文件，其内容有一个或多个文件名称时，让file依序辨识这些文件，格式为每列一个文件名称。&lt;/li&gt;
+&lt;li&gt;-i 　显示MIME类别。&lt;/li&gt;
+&lt;li&gt;-L 　直接显示符号连接所指向的文件的类别。&lt;/li&gt;
+&lt;li&gt;-m&amp;lt;魔法数字文件&amp;gt; 　指定魔法数字文件。&lt;/li&gt;
+&lt;li&gt;-v 　显示版本信息。&lt;/li&gt;
+&lt;li&gt;-z 　尝试去解读压缩文件的内容。&lt;/li&gt;
+&lt;li&gt;[文件或目录&amp;hellip;]  要确定类型的文件列表，多个文件之间使用空格分开，可以使用shell通配符匹配多个文件。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、显示文件类型：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file yetalks.mp4&lt;br /&gt;
+yetalks.mp4: ISO Media, MP4 v2 [ISO 14496-14]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2、不显示文件名称：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file -b yetalks.mp4&lt;br /&gt;
+ISO Media, MP4 v2 [ISO 14496-14]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;3、显示MIME类别：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file -i yetalks.log&lt;br /&gt;
+yetalks.log: text/plain; charset=utf-8&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;Linux 一切皆文件。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux diff命令</title>
@@ -981,82 +1048,6 @@ bodhiye@yeqiongzhou ~/Desktop ll
 -rw-r--r-- 1 bodhiye bin 0 May 25 22:05 yeqiongzhou.log
 改变文件xiaofang.log 的群组属性，使得文件xiaofang.log的群组属性和参考文件yeqiongzhou.log的群组属性相同。
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Docker部署Golang Http服务</title>
-      <link>https://yeqiongzhou.com/2020/02/docker-golang-http/</link>
-      <pubDate>Sun, 16 Feb 2020 11:31:00 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2020/02/docker-golang-http/</guid>
-      <description>
-
-&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
-
-&lt;p&gt;最近在工作中有这么一个需求：由于某个服务只在生产环境下部署，测试环境下没有相关服务，但是本地无法访问生产环境的服务，所以我需要mock一个返回特定json的http服务。&lt;/p&gt;
-
-&lt;h4 id=&#34;服务代码&#34;&gt;服务代码&lt;/h4&gt;
-
-&lt;p&gt;相关代码已经上传至GitHub：&lt;a href=&#34;https://github.com/bodhiye/http-fake&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;https://github.com/bodhiye/http-fake&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;main.go代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import (
-	&amp;quot;encoding/json&amp;quot;
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;net/http&amp;quot;
-)
-
-type fakeReq struct {
-	URI string `json:&amp;quot;uri&amp;quot;`
-}
-
-// 处理application/json类型的POST请求
-func fake(w http.ResponseWriter, r *http.Request) {
-	// 根据请求body创建一个json解析器实例
-	decoder := json.NewDecoder(r.Body)
-	// 用于存放参数数据
-	var req fakeReq
-	// 解析参数 存入map
-    decoder.Decode(&amp;amp;req)
-    // 打印日志
-	fmt.Printf(&amp;quot;url=%s\n&amp;quot;, req.URI)
-
-    // 返回你需要的json，这里返回了{&amp;quot;code&amp;quot;: 200}
-	fmt.Fprintf(w, `{&amp;quot;code&amp;quot;: 200}`)
-}
-
-func main() {
-	http.HandleFunc(&amp;quot;/fake&amp;quot;, fake)
-	http.ListenAndServe(&amp;quot;:2333&amp;quot;, nil)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dockerfile代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM golang:latest
-MAINTAINER &amp;quot;yeqiongzhou@whu.edu.cn&amp;quot;
-WORKDIR /go/src/http-fake
-ADD . /go/src/http-fake
-RUN go build .
-EXPOSE 2333
-ENTRYPOINT [&amp;quot;./http-fake&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;部署流程&#34;&gt;部署流程&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;编译Dockerfile文件：&lt;code&gt;docker build -t bodhiye/http-fake .&lt;/code&gt;编译完成后在终端输入&lt;code&gt;docker images&lt;/code&gt;可以查看刚才编译好的http-fake镜像。&lt;/li&gt;
-&lt;li&gt;你得注册一个Docker Hub账号，注册成功后登录Docker Hub：&lt;code&gt;docker login -u bodhiye&lt;/code&gt;，之后输入密码即可登录成功。&lt;/li&gt;
-&lt;li&gt;把镜像上传到Docker Hub：&lt;code&gt;docker push bodhiye/http-fake&lt;/code&gt;上传成功后可以在Docker Hub网站上看到刚刚上传的http-fake镜像。&lt;/li&gt;
-&lt;li&gt;在你需要部署的服务器或者本地环境下拉取镜像：&lt;code&gt;docker pull bodhiye/http-fake:latest&lt;/code&gt;代码中latest表示拉取最新的镜像版本。&lt;/li&gt;
-&lt;li&gt;启动http-fake服务：&lt;code&gt;docker run --name test-http -d -p 2048:2333 bodhiye/http-fake&lt;/code&gt;将容器服务内部的2333端口映射到本机的2048端口上，并给该容器服务起了一个my-test-http名称。&lt;/li&gt;
-&lt;li&gt;测试http-fake服务：&lt;code&gt;curl -X POST -d &#39;{&amp;quot;uri&amp;quot;:&amp;quot;https://img.yeqiongzhou.com/test.jpg&amp;quot;}&#39; 127.0.0.1:2048/fake&lt;/code&gt;通过curl的方式来访问本地的http-fake服务，可以看到该服务返回了预期的json字段。如果要在本地访问服务器上的该服务，则127.0.0.1替换成服务器的IP地址。&lt;/li&gt;
-&lt;li&gt;查看日志：&lt;code&gt;docker logs test-http&lt;/code&gt;可以打印出服务相关日志&lt;code&gt;url=https://img.yeqiongzhou.com/test.jpg&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/08/cmp/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/08/file/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/diff/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/08/diff/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/file/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux diff命令 | 叶琼州的代码小窝
+           Linux file命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux diff命令 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux file命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux diff命令",
-    "headline" : "Linux diff命令",
-    "description" : "前言 Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，还讲了利用 cmp 来比较两个文件是否有差异，今天来讲一下另一",
+    "name" : "Linux file命令",
+    "headline" : "Linux file命令",
+    "description" : "前言 Linux 中“一切皆文件”，任何事物都是以文件的形式存在，在 windows 环境下，我们一般情况下可以通过文件的后缀名来识别文件的种类，但是在 linux 环境下，文件名",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,10 +54,10 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-08-12 23:48:09 &#43;0800 &#43;0800",
-    "dateModified" : "2020-08-12 23:48:09 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/08/diff/",
-    "wordCount" : "2130",
+    "datePublished": "2020-08-16 17:13:14 &#43;0800 &#43;0800",
+    "dateModified" : "2020-08-16 17:13:14 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/08/file/",
+    "wordCount" : "506",
     "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
@@ -126,11 +126,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux diff命令</h1>
+        <h1 class="post-title" itemprop="name headline">Linux file命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=8996-20-1211 itemprop="datePublished">August 12, 2020</time>
+                on <time datetime=8996-20-165 itemprop="datePublished">August 16, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
@@ -138,7 +138,7 @@
                         <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 2130 words</span>
+                <span class="post-word-count">, 506 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -163,105 +163,58 @@
 
 <h3 id="前言">前言</h3>
 
-<p>Linux 中比较两个文件是否一致有好几种方式，前面已经讲过了 cksum 命令来校验两个文件是否一致，还讲了利用 cmp 来比较两个文件是否有差异，今天来讲一下另一个比较文件差异的 diff 命令。</p>
+<p>Linux 中“一切皆文件”，任何事物都是以文件的形式存在，在 windows 环境下，我们一般情况下可以通过文件的后缀名来识别文件的种类，但是在 linux 环境下，文件名可以自由更改，这时我们就可以通过 file 命令来获取文件的类型信息。</p>
 
 <h3 id="命令详解">命令详解</h3>
 
-<p>Linux diff 命令用于比较文件的差异。
-diff 以逐行的方式，比较文本文件的异同处。如果指定要比较目录，则 diff 会比较目录中相同文件名的文件，但不会比较其中子目录。</p>
-
-<h3 id="命令全拼">命令全拼</h3>
-
-<p>diff = Difference</p>
+<p>Linux file 命令用于辨识文件类型，通过 file 指令，我们得以辨识该文件的类型。</p>
 
 <h3 id="语法格式">语法格式</h3>
 
 <blockquote>
-<p>diff [-abBcdefHilnNpPqrstTuvwy][-&lt;行数&gt;][-C &lt;行数&gt;][-D &lt;巨集名称&gt;][-I &lt;字符或字符串&gt;][-S &lt;文件&gt;][-W &lt;宽度&gt;][-x &lt;文件或目录&gt;][-X &lt;文件&gt;][&ndash;help][&ndash;left-column][&ndash;suppress-common-line][文件或目录1][文件或目录2]</p>
+<p>file [-bcLvz][-f &lt;名称文件&gt;][-m &lt;魔法数字文件&gt;&hellip;][文件或目录&hellip;]</p>
 </blockquote>
 
 <h3 id="参数说明">参数说明</h3>
 
 <ul>
-<li>-&lt;行数&gt;: 指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。</li>
-<li>-a或&ndash;text: diff预设只会逐行比较文本文件。</li>
-<li>-b或&ndash;ignore-space-change: 不检查空格字符的不同。</li>
-<li>-B或&ndash;ignore-blank-lines: 不检查空白行。</li>
-<li>-c: 显示全部内文，并标出不同之处。</li>
-<li>-C&lt;行数&gt;或&ndash;context&lt;行数&gt;: 与执行&rdquo;-c-&lt;行数&gt;&ldquo;指令相同。</li>
-<li>-d或&ndash;minimal: 使用不同的演算法，以较小的单位来做比较。</li>
-<li>-D&lt;巨集名称&gt;或ifdef&lt;巨集名称&gt;: 此参数的输出格式可用于前置处理器巨集。</li>
-<li>-e或&ndash;ed: 此参数的输出格式可用于ed的script文件。</li>
-<li>-f或-forward-ed: 输出的格式类似ed的script文件，但按照原来文件的顺序来显示不同处。</li>
-<li>-H或&ndash;speed-large-files: 比较大文件时，可加快速度。</li>
-<li>-l&lt;字符或字符串&gt;或&ndash;ignore-matching-lines&lt;字符或字符串&gt;: 若两个文件在某几行有所不同，而这几行同时都包含了选项中指定的字符或字符串，则不显示这两个文件的差异。</li>
-<li>-i或&ndash;ignore-case: 不检查大小写的不同。</li>
-<li>-l或&ndash;paginate: 将结果交由pr程序来分页。</li>
-<li>-n或&ndash;rcs: 将比较结果以RCS的格式来显示。</li>
-<li>-N或&ndash;new-file: 在比较目录时，若文件A仅出现在某个目录中，预设会显示：</li>
-<li>Only in目录: 件A若使用-N参数，则diff会将文件A与一个空白的文件比较。</li>
-<li>-p: 若比较的文件为C语言的程序码文件时，显示差异所在的函数名称。</li>
-<li>-P或&ndash;unidirectional-new-file: 与-N类似，但只有当第二个目录包含了一个第一个目录所没有的文件时，才会将这个文件与空白的文件做比较。</li>
-<li>-q或&ndash;brief: 仅显示有无差异，不显示详细的信息。</li>
-<li>-r或&ndash;recursive: 比较子目录中的文件。</li>
-<li>-s或&ndash;report-identical-files: 若没有发现任何差异，仍然显示信息。</li>
-<li>-S&lt;文件&gt;或&ndash;starting-file&lt;文件&gt;: 在比较目录时，从指定的文件开始比较。</li>
-<li>-t或&ndash;expand-tabs: 在输出时，将tab字符展开。</li>
-<li>-T或&ndash;initial-tab: 在每行前面加上tab字符以便对齐。</li>
-<li>-u,-U&lt;列数&gt;或&ndash;unified=&lt;列数&gt;: 以合并的方式来显示文件内容的不同。</li>
-<li>-v或&ndash;version: 显示版本信息。</li>
-<li>-w或&ndash;ignore-all-space: 忽略全部的空格字符。</li>
-<li>-W&lt;宽度&gt;或&ndash;width&lt;宽度&gt;: 在使用-y参数时，指定栏宽。</li>
-<li>-x&lt;文件名或目录&gt;或&ndash;exclude&lt;文件名或目录&gt;: 不比较选项中所指定的文件或目录。</li>
-<li>-X&lt;文件&gt;或&ndash;exclude-from&lt;文件&gt;: 您可以将文件或目录类型存成文本文件，然后在=&lt;文件&gt;中指定此文本文件。</li>
-<li>-y或&ndash;side-by-side: 以并列的方式显示文件的异同之处。</li>
-<li>&ndash;help: 显示帮助。</li>
-<li>&ndash;left-column: 在使用-y参数时，若两个文件某一行内容相同，则仅在左侧的栏位显示该行内容。</li>
-<li>&ndash;suppress-common-lines: 在使用-y参数时，仅显示不同之处。</li>
+<li>-b 　列出辨识结果时，不显示文件名称。</li>
+<li>-c 　详细显示指令执行过程，便于排错或分析程序执行的情形。</li>
+<li>-f&lt;名称文件&gt; 　指定名称文件，其内容有一个或多个文件名称时，让file依序辨识这些文件，格式为每列一个文件名称。</li>
+<li>-i 　显示MIME类别。</li>
+<li>-L 　直接显示符号连接所指向的文件的类别。</li>
+<li>-m&lt;魔法数字文件&gt; 　指定魔法数字文件。</li>
+<li>-v 　显示版本信息。</li>
+<li>-z 　尝试去解读压缩文件的内容。</li>
+<li>[文件或目录&hellip;]  要确定类型的文件列表，多个文件之间使用空格分开，可以使用shell通配符匹配多个文件。</li>
 </ul>
 
 <h3 id="举个栗子">举个栗子</h3>
 
-<p>上面看了一大堆参数，下面来看看 diff 命令的实际使用吧，首先准备两个文件 xiaoye.log 和 xiaofang.log，接着来比较这两个文件：
-xiaoye.log</p>
-
-<pre><code class="language-html">yeqiongzhou
-region
-shanghai
-</code></pre>
-
-<p>xiaofang.log</p>
-
-<pre><code class="language-html">xiaofang
-region
-china
-</code></pre>
+<p>1、显示文件类型：</p>
 
 <blockquote>
-<p>diff xiaoye.log xiaofang.log</p>
+<p>file yetalks.mp4<br />
+yetalks.mp4: ISO Media, MP4 v2 [ISO 14496-14]</p>
 </blockquote>
 
-<p>输出如下：</p>
+<p>2、不显示文件名称：</p>
 
-<pre><code class="language-html">1c1
-&lt; yeqiongzhou
----
-&gt; xiaofang
-3c3
-&lt; shanghai
----
-&gt; china
-</code></pre>
+<blockquote>
+<p>file -b yetalks.mp4<br />
+ISO Media, MP4 v2 [ISO 14496-14]</p>
+</blockquote>
 
-<p>上面的&rdquo;1c1&rdquo;和&rdquo;3c3&rdquo;表示 xiaoye.log 和 xiaofang.log 文件在第1行和第3行内容有所不同。</p>
+<p>3、显示MIME类别：</p>
+
+<blockquote>
+<p>file -i yetalks.log<br />
+yetalks.log: text/plain; charset=utf-8</p>
+</blockquote>
 
 <h3 id="tips">Tips</h3>
 
-<ul>
-<li>&rdquo;|&rdquo; 表示前后两个文件内容有不同。</li>
-<li>&ldquo;&lt;&rdquo; 表示后面文件比前面文件少了一行内容。</li>
-<li>&rdquo;&gt;&rdquo; 表示后面文件比前面文件多了一行内容。</li>
-</ul>
+<p>Linux 一切皆文件。</p>
 
     </div>
 
@@ -276,7 +229,7 @@ china
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/08/diff/>https://yeqiongzhou.com/2020/08/diff/</span>
+                    <a href=https://yeqiongzhou.com/2020/08/file/>https://yeqiongzhou.com/2020/08/file/</span>
             </p>
             
              
@@ -305,10 +258,8 @@ china
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/08/cmp/" class="prev" rel="prev" title="Linux cmp命令"><i class="font_family icon-left"></i>&nbsp;Linux cmp命令</a>
+        <a href="https://yeqiongzhou.com/2020/08/diff/" class="prev" rel="prev" title="Linux diff命令"><i class="font_family icon-left"></i>&nbsp;Linux diff命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/08/file/" class="next" rel="next" title="Linux file命令">Linux file命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
