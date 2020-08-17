@@ -94,10 +94,10 @@ iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongz
 &lt;p&gt;lsof -c ye&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;4、显示进程号为 123 的进程所打开的文件：&lt;/p&gt;
+&lt;p&gt;4、显示进程号为 2333 的进程所打开的文件：&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;lsof -p 123&lt;/p&gt;
+&lt;p&gt;lsof -p 2333&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
