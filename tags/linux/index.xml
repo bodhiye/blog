@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 Aug 2020 17:13:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 22:13:14 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux lsof 命令</title>
+      <link>https://yeqiongzhou.com/2020/08/lsof/</link>
+      <pubDate>Mon, 17 Aug 2020 22:13:14 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/lsof/</guid>
+      <description>前言 在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。 在 linux 环境下，任何事物都以文件</description>
+    </item>
     
     <item>
       <title>Linux file命令</title>

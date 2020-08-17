@@ -6,8 +6,105 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 Aug 2020 17:13:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 22:13:14 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux lsof 命令</title>
+      <link>https://yeqiongzhou.com/2020/08/lsof/</link>
+      <pubDate>Mon, 17 Aug 2020 22:13:14 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/08/lsof/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。&lt;/p&gt;
+
+&lt;p&gt;在 linux 环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。所以如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，无论这个文件的本质如何，该文件描述符为应用程序与基础操作系统之间的交互提供了通用接口。因为应用程序打开文件的描述符列表提供了大量关于这个应用程序本身的信息，因此通过 lsof 工具能够查看这个列表对系统监测以及排错将是很有帮助的。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux lsof 命令是一个列出当前系统打开文件的工具。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;lsof = list open files&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;lsof [参数] [文件]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-a：列出打开文件存在的进程；&lt;/li&gt;
+&lt;li&gt;-c&amp;lt;进程名&amp;gt;：列出指定进程所打开的文件；&lt;/li&gt;
+&lt;li&gt;-d&amp;lt;文件号&amp;gt;：列出占用该文件号的进程；&lt;/li&gt;
+&lt;li&gt;+d&amp;lt;目录&amp;gt;：列出目录下被打开的文件；&lt;/li&gt;
+&lt;li&gt;+D&amp;lt;目录&amp;gt;：递归列出目录下被打开的文件；&lt;/li&gt;
+&lt;li&gt;-g：列出GID号进程详情；&lt;/li&gt;
+&lt;li&gt;-h：显示帮助信息；&lt;/li&gt;
+&lt;li&gt;-i&amp;lt;条件&amp;gt;：列出符合条件的进程；&lt;/li&gt;
+&lt;li&gt;-n&amp;lt;目录&amp;gt;：列出使用NFS的文件；&lt;/li&gt;
+&lt;li&gt;-p&amp;lt;进程号&amp;gt;：列出指定进程号所打开的文件；&lt;/li&gt;
+&lt;li&gt;-u：列出UID号进程详情；&lt;/li&gt;
+&lt;li&gt;-v：显示版本信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、查看开启&lt;code&gt;/Users/yeqiongzhou/Desktup&lt;/code&gt;文件的进程：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;lsof /Users/yeqiongzhou/Desktop&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;COMMAND  PID  USER         FD   TYPE  DEVICE   SIZE/OFF  NODE    NAME
+iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongzhou/Desktop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lsof 输出的各列字段信息：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;COMMAND：进程名称。&lt;/li&gt;
+&lt;li&gt;PID：进程标识符。&lt;/li&gt;
+&lt;li&gt;USER：进程所有者。&lt;/li&gt;
+&lt;li&gt;FD：文件描述符，应用程序通过文件描述符识别该文件。&lt;/li&gt;
+&lt;li&gt;TYPE：文件类型。&lt;/li&gt;
+&lt;li&gt;DEVICE：指定磁盘的名称。&lt;/li&gt;
+&lt;li&gt;SIZE：文件的大小。&lt;/li&gt;
+&lt;li&gt;NODE：索引节点，文件在磁盘上的标识。&lt;/li&gt;
+&lt;li&gt;NAME：打开文件的确切名称。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2、查看 8080 端口占用：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;lsof -i:8080&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;3、显示 ye 进程现在打开的文件：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;lsof -c ye&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;4、显示进程号为 123 的进程所打开的文件：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;lsof -p 123&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+
+&lt;p&gt;因为 lsof 命令需要访问核心内存和各种文件，所以需要 root 权限执行。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Linux file命令</title>
@@ -970,83 +1067,6 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return maxLength
 }
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Linux chgrp命令</title>
-      <link>https://yeqiongzhou.com/2020/05/chgrp/</link>
-      <pubDate>Mon, 25 May 2020 22:25:47 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2020/05/chgrp/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
-
-&lt;p&gt;Linux chgrp命令用于变更文件或目录的所属群组。
-在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgrp指令去变更文件与目录的所属群组，设置方式采用群组名称或群组识别码皆可。&lt;/p&gt;
-
-&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
-
-&lt;p&gt;chgrp = change group&lt;/p&gt;
-
-&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;version][所属群组][文件或目录&amp;hellip;]
-chgrp [-cfhRv][&amp;ndash;help][&amp;ndash;reference=&amp;lt;参考文件或目录&amp;gt;][&amp;ndash;version][文件或目录&amp;hellip;]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-c或&amp;ndash;changes 效果类似&amp;rdquo;-v&amp;rdquo;参数，但仅回报更改的部分。&lt;/li&gt;
-&lt;li&gt;-f或&amp;ndash;quiet或&amp;ndash;silent 不显示错误信息。&lt;/li&gt;
-&lt;li&gt;-h或&amp;ndash;no-dereference 只对符号连接的文件作修改，而不更动其他任何相关文件。&lt;/li&gt;
-&lt;li&gt;-R或&amp;ndash;recursive 递归处理，将指定目录下的所有文件及子目录一并处理。&lt;/li&gt;
-&lt;li&gt;-v或&amp;ndash;verbose 显示指令执行过程。&lt;/li&gt;
-&lt;li&gt;&amp;ndash;help 在线帮助。&lt;/li&gt;
-&lt;li&gt;&amp;ndash;reference=&amp;lt;参考文件或目录&amp;gt;，把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。&lt;/li&gt;
-&lt;li&gt;&amp;ndash;version 显示版本信息。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;改变文件的群组属性:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chgrp -v bin yeqiongzhou.log&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bodhiye@yeqiongzhou ~/Desktop ll
--rw-r--r-- 1 bodhiye staff 0 May 25 22:05 yeqiongzhou.log
-bodhiye@yeqiongzhou ~/Desktop chgrp -v bin yeqiongzhou.log
-bodhiye@yeqiongzhou ~/Desktop ll
--rw-r--r-- 1 bodhiye bin 0 May 25 22:05 yeqiongzhou.log
-可以看到将yeqiongzhou.log文件由staff群组改为了bin群组。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;根据指定文件改变文件的群组属性:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chgrp &amp;ndash;reference=yeqiongzhou.log xiaofang.log&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bodhiye@yeqiongzhou ~/Desktop ll
--rw-r--r-- 1 bodhiye staff 0 May 25 22:22 xiaofang.log
--rw-r--r-- 1 bodhiye bin   0 May 25 22:05 yeqiongzhou.log
-bodhiye@yeqiongzhou ~/Desktop chgrp --reference=yeqiongzhou.log xiaofang.log
-bodhiye@yeqiongzhou ~/Desktop ll
--rw-r--r-- 1 bodhiye bin 0 May 25 22:22 xiaofang.log
--rw-r--r-- 1 bodhiye bin 0 May 25 22:05 yeqiongzhou.log
-改变文件xiaofang.log 的群组属性，使得文件xiaofang.log的群组属性和参考文件yeqiongzhou.log的群组属性相同。
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
