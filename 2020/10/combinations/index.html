@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/08/file/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/10/combinations/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/08/lsof/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/08/lsof/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/10/combinations/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Linux lsof 命令 | 叶琼州的代码小窝
+           组合 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="Linux lsof 命令 | 叶琼州的代码小窝">
+  <meta name="title" content="组合 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "Linux lsof 命令",
-    "headline" : "Linux lsof 命令",
-    "description" : "前言 在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。 在 linux 环境下，任何事物都以文件",
+    "name" : "组合",
+    "headline" : "组合",
+    "description" : "题目描述 给定两个整数 n 和 k，返回 1 &hellip; n 中所有可能的 k 个数的组合。 示例: 输入: n = 4, k = 2 输出: [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ] 题解 package main import &quot;fmt&quot; func main() { fmt.Print(combine(4, 2)) } func combine(n int,",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,11 +54,11 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-08-17 22:13:14 &#43;0800 &#43;0800",
-    "dateModified" : "2020-08-17 22:13:14 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/08/lsof/",
-    "wordCount" : "842",
-    "keywords" : [ "Linux", "叶琼州的代码小窝"]
+    "datePublished": "2020-10-26 23:32:21 &#43;0800 &#43;0800",
+    "dateModified" : "2020-10-26 23:32:21 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/10/combinations/",
+    "wordCount" : "145",
+    "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Linux lsof 命令</h1>
+        <h1 class="post-title" itemprop="name headline">组合</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=8996-20-1710 itemprop="datePublished">August 17, 2020</time>
+                on <time datetime=10996-20-2611 itemprop="datePublished">October 26, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
+                        <a href="https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/"> Leetcode题解 </a>
                         
                 </span>
-                <span class="post-word-count">, 842 words</span>
+                <span class="post-word-count">, 145 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,90 +161,59 @@
 
 <hr />
 
-<h3 id="前言">前言</h3>
+<h2 id="题目描述">题目描述</h2>
 
-<p>在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。</p>
+<p>给定两个整数 n 和 k，返回 1 &hellip; n 中所有可能的 k 个数的组合。</p>
 
-<p>在 linux 环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。所以如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，无论这个文件的本质如何，该文件描述符为应用程序与基础操作系统之间的交互提供了通用接口。因为应用程序打开文件的描述符列表提供了大量关于这个应用程序本身的信息，因此通过 lsof 工具能够查看这个列表对系统监测以及排错将是很有帮助的。</p>
+<h3 id="示例">示例:</h3>
 
-<h3 id="命令详解">命令详解</h3>
-
-<p>Linux lsof 命令是一个列出当前系统打开文件的工具。</p>
-
-<h3 id="命令全拼">命令全拼</h3>
-
-<p>lsof = list open files</p>
-
-<h3 id="语法格式">语法格式</h3>
-
-<blockquote>
-<p>lsof [参数] [文件]</p>
-</blockquote>
-
-<h3 id="参数说明">参数说明</h3>
-
-<ul>
-<li>-a：列出打开文件存在的进程；</li>
-<li>-c&lt;进程名&gt;：列出指定进程所打开的文件；</li>
-<li>-d&lt;文件号&gt;：列出占用该文件号的进程；</li>
-<li>+d&lt;目录&gt;：列出目录下被打开的文件；</li>
-<li>+D&lt;目录&gt;：递归列出目录下被打开的文件；</li>
-<li>-g：列出GID号进程详情；</li>
-<li>-h：显示帮助信息；</li>
-<li>-i&lt;条件&gt;：列出符合条件的进程；</li>
-<li>-n&lt;目录&gt;：列出使用NFS的文件；</li>
-<li>-p&lt;进程号&gt;：列出指定进程号所打开的文件；</li>
-<li>-u：列出UID号进程详情；</li>
-<li>-v：显示版本信息。</li>
-</ul>
-
-<h3 id="举个栗子">举个栗子</h3>
-
-<p>1、查看开启<code>/Users/yeqiongzhou/Desktup</code>文件的进程：</p>
-
-<blockquote>
-<p>lsof /Users/yeqiongzhou/Desktop</p>
-</blockquote>
-
-<pre><code class="language-html">COMMAND  PID  USER         FD   TYPE  DEVICE   SIZE/OFF  NODE    NAME
-iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongzhou/Desktop
+<pre><code class="language-html">输入: n = 4, k = 2
+输出:
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
 </code></pre>
 
-<p>lsof 输出的各列字段信息：</p>
+<h2 id="题解">题解</h2>
 
-<ul>
-<li>COMMAND：进程名称。</li>
-<li>PID：进程标识符。</li>
-<li>USER：进程所有者。</li>
-<li>FD：文件描述符，应用程序通过文件描述符识别该文件。</li>
-<li>TYPE：文件类型。</li>
-<li>DEVICE：指定磁盘的名称。</li>
-<li>SIZE：文件的大小。</li>
-<li>NODE：索引节点，文件在磁盘上的标识。</li>
-<li>NAME：打开文件的确切名称。</li>
-</ul>
+<pre><code class="language-golang">package main
 
-<p>2、查看 8080 端口占用：</p>
+import &quot;fmt&quot;
 
-<blockquote>
-<p>lsof -i:8080</p>
-</blockquote>
+func main() {
+	fmt.Print(combine(4, 2))
+}
 
-<p>3、显示 ye 进程现在打开的文件：</p>
-
-<blockquote>
-<p>lsof -c ye</p>
-</blockquote>
-
-<p>4、显示进程号为 2333 的进程所打开的文件：</p>
-
-<blockquote>
-<p>lsof -p 2333</p>
-</blockquote>
-
-<h3 id="tips">Tips</h3>
-
-<p>因为 lsof 命令需要访问核心内存和各种文件，所以需要 root 权限执行。</p>
+func combine(n int, k int) (ans [][]int) {
+	tmp := []int{}
+	var dfs func(int)
+	dfs = func(cur int) {
+		// 剪枝
+		if len(tmp)+(n-cur+1) &lt; k {
+			return
+		}
+		if len(tmp) == k {
+			comb := make([]int, k)
+			copy(comb, tmp)
+			ans = append(ans, comb)
+			return
+		}
+		// 选择当前位置
+		tmp = append(tmp, cur)
+		dfs(cur + 1)
+		// 不选择当前位置
+		tmp = tmp[:len(tmp)-1]
+		dfs(cur + 1)
+	}
+	dfs(1)
+	return
+}
+</code></pre>
 
     </div>
 
@@ -259,7 +228,7 @@ iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongz
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/08/lsof/>https://yeqiongzhou.com/2020/08/lsof/</span>
+                    <a href=https://yeqiongzhou.com/2020/10/combinations/>https://yeqiongzhou.com/2020/10/combinations/</span>
             </p>
             
              
@@ -275,8 +244,8 @@ iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongz
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
-                    #Linux</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/leetcode/">
+                    #Leetcode</a></span>
             
             </section>
         
@@ -288,10 +257,8 @@ iTerm2   483  yeqiongzhou  cwd  DIR   1,4      128       995091  /Users/yeqiongz
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/08/file/" class="prev" rel="prev" title="Linux file命令"><i class="font_family icon-left"></i>&nbsp;Linux file命令</a>
+        <a href="https://yeqiongzhou.com/2020/08/lsof/" class="prev" rel="prev" title="Linux lsof 命令"><i class="font_family icon-left"></i>&nbsp;Linux lsof 命令</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/10/combinations/" class="next" rel="next" title="组合">组合&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
