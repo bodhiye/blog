@@ -6,8 +6,98 @@
     <description>Recent content in 叶琼州的代码小窝 on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Oct 2020 23:32:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2020 19:55:08 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux netstat 命令</title>
+      <link>https://yeqiongzhou.com/2020/11/netstat/</link>
+      <pubDate>Sun, 08 Nov 2020 19:55:08 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/11/netstat/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。&lt;/p&gt;
+
+&lt;p&gt;上一篇文章讲解了 lsof 命令，本文就来讲解另一个常用来查看端口信息的 netstat 命令。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令详解&#34;&gt;命令详解&lt;/h3&gt;
+
+&lt;p&gt;Linux netstat 命令用于显示网络状态，利用 netstat 命令可让你得知整个 Linux 系统的网络情况&lt;/p&gt;
+
+&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
+
+&lt;p&gt;netstat = network statistic&lt;/p&gt;
+
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;netstat [-acCeFghilMnNoprstuvVwx][-A&amp;lt;网络类型&amp;gt;][&amp;ndash;ip]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-a或&amp;ndash;all 显示所有连线中的Socket。&lt;/li&gt;
+&lt;li&gt;-A&amp;lt;网络类型&amp;gt;或&amp;ndash;&amp;lt;网络类型&amp;gt; 列出该网络类型连线中的相关地址。&lt;/li&gt;
+&lt;li&gt;-c或&amp;ndash;continuous 持续列出网络状态。&lt;/li&gt;
+&lt;li&gt;-C或&amp;ndash;cache 显示路由器配置的快取信息。&lt;/li&gt;
+&lt;li&gt;-e或&amp;ndash;extend 显示网络其他相关信息。&lt;/li&gt;
+&lt;li&gt;-F或&amp;ndash;fib 显示FIB。&lt;/li&gt;
+&lt;li&gt;-g或&amp;ndash;groups 显示多重广播功能群组组员名单。&lt;/li&gt;
+&lt;li&gt;-h或&amp;ndash;help 在线帮助。&lt;/li&gt;
+&lt;li&gt;-i或&amp;ndash;interfaces 显示网络界面信息表单。&lt;/li&gt;
+&lt;li&gt;-l或&amp;ndash;listening 显示监控中的服务器的Socket。&lt;/li&gt;
+&lt;li&gt;-M或&amp;ndash;masquerade 显示伪装的网络连线。&lt;/li&gt;
+&lt;li&gt;-n或&amp;ndash;numeric 直接使用IP地址，而不通过域名服务器。&lt;/li&gt;
+&lt;li&gt;-N或&amp;ndash;netlink或&amp;ndash;symbolic 显示网络硬件外围设备的符号连接名称。&lt;/li&gt;
+&lt;li&gt;-o或&amp;ndash;timers 显示计时器。&lt;/li&gt;
+&lt;li&gt;-p或&amp;ndash;programs 显示正在使用Socket的程序识别码和程序名称。&lt;/li&gt;
+&lt;li&gt;-r或&amp;ndash;route 显示Routing Table。&lt;/li&gt;
+&lt;li&gt;-s或&amp;ndash;statistics 显示网络工作信息统计表。&lt;/li&gt;
+&lt;li&gt;-t或&amp;ndash;tcp 显示TCP传输协议的连线状况。&lt;/li&gt;
+&lt;li&gt;-u或&amp;ndash;udp 显示UDP传输协议的连线状况。&lt;/li&gt;
+&lt;li&gt;-v或&amp;ndash;verbose 显示指令执行过程。&lt;/li&gt;
+&lt;li&gt;-V或&amp;ndash;version 显示版本信息。&lt;/li&gt;
+&lt;li&gt;-w或&amp;ndash;raw 显示RAW传输协议的连线状况。&lt;/li&gt;
+&lt;li&gt;-x或&amp;ndash;unix 此参数的效果和指定&amp;rdquo;-A unix&amp;rdquo;参数相同。&lt;/li&gt;
+&lt;li&gt;&amp;ndash;ip或&amp;ndash;inet 此参数的效果和指定&amp;rdquo;-A inet&amp;rdquo;参数相同。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;活学活用&#34;&gt;活学活用&lt;/h3&gt;
+
+&lt;p&gt;netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。&lt;/p&gt;
+
+&lt;p&gt;netstat 查看端口占用语法格式：
+&amp;gt; netstat -tunlp | grep 端口号&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-t (tcp) 仅显示tcp相关选项&lt;/li&gt;
+&lt;li&gt;-u (udp) 仅显示udp相关选项&lt;/li&gt;
+&lt;li&gt;-n 拒绝显示别名，能显示数字的全部转化为数字&lt;/li&gt;
+&lt;li&gt;-l 仅列出在Listen(监听)的服务状态&lt;/li&gt;
+&lt;li&gt;-p 显示建立相关链接的程序名&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
+
+&lt;p&gt;1、 查看 8000 端口的情况，使用以下命令：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;netstat -tunlp | grep 8000&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2、 在 Mac 系统下该命令使用参数有点变化，即&lt;code&gt;-f&lt;/code&gt;需要加上地址族，&lt;code&gt;-p&lt;/code&gt;需要加上协议 TCP 或者 UDP 等：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;netstat -anvp | grep 8000&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>组合</title>
@@ -962,107 +1052,6 @@ Tips: 如果是相对路径，则不需要上面的-safe 0。
 -map &amp;quot;[outv]&amp;quot; -map &amp;quot;[outa]&amp;quot; yeqiongzhou.mkv
 通过上面的命令我们合并了三个具有视频流和音频流的文件。
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Linux chmod命令</title>
-      <link>https://yeqiongzhou.com/2020/05/chmod/</link>
-      <pubDate>Tue, 26 May 2020 23:35:47 +0800</pubDate>
-      
-      <guid>https://yeqiongzhou.com/2020/05/chmod/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;命令详解&#34;&gt;命令详解&lt;/h2&gt;
-
-&lt;p&gt;Linux/Unix 的文件调用权限分为三级: 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。
-&lt;strong&gt;使用权限&lt;/strong&gt;: 所有使用者&lt;/p&gt;
-
-&lt;h3 id=&#34;命令全拼&#34;&gt;命令全拼&lt;/h3&gt;
-
-&lt;p&gt;chmod = change mode&lt;/p&gt;
-
-&lt;h3 id=&#34;语法格式&#34;&gt;语法格式&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod [-cfvR] [&amp;ndash;help] [&amp;ndash;version] mode file&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;参数说明&#34;&gt;参数说明&lt;/h3&gt;
-
-&lt;p&gt;mode: 权限设定字串，格式如下 :
-&amp;gt; [ugoa&amp;hellip;][[+-=][rwxX]&amp;hellip;][,&amp;hellip;]&lt;/p&gt;
-
-&lt;p&gt;其中:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;u表示该文件的拥有者，g表示与该文件的拥有者属于同一个群体(group)者，o表示其他以外的人，a表示这三者皆是。&lt;/li&gt;
-&lt;li&gt;+表示增加权限、-表示取消权限、=表示唯一设定权限。&lt;/li&gt;
-&lt;li&gt;r表示可读取，w表示可写入，x表示可执行，X表示只有当该文件是个子目录或者该文件已经被设定过为可执行。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;其他参数说明：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-c: 若该文件权限确实已经更改，才显示其更改动作&lt;/li&gt;
-&lt;li&gt;-f: 若该文件权限无法被更改也不要显示错误讯息&lt;/li&gt;
-&lt;li&gt;-v: 显示权限变更的详细资料&lt;/li&gt;
-&lt;li&gt;-R: 对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更)&lt;/li&gt;
-&lt;li&gt;&amp;ndash;help: 显示辅助说明&lt;/li&gt;
-&lt;li&gt;&amp;ndash;version: 显示版本&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h3&gt;
-
-&lt;p&gt;1 将文件 yeqiongzhou.txt 设为所有人皆可读取:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod ugo+r yeqiongzhou.txt
-chmod a+r yeqiongzhou.txt&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;2 将文件 yeqiongzhou.txt 与 xiaofang.txt 设为该文件拥有者，与其所属同一个群体者可写入，但其他以外的人则不可写入:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod ug+w,o-w yeqiongzhou.txt xiaofang.txt&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;3 将 yeqiongzhou.go 设定为只有该文件拥有者可以执行:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod u+x yeqiongzhou.go&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;4 将目前目录下的所有文件与子目录皆设为任何人可读取:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod -R a+r *&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;5 此外chmod也可以用数字来表示权限如:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;chmod 777 file
-语法为: chmod abc file
-其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;r=4，w=2，x=1&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;若要rwx属性则4+2+1=7；&lt;/li&gt;
-&lt;li&gt;若要rw-属性则4+2=6；&lt;/li&gt;
-&lt;li&gt;若要r-x属性则4+1=5。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;chmod a=rwx file&lt;/code&gt; 和 &lt;code&gt;chmod 777 file&lt;/code&gt; 效果相同
-&lt;code&gt;chmod ug=rwx,o=x file&lt;/code&gt; 和 &lt;code&gt;chmod 771 file&lt;/code&gt; 效果相同&lt;/p&gt;
-
-&lt;h4 id=&#34;注&#34;&gt;注&lt;/h4&gt;
-
-&lt;p&gt;若用chmod 4755 filename可使此程序具有root的权限&lt;/p&gt;
 </description>
     </item>
     

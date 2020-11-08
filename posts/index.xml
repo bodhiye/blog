@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 叶琼州的代码小窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Oct 2020 23:32:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2020 19:55:08 +0800</lastBuildDate>
     
 	<atom:link href="https://yeqiongzhou.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux netstat 命令</title>
+      <link>https://yeqiongzhou.com/2020/11/netstat/</link>
+      <pubDate>Sun, 08 Nov 2020 19:55:08 +0800</pubDate>
+      
+      <guid>https://yeqiongzhou.com/2020/11/netstat/</guid>
+      <description>前言 在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。 上一篇文章讲解了 lsof 命令，本文</description>
+    </item>
     
     <item>
       <title>组合</title>

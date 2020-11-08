@@ -9,9 +9,9 @@
   <meta name="description" content="叶琼州的个人博客">
   <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
   
-  <link rel="prev" href="https://yeqiongzhou.com/2020/08/lsof/" />
-  <link rel="next" href="https://yeqiongzhou.com/2020/11/netstat/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2020/10/combinations/" />
+  <link rel="prev" href="https://yeqiongzhou.com/2020/10/combinations/" />
+  
+  <link rel="canonical" href="https://yeqiongzhou.com/2020/11/netstat/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           组合 | 叶琼州的代码小窝
+           Linux netstat 命令 | 叶琼州的代码小窝
        
   </title>
-  <meta name="title" content="组合 | 叶琼州的代码小窝">
+  <meta name="title" content="Linux netstat 命令 | 叶琼州的代码小窝">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://yeqiongzhou.com"
     },
     "articleSection" : "posts",
-    "name" : "组合",
-    "headline" : "组合",
-    "description" : "题目描述 给定两个整数 n 和 k，返回 1 &hellip; n 中所有可能的 k 个数的组合。 示例: 输入: n = 4, k = 2 输出: [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ] 题解 package main import &quot;fmt&quot; func main() { fmt.Print(combine(4, 2)) } func combine(n int,",
+    "name" : "Linux netstat 命令",
+    "headline" : "Linux netstat 命令",
+    "description" : "前言 在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。 上一篇文章讲解了 lsof 命令，本文",
     "inLanguage" : "zh-cn",
     "author" : "叶琼州",
     "creator" : "叶琼州",
@@ -54,11 +54,11 @@
     "accountablePerson" : "叶琼州",
     "copyrightHolder" : "叶琼州",
     "copyrightYear" : "2020",
-    "datePublished": "2020-10-26 23:32:21 &#43;0800 &#43;0800",
-    "dateModified" : "2020-10-26 23:32:21 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2020/10/combinations/",
-    "wordCount" : "145",
-    "keywords" : [ "Leetcode", "叶琼州的代码小窝"]
+    "datePublished": "2020-11-08 19:55:08 &#43;0800 &#43;0800",
+    "dateModified" : "2020-11-08 19:55:08 &#43;0800 &#43;0800",
+    "url" : "https://yeqiongzhou.com/2020/11/netstat/",
+    "wordCount" : "1178",
+    "keywords" : [ "Linux", "叶琼州的代码小窝"]
 }
 </script>
 
@@ -126,19 +126,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">组合</h1>
+        <h1 class="post-title" itemprop="name headline">Linux netstat 命令</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=10996-20-2611 itemprop="datePublished">October 26, 2020</time>
+                on <time datetime=11996-20-87 itemprop="datePublished">November 8, 2020</time>
                 </span>
                 in
                 <i class="font_family icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/"> Leetcode题解 </a>
+                        <a href="https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/"> 每日Linux命令 </a>
                         
                 </span>
-                <span class="post-word-count">, 145 words</span>
+                <span class="post-word-count">, 1178 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -161,59 +161,83 @@
 
 <hr />
 
-<h2 id="题目描述">题目描述</h2>
+<h3 id="前言">前言</h3>
 
-<p>给定两个整数 n 和 k，返回 1 &hellip; n 中所有可能的 k 个数的组合。</p>
+<p>在平时的开发过程中，我们会经常遇到查看某个端口占用的情况，一般我们会用到 lsof 和 netstat 这两个命令来查看端口占用信息。</p>
 
-<h3 id="示例">示例:</h3>
+<p>上一篇文章讲解了 lsof 命令，本文就来讲解另一个常用来查看端口信息的 netstat 命令。</p>
 
-<pre><code class="language-html">输入: n = 4, k = 2
-输出:
-[
-  [2,4],
-  [3,4],
-  [2,3],
-  [1,2],
-  [1,3],
-  [1,4],
-]
-</code></pre>
+<h3 id="命令详解">命令详解</h3>
 
-<h2 id="题解">题解</h2>
+<p>Linux netstat 命令用于显示网络状态，利用 netstat 命令可让你得知整个 Linux 系统的网络情况</p>
 
-<pre><code class="language-golang">package main
+<h3 id="命令全拼">命令全拼</h3>
 
-import &quot;fmt&quot;
+<p>netstat = network statistic</p>
 
-func main() {
-	fmt.Print(combine(4, 2))
-}
+<h3 id="语法格式">语法格式</h3>
 
-func combine(n int, k int) (ans [][]int) {
-	tmp := []int{}
-	var dfs func(int)
-	dfs = func(cur int) {
-		// 剪枝
-		if len(tmp)+(n-cur+1) &lt; k {
-			return
-		}
-		if len(tmp) == k {
-			comb := make([]int, k)
-			copy(comb, tmp)
-			ans = append(ans, comb)
-			return
-		}
-		// 选择当前位置
-		tmp = append(tmp, cur)
-		dfs(cur + 1)
-		// 不选择当前位置
-		tmp = tmp[:len(tmp)-1]
-		dfs(cur + 1)
-	}
-	dfs(1)
-	return
-}
-</code></pre>
+<blockquote>
+<p>netstat [-acCeFghilMnNoprstuvVwx][-A&lt;网络类型&gt;][&ndash;ip]</p>
+</blockquote>
+
+<h3 id="参数说明">参数说明</h3>
+
+<ul>
+<li>-a或&ndash;all 显示所有连线中的Socket。</li>
+<li>-A&lt;网络类型&gt;或&ndash;&lt;网络类型&gt; 列出该网络类型连线中的相关地址。</li>
+<li>-c或&ndash;continuous 持续列出网络状态。</li>
+<li>-C或&ndash;cache 显示路由器配置的快取信息。</li>
+<li>-e或&ndash;extend 显示网络其他相关信息。</li>
+<li>-F或&ndash;fib 显示FIB。</li>
+<li>-g或&ndash;groups 显示多重广播功能群组组员名单。</li>
+<li>-h或&ndash;help 在线帮助。</li>
+<li>-i或&ndash;interfaces 显示网络界面信息表单。</li>
+<li>-l或&ndash;listening 显示监控中的服务器的Socket。</li>
+<li>-M或&ndash;masquerade 显示伪装的网络连线。</li>
+<li>-n或&ndash;numeric 直接使用IP地址，而不通过域名服务器。</li>
+<li>-N或&ndash;netlink或&ndash;symbolic 显示网络硬件外围设备的符号连接名称。</li>
+<li>-o或&ndash;timers 显示计时器。</li>
+<li>-p或&ndash;programs 显示正在使用Socket的程序识别码和程序名称。</li>
+<li>-r或&ndash;route 显示Routing Table。</li>
+<li>-s或&ndash;statistics 显示网络工作信息统计表。</li>
+<li>-t或&ndash;tcp 显示TCP传输协议的连线状况。</li>
+<li>-u或&ndash;udp 显示UDP传输协议的连线状况。</li>
+<li>-v或&ndash;verbose 显示指令执行过程。</li>
+<li>-V或&ndash;version 显示版本信息。</li>
+<li>-w或&ndash;raw 显示RAW传输协议的连线状况。</li>
+<li>-x或&ndash;unix 此参数的效果和指定&rdquo;-A unix&rdquo;参数相同。</li>
+<li>&ndash;ip或&ndash;inet 此参数的效果和指定&rdquo;-A inet&rdquo;参数相同。</li>
+</ul>
+
+<h3 id="活学活用">活学活用</h3>
+
+<p>netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。</p>
+
+<p>netstat 查看端口占用语法格式：
+&gt; netstat -tunlp | grep 端口号</p>
+
+<ul>
+<li>-t (tcp) 仅显示tcp相关选项</li>
+<li>-u (udp) 仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化为数字</li>
+<li>-l 仅列出在Listen(监听)的服务状态</li>
+<li>-p 显示建立相关链接的程序名</li>
+</ul>
+
+<h3 id="举个栗子">举个栗子</h3>
+
+<p>1、 查看 8000 端口的情况，使用以下命令：</p>
+
+<blockquote>
+<p>netstat -tunlp | grep 8000</p>
+</blockquote>
+
+<p>2、 在 Mac 系统下该命令使用参数有点变化，即<code>-f</code>需要加上地址族，<code>-p</code>需要加上协议 TCP 或者 UDP 等：</p>
+
+<blockquote>
+<p>netstat -anvp | grep 8000</p>
+</blockquote>
 
     </div>
 
@@ -228,7 +252,7 @@ func combine(n int, k int) (ans [][]int) {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2020/10/combinations/>https://yeqiongzhou.com/2020/10/combinations/</span>
+                    <a href=https://yeqiongzhou.com/2020/11/netstat/>https://yeqiongzhou.com/2020/11/netstat/</span>
             </p>
             
              
@@ -244,8 +268,8 @@ func combine(n int, k int) (ans [][]int) {
             <section>
             <i class="font_family icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/leetcode/">
-                    #Leetcode</a></span>
+            <span class="tag"><a href="https://yeqiongzhou.com/tags/linux/">
+                    #Linux</a></span>
             
             </section>
         
@@ -257,10 +281,8 @@ func combine(n int, k int) (ans [][]int) {
 
     <div class="post-nav">
         
-        <a href="https://yeqiongzhou.com/2020/08/lsof/" class="prev" rel="prev" title="Linux lsof 命令"><i class="font_family icon-left"></i>&nbsp;Linux lsof 命令</a>
+        <a href="https://yeqiongzhou.com/2020/10/combinations/" class="prev" rel="prev" title="组合"><i class="font_family icon-left"></i>&nbsp;组合</a>
          
-        
-        <a href="https://yeqiongzhou.com/2020/11/netstat/" class="next" rel="next" title="Linux netstat 命令">Linux netstat 命令&nbsp;<i class="font_family icon-right"></i></a>
         
     </div>
 
