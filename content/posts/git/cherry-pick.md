@@ -1,5 +1,5 @@
 ---
-title: "git cherry-pick命令"
+title: "git cherry-pick 命令"
 date: 2020-11-29T22:13:14+08:00
 draft: false
 categories: ["git手册"]
