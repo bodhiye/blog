@@ -33,8 +33,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
+          github_token: ${{ secrets.ACCESS_TOKEN }}
           keep_files: false
-          PUBLISH_DIR: ./public
+          publish_dir: ./public
           commit_message: ${{ github.event.head_commit.message }}
