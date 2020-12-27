@@ -1,380 +1,56 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  <meta name="author" content="叶琼州">
-  <meta name="description" content="叶琼州的个人博客">
-  <meta name="keywords" content="blog, go, golang, docker, k8s, kubernetes, 云原生, 叶琼州, yeqiongzhou, bodhiye">
-  
-  <link rel="prev" href="https://yeqiongzhou.com/2019/02/exchange-two-variables/" />
-  <link rel="next" href="https://yeqiongzhou.com/2019/03/hubei-provincial-museum/" />
-  <link rel="canonical" href="https://yeqiongzhou.com/2019/03/markdown/" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           Markdown语法手册 | 叶琼州的代码小窝
-       
-  </title>
-  <meta name="title" content="Markdown语法手册 | 叶琼州的代码小窝">
-    
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
-
-
-  
-  
- 
-
-<script type="application/ld+json">
- "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "https://yeqiongzhou.com"
-    },
-    "articleSection" : "posts",
-    "name" : "Markdown语法手册",
-    "headline" : "Markdown语法手册",
-    "description" : "Markdown 简明语法手册 1. 斜体和粗体 使用 * _ 和 ** _ _ 表示斜体和粗体。 示例： 这是 斜体 ，这是 粗体 。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，",
-    "inLanguage" : "zh-cn",
-    "author" : "叶琼州",
-    "creator" : "叶琼州",
-    "publisher": "叶琼州",
-    "accountablePerson" : "叶琼州",
-    "copyrightHolder" : "叶琼州",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-03-01 19:36:47 &#43;0800 &#43;0800",
-    "dateModified" : "2019-03-01 19:36:47 &#43;0800 &#43;0800",
-    "url" : "https://yeqiongzhou.com/2019/03/markdown/",
-    "wordCount" : "1685",
-    "keywords" : [ "Markdown", "叶琼州的代码小窝"]
-}
-</script>
-
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', '');
-</script>
-
-</head>
-
-  
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="font_family icon-love"></i></a>&nbsp;<a href="https://yeqiongzhou.com">叶琼州的代码小窝</a>
-        </div>
-        <div class="menu navbar-right">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="font_family icon-love"></i></a>&nbsp;<a href="https://yeqiongzhou.com">叶琼州的代码小窝</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/tags/" title="">Tags</a>
-                
-                <a class="menu-item" href="/about/" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Markdown语法手册</h1>
-        <div class="post-meta">
-                Written by <a itemprop="name" href="https://yeqiongzhou.com" rel="author">叶琼州</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=3996-19-17 itemprop="datePublished">March 1, 2019</time>
-                </span>
-                in
-                <i class="font_family icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"> 技能学习 </a>
-                        
-                </span>
-                <span class="post-word-count">, 1685 words</span>
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-            
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          
-
-<h1 id="markdown-简明语法手册">Markdown 简明语法手册</h1>
-
-<hr />
-
-<h3 id="1-斜体和粗体">1. 斜体和粗体</h3>
-
-<p>使用 <code>*</code>  <code>_</code> 和 <code>**</code>  <code>_ _</code> 表示斜体和粗体。</p>
-
-<p>示例：</p>
-
-<p>这是 <em>斜体</em> ，这是 <strong>粗体</strong> 。</p>
-
-<h3 id="2-分级标题">2. 分级标题</h3>
-
-<p>使用任意个 = 表示一级标题，使用 - 表示二级标题，不过一共只能表示两级。</p>
-
-<p>示例：</p>
-
-<pre><code class="language-html">这是一个一级标题
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta name=author content="叶琼州"><meta name=description content="叶琼州的个人博客"><meta name=keywords content="blog,go,golang,docker,k8s,kubernetes,云原生,叶琼州,yeqiongzhou"><link rel=prev href=https://yeqiongzhou.com/2019/02/exchange-two-variables/><link rel=next href=https://yeqiongzhou.com/2019/03/hubei-provincial-museum/><link rel=canonical href=https://yeqiongzhou.com/2019/03/markdown/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Markdown语法手册 | 叶琼州的代码小窝</title><meta name=title content="Markdown语法手册 | 叶琼州的代码小窝"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"Markdown语法手册","headline":"Markdown语法手册","description":"Markdown 简明语法手册 1. 斜体和粗体 使用 * _ 和 ** _ _ 表示斜体和粗体。 示例： 这是 斜体 ，这是 粗体 。 2. 分级标题 使用任意个 = 表示一级标题，使用 - 表示二级标题，","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2019","datePublished":"2019-03-01 19:36:47 \u002b0800 \u002b0800","dateModified":"2019-03-01 19:36:47 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2019\/03\/markdown\/","wordCount":"1850","keywords":["Markdown","叶琼州的代码小窝"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','');</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/categories/>Categories</a>
+<a class=menu-item href=/tags/>Tags</a>
+<a class=menu-item href=/about/>About</a></div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/categories/>Categories</a>
+<a class=menu-item href=/tags/>Tags</a>
+<a class=menu-item href=/about/>About</a></div></div></nav><main class=main><div class=container><article class=post-warp itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">Markdown语法手册</h1><div class=post-meta>Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
+<span class=post-time>on <time datetime=3996-19-17 itemprop=datePublished>March 1, 2019</time></span>
+in
+<i class="font_family icon-folder"></i><span class=post-category><a href=https://yeqiongzhou.com/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/>技能学习</a></span>
+<span class=post-word-count>, 1850 words</span></div></header><div class=post-content><h1 id=markdown-简明语法手册>Markdown 简明语法手册</h1><hr><h3 id=1-斜体和粗体>1. 斜体和粗体</h3><p>使用 <code>*</code> <code>_</code> 和 <code>**</code> <code>_ _</code> 表示斜体和粗体。</p><p>示例：</p><p>这是 <em>斜体</em> ，这是 <strong>粗体</strong> 。</p><h3 id=2-分级标题>2. 分级标题</h3><p>使用任意个 = 表示一级标题，使用 - 表示二级标题，不过一共只能表示两级。</p><p>示例：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>这是一个一级标题
 ==============
 
 这是一个二级标题
 --------------
-</code></pre>
-
-<h1 id="这是一个一级标题">这是一个一级标题</h1>
-
-<h2 id="这是一个二级标题">这是一个二级标题</h2>
-
-<p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1，## H2，### H3，#### H4，##### H5，###### H6。</p>
-
-<h1 id="h1">H1</h1>
-
-<h2 id="h2">H2</h2>
-
-<h3 id="h3">H3</h3>
-
-<h4 id="h4">H4</h4>
-
-<h5 id="h5">H5</h5>
-
-<h6 id="h6">H6</h6>
-
-<h3 id="3-外链接">3. 外链接</h3>
-
-<p>使用 [描述](链接地址) 为文字增加外链接。</p>
-
-<p>示例：</p>
-
-<p>这是 <a href="https://yeqiongzhou.com" rel="nofollow noreferrer" target="_blank">本人博客</a> 的链接。</p>
-
-<h3 id="4-无序列表">4. 无序列表</h3>
-
-<p>使用 *，+，- 表示无序列表。</p>
-
-<p>示例：</p>
-
-<ul>
-<li>无序列表项 一</li>
-<li>无序列表项 二</li>
-<li>无序列表项 三</li>
-</ul>
-
-<h3 id="5-有序列表">5. 有序列表</h3>
-
-<p>使用数字和点表示有序列表。</p>
-
-<p>示例：</p>
-
-<ol>
-<li>有序列表项 一</li>
-<li>有序列表项 二</li>
-<li>有序列表项 三</li>
-</ol>
-
-<h3 id="6-文字引用">6. 文字引用</h3>
-
-<p>使用 &gt; 表示文字引用。</p>
-
-<p>示例：</p>
-
-<blockquote>
-<p>Talk is cheap. Show me the code.</p>
-</blockquote>
-
-<h3 id="7-行内代码块">7. 行内代码块</h3>
-
-<p>使用 \ <code>代码</code> 表示行内代码块。</p>
-
-<p>示例：</p>
-
-<p>让我们聊聊 <code>Kubernetes</code> 。</p>
-
-<h3 id="8-代码块">8. 代码块</h3>
-
-<p>使用四个缩进空格表示代码块。</p>
-
-<p>示例：</p>
-
-<pre><code>这是一个代码块，此行左侧有四个不可见的空格哟。
-</code></pre>
-
-<h3 id="9-插入图像">9. 插入图像</h3>
-
-<p>使用 ![描述](图片链接地址) 插入图像。</p>
-
-<p>示例：</p>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/avatar.png" alt="我的头像" class="lazyload"><figcaption class="image-caption">我的头像</figcaption></figure></p>
-
-<h1 id="markdown-高阶语法手册">Markdown 高阶语法手册</h1>
-
-<hr />
-
-<h3 id="1-内容目录-注-github-markdown-不支持-toc-目录">1. 内容目录(注：GitHub Markdown 不支持 <code>[TOC]</code> 目录)</h3>
-
-<p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/toc.png" alt="目录" class="lazyload"><figcaption class="image-caption">目录</figcaption></figure></p>
-
-<h3 id="2-标签分类">2. 标签分类</h3>
-
-<p>在编辑区任意行的列首位置输入以下代码给文稿标签：</p>
-
-<p>标签： Docker Kubernetes Markdown</p>
-
-<p>或者</p>
-
-<p>Tags： Docker Kubernetes Markdown</p>
-
-<h3 id="3-删除线">3. 删除线</h3>
-
-<p>使用 ~~ 表示删除线。</p>
-
-<p><del>这是一段错误的文本。</del></p>
-
-<h3 id="4-注脚">4. 注脚</h3>
-
-<p>使用 [^keyword] 表示注脚。</p>
-
-<p>这是一个注脚<sup class="footnote-ref" id="fnref:footnote"><a href="#fn:footnote">1</a></sup>的样例。</p>
-
-<p>这是第二个注脚<sup class="footnote-ref" id="fnref:footnote2"><a href="#fn:footnote2">2</a></sup>的样例。</p>
-
-<h3 id="5-latex-公式-注-github-markdown-不支持-latex-公式">5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)</h3>
-
-<p>$ 表示行内公式：</p>
-
-<p><code>$E=mc^2$</code>
-质能守恒方程可以用一个很简洁的方程式来表达。</p>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/gs1.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-
-<p>$$ 表示整行公式：</p>
-
-<p><code>$$\sum_{i=1}^n a_i=0$$</code>
- <code>$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</code>
- <code>$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$</code>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/gs2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-
-<p>访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" rel="nofollow noreferrer" target="_blank">MathJax</a> 参考更多使用方法。</p>
-
-<h3 id="6-加强的代码块">6. 加强的代码块</h3>
-
-<p>支持四十一种编程语言的语法高亮的显示，行号显示。</p>
-
-<p>非代码示例：</p>
-
-<pre><code>$ sudo apt-get install vim-gnome
-</code></pre>
-
-<p>Python 示例：</p>
-
-<pre><code class="language-python">@requires_authorization
-def somefunc(param1='', param2=0):
-    '''A docstring'''
-    if param1 &gt; param2: # interesting
-        print 'Greater'
-    return (param2 - param1 + 1) or None
-
-class SomeClass:
-    pass
-
-&gt;&gt;&gt; message = '''interpreter
-... prompt'''
-</code></pre>
-
-<p>JavaScript 示例：</p>
-
-<pre><code class="language-javascript">/**
- * nth element in the fibonacci series.
- * @param n &gt;= 0
- * @return the nth element, &gt;= 0.
- */
-function fib(n) {
-    var a = 1,
-        b = 1;
-    var tmp;
-    while (--n &gt;= 0) {
-        tmp = a;
-        a += b;
-        b = tmp;
+</code></pre></div><h1 id=这是一个一级标题>这是一个一级标题</h1><h2 id=这是一个二级标题>这是一个二级标题</h2><p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1，## H2，### H3，#### H4，##### H5，###### H6。</p><h1 id=h1>H1</h1><h2 id=h2>H2</h2><h3 id=h3>H3</h3><h4 id=h4>H4</h4><h5 id=h5>H5</h5><h6 id=h6>H6</h6><h3 id=3-外链接>3. 外链接</h3><p>使用 [描述](链接地址) 为文字增加外链接。</p><p>示例：</p><p>这是 <a href=https://yeqiongzhou.com>本人博客</a> 的链接。</p><h3 id=4-无序列表>4. 无序列表</h3><p>使用 *，+，- 表示无序列表。</p><p>示例：</p><ul><li>无序列表项 一</li><li>无序列表项 二</li><li>无序列表项 三</li></ul><h3 id=5-有序列表>5. 有序列表</h3><p>使用数字和点表示有序列表。</p><p>示例：</p><ol><li>有序列表项 一</li><li>有序列表项 二</li><li>有序列表项 三</li></ol><h3 id=6-文字引用>6. 文字引用</h3><p>使用 > 表示文字引用。</p><p>示例：</p><blockquote><p>Talk is cheap. Show me the code.</p></blockquote><h3 id=7-行内代码块>7. 行内代码块</h3><p>使用 \ <code>代码</code> 表示行内代码块。</p><p>示例：</p><p>让我们聊聊 <code>Kubernetes</code> 。</p><h3 id=8-代码块>8. 代码块</h3><p>使用四个缩进空格表示代码块。</p><p>示例：</p><pre><code>这是一个代码块，此行左侧有四个不可见的空格哟。
+</code></pre><h3 id=9-插入图像>9. 插入图像</h3><p>使用 ![描述](图片链接地址) 插入图像。</p><p>示例：</p><p><img src=http://blog.yeqiongzhou.com/avatar.png alt=我的头像></p><h1 id=markdown-高阶语法手册>Markdown 高阶语法手册</h1><hr><h3 id=1-内容目录注github-markdown-不支持-toc-目录>1. 内容目录(注：GitHub Markdown 不支持 <code>[TOC]</code> 目录)</h3><p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p><p><img src=http://blog.yeqiongzhou.com/toc.png alt=目录></p><h3 id=2-标签分类>2. 标签分类</h3><p>在编辑区任意行的列首位置输入以下代码给文稿标签：</p><p>标签： Docker Kubernetes Markdown</p><p>或者</p><p>Tags： Docker Kubernetes Markdown</p><h3 id=3-删除线>3. 删除线</h3><p>使用 ~~ 表示删除线。</p><p><del>这是一段错误的文本。</del></p><h3 id=4-注脚>4. 注脚</h3><p>使用 [^keyword] 表示注脚。</p><p>这是一个注脚<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>的样例。</p><p>这是第二个注脚<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>的样例。</p><h3 id=5-latex-公式注github-markdown-不支持-latex-公式>5. LaTeX 公式(注：GitHub Markdown 不支持 LaTeX 公式)</h3><p>$ 表示行内公式：</p><p><code>$E=mc^2$</code>
+质能守恒方程可以用一个很简洁的方程式来表达。</p><p><img src=http://blog.yeqiongzhou.com/gs1.png alt></p><p>$$ 表示整行公式：</p><p><code>$$\sum_{i=1}^n a_i=0$$</code>
+<code>$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</code>
+<code>$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$</code>
+<img src=http://blog.yeqiongzhou.com/gs2.png alt></p><p>访问 <a href=http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>MathJax</a> 参考更多使用方法。</p><h3 id=6-加强的代码块>6. 加强的代码块</h3><p>支持四十一种编程语言的语法高亮的显示，行号显示。</p><p>非代码示例：</p><pre><code>$ sudo apt-get install vim-gnome
+</code></pre><p>Python 示例：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a6e22e>@requires_authorization</span>
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>somefunc</span>(param1<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>, param2<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>):
+    <span style=color:#e6db74>&#39;&#39;&#39;A docstring&#39;&#39;&#39;</span>
+    <span style=color:#66d9ef>if</span> param1 <span style=color:#f92672>&gt;</span> param2: <span style=color:#75715e># interesting</span>
+        <span style=color:#66d9ef>print</span> <span style=color:#e6db74>&#39;Greater&#39;</span>
+    <span style=color:#66d9ef>return</span> (param2 <span style=color:#f92672>-</span> param1 <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>or</span> None
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SomeClass</span>:
+    <span style=color:#66d9ef>pass</span>
+
+<span style=color:#f92672>&gt;&gt;&gt;</span> message <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&#39;&#39;interpreter
+</span><span style=color:#e6db74>... prompt&#39;&#39;&#39;</span>
+</code></pre></div><p>JavaScript 示例：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#75715e>/**
+</span><span style=color:#75715e> * nth element in the fibonacci series.
+</span><span style=color:#75715e> * @param n &gt;= 0
+</span><span style=color:#75715e> * @return the nth element, &gt;= 0.
+</span><span style=color:#75715e> */</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>fib</span>(<span style=color:#a6e22e>n</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>,
+        <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>tmp</span>;
+    <span style=color:#66d9ef>while</span> (<span style=color:#f92672>--</span><span style=color:#a6e22e>n</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>) {
+        <span style=color:#a6e22e>tmp</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span>;
+        <span style=color:#a6e22e>a</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>b</span>;
+        <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>tmp</span>;
     }
-    return a;
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span>;
 }
 
-document.write(fib(10));
-</code></pre>
-
-<h3 id="7-流程图-注-github-markdown-不支持流程图">7. 流程图(注：GitHub Markdown 不支持流程图)</h3>
-
-<h4 id="示例">示例</h4>
-
-<pre><code class="language-flow">st=&gt;start: Start:&gt;https://yeqiongzhou.com
+document.<span style=color:#a6e22e>write</span>(<span style=color:#a6e22e>fib</span>(<span style=color:#ae81ff>10</span>));
+</code></pre></div><h3 id=7-流程图注github-markdown-不支持流程图>7. 流程图(注：GitHub Markdown 不支持流程图)</h3><h4 id=示例>示例</h4><pre><code class=language-flow data-lang=flow>st=&gt;start: Start:&gt;https://yeqiongzhou.com
 io=&gt;inputoutput: verification
 op=&gt;operation: Your Operation
 cond=&gt;condition: Yes or No?
@@ -383,39 +59,15 @@ e=&gt;end
 st-&gt;io-&gt;op-&gt;cond
 cond(yes)-&gt;e
 cond(no)-&gt;sub-&gt;io
-</code></pre>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/flow.png" alt="流程图示例" class="lazyload"><figcaption class="image-caption">流程图示例</figcaption></figure></p>
-
-<h3 id="8-序列图-注-github-markdown-不支持序列图">8. 序列图(注：GitHub Markdown 不支持序列图)</h3>
-
-<h4 id="示例-1">示例 1</h4>
-
-<pre><code class="language-sequence">Alice-&gt;Bob: Hello Bob, how are you?
+</code></pre><p><img src=http://blog.yeqiongzhou.com/flow.png alt=流程图示例></p><h3 id=8-序列图注github-markdown-不支持序列图>8. 序列图(注：GitHub Markdown 不支持序列图)</h3><h4 id=示例-1>示例 1</h4><pre><code class=language-sequence data-lang=sequence>Alice-&gt;Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob--&gt;Alice: I am good thanks!
-</code></pre>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/seq1.png" alt="序列图示例1" class="lazyload"><figcaption class="image-caption">序列图示例1</figcaption></figure></p>
-
-<h4 id="示例-2">示例 2</h4>
-
-<pre><code class="language-sequence">Title: Here is a title
+</code></pre><p><img src=http://blog.yeqiongzhou.com/seq1.png alt=序列图示例1></p><h4 id=示例-2>示例 2</h4><pre><code class=language-sequence data-lang=sequence>Title: Here is a title
 A-&gt;B: Normal line
 B--&gt;C: Dashed line
 C-&gt;&gt;D: Open arrow
 D--&gt;&gt;A: Dashed open arrow
-</code></pre>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/seq2.png" alt="序列图示例2" class="lazyload"><figcaption class="image-caption">序列图示例2</figcaption></figure></p>
-
-<h3 id="9-甘特图-注-github-markdown-不支持甘特图">9. 甘特图(注：GitHub Markdown 不支持甘特图)</h3>
-
-<p>甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。</p>
-
-<h4 id="示例-1-1">示例</h4>
-
-<pre><code class="language-gantt">title 项目开发流程
+</code></pre><p><img src=http://blog.yeqiongzhou.com/seq2.png alt=序列图示例2></p><h3 id=9-甘特图注github-markdown-不支持甘特图>9. 甘特图(注：GitHub Markdown 不支持甘特图)</h3><p>甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。</p><h4 id=示例-3>示例</h4><pre><code class=language-gantt data-lang=gantt>title 项目开发流程
 section 项目确定
     需求分析       :a1, 2016-06-22, 3d
     可行性报告     :after a1, 5d
@@ -428,297 +80,46 @@ section 项目实施
 section 发布验收
     发布: 2d
     验收: 3d
-</code></pre>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://blog.yeqiongzhou.com/gantt.png" alt="甘特图示例" class="lazyload"><figcaption class="image-caption">甘特图示例</figcaption></figure></p>
-
-<h3 id="10-表格支持">10. 表格支持</h3>
-
-<h4 id="示例-1-2">示例</h4>
-
-<pre><code class="language-html">| 项目 | 价格 | 数量 |
+</code></pre><p><img src=http://blog.yeqiongzhou.com/gantt.png alt=甘特图示例></p><h3 id=10-表格支持>10. 表格支持</h3><h4 id=示例-4>示例</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>| 项目 | 价格 | 数量 |
 | -------- | -----: | :----: |
 | 计算机 | $1600 | 5 |
 | 手机 | $12 | 12 |
 | 管线 | $1 | 234 |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th align="right">价格</th>
-<th align="center">数量</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>计算机</td>
-<td align="right">$1600</td>
-<td align="center">5</td>
-</tr>
-
-<tr>
-<td>手机</td>
-<td align="right">$12</td>
-<td align="center">12</td>
-</tr>
-
-<tr>
-<td>管线</td>
-<td align="right">$1</td>
-<td align="center">234</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="11-定义型列表">11. 定义型列表</h3>
-
-<dl>
-<dt>名词 1</dt>
-<dd>定义 1（左侧有一个可见的冒号和四个不可见的空格）</dd>
-<dt>代码块 2</dt>
-<dd><p>这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）</p>
-
-<pre><code>代码块（左侧有八个不可见的空格）
-</code></pre></dd>
-</dl>
-
-<h3 id="12-html-标签">12. Html 标签</h3>
-
-<p>Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
-
-<h4 id="示例-1-3">示例</h4>
-
-<pre><code class="language-html">&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
-        &lt;th&gt;星期一&lt;/th&gt;
-        &lt;th&gt;星期二&lt;/th&gt;
-        &lt;th&gt;星期三&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;李强&lt;/td&gt;
-        &lt;td&gt;张明&lt;/td&gt;
-        &lt;td&gt;王平&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre>
-
-<table>
-
-    <tr>
-        <th rowspan="2">值班人员</th>
-        <th>星期一</th>
-        <th>星期二</th>
-        <th>星期三</th>
-    </tr>
-    <tr>
-        <td>李强</td>
-        <td>张明</td>
-        <td>王平</td>
-    </tr>
-
-</table>
-
-<h3 id="13-待办事宜-todo-列表">13. 待办事宜 Todo 列表</h3>
-
-<p>使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：</p>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>博客开发</strong>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 增加黑白背景色切换功能</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 支持评论功能</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 改进 LaTex 功能
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> 修复 LaTex 公式渲染问题</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers" rel="nofollow noreferrer" target="_blank">语法参考</a></label></li>
-</ul></label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>六月毕业旅行准备</strong>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 购买武汉到大阪来回的机票</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 准备去往日本的签证</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 浏览日本免税店的物品</label></li>
-</ul></label></li>
-</ul>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:footnote">这是一个 <em>注脚</em> 的 <strong>文本</strong>。
- <a class="footnote-return" href="#fnref:footnote"><sup>[return]</sup></a></li>
-<li id="fn:footnote2">这是另一个 <em>注脚</em> 的 <strong>文本</strong>。
- <a class="footnote-return" href="#fnref:footnote2"><sup>[return]</sup></a></li>
-</ol>
-</div>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>叶琼州 </span>
-                </p>
-            
-           
-             
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://yeqiongzhou.com/2019/03/markdown/>https://yeqiongzhou.com/2019/03/markdown/</span>
-            </p>
-            
-             
-            <p class="copyright-item lincese">
-                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-            <section>
-            <i class="font_family icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://yeqiongzhou.com/tags/markdown/">
-                    #Markdown</a></span>
-            
-            </section>
-        
-        <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://yeqiongzhou.com">home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://yeqiongzhou.com/2019/02/exchange-two-variables/" class="prev" rel="prev" title="交换两个变量的值"><i class="font_family icon-left"></i>&nbsp;交换两个变量的值</a>
-         
-        
-        <a href="https://yeqiongzhou.com/2019/03/hubei-provincial-museum/" class="next" rel="next" title="宝剑藏千年, 谁人能识君?">宝剑藏千年, 谁人能识君?&nbsp;<i class="font_family icon-right"></i></a>
-        
-    </div>
-
-    <div class="post-comment">
-          
-                 
-          
-        
-<div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
-    var title = location.pathname.substr(0, 50); 
-    const gitalk = new Gitalk({
-        clientID: 'abe0462addf2bb7816db',
-        clientSecret: '302211bbfc34be3c75ec4cfa8751002e796356fa',
-        repo: 'bodhiye.github.io',
-        owner: 'bodhiye',
-        admin: ['bodhiye'],
-        id: title, 
-        distractionFreeMode: false 
-    });
-    (function () {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
-            return;
-        }
-        gitalk.render('gitalk-container');
-    })();
-</script>
-
-    </div>
-</article>
-          </div>
-		   </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2019 - 2020</span>
-        
-        <span class="with-love">
-    	 <i class="font_family icon-love"></i> 
-         </span>
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://yeqiongzhou.com">叶琼州</a> | </span> 
-         
-
-         
-            <a href="http://beian.miit.gov.cn/" target="_blank" rel="external nofollow">赣ICP备20001186号 </a> |
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a></span> 
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
-    
-  
-
-
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-135209530-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-  
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https'){
-           bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else{
-          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-        </script>
-    
-
-     </div>
-  </body>
-</html>
+</code></pre></div><table><thead><tr><th>项目</th><th style=text-align:right>价格</th><th style=text-align:center>数量</th></tr></thead><tbody><tr><td>计算机</td><td style=text-align:right>$1600</td><td style=text-align:center>5</td></tr><tr><td>手机</td><td style=text-align:right>$12</td><td style=text-align:center>12</td></tr><tr><td>管线</td><td style=text-align:right>$1</td><td style=text-align:center>234</td></tr></tbody></table><h3 id=11-定义型列表>11. 定义型列表</h3><dl><dt>名词 1</dt><dd>定义 1（左侧有一个可见的冒号和四个不可见的空格）</dd><dt>代码块 2</dt><dd>这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）<pre><code>代码块（左侧有八个不可见的空格）
+</code></pre></dd></dl><h3 id=12-html-标签>12. Html 标签</h3><p>Markdown 语法中支持嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p><h4 id=示例-5>示例</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>table</span>&gt;
+    &lt;<span style=color:#f92672>tr</span>&gt;
+        &lt;<span style=color:#f92672>th</span> <span style=color:#a6e22e>rowspan</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;2&#34;</span>&gt;值班人员&lt;/<span style=color:#f92672>th</span>&gt;
+        &lt;<span style=color:#f92672>th</span>&gt;星期一&lt;/<span style=color:#f92672>th</span>&gt;
+        &lt;<span style=color:#f92672>th</span>&gt;星期二&lt;/<span style=color:#f92672>th</span>&gt;
+        &lt;<span style=color:#f92672>th</span>&gt;星期三&lt;/<span style=color:#f92672>th</span>&gt;
+    &lt;/<span style=color:#f92672>tr</span>&gt;
+    &lt;<span style=color:#f92672>tr</span>&gt;
+        &lt;<span style=color:#f92672>td</span>&gt;李强&lt;/<span style=color:#f92672>td</span>&gt;
+        &lt;<span style=color:#f92672>td</span>&gt;张明&lt;/<span style=color:#f92672>td</span>&gt;
+        &lt;<span style=color:#f92672>td</span>&gt;王平&lt;/<span style=color:#f92672>td</span>&gt;
+    &lt;/<span style=color:#f92672>tr</span>&gt;
+&lt;/<span style=color:#f92672>table</span>&gt;
+</code></pre></div><pre><code>&lt;tr&gt;
+    &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
+    &lt;th&gt;星期一&lt;/th&gt;
+    &lt;th&gt;星期二&lt;/th&gt;
+    &lt;th&gt;星期三&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;李强&lt;/td&gt;
+    &lt;td&gt;张明&lt;/td&gt;
+    &lt;td&gt;王平&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre><h3 id=13-待办事宜-todo-列表>13. 待办事宜 Todo 列表</h3><p>使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：</p><ul><li><input disabled type=checkbox> <strong>博客开发</strong><ul><li><input checked disabled type=checkbox> 增加黑白背景色切换功能</li><li><input checked disabled type=checkbox> 支持评论功能</li><li><input disabled type=checkbox> 新增Todo列表功能 <a href=https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments>语法参考</a></li><li><input disabled type=checkbox> 改进 LaTex 功能<ul><li><input disabled type=checkbox> 修复 LaTex 公式渲染问题</li><li><input disabled type=checkbox> 新增 LaTex 公式编号功能 <a href=http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers>语法参考</a></li></ul></li></ul></li><li><input disabled type=checkbox> <strong>六月毕业旅行准备</strong><ul><li><input checked disabled type=checkbox> 购买武汉到大阪来回的机票</li><li><input disabled type=checkbox> 准备去往日本的签证</li><li><input disabled type=checkbox> 浏览日本免税店的物品</li></ul></li></ul><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>这是一个 <em>注脚</em> 的 <strong>文本</strong>。 <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p>这是另一个 <em>注脚</em> 的 <strong>文本</strong>。 <a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
+<span>叶琼州</span></p><p class=copyright-item><span>Link:</span>
+<a href=https://yeqiongzhou.com/2019/03/markdown/>https://yeqiongzhou.com/2019/03/markdown/</span></p><p class="copyright-item lincese">本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p></div><div class=post-tags><section><i class="font_family icon-tag"></i>Tag(s):
+<span class=tag><a href=https://yeqiongzhou.com/tags/markdown/>#Markdown</a></span></section><section><a href=javascript:window.history.back();>back</a></span> ·
+<span><a href=https://yeqiongzhou.com>home</a></span></section></div><div class=post-nav><a href=https://yeqiongzhou.com/2019/02/exchange-two-variables/ class=prev rel=prev title=交换两个变量的值><i class="font_family icon-left"></i>&nbsp;交换两个变量的值</a>
+<a href=https://yeqiongzhou.com/2019/03/hubei-provincial-museum/ class=next rel=next title="宝剑藏千年, 谁人能识君?">宝剑藏千年, 谁人能识君?&nbsp;<i class="font_family icon-right"></i></a></div><div class=post-comment><div id=gitalk-container></div><link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css><script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script><script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'bodhiye.github.io',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:false});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return;}
+gitalk.render('gitalk-container');})();</script></div></article></div></main><footer class=footer><div class=copyright>&copy;
+<span itemprop=copyrightYear>2019 - 2020</span>
+<span class=with-love><i class="font_family icon-love"></i></span><span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> |</span>
+<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号</a> |
+<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span></div></footer><link href=//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css rel=stylesheet><script src=/js/vendor_gallery.min.js async></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-135209530-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script>(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}
+else{bp.src='http://push.zhanzhang.baidu.com/push.js';}
+var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script></div></body></html>
