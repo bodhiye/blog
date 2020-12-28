@@ -18,7 +18,7 @@ tags: ["Leetcode"]
 
 例如，上图是一个 7 x 3 的网格，有多少可能的路径？
 
-### 示例 1:
+### 示例 1
 
 ``` html
 输入: m = 3, n = 2
@@ -31,7 +31,7 @@ tags: ["Leetcode"]
 
 ```
 
-### 示例 2:
+### 示例 2
 
 ``` html
 输入: m = 7, n = 3
@@ -45,7 +45,7 @@ tags: ["Leetcode"]
 
 ## 题解
 
-``` golang
+``` go
 package main
 
 import (

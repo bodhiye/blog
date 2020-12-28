@@ -48,7 +48,7 @@ tags: ["Leetcode"]
 
 ## 题解
 
-``` golang
+``` go
 ppackage main
 
 import (

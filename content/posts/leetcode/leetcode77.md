@@ -12,7 +12,7 @@ tags: ["Leetcode"]
 
 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 
-### 示例:
+### 示例
 
 ``` html
 输入: n = 4, k = 2
@@ -29,7 +29,7 @@ tags: ["Leetcode"]
 
 ## 题解
 
-``` golang
+``` go
 package main
 
 import "fmt"

@@ -20,7 +20,7 @@ tags: ["Leetcode"]
 
 **说明：**m 和 n 的值均不超过 100。
 
-### 示例 1:
+### 示例 1
 
 ``` html
 输入:
@@ -41,7 +41,7 @@ tags: ["Leetcode"]
 
 ## 题解
 
-``` golang
+``` go
 package main
 
 import (
