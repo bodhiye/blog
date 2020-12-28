@@ -11,7 +11,7 @@ in
 <i class="font_family icon-folder"></i><span class=post-category><a href=https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/>Leetcode题解</a></span>
 <span class=post-word-count>, 337 words</span></div></header><div class=post-content><hr><h2 id=题目描述>题目描述</h2><p>一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start”）。
 机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
-现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p><p><img src=/images/leetcode/unique-paths-ii.jpg alt=不同路径II></p><p>网格中的障碍物和空位置分别用 1 和 0 来表示。</p><p>**说明：**m 和 n 的值均不超过 100。</p><h3 id=示例-1>示例 1:</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入:
+现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p><p><img src=/images/leetcode/unique-paths-ii.jpg alt=不同路径II></p><p>网格中的障碍物和空位置分别用 1 和 0 来表示。</p><p>**说明：**m 和 n 的值均不超过 100。</p><h3 id=示例-1>示例 1</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入:
 [
   [0,0,0],
   [0,1,0],
@@ -25,7 +25,7 @@ in
 1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下
 2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右
 
-</code></pre></div><h2 id=题解>题解</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-golang data-lang=golang><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</code></pre></div><h2 id=题解>题解</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
 
 <span style=color:#f92672>import</span> (
 	<span style=color:#e6db74>&#34;fmt&#34;</span>

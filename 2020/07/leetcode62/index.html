@@ -11,7 +11,7 @@ in
 <i class="font_family icon-folder"></i><span class=post-category><a href=https://yeqiongzhou.com/categories/leetcode%E9%A2%98%E8%A7%A3/>Leetcode题解</a></span>
 <span class=post-word-count>, 298 words</span></div></header><div class=post-content><hr><h2 id=题目描述>题目描述</h2><p>一个机器人位于一个 m x n 网格的左上角（起始点在下图中标记为“Start” ）。
 机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
-问总共有多少条不同的路径？</p><p><img src=/images/leetcode/unique-paths.jpg alt=不同路径></p><p>例如，上图是一个 7 x 3 的网格，有多少可能的路径？</p><h3 id=示例-1>示例 1:</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入: m = 3, n = 2
+问总共有多少条不同的路径？</p><p><img src=/images/leetcode/unique-paths.jpg alt=不同路径></p><p>例如，上图是一个 7 x 3 的网格，有多少可能的路径？</p><h3 id=示例-1>示例 1</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入: m = 3, n = 2
 输出: 3
 解释: 从左上角开始，总共有 3 条路径可以到达右下角。
 
@@ -19,9 +19,9 @@ in
 2. 向右 -&gt; 向下 -&gt; 向右
 3. 向下 -&gt; 向右 -&gt; 向右
 
-</code></pre></div><h3 id=示例-2>示例 2:</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入: m = 7, n = 3
+</code></pre></div><h3 id=示例-2>示例 2</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>输入: m = 7, n = 3
 输出: 28
-</code></pre></div><h3 id=提示>提示</h3><ul><li>1 &lt;= m, n &lt;= 100</li><li>题目数据保证答案小于等于 2 * 10 ^ 9</li></ul><h2 id=题解>题解</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-golang data-lang=golang><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</code></pre></div><h3 id=提示>提示</h3><ul><li>1 &lt;= m, n &lt;= 100</li><li>题目数据保证答案小于等于 2 * 10 ^ 9</li></ul><h2 id=题解>题解</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
 
 <span style=color:#f92672>import</span> (
 	<span style=color:#e6db74>&#34;fmt&#34;</span>
