@@ -14,7 +14,7 @@ tags: ["Leetcode"]
 机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。
 问总共有多少条不同的路径？
 
-![不同路径](http://blog.yeqiongzhou.com/unique-paths-ii.jpg)
+![不同路径](/images/leetcode/unique-paths.jpg)
 
 例如，上图是一个 7 x 3 的网格，有多少可能的路径？
 
