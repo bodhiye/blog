@@ -68,6 +68,7 @@ type pair struct {
 	Value int
 }
 
+// 快速排序
 func smallerNumbersThanCurrent(nums []int) []int {
 	p := make([]pair, len(nums))
 	for i, num := range nums {
@@ -85,5 +86,24 @@ func smallerNumbersThanCurrent(nums []int) []int {
 	}
 
 	return res
+}
+
+// 计数排序
+func smallerNumbersThanCurrent1(nums []int) []int {
+	cnt := [101]int{}
+    for _, v := range nums {
+        cnt[v]++
+    }
+    for i := 0; i < 100; i++ {
+		cnt[i+1] += cnt[i]
+	}
+
+    res := make([]int, len(nums))
+    for i, v := range nums {
+        if v > 0 {
+            res[i] = cnt[v-1]
+        }
+    }
+    return res
 }
 ```
