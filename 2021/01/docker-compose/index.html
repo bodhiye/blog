@@ -18,15 +18,13 @@ in
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> pip install -r requirements.txt<span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> . .<span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;flask&#34;</span>, <span style=color:#e6db74>&#34;run&#34;</span>]<span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><ul><li><code>FROM python:3.7-alpine</code>: 从 Python 3.7 基础镜像开始构建镜像。</li><li><code>WORKDIR /code</code>: 将工作目录设置为 /code。</li><li><code>ENV FLASK_APP app.py</code>、<code>ENV FLASK_RUN_HOST 0.0.0.0</code>: 设置环境变量。</li><li><code>COPY requirements.txt requirements.txt</code>、<code>RUN pip install -r requirements.txt</code>: 复制 requirements.txt 并安装 Python 依赖项。</li><li><code>COPY . .</code>: 将 . 项目中的当前目录复制到 . 镜像中的工作目录。</li><li><code>CMD ["flask", "run"]:</code>: 容器提供默认的执行命令为：flask run。</li></ul><h4 id=docker-composeyml>docker-compose.yml</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3&#34;</span>
-
+</span></code></pre></div><ul><li><code>FROM python:3.7-alpine</code>: 从 Python 3.7 基础镜像开始构建镜像。</li><li><code>WORKDIR /code</code>: 将工作目录设置为 /code。</li><li><code>ENV FLASK_APP app.py</code>、<code>ENV FLASK_RUN_HOST 0.0.0.0</code>: 设置环境变量。</li><li><code>COPY requirements.txt requirements.txt</code>、<code>RUN pip install -r requirements.txt</code>: 复制 requirements.txt 并安装 Python 依赖项。</li><li><code>COPY . .</code>: 将 . 项目中的当前目录复制到 . 镜像中的工作目录。</li><li><code>CMD ["flask", "run"]</code>: 容器提供默认的执行命令为：flask run。</li></ul><h4 id=docker-composeyml>docker-compose.yml</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3&#34;</span>
 <span style=color:#f92672>services</span>:
   <span style=color:#f92672>mongo</span>:
     <span style=color:#f92672>image</span>: <span style=color:#ae81ff>mongo:3.4.24-xenial</span>
     <span style=color:#f92672>command</span>: <span style=color:#ae81ff>mongod --port 27017</span>
     <span style=color:#f92672>ports</span>:
       - <span style=color:#e6db74>&#34;27017:27017&#34;</span>
-
   <span style=color:#f92672>demo</span>:
     <span style=color:#f92672>build</span>: <span style=color:#ae81ff>.</span>
     <span style=color:#f92672>ports</span>:
@@ -48,7 +46,7 @@ in
       <span style=color:#f92672>target</span>: <span style=color:#ae81ff>prod</span>
 </code></pre></div><ul><li>context: 上下文路径。</li><li>dockerfile: 指定构建镜像的 Dockerfile 文件名。</li><li>args: 添加构建参数，这是只能在构建过程中访问的环境变量。</li><li>labels: 设置构建镜像的标签。</li><li>target: 多层构建，可以指定构建哪一层。</li></ul><h4 id=command>command</h4><p><code>command: ["go", "run", "main.go"]</code> 会覆盖 Dockerfile 容器中指定的默认命令。</p><h4 id=container_name>container_name</h4><p><code>container_name: yeqiongzhou-demo</code> 指定自定义容器名称，而不是生成的默认名称。</p><h4 id=depends_on>depends_on</h4><p>设置依赖关系。</p><ul><li>docker-compose up: 以依赖性顺序启动服务。在以下示例中，先启动 db 和 redis ，才会启动 demo。</li><li>docker-compose up SERVICE ：自动包含 SERVICE 的依赖项。在以下示例中，docker-compose up demo 还将创建并启动 db 和 redis。</li><li>docker-compose stop ：按依赖关系顺序停止服务。在以下示例中，demo 在 db 和 redis 之前停止。</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3&#34;</span>
 <span style=color:#f92672>services</span>:
-  <span style=color:#f92672>web</span>:
+  <span style=color:#f92672>demo</span>:
     <span style=color:#f92672>build</span>: <span style=color:#ae81ff>.</span>
     <span style=color:#f92672>depends_on</span>:
       - <span style=color:#ae81ff>db</span>
@@ -57,7 +55,7 @@ in
     <span style=color:#f92672>image</span>: <span style=color:#ae81ff>redis</span>
   <span style=color:#f92672>db</span>:
     <span style=color:#f92672>image</span>: <span style=color:#ae81ff>postgres</span>
-</code></pre></div><h4 id=entrypoint>entrypoint</h4><p><code>entrypoint: /code/entrypoint.sh</code> 会覆盖容器默认的 entrypoint。</p><h4 id=environment>environment</h4><p>添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>environment</span>:
+</code></pre></div><h4 id=entrypoint>entrypoint</h4><p><code>entrypoint: /code/entrypoint.sh</code> 会覆盖容器默认的 entrypoint。</p><h4 id=environment>environment</h4><p>　　添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>environment</span>:
   <span style=color:#f92672>RACK_ENV</span>: <span style=color:#ae81ff>development</span>
   <span style=color:#f92672>SHOW</span>: <span style=color:#e6db74>&#39;true&#39;</span>
 </code></pre></div><h4 id=expose>expose</h4><p>暴露端口，但不映射到宿主机，只被连接的服务访问，仅可以指定内部端口为参数。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>expose</span>:
@@ -69,7 +67,7 @@ in
   <span style=color:#f92672>timeout</span>: <span style=color:#ae81ff>10s</span> <span style=color:#75715e># 设置检测超时时间</span>
   <span style=color:#f92672>retries</span>: <span style=color:#ae81ff>3</span> <span style=color:#75715e># 设置重试次数</span>
   <span style=color:#f92672>start_period</span>: <span style=color:#ae81ff>30s</span> <span style=color:#75715e># 启动后，多少秒开始启动检测程序</span>
-</code></pre></div><h4 id=image>image</h4><p>指定容器运行的镜像。以下格式都可以:</p><ul><li>image: golang</li><li>image: ubuntu:18.04</li><li>image: yeqiongzhou/demo</li><li>image: example-registry.com:5000/redis</li><li>image: a4bc65fd # 镜像id</li></ul><h4 id=logging>logging</h4><p>服务的日志记录配置。driver: 指定服务容器的日志记录驱动程序，默认值为json-file。有以下三个选项:</p><ul><li>driver: &ldquo;json-file&rdquo;</li><li>driver: &ldquo;syslog&rdquo;</li><li>driver: &ldquo;none&rdquo;</li></ul><p>仅在 json-file 驱动程序下，可以使用以下参数，限制日志得数量和大小。当达到文件限制上限，会自动删除旧得文件。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>logging</span>:
+</code></pre></div><h4 id=image>image</h4><p>指定容器运行的镜像。以下格式都可以:</p><ul><li>image: golang</li><li>image: ubuntu:18.04</li><li>image: yeqiongzhou/demo</li><li>image: example-registry.com:5000/redis</li><li>image: a4bc65fd # 镜像id</li></ul><h4 id=logging>logging</h4><p>　　服务的日志记录配置。driver: 指定服务容器的日志记录驱动程序，默认值为json-file。有以下三个选项:</p><ul><li>driver: &ldquo;json-file&rdquo;</li><li>driver: &ldquo;syslog&rdquo;</li><li>driver: &ldquo;none&rdquo;</li></ul><p>　　仅在 json-file 驱动程序下，可以使用以下参数，限制日志的数量和大小。当达到文件限制上限，会自动删除旧的文件。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>logging</span>:
   <span style=color:#f92672>driver</span>: <span style=color:#ae81ff>json-file</span>
   <span style=color:#f92672>options</span>:
     <span style=color:#f92672>max-size</span>: <span style=color:#e6db74>&#34;200k&#34;</span> <span style=color:#75715e># 单个文件大小为200k</span>
@@ -78,7 +76,7 @@ in
   <span style=color:#f92672>driver</span>: <span style=color:#ae81ff>syslog</span>
   <span style=color:#f92672>options</span>:
     <span style=color:#f92672>syslog-address</span>: <span style=color:#e6db74>&#34;tcp://192.168.0.1:1024&#34;</span>
-</code></pre></div><h4 id=restart>restart</h4><ul><li>no：是默认的重启策略，在任何情况下都不会重启容器。</li><li>always：容器总是重新启动。</li><li>on-failure：在容器非正常退出时（退出状态非0），才会重启容器。</li><li>unless-stopped：在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器。</li></ul><h4 id=volumes>volumes</h4><p>将主机的数据卷或着文件挂载到容器里。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3.7&#34;</span>
+</code></pre></div><h4 id=restart>restart</h4><ul><li>no：是默认的重启策略，在任何情况下都不会重启容器。</li><li>always：容器总是重新启动。</li><li>on-failure：在容器非正常退出时（退出状态非0），才会重启容器。</li><li>unless-stopped：在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器。</li></ul><h4 id=volumes>volumes</h4><p>将主机的数据卷或者文件挂载到容器里。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;3&#34;</span>
 <span style=color:#f92672>services</span>:
   <span style=color:#f92672>db</span>:
     <span style=color:#f92672>image</span>: <span style=color:#ae81ff>postgres:latest</span>
