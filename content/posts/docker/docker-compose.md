@@ -39,20 +39,18 @@ CMD ["flask", "run"]
 * `ENV FLASK_APP app.py`、`ENV FLASK_RUN_HOST 0.0.0.0`: 设置环境变量。
 * `COPY requirements.txt requirements.txt`、`RUN pip install -r requirements.txt`: 复制 requirements.txt 并安装 Python 依赖项。
 * `COPY . .`: 将 . 项目中的当前目录复制到 . 镜像中的工作目录。
-* `CMD ["flask", "run"]:`: 容器提供默认的执行命令为：flask run。
+* `CMD ["flask", "run"]`: 容器提供默认的执行命令为：flask run。
 
 #### docker-compose.yml
 
 ``` yml
 version: "3"
-
 services:
   mongo:
     image: mongo:3.4.24-xenial
     command: mongod --port 27017
     ports:
       - "27017:27017"
-
   demo:
     build: .
     ports:
@@ -116,7 +114,7 @@ services:
 ``` yml
 version: "3"
 services:
-  web:
+  demo:
     build: .
     depends_on:
       - db
@@ -133,7 +131,7 @@ services:
 
 #### environment
 
-添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。
+　　添加环境变量。您可以使用数组或字典、任何布尔值，布尔值需要用引号引起来，以确保 YML 解析器不会将其转换为 True 或 False。
 
 ``` yml
 environment:
@@ -176,13 +174,13 @@ healthcheck:
 
 #### logging
 
-服务的日志记录配置。driver: 指定服务容器的日志记录驱动程序，默认值为json-file。有以下三个选项:
+　　服务的日志记录配置。driver: 指定服务容器的日志记录驱动程序，默认值为json-file。有以下三个选项:
 
 * driver: "json-file"
 * driver: "syslog"
 * driver: "none"
 
-仅在 json-file 驱动程序下，可以使用以下参数，限制日志得数量和大小。当达到文件限制上限，会自动删除旧得文件。
+　　仅在 json-file 驱动程序下，可以使用以下参数，限制日志的数量和大小。当达到文件限制上限，会自动删除旧的文件。
 
 ``` yml
 logging:
@@ -210,10 +208,10 @@ logging:
 
 #### volumes
 
-将主机的数据卷或着文件挂载到容器里。
+将主机的数据卷或者文件挂载到容器里。
 
 ``` yml
-version: "3.7"
+version: "3"
 services:
   db:
     image: postgres:latest
