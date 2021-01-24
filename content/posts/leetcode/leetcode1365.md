@@ -49,7 +49,7 @@ tags: ["Leetcode"]
 ## 题解
 
 ``` go
-ppackage main
+package main
 
 import (
 	"fmt"
