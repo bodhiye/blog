@@ -1,5 +1,5 @@
 ---
-title: "包含min函数的栈"
+title: "剑指offer20——包含min函数的栈"
 date: 2019-03-06T19:20:20+08:00
 draft: false
 categories: ["剑指offer"]

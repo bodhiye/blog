@@ -1,5 +1,5 @@
 ---
-title: "左旋转字符串"
+title: "剑指offer43——左旋转字符串"
 date: 2019-03-06T19:21:52+08:00
 draft: false
 categories: ["剑指offer"]

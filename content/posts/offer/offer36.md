@@ -1,5 +1,5 @@
 ---
-title: "两个链表的第一个公共结点"
+title: "剑指offer36——两个链表的第一个公共结点"
 date: 2019-03-06T19:21:15+08:00
 draft: false
 categories: ["剑指offer"]

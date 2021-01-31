@@ -1,5 +1,5 @@
 ---
-title: "按之字形顺序打印二叉树"
+title: "剑指offer59——按之字形顺序打印二叉树"
 date: 2019-03-06T19:22:54+08:00
 draft: false
 categories: ["剑指offer"]

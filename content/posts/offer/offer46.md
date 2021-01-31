@@ -1,5 +1,5 @@
 ---
-title: "孩子们的游戏(圆圈中最后剩下的数)"
+title: "剑指offer46——孩子们的游戏(圆圈中最后剩下的数)"
 date: 2019-03-06T19:22:03+08:00
 draft: false
 categories: ["剑指offer"]

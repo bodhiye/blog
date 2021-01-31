@@ -1,5 +1,5 @@
 ---
-title: "旋转数组的最小数字"
+title: "剑指offer6——旋转数组的最小数字"
 date: 2019-03-06T19:19:22+08:00
 draft: false
 categories: ["剑指offer"]

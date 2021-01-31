@@ -1,5 +1,5 @@
 ---
-title: "二叉搜索树的后序遍历序列"
+title: "剑指offer23——二叉搜索树的后序遍历序列"
 date: 2019-03-06T19:20:31+08:00
 draft: false
 categories: ["剑指offer"]

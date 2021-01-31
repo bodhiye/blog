@@ -1,5 +1,5 @@
 ---
-title: "用两个栈实现队列"
+title: "剑指offer5——用两个栈实现队列"
 date: 2019-03-06T19:19:18+08:00
 draft: false
 categories: ["剑指offer"]

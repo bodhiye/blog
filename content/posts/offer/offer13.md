@@ -1,5 +1,5 @@
 ---
-title: "调整数组顺序使奇数位于偶数前面"
+title: "剑指offer13——调整数组顺序使奇数位于偶数前面"
 date: 2019-03-06T19:19:51+08:00
 draft: false
 categories: ["剑指offer"]

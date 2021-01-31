@@ -1,5 +1,5 @@
 ---
-title: "删除链表中重复的结点"
+title: "剑指offer56——删除链表中重复的结点"
 date: 2019-03-06T19:22:44+08:00
 draft: false
 categories: ["剑指offer"]

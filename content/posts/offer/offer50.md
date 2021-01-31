@@ -1,5 +1,5 @@
 ---
-title: "数组中重复的数字"
+title: "剑指offer50——数组中重复的数字"
 date: 2019-03-06T19:22:20+08:00
 draft: false
 categories: ["剑指offer"]

@@ -1,5 +1,5 @@
 ---
-title: "数组中只出现一次的数字"
+title: "剑指offer40——数组中只出现一次的数字"
 date: 2019-03-06T19:21:33+08:00
 draft: false
 categories: ["剑指offer"]
@@ -18,8 +18,7 @@ tags: ["Offer"]
 
 using namespace std;
 
-void FindNumsAppearOnce(vector<int> data, int* num1, int *num2)
-{
+void FindNumsAppearOnce(vector<int> data, int* num1, int *num2) {
 	int res = 0, index = 0;
 	for (int i = 0; i < data.size(); i++)
 		res ^= data[i];
@@ -38,8 +37,7 @@ void FindNumsAppearOnce(vector<int> data, int* num1, int *num2)
 	}
 }
 
-int main()
-{
+int main() {
 	ios::sync_with_stdio(false);
 	vector<int> v;
 	int n, temp, num1 = 0, num2 = 0;

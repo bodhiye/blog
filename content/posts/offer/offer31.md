@@ -1,5 +1,5 @@
 ---
-title: "整数中1出现的次数（从1到n整数中1出现的次数）"
+title: "剑指offer31——整数中1出现的次数（从1到n整数中1出现的次数）"
 date: 2019-03-06T19:20:59+08:00
 draft: false
 categories: ["剑指offer"]

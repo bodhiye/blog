@@ -1,5 +1,5 @@
 ---
-title: "链表中倒数第k个结点"
+title: "剑指offer14——链表中倒数第k个结点"
 date: 2019-03-06T19:19:57+08:00
 draft: false
 categories: ["剑指offer"]

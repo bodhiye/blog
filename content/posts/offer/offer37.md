@@ -1,5 +1,5 @@
 ---
-title: "数字在排序数组中出现的次数"
+title: "剑指offer37——数字在排序数组中出现的次数"
 date: 2019-03-06T19:21:19+08:00
 draft: false
 categories: ["剑指offer"]

@@ -1,5 +1,5 @@
 ---
-title: "数组中出现次数超过一半的数字"
+title: "剑指offer28——数组中出现次数超过一半的数字"
 date: 2019-03-06T19:20:47+08:00
 draft: false
 categories: ["剑指offer"]

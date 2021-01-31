@@ -1,5 +1,5 @@
 ---
-title: "丑数"
+title: "剑指offer33——丑数"
 date: 2019-03-06T19:21:06+08:00
 draft: false
 categories: ["剑指offer"]

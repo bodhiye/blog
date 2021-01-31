@@ -1,5 +1,5 @@
 ---
-title: "平衡二叉树"
+title: "剑指offer39——平衡二叉树"
 date: 2019-03-06T19:21:25+08:00
 draft: false
 categories: ["剑指offer"]
@@ -19,8 +19,7 @@ tags: ["Offer"]
 
 using namespace std;
 
-struct TreeNode
-{
+struct TreeNode {
 	int val;
 	struct TreeNode *left;
 	struct TreeNode *right;
@@ -28,8 +27,7 @@ struct TreeNode
 	TreeNode() {}
 };
 
-TreeNode* newTree()
-{
+TreeNode* newTree() {
 	TreeNode* node = new TreeNode;
 	int x;
 	cin >> x;
@@ -43,8 +41,7 @@ TreeNode* newTree()
 	return node;
 }
 
-int getDepth(TreeNode* root)
-{
+int getDepth(TreeNode* root) {
 	if (!root)return 0;
 	int left = getDepth(root->left);
 	if (left == -1)return -1;
@@ -53,13 +50,11 @@ int getDepth(TreeNode* root)
 	return abs(left - right) > 1 ? -1 : 1 + max(left, right);
 }
 
-bool IsBalanced_Solution(TreeNode* pRoot)
-{
+bool IsBalanced_Solution(TreeNode* pRoot) {
 	return getDepth(pRoot) != -1;
 }
 
-int main()
-{
+int main() {
 	ios::sync_with_stdio(false);
 	TreeNode* root = NULL;
 	root = newTree();

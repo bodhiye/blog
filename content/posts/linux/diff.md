@@ -67,6 +67,7 @@ diff = Difference
 
 上面看了一大堆参数，下面来看看 diff 命令的实际使用吧，首先准备两个文件 xiaoye.log 和 xiaofang.log，接着来比较这两个文件：
 xiaoye.log
+
 ```html
 yeqiongzhou
 region
@@ -74,6 +75,7 @@ shanghai
 ```
 
 xiaofang.log
+
 ```html
 xiaofang
 region
@@ -83,6 +85,7 @@ china
 > diff xiaoye.log xiaofang.log
 
 输出如下：
+
 ```html
 1c1
 < yeqiongzhou
@@ -93,6 +96,7 @@ china
 ---
 > china
 ```
+
 上面的"1c1"和"3c3"表示 xiaoye.log 和 xiaofang.log 文件在第1行和第3行内容有所不同。
 
 ### Tips

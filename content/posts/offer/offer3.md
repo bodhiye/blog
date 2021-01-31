@@ -1,5 +1,5 @@
 ---
-title: "从尾到头打印链表"
+title: "剑指offer3——从尾到头打印链表"
 date: 2019-03-06T19:19:09+08:00
 draft: false
 categories: ["剑指offer"]

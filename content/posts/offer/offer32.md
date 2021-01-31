@@ -1,5 +1,5 @@
 ---
-title: "把数组排成最小的数"
+title: "剑指offer32——把数组排成最小的数"
 date: 2019-03-06T19:21:03+08:00
 draft: false
 categories: ["剑指offer"]

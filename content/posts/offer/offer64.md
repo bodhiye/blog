@@ -1,5 +1,5 @@
 ---
-title: "滑动窗口的最大值"
+title: "剑指offer64——滑动窗口的最大值"
 date: 2019-03-06T19:23:18+08:00
 draft: false
 categories: ["剑指offer"]

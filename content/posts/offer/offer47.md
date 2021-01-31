@@ -1,5 +1,5 @@
 ---
-title: "求1+2+3+...+n"
+title: "剑指offer47——求1+2+3+...+n"
 date: 2019-03-06T19:22:07+08:00
 draft: false
 categories: ["剑指offer"]

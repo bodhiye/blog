@@ -1,5 +1,5 @@
 ---
-title: "翻转单词顺序列"
+title: "剑指offer44——翻转单词顺序列"
 date: 2019-03-06T19:21:57+08:00
 draft: false
 categories: ["剑指offer"]

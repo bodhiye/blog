@@ -1,5 +1,5 @@
 ---
-title: "栈的压入、弹出序列"
+title: "剑指offer21——栈的压入、弹出序列"
 date: 2019-03-06T19:20:24+08:00
 draft: false
 categories: ["剑指offer"]

@@ -1,5 +1,5 @@
 ---
-title: "构建乘积数组"
+title: "剑指offer51——构建乘积数组"
 date: 2019-03-06T19:22:23+08:00
 draft: false
 categories: ["剑指offer"]

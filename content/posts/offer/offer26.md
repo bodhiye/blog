@@ -1,5 +1,5 @@
 ---
-title: "二叉搜索树与双向链表"
+title: "剑指offer26——二叉搜索树与双向链表"
 date: 2019-03-06T19:20:41+08:00
 draft: false
 categories: ["剑指offer"]

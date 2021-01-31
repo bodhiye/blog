@@ -1,5 +1,5 @@
 ---
-title: "数值的整数次方"
+title: "剑指offer12——数值的整数次方"
 date: 2019-03-06T19:19:48+08:00
 draft: false
 categories: ["剑指offer"]

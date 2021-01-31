@@ -1,5 +1,5 @@
 ---
-title: "二叉搜索树的第k个结点"
+title: "剑指offer62——二叉搜索树的第k个结点"
 date: 2019-03-06T19:23:07+08:00
 draft: false
 categories: ["剑指offer"]

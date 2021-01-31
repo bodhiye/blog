@@ -1,5 +1,5 @@
 ---
-title: "字符串的排列"
+title: "剑指offer27——字符串的排列"
 date: 2019-03-06T19:20:44+08:00
 draft: false
 categories: ["剑指offer"]

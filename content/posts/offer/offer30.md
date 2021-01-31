@@ -1,5 +1,5 @@
 ---
-title: "连续子数组的最大和"
+title: "剑指offer30——连续子数组的最大和"
 date: 2019-03-06T19:20:55+08:00
 draft: false
 categories: ["剑指offer"]
