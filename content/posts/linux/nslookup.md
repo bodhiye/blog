@@ -1,5 +1,5 @@
 ---
-title: "Linux nohup命令"
+title: "Linux nslookup 命令"
 date: 2021-01-30T15:13:14+08:00
 categories: ["每日Linux命令"]
 tags: ["Linux"]
@@ -9,7 +9,7 @@ tags: ["Linux"]
 
 ### 前言
 
-我们平时在远程服务器或者跳板机上执行命令时，如果由于长时间未操作导致服务端未响应，触发了防火墙的闲置超时断开的缺省机制，会导致之前执行的命令中断。
+　　我们在工作时经常会查看某个 IP 或域名的 DNS 信息，查看当前 IP 绑定到了哪台机器上，或者当前域名是否解析正常。这里就要用到 nslookup 命令了。在使用nslookup之前，先确保已经安装了它，nslookup 属于 bind-utils 包下一个命令。
 
 ### 命令详解
 
