@@ -9,7 +9,7 @@ tags: ["Linux"]
 
 ### 前言
 
-　　我们在工作时经常会查看某个 IP 或域名的 DNS 信息，查看当前 IP 绑定到了哪台机器上，或者当前域名是否解析正常。这里就要用到 nslookup 命令了。在使用 nslookup之前，先确保已经安装了它，nslookup 属于 bind-utils 包下一个命令。
+　　我们在工作时经常会查看某个 IP 或域名的 DNS 信息，查看当前 IP 绑定到了哪台机器上，或者当前域名是否解析正常。这里就要用到 nslookup 命令了。
 
 ### 命令详解
 
@@ -60,3 +60,7 @@ yeqiongzhou.com mail exchanger = 5 mxbiz1.qq.com.
 Authoritative answers can be found from:
 > exit
 ```
+
+### Tips
+
+在使用 nslookup之前，先确保已经安装了它，nslookup 属于 bind-utils 包下一个命令。
