@@ -1,6 +1,6 @@
 ---
 title: "同步 Linux 时间"
-date: 2021-03-15T23:26:14+08:00
+date: 2021-03-16T22:53:14+08:00
 categories: ["Linux 运维"]
 tags: ["Linux"]
 ---
