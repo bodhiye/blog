@@ -1,8 +1,8 @@
 ---
 title: "Nginx 搭建离线文件服务器"
 date: 2021-03-15T23:26:14+08:00
-categories: ["nginx 实战"]
-tags: ["nginx"]
+categories: ["Nginx 实战"]
+tags: ["Nginx"]
 ---
 
 ### 前言
