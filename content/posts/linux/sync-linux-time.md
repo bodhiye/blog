@@ -21,4 +21,5 @@ tags: ["Linux"]
 
 #### 同步系统时间
 
-　　将机器时间同步到系统时间，`hwclock --hctosys`。相反的，如果要把系统时间同步到机器时间，`hwclock --systohc`。
+　　将机器时间同步到系统时间，`hwclock --hctosys`。
+　　相反的，如果要把系统时间同步到机器时间，`hwclock --systohc`。
