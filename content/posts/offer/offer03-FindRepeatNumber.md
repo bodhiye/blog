@@ -84,7 +84,6 @@ func findRepeatNumber2(nums []int) int {
 using namespace std; 
 
 bool duplicate(int numbers[], int length, int *duplication) {
-
     vector<bool> b = {0};
     for (int i = 0; i < length; i++) {
         if (b[numbers[i]]) {
@@ -94,11 +93,9 @@ bool duplicate(int numbers[], int length, int *duplication) {
         b[numbers[i]] = true;
     }
     return false;
-
 }
 
 int main() {
-
     ios::sync_with_stdio(false);
     int n, res;
     int a[1001];
@@ -108,6 +105,5 @@ int main() {
     cout << duplicate(a, n, &res) << endl;
     cout << res;
     return 0;
-
 }
 ```
