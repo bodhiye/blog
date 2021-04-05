@@ -41,7 +41,7 @@ tags: ["Offer"]
 
 ## 源码
 
-golang 实现
+### golang 实现
 
 ```go
 package main
@@ -79,7 +79,7 @@ func findRepeatNumber2(nums []int) int {
 }
 ```
 
-c++ 实现
+### c++ 实现
 
 ```c++
 #include <iostream>
