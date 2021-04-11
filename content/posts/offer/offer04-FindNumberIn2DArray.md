@@ -139,15 +139,14 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 
 using namespace std;
 
-bool find(int target, vector<vector<int> > array)
+bool findNumberIn2DArray(vector<vector<int> >& matrix, int target)
 {
-	int rows = array.size(), cols = array[0].size();
-	int i = rows - 1, j = 0;
-	while (i >= 0 && j < cols)
+	int i = matrix.size() - 1, j = 0;
+	while (i >= 0 && j < matrix[0].size())
 	{
-		if (target < array[i][j])
+		if (target < matrix[i][j])
 			i--;
-		else if (target > array[i][j])
+		else if (target > matrix[i][j])
 			j++;
 		else
 			return true;
@@ -158,21 +157,23 @@ bool find(int target, vector<vector<int> > array)
 int main()
 {
 	ios::sync_with_stdio(false);
-	vector<vector<int> > array;
-	vector<int> v;
-	int m, n, target, temp;
-	cin >> m >> n >> target;
-	for (int i = 0; i < m; i++)
+	int a[][5] = {
+		{1, 4, 7, 11, 15},
+		{2, 5, 8, 12, 19},
+		{3, 6, 9, 16, 22},
+		{10, 13, 14, 17, 24},
+		{18, 21, 23, 26, 30},
+	};
+	vector<vector<int> > matrix(5, vector<int> (5, 0));
+	for (int m = 0; m < matrix.size(); m++)
 	{
-		for (int j = 0; j < n; j++)
+		for (int n = 0; n < matrix[m].size(); n++)
 		{
-			cin >> temp;
-			v.push_back(temp);
+			matrix[m][n] = a[m][n];
 		}
-		array.push_back(v);
-		v.clear();
 	}
-	cout << find(target, array) << endl;
+	cout << findNumberIn2DArray(matrix, 5) << endl;
+	cout << findNumberIn2DArray(matrix, 20) << endl;
 	return 0;
 }
 ```

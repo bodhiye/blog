@@ -87,27 +87,29 @@ func findRepeatNumber2(nums []int) int {
 
 using namespace std; 
 
-bool duplicate(int numbers[], int length, int *duplication) {
-    vector<bool> b = {0};
-    for (int i = 0; i < length; i++) {
-        if (b[numbers[i]]) {
-            *duplication = numbers[i];
-            return true;
-        }
-        b[numbers[i]] = true;
-    }
-    return false;
+int findRepeatNumber(vector<int>& nums)
+{
+    for (int i = 0; i < nums.size(); i++)
+    {
+        int num = nums[i];
+		if (nums[i] != i)
+        {
+			if (nums[i] == num)
+            {
+				return nums[i];
+			}
+			nums[i], num = num, nums[i];
+		}
+	}
+	return 0;
 }
 
-int main() {
+int main() 
+{
     ios::sync_with_stdio(false);
-    int n, res;
-    int a[1001];
-    cin >> n;
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    cout << duplicate(a, n, &res) << endl;
-    cout << res;
+    int a[] = {2, 3, 1, 0, 2, 5, 3};
+    vector<int> nums(a, a+7);
+    cout << findRepeatNumber(nums) << endl;
     return 0;
 }
 ```
