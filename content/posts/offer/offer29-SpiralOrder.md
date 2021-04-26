@@ -24,8 +24,8 @@ tags: ["Offer"]
 
 ## 限制
 
-0 <= matrix.length <= 100
-0 <= matrix[i].length <= 100
+`0 <= matrix.length <= 100`
+`0 <= matrix[i].length <= 100`
 
 ## 题解
 
