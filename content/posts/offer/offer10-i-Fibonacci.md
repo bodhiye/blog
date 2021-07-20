@@ -1,5 +1,5 @@
 ---
-title: "剑指offer10-i-斐波那契数列"
+title: "剑指offer10-I-斐波那契数列"
 date: 2021-07-20T16:40:00+08:00
 draft: false
 categories: ["剑指offer"]
