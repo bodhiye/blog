@@ -1,23 +1,125 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta name=author content="叶琼州"><meta name=description content="叶琼州的个人博客"><meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou"><link rel=prev href=https://yeqiongzhou.com/2020/02/docker-golang-http/><link rel=next href=https://yeqiongzhou.com/2020/05/leetcode3/><link rel=canonical href=https://yeqiongzhou.com/2020/05/chgrp/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/x-icon href=/favicon.ico><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Linux chgrp命令 | 叶琼州的代码小窝</title><meta name=title content="Linux chgrp命令 | 叶琼州的代码小窝"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"Linux chgrp命令","headline":"Linux chgrp命令","description":"命令详解 Linux chgrp命令用于变更文件或目录的所属群组。 在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgr","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2020","datePublished":"2020-05-25 22:25:47 \u002b0800 \u002b0800","dateModified":"2020-05-25 22:25:47 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2020\/05\/chgrp\/","wordCount":"777","keywords":["Linux","叶琼州的代码小窝"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/ title>Blog</a>
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta name=author content="叶琼州">
+<meta name=description content="叶琼州的个人博客">
+<meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou">
+<link rel=prev href=https://yeqiongzhou.com/2020/02/docker-golang-http/>
+<link rel=next href=https://yeqiongzhou.com/2020/05/leetcode3/>
+<link rel=canonical href=https://yeqiongzhou.com/2020/05/chgrp/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=icon type=image/x-icon href=/favicon.ico>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<title>
+Linux chgrp命令 | 叶琼州的代码小窝
+</title>
+<meta name=title content="Linux chgrp命令 | 叶琼州的代码小窝">
+<link rel=stylesheet href=/font/iconfont.css>
+<link rel=stylesheet href=/css/main.min.css>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"Linux chgrp命令","headline":"Linux chgrp命令","description":"命令详解 Linux chgrp命令用于变更文件或目录的所属群组。 在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgr","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2020","datePublished":"2020-05-25 22:25:47 \u002b0800 \u002b0800","dateModified":"2020-05-25 22:25:47 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2020\/05\/chgrp\/","wordCount":"777","keywords":["Linux","叶琼州的代码小窝"]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
+</head>
+<body>
+<div class=wrapper>
+<nav class=navbar>
+<div class=container>
+<div class="navbar-header header-logo">
+<a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a>
+</div>
+<div class="menu navbar-right">
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/ title>Blog</a>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<nav class=navbar-mobile id=nav-mobile style=display:none>
+<div class=container>
+<div class=navbar-header>
+<div> <a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div>
+<div class=menu-toggle>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=mobile-menu>
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><main class=main><div class=container><article class=post-warp itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">Linux chgrp命令</h1><div class=post-meta>Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
-<span class=post-time>on <time datetime=5996-20-2510 itemprop=datePublished>May 25, 2020</time></span>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<main class=main>
+<div class=container>
+<article class=post-warp itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">Linux chgrp命令</h1>
+<div class=post-meta>
+Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
+<span class=post-time>
+on <time datetime=5996-20-2510 itemprop=datePublished>May 25, 2020</time>
+</span>
 in
 <i class="font_family icon-folder"></i>
-<span class=post-category><a href=https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/>每日Linux命令</a></span>
-<span class=post-word-count>, 777 words</span></div></header><div class=post-content><hr><h2 id=命令详解>命令详解</h2><p>Linux chgrp命令用于变更文件或目录的所属群组。
-在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgrp指令去变更文件与目录的所属群组，设置方式采用群组名称或群组识别码皆可。</p><h3 id=命令全拼>命令全拼</h3><p>chgrp = change group</p><h3 id=语法格式>语法格式</h3><blockquote><p>chgrp [-cfhRv][&ndash;help][&ndash;version][所属群组][文件或目录&mldr;]
-chgrp [-cfhRv][&ndash;help][&ndash;reference=&lt;参考文件或目录>][&ndash;version][文件或目录&mldr;]</p></blockquote><h3 id=参数说明>参数说明</h3><ul><li>-c或&ndash;changes 效果类似"-v"参数，但仅回报更改的部分。</li><li>-f或&ndash;quiet或&ndash;silent 不显示错误信息。</li><li>-h或&ndash;no-dereference 只对符号连接的文件作修改，而不更动其他任何相关文件。</li><li>-R或&ndash;recursive 递归处理，将指定目录下的所有文件及子目录一并处理。</li><li>-v或&ndash;verbose 显示指令执行过程。</li><li>&ndash;help 在线帮助。</li><li>&ndash;reference=&lt;参考文件或目录>，把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。</li><li>&ndash;version 显示版本信息。</li></ul><h3 id=举个栗子>举个栗子</h3><ul><li>改变文件的群组属性:</li></ul><blockquote><p>chgrp -v bin yeqiongzhou.log</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bodhiye@yeqiongzhou ~/Desktop ll
+<span class=post-category>
+<a href=https://yeqiongzhou.com/categories/%E6%AF%8F%E6%97%A5linux%E5%91%BD%E4%BB%A4/> 每日Linux命令 </a>
+</span>
+<span class=post-word-count>, 777 words</span>
+</div>
+</header>
+<div class=post-content>
+<hr>
+<h2 id=命令详解>命令详解</h2>
+<p>Linux chgrp命令用于变更文件或目录的所属群组。
+在UNIX系统家族里，文件或目录权限的掌控以拥有者及所属群组来管理。您可以使用chgrp指令去变更文件与目录的所属群组，设置方式采用群组名称或群组识别码皆可。</p>
+<h3 id=命令全拼>命令全拼</h3>
+<p>chgrp = change group</p>
+<h3 id=语法格式>语法格式</h3>
+<blockquote>
+<p>chgrp [-cfhRv][&ndash;help][&ndash;version][所属群组][文件或目录&mldr;]
+chgrp [-cfhRv][&ndash;help][&ndash;reference=&lt;参考文件或目录>][&ndash;version][文件或目录&mldr;]</p>
+</blockquote>
+<h3 id=参数说明>参数说明</h3>
+<ul>
+<li>-c或&ndash;changes 效果类似"-v"参数，但仅回报更改的部分。</li>
+<li>-f或&ndash;quiet或&ndash;silent 不显示错误信息。</li>
+<li>-h或&ndash;no-dereference 只对符号连接的文件作修改，而不更动其他任何相关文件。</li>
+<li>-R或&ndash;recursive 递归处理，将指定目录下的所有文件及子目录一并处理。</li>
+<li>-v或&ndash;verbose 显示指令执行过程。</li>
+<li>&ndash;help 在线帮助。</li>
+<li>&ndash;reference=&lt;参考文件或目录>，把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。</li>
+<li>&ndash;version 显示版本信息。</li>
+</ul>
+<h3 id=举个栗子>举个栗子</h3>
+<ul>
+<li>改变文件的群组属性:</li>
+</ul>
+<blockquote>
+<p>chgrp -v bin yeqiongzhou.log</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bodhiye@yeqiongzhou ~/Desktop ll
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye staff <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:05 yeqiongzhou.log
 bodhiye@yeqiongzhou ~/Desktop chgrp -v bin yeqiongzhou.log
 bodhiye@yeqiongzhou ~/Desktop ll
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye bin <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:05 yeqiongzhou.log
 可以看到将yeqiongzhou.log文件由staff群组改为了bin群组。
-</code></pre></div><ul><li>根据指定文件改变文件的群组属性:</li></ul><blockquote><p>chgrp &ndash;reference=yeqiongzhou.log xiaofang.log</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bodhiye@yeqiongzhou ~/Desktop ll
+</code></pre></div><ul>
+<li>根据指定文件改变文件的群组属性:</li>
+</ul>
+<blockquote>
+<p>chgrp &ndash;reference=yeqiongzhou.log xiaofang.log</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bodhiye@yeqiongzhou ~/Desktop ll
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye staff <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:22 xiaofang.log
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye bin   <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:05 yeqiongzhou.log
 bodhiye@yeqiongzhou ~/Desktop chgrp --reference<span style=color:#f92672>=</span>yeqiongzhou.log xiaofang.log
@@ -25,14 +127,62 @@ bodhiye@yeqiongzhou ~/Desktop ll
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye bin <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:22 xiaofang.log
 -rw-r--r-- <span style=color:#ae81ff>1</span> bodhiye bin <span style=color:#ae81ff>0</span> May <span style=color:#ae81ff>25</span> 22:05 yeqiongzhou.log
 改变文件xiaofang.log 的群组属性，使得文件xiaofang.log的群组属性和参考文件yeqiongzhou.log的群组属性相同。
-</code></pre></div></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
-<span>叶琼州</span></p><p class=copyright-item><span>Link:</span>
-<a href=https://yeqiongzhou.com/2020/05/chgrp/>https://yeqiongzhou.com/2020/05/chgrp/</span></p><p class="copyright-item lincese">本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p></div><div class=post-tags><section><i class="font_family icon-tag"></i>Tag(s):
-<span class=tag><a href=https://yeqiongzhou.com/tags/linux/>#Linux</a></span></section><section><a href=javascript:window.history.back();>back</a></span> ·
-<span><a href=https://yeqiongzhou.com>home</a></span></section></div><div class=post-nav><a href=https://yeqiongzhou.com/2020/02/docker-golang-http/ class=prev rel=prev title="Docker部署Golang Http服务"><i class="font_family icon-left"></i>&nbsp;Docker部署Golang Http服务</a>
-<a href=https://yeqiongzhou.com/2020/05/leetcode3/ class=next rel=next title=无重复字符的最长子串>无重复字符的最长子串&nbsp;<i class="font_family icon-right"></i></a></div><div class=post-comment><div id=gitalk-container></div><link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css><script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script><script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script></div></article></div></main><footer class=footer><div class=copyright>&copy;
+</code></pre></div>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span>Author:</span>
+<span>叶琼州 </span>
+</p>
+<p class=copyright-item>
+<span>Link:</span>
+<a href=https://yeqiongzhou.com/2020/05/chgrp/>https://yeqiongzhou.com/2020/05/chgrp/</span>
+</p>
+<p class="copyright-item lincese">
+本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+</div>
+<div class=post-tags>
+<section>
+<i class="font_family icon-tag"></i>Tag(s):
+<span class=tag><a href=https://yeqiongzhou.com/tags/linux/>
+#Linux</a></span>
+</section>
+<section>
+<a href=javascript:window.history.back();>back</a></span> ·
+<span><a href=https://yeqiongzhou.com>home</a></span>
+</section>
+</div>
+<div class=post-nav>
+<a href=https://yeqiongzhou.com/2020/02/docker-golang-http/ class=prev rel=prev title="Docker部署Golang Http服务"><i class="font_family icon-left"></i>&nbsp;Docker部署Golang Http服务</a>
+<a href=https://yeqiongzhou.com/2020/05/leetcode3/ class=next rel=next title=无重复字符的最长子串>无重复字符的最长子串&nbsp;<i class="font_family icon-right"></i></a>
+</div>
+<div class=post-comment>
+<div id=gitalk-container></div>
+<link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css>
+<script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script>
+<script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script>
+</div>
+</article>
+</div>
+</main>
+<footer class=footer>
+<div class=copyright>
+&copy;
 <span itemprop=copyrightYear>2019 - 2021</span>
-<span class=with-love><i class="font_family icon-love"></i></span>
-<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> |</span>
-<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号</a> |
-<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span></div></footer><script src=/js/vendor_no_gallery.min.js async></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div></body></html>
+<span class=with-love>
+<i class="font_family icon-love"></i>
+</span>
+<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> | </span>
+<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号 </a> |
+<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span>
+</div>
+</footer>
+<script src=/js/vendor_no_gallery.min.js async></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</div>
+</body>
+</html>

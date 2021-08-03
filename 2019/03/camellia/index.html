@@ -1,26 +1,166 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta name=author content="叶琼州"><meta name=description content="叶琼州的个人博客"><meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou"><link rel=prev href=https://yeqiongzhou.com/2019/03/offer66/><link rel=next href=https://yeqiongzhou.com/2019/03/sakura/><link rel=canonical href=https://yeqiongzhou.com/2019/03/camellia/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/x-icon href=/favicon.ico><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>山茶花 | 叶琼州的代码小窝</title><meta name=title content="山茶花 | 叶琼州的代码小窝"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"山茶花","headline":"山茶花","description":"前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过山茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下山茶花吧。 山茶花是我国","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2019","datePublished":"2019-03-13 14:07:51 \u002b0800 \u002b0800","dateModified":"2019-03-13 14:07:51 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2019\/03\/camellia\/","wordCount":"485","keywords":["Album","叶琼州的代码小窝"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/ title>Blog</a>
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta name=author content="叶琼州">
+<meta name=description content="叶琼州的个人博客">
+<meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou">
+<link rel=prev href=https://yeqiongzhou.com/2019/03/offer66/>
+<link rel=next href=https://yeqiongzhou.com/2019/03/sakura/>
+<link rel=canonical href=https://yeqiongzhou.com/2019/03/camellia/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=icon type=image/x-icon href=/favicon.ico>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<title>
+山茶花 | 叶琼州的代码小窝
+</title>
+<meta name=title content="山茶花 | 叶琼州的代码小窝">
+<link rel=stylesheet href=/font/iconfont.css>
+<link rel=stylesheet href=/css/main.min.css>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"山茶花","headline":"山茶花","description":"前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过山茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下山茶花吧。 山茶花是我国","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2019","datePublished":"2019-03-13 14:07:51 \u002b0800 \u002b0800","dateModified":"2019-03-13 14:07:51 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2019\/03\/camellia\/","wordCount":"485","keywords":["Album","叶琼州的代码小窝"]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
+</head>
+<body>
+<div class=wrapper>
+<nav class=navbar>
+<div class=container>
+<div class="navbar-header header-logo">
+<a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a>
+</div>
+<div class="menu navbar-right">
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/ title>Blog</a>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<nav class=navbar-mobile id=nav-mobile style=display:none>
+<div class=container>
+<div class=navbar-header>
+<div> <a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div>
+<div class=menu-toggle>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=mobile-menu>
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><main class=main><div class=container><article class=post-warp itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">山茶花</h1><div class=post-meta>Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
-<span class=post-time>on <time datetime=3996-19-132 itemprop=datePublished>March 13, 2019</time></span>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<main class=main>
+<div class=container>
+<article class=post-warp itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">山茶花</h1>
+<div class=post-meta>
+Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
+<span class=post-time>
+on <time datetime=3996-19-132 itemprop=datePublished>March 13, 2019</time>
+</span>
 in
 <i class="font_family icon-folder"></i>
-<span class=post-category><a href=https://yeqiongzhou.com/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/>相册影集</a></span>
-<span class=post-word-count>, 485 words</span></div></header><div class=post-content><p>前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过山茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下山茶花吧。</p><p><img src=/images/album/camellia/shancha1.jpg alt=红色山茶花></p><hr><p>山茶花是我国著名的花卉之一，由于它的株形十分优美典雅，花色丰富多样化，一直都深受很多文人墨客的青睐，而且山茶花寓意着谦逊，理想的爱，美德，可爱，即使在寒冷季节也依旧不失它的高洁美丽。</p><p><img src=/images/album/camellia/shancha2.jpg alt=白色山茶花></p><hr><h3 id=山茶花花语>山茶花花语</h3><ul><li><strong>谦让细心呵护</strong></li></ul><p>因为山茶花的花瓣掉落是一片一片叶子慢慢掉落，带有依依不舍之意，所以山茶花的花语代表了一种谦让和高洁的寓意，比如山茶花送给女孩表现了男孩对女孩爱意的小心翼翼和爱慕之情。</p><ul><li><strong>高洁孤傲</strong></li></ul><p>因为山茶花是冬末春初盛开的鲜花，就如同梅花一样，带有一种高洁孤傲之意，不愿和众花一起盛开争艳，只愿独自绽放需求一份属于自己的高洁和孤傲，这就是山茶花的另外一层花语寓意。</p><ul><li><strong>深沉谨慎</strong></li></ul><p>同样因为山茶花的花朵绽放时间，山茶花不愿意和众花一起绽放在夏季，不愿意争芳斗艳，也说明了山茶花有自己的谨慎和深沉，也正是因为这份谨慎和深沉才造就了只属于山茶花的高洁与孤傲。</p><p><img src=/images/album/camellia/shancha3.jpg alt=粉色山茶花></p><hr><p>最后来欣赏一下陆游描写山茶花的诗句吧。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>         《山茶》
+<span class=post-category>
+<a href=https://yeqiongzhou.com/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/> 相册影集 </a>
+</span>
+<span class=post-word-count>, 485 words</span>
+</div>
+</header>
+<div class=post-content>
+<p>前不久听同学告诉我梅园操场门口的山茶花开了，很久以前就听说过山茶花，不过一直没有见过，索性就趁着这个机会近距离欣赏一下山茶花吧。</p>
+<p><img src=/images/album/camellia/shancha1.jpg alt=红色山茶花></p>
+<hr>
+<p>山茶花是我国著名的花卉之一，由于它的株形十分优美典雅，花色丰富多样化，一直都深受很多文人墨客的青睐，而且山茶花寓意着谦逊，理想的爱，美德，可爱，即使在寒冷季节也依旧不失它的高洁美丽。</p>
+<p><img src=/images/album/camellia/shancha2.jpg alt=白色山茶花></p>
+<hr>
+<h3 id=山茶花花语>山茶花花语</h3>
+<ul>
+<li><strong>谦让细心呵护</strong></li>
+</ul>
+<p>因为山茶花的花瓣掉落是一片一片叶子慢慢掉落，带有依依不舍之意，所以山茶花的花语代表了一种谦让和高洁的寓意，比如山茶花送给女孩表现了男孩对女孩爱意的小心翼翼和爱慕之情。</p>
+<ul>
+<li><strong>高洁孤傲</strong></li>
+</ul>
+<p>因为山茶花是冬末春初盛开的鲜花，就如同梅花一样，带有一种高洁孤傲之意，不愿和众花一起盛开争艳，只愿独自绽放需求一份属于自己的高洁和孤傲，这就是山茶花的另外一层花语寓意。</p>
+<ul>
+<li><strong>深沉谨慎</strong></li>
+</ul>
+<p>同样因为山茶花的花朵绽放时间，山茶花不愿意和众花一起绽放在夏季，不愿意争芳斗艳，也说明了山茶花有自己的谨慎和深沉，也正是因为这份谨慎和深沉才造就了只属于山茶花的高洁与孤傲。</p>
+<p><img src=/images/album/camellia/shancha3.jpg alt=粉色山茶花></p>
+<hr>
+<p>最后来欣赏一下陆游描写山茶花的诗句吧。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>         《山茶》
          宋 陆游
          东园三月雨兼风，桃李飘零扫地空。
          唯有山茶偏耐久，绿丛又放数枝红。
-</code></pre></div><p><img src=/images/album/camellia/shancha4.jpg alt=山茶花></p></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
-<span>叶琼州</span></p><p class=copyright-item><span>Link:</span>
-<a href=https://yeqiongzhou.com/2019/03/camellia/>https://yeqiongzhou.com/2019/03/camellia/</span></p><p class="copyright-item lincese">本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p></div><div class=post-tags><section><i class="font_family icon-tag"></i>Tag(s):
-<span class=tag><a href=https://yeqiongzhou.com/tags/album/>#Album</a></span></section><section><a href=javascript:window.history.back();>back</a></span> ·
-<span><a href=https://yeqiongzhou.com>home</a></span></section></div><div class=post-nav><a href=https://yeqiongzhou.com/2019/03/offer66/ class=prev rel=prev title=剑指offer66——机器人的运动范围><i class="font_family icon-left"></i>&nbsp;剑指offer66——机器人的运动范围</a>
-<a href=https://yeqiongzhou.com/2019/03/sakura/ class=next rel=next title=🌸又是一年赏樱时🌸>🌸又是一年赏樱时🌸&nbsp;<i class="font_family icon-right"></i></a></div><div class=post-comment><div id=gitalk-container></div><link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css><script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script><script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script></div></article></div></main><footer class=footer><div class=copyright>&copy;
+</code></pre></div><p><img src=/images/album/camellia/shancha4.jpg alt=山茶花></p>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span>Author:</span>
+<span>叶琼州 </span>
+</p>
+<p class=copyright-item>
+<span>Link:</span>
+<a href=https://yeqiongzhou.com/2019/03/camellia/>https://yeqiongzhou.com/2019/03/camellia/</span>
+</p>
+<p class="copyright-item lincese">
+本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+</div>
+<div class=post-tags>
+<section>
+<i class="font_family icon-tag"></i>Tag(s):
+<span class=tag><a href=https://yeqiongzhou.com/tags/album/>
+#Album</a></span>
+</section>
+<section>
+<a href=javascript:window.history.back();>back</a></span> ·
+<span><a href=https://yeqiongzhou.com>home</a></span>
+</section>
+</div>
+<div class=post-nav>
+<a href=https://yeqiongzhou.com/2019/03/offer66/ class=prev rel=prev title=剑指offer66——机器人的运动范围><i class="font_family icon-left"></i>&nbsp;剑指offer66——机器人的运动范围</a>
+<a href=https://yeqiongzhou.com/2019/03/sakura/ class=next rel=next title=🌸又是一年赏樱时🌸>🌸又是一年赏樱时🌸&nbsp;<i class="font_family icon-right"></i></a>
+</div>
+<div class=post-comment>
+<div id=gitalk-container></div>
+<link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css>
+<script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script>
+<script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script>
+</div>
+</article>
+</div>
+</main>
+<footer class=footer>
+<div class=copyright>
+&copy;
 <span itemprop=copyrightYear>2019 - 2021</span>
-<span class=with-love><i class="font_family icon-love"></i></span>
-<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> |</span>
-<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号</a> |
-<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span></div></footer><link href=//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css rel=stylesheet><script src=/js/vendor_gallery.min.js async></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div></body></html>
+<span class=with-love>
+<i class="font_family icon-love"></i>
+</span>
+<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> | </span>
+<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号 </a> |
+<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span>
+</div>
+</footer>
+<link href=//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css rel=stylesheet>
+<script src=/js/vendor_gallery.min.js async></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</div>
+</body>
+</html>

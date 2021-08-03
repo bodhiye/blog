@@ -1,22 +1,162 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta name=author content="叶琼州"><meta name=description content="叶琼州的个人博客"><meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou"><link rel=prev href=https://yeqiongzhou.com/2019/03/camellia/><link rel=next href=https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/><link rel=canonical href=https://yeqiongzhou.com/2019/03/sakura/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/x-icon href=/favicon.ico><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>🌸又是一年赏樱时🌸 | 叶琼州的代码小窝</title><meta name=title content="🌸又是一年赏樱时🌸 | 叶琼州的代码小窝"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"🌸又是一年赏樱时🌸","headline":"🌸又是一年赏樱时🌸","description":"正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。 武大樱花背景 武大校内樱花约1000多株，以日本樱花、山樱花、垂","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2019","datePublished":"2019-03-23 16:53:00 \u002b0800 \u002b0800","dateModified":"2019-03-23 16:53:00 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2019\/03\/sakura\/","wordCount":"897","keywords":["Album","叶琼州的代码小窝"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/ title>Blog</a>
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta name=author content="叶琼州">
+<meta name=description content="叶琼州的个人博客">
+<meta name=keywords content="博客,blog,算法,go,golang,docker,k8s,kubernetes,武汉大学,计算机,叶琼州,yeqiongzhou">
+<link rel=prev href=https://yeqiongzhou.com/2019/03/camellia/>
+<link rel=next href=https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/>
+<link rel=canonical href=https://yeqiongzhou.com/2019/03/sakura/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=icon type=image/x-icon href=/favicon.ico>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<title>
+🌸又是一年赏樱时🌸 | 叶琼州的代码小窝
+</title>
+<meta name=title content="🌸又是一年赏樱时🌸 | 叶琼州的代码小窝">
+<link rel=stylesheet href=/font/iconfont.css>
+<link rel=stylesheet href=/css/main.min.css>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yeqiongzhou.com"},"articleSection":"posts","name":"🌸又是一年赏樱时🌸","headline":"🌸又是一年赏樱时🌸","description":"正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。 武大樱花背景 武大校内樱花约1000多株，以日本樱花、山樱花、垂","inLanguage":"zh-cn","author":"叶琼州","creator":"叶琼州","publisher":"叶琼州","accountablePerson":"叶琼州","copyrightHolder":"叶琼州","copyrightYear":"2019","datePublished":"2019-03-23 16:53:00 \u002b0800 \u002b0800","dateModified":"2019-03-23 16:53:00 \u002b0800 \u002b0800","url":"https:\/\/yeqiongzhou.com\/2019\/03\/sakura\/","wordCount":"897","keywords":["Album","叶琼州的代码小窝"]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
+</head>
+<body>
+<div class=wrapper>
+<nav class=navbar>
+<div class=container>
+<div class="navbar-header header-logo">
+<a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a>
+</div>
+<div class="menu navbar-right">
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/ title>Blog</a>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<nav class=navbar-mobile id=nav-mobile style=display:none>
+<div class=container>
+<div class=navbar-header>
+<div> <a href=javascript:void(0); class=theme-switch><i class="font_family icon-love"></i></a>&nbsp;<a href=https://yeqiongzhou.com>叶琼州的代码小窝</a></div>
+<div class=menu-toggle>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=mobile-menu>
+<a class=menu-item href=/posts/ title>Blog</a>
 <a class=menu-item href=/categories/ title>Categories</a>
 <a class=menu-item href=/tags/ title>Tags</a>
-<a class=menu-item href=/about/ title>About</a></div></div></nav><main class=main><div class=container><article class=post-warp itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline">🌸又是一年赏樱时🌸</h1><div class=post-meta>Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
-<span class=post-time>on <time datetime=3996-19-234 itemprop=datePublished>March 23, 2019</time></span>
+<a class=menu-item href=/about/ title>About</a>
+</div>
+</div>
+</nav>
+<main class=main>
+<div class=container>
+<article class=post-warp itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">🌸又是一年赏樱时🌸</h1>
+<div class=post-meta>
+Written by <a itemprop=name href=https://yeqiongzhou.com rel=author>叶琼州</a> with ♥
+<span class=post-time>
+on <time datetime=3996-19-234 itemprop=datePublished>March 23, 2019</time>
+</span>
 in
 <i class="font_family icon-folder"></i>
-<span class=post-category><a href=https://yeqiongzhou.com/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/>相册影集</a></span>
-<span class=post-word-count>, 897 words</span></div></header><div class=post-content><p>正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。</p><hr><h3 id=武大樱花背景>武大樱花背景</h3><p>武大校内樱花约1000多株，以日本樱花、山樱花、垂枝大叶早樱和红花高盆樱4种为主。这些花既有侵华日军当年所留下的“国耻之花”，也有中日恢复邦交后由日本友人多次赠送的“友谊之花”。</p><p>武汉大学的樱花已经有着很长的历史，更有着复杂的历史背景，关于武大樱花多数人并不很清楚，只是停留在日本军人栽种的那种认识状态上。因此美丽的樱花虽然渲染春色，给了人们美的享受，但也带了一些“烦恼”。有人认为樱花是国耻的象征，有人说不要把樱花复杂化；有人说武大因樱花而美丽；也有人说樱花因武大才迷人。</p><p><img src=/images/album/sakura/yinghua4.jpg alt=樱花城堡></p><hr><h3 id=武大樱花发展历史>武大樱花发展历史</h3><ul><li>1939年日军当年在武汉大学种下的小日樱花不超过30株，主要分布在今天的樱花大道上，至今那些日军栽种的樱花树都早已老死。抗战胜利后，武大于1946年10月复归珞珈山；</li><li>1947年3月，武大生物系师生观察发现，校园里共有28株樱花树开花，它们均匀地分布在老斋舍三个拱门之间及其两侧的四个门栋前（每个门栋前各有7株）。</li><li>1957年，武汉大学对这些樱树进行了更新。</li><li>1973年，武大农场又从上海引进了一批山樱花，同时再次更新了已老化的樱树。由于樱花树的生命周期很短，一般只有二三十年，1939年由日本人种下的第一批日本樱花，50年代更新时已基本死绝。因此，我们今天在武大所看到的日本樱花，已远非当年日军所留下的花种了。</li></ul><p><img src=/images/album/sakura/yinghua1.jpg alt=武大樱花></p><hr><h3 id=武大樱花季>武大樱花季</h3><p>武大樱花就像我国的著名景区一样，早已负盛名。无论海内外只要到了三四月份，就前赴后继的奔赴武大观赏樱花，无论是感受学子间传播的才气氛围，还是樱花满地所带来的美伦意境，都足以让人觉得不虚此行。但这只是臆想罢了，作为校园而并非正规景点，他是有规定的，每天只限定在某一时间段开放，而且限名额为两万人，去那里可能看不到花，却一定看得到人头涌动，热闹无比的人群。</p><p><img src=/images/album/sakura/yinghua2.jpg alt=樱花大道人潮></p><hr><h3 id=武大樱花赏析>武大樱花赏析</h3><p>到武大去看樱花，看那些摇曳的花枝，看那些如花的笑靥，看那些流光溢彩，也看那些深情的凝望。我看到那些年轻的充满深情的眸子，也看到写着岁月沧桑的双眼，此刻春风扑在他们的脸上，我仿佛看到圣洁的诺言美丽如初，我仿佛看到深情中的淡定、从容正在绽放。</p><p><img src=/images/album/sakura/yinghua3.jpg alt=武大行政楼></p></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
-<span>叶琼州</span></p><p class=copyright-item><span>Link:</span>
-<a href=https://yeqiongzhou.com/2019/03/sakura/>https://yeqiongzhou.com/2019/03/sakura/</span></p><p class="copyright-item lincese">本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p></div><div class=post-tags><section><i class="font_family icon-tag"></i>Tag(s):
-<span class=tag><a href=https://yeqiongzhou.com/tags/album/>#Album</a></span></section><section><a href=javascript:window.history.back();>back</a></span> ·
-<span><a href=https://yeqiongzhou.com>home</a></span></section></div><div class=post-nav><a href=https://yeqiongzhou.com/2019/03/camellia/ class=prev rel=prev title=山茶花><i class="font_family icon-left"></i>&nbsp;山茶花</a>
-<a href=https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/ class=next rel=next title=Kubernetes存活探针>Kubernetes存活探针&nbsp;<i class="font_family icon-right"></i></a></div><div class=post-comment><div id=gitalk-container></div><link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css><script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script><script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script></div></article></div></main><footer class=footer><div class=copyright>&copy;
+<span class=post-category>
+<a href=https://yeqiongzhou.com/categories/%E7%9B%B8%E5%86%8C%E5%BD%B1%E9%9B%86/> 相册影集 </a>
+</span>
+<span class=post-word-count>, 897 words</span>
+</div>
+</header>
+<div class=post-content>
+<p>正当武大樱花盛开之际，觉得有必要写一篇文章来记录在武大最后一个年头的樱花节了。</p>
+<hr>
+<h3 id=武大樱花背景>武大樱花背景</h3>
+<p>武大校内樱花约1000多株，以日本樱花、山樱花、垂枝大叶早樱和红花高盆樱4种为主。这些花既有侵华日军当年所留下的“国耻之花”，也有中日恢复邦交后由日本友人多次赠送的“友谊之花”。</p>
+<p>武汉大学的樱花已经有着很长的历史，更有着复杂的历史背景，关于武大樱花多数人并不很清楚，只是停留在日本军人栽种的那种认识状态上。因此美丽的樱花虽然渲染春色，给了人们美的享受，但也带了一些“烦恼”。有人认为樱花是国耻的象征，有人说不要把樱花复杂化；有人说武大因樱花而美丽；也有人说樱花因武大才迷人。</p>
+<p><img src=/images/album/sakura/yinghua4.jpg alt=樱花城堡></p>
+<hr>
+<h3 id=武大樱花发展历史>武大樱花发展历史</h3>
+<ul>
+<li>1939年日军当年在武汉大学种下的小日樱花不超过30株，主要分布在今天的樱花大道上，至今那些日军栽种的樱花树都早已老死。抗战胜利后，武大于1946年10月复归珞珈山；</li>
+<li>1947年3月，武大生物系师生观察发现，校园里共有28株樱花树开花，它们均匀地分布在老斋舍三个拱门之间及其两侧的四个门栋前（每个门栋前各有7株）。</li>
+<li>1957年，武汉大学对这些樱树进行了更新。</li>
+<li>1973年，武大农场又从上海引进了一批山樱花，同时再次更新了已老化的樱树。由于樱花树的生命周期很短，一般只有二三十年，1939年由日本人种下的第一批日本樱花，50年代更新时已基本死绝。因此，我们今天在武大所看到的日本樱花，已远非当年日军所留下的花种了。</li>
+</ul>
+<p><img src=/images/album/sakura/yinghua1.jpg alt=武大樱花></p>
+<hr>
+<h3 id=武大樱花季>武大樱花季</h3>
+<p>武大樱花就像我国的著名景区一样，早已负盛名。无论海内外只要到了三四月份，就前赴后继的奔赴武大观赏樱花，无论是感受学子间传播的才气氛围，还是樱花满地所带来的美伦意境，都足以让人觉得不虚此行。但这只是臆想罢了，作为校园而并非正规景点，他是有规定的，每天只限定在某一时间段开放，而且限名额为两万人，去那里可能看不到花，却一定看得到人头涌动，热闹无比的人群。</p>
+<p><img src=/images/album/sakura/yinghua2.jpg alt=樱花大道人潮></p>
+<hr>
+<h3 id=武大樱花赏析>武大樱花赏析</h3>
+<p>到武大去看樱花，看那些摇曳的花枝，看那些如花的笑靥，看那些流光溢彩，也看那些深情的凝望。我看到那些年轻的充满深情的眸子，也看到写着岁月沧桑的双眼，此刻春风扑在他们的脸上，我仿佛看到圣洁的诺言美丽如初，我仿佛看到深情中的淡定、从容正在绽放。</p>
+<p><img src=/images/album/sakura/yinghua3.jpg alt=武大行政楼></p>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span>Author:</span>
+<span>叶琼州 </span>
+</p>
+<p class=copyright-item>
+<span>Link:</span>
+<a href=https://yeqiongzhou.com/2019/03/sakura/>https://yeqiongzhou.com/2019/03/sakura/</span>
+</p>
+<p class="copyright-item lincese">
+本文采用<a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/ target=_blank>知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+</div>
+<div class=post-tags>
+<section>
+<i class="font_family icon-tag"></i>Tag(s):
+<span class=tag><a href=https://yeqiongzhou.com/tags/album/>
+#Album</a></span>
+</section>
+<section>
+<a href=javascript:window.history.back();>back</a></span> ·
+<span><a href=https://yeqiongzhou.com>home</a></span>
+</section>
+</div>
+<div class=post-nav>
+<a href=https://yeqiongzhou.com/2019/03/camellia/ class=prev rel=prev title=山茶花><i class="font_family icon-left"></i>&nbsp;山茶花</a>
+<a href=https://yeqiongzhou.com/2019/04/kubernetes-liveness-probes/ class=next rel=next title=Kubernetes存活探针>Kubernetes存活探针&nbsp;<i class="font_family icon-right"></i></a>
+</div>
+<div class=post-comment>
+<div id=gitalk-container></div>
+<link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css>
+<script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script>
+<script>var title=location.pathname.substr(0,50);const gitalk=new Gitalk({clientID:'abe0462addf2bb7816db',clientSecret:'302211bbfc34be3c75ec4cfa8751002e796356fa',repo:'blog',owner:'bodhiye',admin:['bodhiye'],id:title,distractionFreeMode:!1});(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('gitalk-container').innerHTML='Gitalk comments not available by default when the website is previewed locally.';return}gitalk.render('gitalk-container')})()</script>
+</div>
+</article>
+</div>
+</main>
+<footer class=footer>
+<div class=copyright>
+&copy;
 <span itemprop=copyrightYear>2019 - 2021</span>
-<span class=with-love><i class="font_family icon-love"></i></span>
-<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> |</span>
-<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号</a> |
-<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span></div></footer><link href=//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css rel=stylesheet><script src=/js/vendor_gallery.min.js async></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script><script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></div></body></html>
+<span class=with-love>
+<i class="font_family icon-love"></i>
+</span>
+<span class=author itemprop=copyrightHolder><a href=https://yeqiongzhou.com>叶琼州</a> | </span>
+<a href=http://beian.miit.gov.cn/ target=_blank rel="external nofollow">赣ICP备20001186号 </a> |
+<span>Powered by <a href=https://gohugo.io/ target=_blank rel="external nofollow">Hugo</a></span>
+</div>
+</footer>
+<link href=//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css rel=stylesheet>
+<script src=/js/vendor_gallery.min.js async></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-135209530-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?8cb4aac9b76858bf912c10546e0ca16d",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</div>
+</body>
+</html>
