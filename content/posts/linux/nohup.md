@@ -20,7 +20,7 @@ nohup命令，在默认情况下（非重定向时），会输出一个名叫 no
 
 ### 命令全拼
 
-cksum = no hang up
+nohup = no hang up
 
 ### 语法格式
 
