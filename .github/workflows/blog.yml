@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-deploy:
     # 服务器环境 Ubuntu
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       # 拉取代码
       - name: Checkout
@@ -21,9 +21,9 @@ jobs:
 
       # 安装 Hugo
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+        uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.92.0'
           extended: true
 
       - name: Build
